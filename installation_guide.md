@@ -91,11 +91,14 @@ Download my borrowed ISO, and the necessary tool from the following link: [Downl
 1. **Installation**:
    
    - If you are using software like Rufus to prepare the USB installation drive, make sure to **uncheck** any options related to Windows Debloat or similar features in such tools. This is important because HandleOS, already includes these optimizations within its system. Additionally, registry changes made by third-party software could potentially corrupt the HandleOS installation dataset. HandleOS is finely tuned and does not require additional debloating steps from these tools. So, be sure on Rufus (as example) it's set like the picture Below:
+
      <img height="300" src="Git_assets/installation/Rufus_settings.png">
+
+
    - Boot from the HandleOS ISO.
    - Follow the installation prompts to install HandleOS on your SSD or hard drive. The installation process will guide you through the necessary steps.
    
-2. **Initial Setup**:
+1. **Initial Setup**:
    
    - After installation, you will start in `Console Mode`.
    - To switch to `Desktop Mode`, use the `Console2Desk` tool. Click the "Desktop" button to transition to `Desktop Mode`.
