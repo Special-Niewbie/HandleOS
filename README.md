@@ -4,7 +4,15 @@
 <div align="center">  
     <img height="260" src="Git_assets/HandleOS_GitVid.gif"/>
 </div>
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="#features" style="color: #2079C8;">Features</a> | <a href="#contact" style="color: #2079C8;">Contact</a>
+
+
+<a href="README.md" style="color: #2079C8;">
+
+Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="#features" style="color: #2079C8;">Features</a> | <a href="#contact" style="color: #2079C8;">Contact</a>
+
+
+
+
 
 
 
@@ -12,6 +20,10 @@
 <div align="center">  
     <img height="240" src="Git_assets/HandleOS_Box.png"/>
 </div>
+
+
+
+
 
 
 ![](https://img.shields.io/github/stars/Special-Niewbie/HandleOS.svg) ![](https://img.shields.io/github/forks/Special-Niewbie/HandleOS.svg) ![](https://img.shields.io/github/tag/Special-Niewbie/HandleOS.svg) ![](https://img.shields.io/github/release/Special-Niewbie/HandleOS.svg) ![](https://img.shields.io/github/issues/Special-Niewbie/HandleOS.svg)![](https://img.shields.io/github/downloads/Special-Niewbie/HandleOS/total.svg)
