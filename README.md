@@ -43,7 +43,7 @@ HandleOS aspires to become a benchmark in the world of gaming performance. I act
 
 My goal is to create a community of enthusiasts eager to get the most out of these products, considering that both Linux and Windows have their Pros and Cons. If you appreciate my work and have the means, I would be grateful if you could contribute to this project or contribute with a small donation to support me in continuing to develop.
 
-[Back to top](#handleos)
+[Back to top](README.md)
 
 ## *Minimum* System Requirements (*base on my testing*)
 | <img height="28" src="Git_assets/HandleOS11Icon.png">        |                           Specs                            |
@@ -74,9 +74,11 @@ My goal is to create a community of enthusiasts eager to get the most out of the
 
 
 
-[Back to top](#handleos)
+
+
+
 
 ## Credits
 Special thanks to the YouTuber **Prob** (Italy), for being a dedicated beta tester and for suggesting valuable ideas.
 
-[Back to top](#handleos)
+[Back to top](README.md)
