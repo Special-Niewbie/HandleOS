@@ -95,9 +95,10 @@ Download my borrowed ISO, and the necessary tool from the following link: [Downl
      <img height="300" src="Git_assets/installation/Rufus_settings.png">
 
 
+   - Make sure to unplug any other external USB drives and SD flash cards before proceeding with the installation process.
    - Boot from the HandleOS ISO.
    - Follow the installation prompts to install HandleOS on your SSD or hard drive. The installation process will guide you through the necessary steps.
-   
+
 1. **Initial Setup**:
    
    - After installation, you will start in `Console Mode`.
