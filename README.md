@@ -96,14 +96,18 @@ Ko-fi:
 
 
 
+## Credits
+- Special thanks to the Italian YouTuber <img height="38" src="Git_assets/Youtubers/prob.jpg">  [Prob]( https://www.youtube.com/@Prob-nest/featured) , for trusting and having been a dedicated beta tester on pre-release of *HandleOS*.
+
+
+
+
+### Contributors
+
 <a href="https://github.com/Special-Niewbie/HandleOS/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Special-Niewbie/HandleOS" />
 </a>
 
-
-
-## Credits
-- Special thanks to the Italian YouTuber <img height="38" src="Git_assets/Youtubers/prob.jpg">  [Prob]( https://www.youtube.com/@Prob-nest/featured) , for trusting and having been a dedicated beta tester on pre-release of *HandleOS*.
 
 
 
