@@ -1,6 +1,6 @@
 
 
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="#features" style="color: #2079C8;">Features</a> | <a href="#contact" style="color: #2079C8;">Contact</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="#features" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="Info_for_Developers.md" style="color: #2079C8;">Developers Info Area</a>
 
 
 
@@ -14,19 +14,21 @@ You can download the `HandleOS ISO` along with the tool to disable the *C-STATE*
 
 This tool, called `Smokless_UMAF_Settings_HandleOS` in a zip file, is **ONLY for AMD APU Architectures on handheld PCs that do not have this option in their BIOS menu**, such as the `Asus Rog Ally`. If your device already has this option according to your BIOS vendor's guide, be sure to disable the same C-STATE Option, otherwise it significantly limits HandleOS performance, and after that you can go directly to the ISO installation process (without using `Smokless_UMAF_Settings_HandleOS`).
 
-Download my borrowed ISO, and the necessary tool from the following link: [Download HandleOS ISO](https://).
+Download my borrowed ISO, and the necessary tool from the following link: [Download HandleOS ISO](https://drive.google.com/drive/folders/17-bPnBSjUiEPouGeiwU6VQjYxb9h5uiE?usp=drive_link).
 
 
 ## Post-Installation
 
 1. **Verify SHA256 Hash serial ISO Number**:
 
-   - After downloading the ISO, check the SHA256 hash to ensure it matches the provided hash. This step is crucial for verifying the integrity of the downloaded HandleOS ISO file. You can find the file named `README_HandleOS_23H2_Genuine_Check_ISO.txt`.
+   - After downloading the ISO, check the SHA256 hash to ensure it matches the provided hash. This step is crucial for verifying the integrity of the downloaded HandleOS ISO file. You can find the file named `README_HandleOS_23H2_Genuine_Check_ISO.txt`. 
+     If you don't have the .txt file, execute this command by your Windows Termina:  
+     `certutil -hashfile "HandleOS_23H2.iso" SHA256`
 
-   - Or here it's the serial SHA256 Hash ISO number:
+   - Here it's the serial SHA256 Hash ISO number:
 
      1. HandleOS 23H2 genuine SHA256 = `f827abe58e149b1106ddb4d7326eab80060a0ce7ee8b065a1cd7b6089c17d872`
-
+   
         
 
 ## Preparation for Smokless-UMAF (disable C-STATE for HandleOS)
@@ -91,8 +93,11 @@ Download my borrowed ISO, and the necessary tool from the following link: [Downl
 1. **Installation**:
    
    - If you are using software like Rufus to prepare the USB installation drive, make sure to **uncheck** any options related to Windows Debloat or similar features in such tools. This is important because HandleOS, already includes these optimizations within its system. Additionally, registry changes made by third-party software could potentially corrupt the HandleOS installation dataset. HandleOS is finely tuned and does not require additional debloating steps from these tools. So, be sure on Rufus (as example) it's set like the picture Below:
-
+     
+     
      <img height="300" src="Git_assets/installation/Rufus_settings.png">
+     
+     
 
 
    - Make sure to unplug any other external USB drives and SD flash cards before proceeding with the installation process.

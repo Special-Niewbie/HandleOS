@@ -1,3 +1,6 @@
+*Page Working Progress...............*
+
+
 <div style="text-align: center;">
   <h1><strong>Welcome to HandleOS</strong></h1>
 </div>
@@ -6,9 +9,10 @@
 </div>
 
 
+
 <a href="README.md" style="color: #2079C8;">
 
-Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="#features" style="color: #2079C8;">Features</a> | <a href="#contact" style="color: #2079C8;">Contact</a>
+Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="#features" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="Info_for_Developers.md" style="color: #2079C8;">Developers Info Area</a>
 
 
 
@@ -37,13 +41,15 @@ Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Downl
 
 HandleOS is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original Windows 11 from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
 
-After months of rigorous testing, I have significantly improved HandleOS performance, increasing FPS, enhancing stability, and reducing power consumption. If you're concerned about safety, rest assured: there is no unusual software or content present, only my completely open-source tools and optimizations aimed at optimizing resources for gaming. This is the result of my passion!
+After months of rigorous testing, I have significantly improved HandleOS performance, increasing FPS, enhancing stability, and reducing power consumption. If you're concerned about safety, rest assured: there is no unusual software or content present, only my completely open-source tools (with an external Open-Source UI called `Playnite`) and optimizations aimed at optimizing resources for Handled gaming . This is the result of my passion!
 
-HandleOS aspires to become a benchmark in the world of gaming performance. I actively invite the community to participate by sharing ideas and improvements by clicking on the Discussions & Tips tab above. One of the unique features of HandleOS is the ability to easily switch between Handled/Console Mode and Desktop Mode.
+HandleOS aspires to become a benchmark in the world of gaming performance. I actively invite the community to participate by sharing ideas and improvements by clicking on the Discussions & Tips tab above. One of the unique features of HandleOS is the ability to easily switch between Handheld/Console Mode and Desktop Mode.
 
-My goal is to create a community of enthusiasts eager to get the most out of these products, considering that both Linux and Windows have their Pros and Cons. If you appreciate my work and have the means, I would be grateful if you could contribute to this project or contribute with a small donation to support me in continuing to develop.
+No matter your expertise - whether you're a developer, an icon designer, a PC enthusiast, or just someone with a knack for tweaking registry keys or features - your contributions are valuable. Please help us improve this project and make it a true community effort.
 
-[Back to top](README.md)
+My goal is to create a community of enthusiasts eager to get the most out of these products, considering that both Linux and Windows have their Pros and Cons. If you appreciate my work and have the means, I would be grateful if you could contribute to this project or make a small donation to support me in continuing to develop.
+
+
 
 ## *Minimum* System Requirements (*base on my testing*)
 | <img height="28" src="Git_assets/HandleOS11Icon.png">        |                           Specs                            |
@@ -74,11 +80,23 @@ My goal is to create a community of enthusiasts eager to get the most out of the
 
 
 
-
+<a href="https://github.com/Special-Niewbie/HandleOS/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Special-Niewbie/HandleOS" />
+</a>
 
 
 
 ## Credits
-Special thanks to the YouTuber **Prob** (Italy), for being a dedicated beta tester and for suggesting valuable ideas.
+- Special thanks to the YouTuber **Prob** (Italy)  https://www.youtube.com/@Prob-nest/featured , for being a dedicated beta tester .
+
+
+
+### Others
+
+- A special thanks to my trusty test subject, the Rog Ally and one of my very old pc Samsung NF210, and all the SSDs that bravely endured my endless experiments.
+
+
+
+
 
 [Back to top](README.md)
