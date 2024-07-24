@@ -51,6 +51,22 @@ My goal is to create a community of enthusiasts eager to get the most out of the
 
 
 
+## Donation
+
+If you enjoy using HandleOS and find it valuable, a small donation would be greatly appreciated! Your support will help me maintain the project and acquire additional handheld devices for further testing and improvement. Every contribution, no matter the size, makes a big difference in continuing to develop and enhance HandleOS.
+
+PayPal:
+
+[![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/CrisDonate)
+
+Ko-fi:
+
+[![Donate with Ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/special_niewbie)
+
+
+
+
+
 ## *Minimum* System Requirements (*base on my testing*)
 | <img height="28" src="Git_assets/HandleOS11Icon.png">        |                           Specs                            |
 | ------------------------------------------------------------ | :--------------------------------------------------------: |
