@@ -87,7 +87,7 @@ My goal is to create a community of enthusiasts eager to get the most out of the
 
 
 ## Credits
-- Special thanks to the YouTuber **Prob** (Italy)  https://www.youtube.com/@Prob-nest/featured , for being a dedicated beta tester .
+- Special thanks to the Italian YouTuber <img height="38" src="Git_assets/Youtubers/prob.jpg">  [Prob]( https://www.youtube.com/@Prob-nest/featured) , for trusting and having been a dedicated beta tester on pre-release of *HandleOS*.
 
 
 
