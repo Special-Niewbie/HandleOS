@@ -75,7 +75,7 @@ Ko-fi:
 | <img width=32px src="Git_assets/gpu.png">  **GPU**           | Any<br />(with drivers compatible or modded for modern OS) |
 | <img width=32px src="Git_assets/windows.ico">  **HDD/SSD**   |                 15 GB <br />(Tested by VM)                 |
 | <img width=36px src="Git_assets/controller.png">↺ <img width=32px src="Git_assets/monitor.ico">Console Mode / Desktop Mode |                             ✅                              |
-| <img width=32px src="Git_assets/computerchip.ico">  **TPM**  |          <img width=22px src="Git_assets/x.png">           |
+| <img width=32px src="Git_assets/computerchip.ico">  **TPM**  |          <img width=20px src="Git_assets/x.png">           |
 
 **NOTE**: The benchmark and RAM consumption of approximately 1 GB, is based on a system with limited hardware characteristics. This value is intended to reflect the OS's lightness. HandleOS, by nature of being based on Windows, may use slightly more RAM if you have a large amount available on your PC, especially if there are default drivers that Windows has founded in its local database. Conversely, if the system has very limited specifications, HandleOS will adjust and use less RAM accordingly.
 
