@@ -1,0 +1,1237 @@
+20-06 21:05:45.544|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:06:10.049|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 21:06:10.073|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 21:06:10.167|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 21:06:11.246|ERROR|UplayLibrary#UplayMetadataProvider:Failed to get Ubisoft Connect product info from cache.
+System.IO.FileNotFoundException: Ubisoft Connect client was not initialized, please start the client at least once to generate user library data.
+   at UplayLibrary.Uplay.GetLocalProductCache() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\Uplay.cs:line 103
+   at UplayLibrary.UplayMetadataProvider..ctor() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\UplayMetadataProvider.cs:line 22
+20-06 21:14:10.580|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:14:31.600|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:16:30.821|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:17:57.542|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:19:22.040|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:20:45.635|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:25:03.751|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:25:06.528|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 21:25:06.558|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 21:25:06.589|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 21:26:22.921|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:38:24.485|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:38:27.359|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 21:38:27.393|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 21:38:27.451|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 21:39:59.676|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:44:55.525|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:46:58.859|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:47:37.232|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:48:06.833|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:49:29.578|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:51:45.710|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 21:51:48.606|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 21:51:48.623|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 21:51:48.641|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 21:53:42.465|ERROR|UplayLibrary#UplayMetadataProvider:Failed to get Ubisoft Connect product info from cache.
+System.IO.FileNotFoundException: Ubisoft Connect client was not initialized, please start the client at least once to generate user library data.
+   at UplayLibrary.Uplay.GetLocalProductCache() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\Uplay.cs:line 103
+   at UplayLibrary.UplayMetadataProvider..ctor() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\UplayMetadataProvider.cs:line 22
+20-06 22:02:00.671|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:02:20.568|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:02:45.694|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:03:38.974|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:06:11.423|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:11:03.259|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:11:15.769|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:11:43.206|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:13:33.020|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:17:00.702|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:17:03.597|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 22:17:03.618|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 22:17:03.618|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 22:17:46.159|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:17:50.148|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 22:17:50.183|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 22:17:50.329|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 22:21:59.040|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:22:02.824|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 22:22:02.856|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 22:22:02.971|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 22:31:40.470|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:33:16.942|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:33:40.947|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:34:09.235|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:37:26.382|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 22:43:48.301|ERROR|UplayLibrary#UplayMetadataProvider:Failed to get Ubisoft Connect product info from cache.
+System.IO.FileNotFoundException: Ubisoft Connect client was not initialized, please start the client at least once to generate user library data.
+   at UplayLibrary.Uplay.GetLocalProductCache() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\Uplay.cs:line 103
+   at UplayLibrary.UplayMetadataProvider..ctor() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\UplayMetadataProvider.cs:line 22
+20-06 22:53:59.604|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 23:03:41.500|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 23:03:47.132|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 23:03:47.137|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 23:03:47.252|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 23:04:23.506|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 23:05:59.647|ERROR|UplayLibrary#UplayMetadataProvider:Failed to get Ubisoft Connect product info from cache.
+System.IO.FileNotFoundException: Ubisoft Connect client was not initialized, please start the client at least once to generate user library data.
+   at UplayLibrary.Uplay.GetLocalProductCache() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\Uplay.cs:line 103
+   at UplayLibrary.UplayMetadataProvider..ctor() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\UplayMetadataProvider.cs:line 22
+20-06 23:12:45.794|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 23:22:05.401|ERROR|UplayLibrary#UplayMetadataProvider:Failed to get Ubisoft Connect product info from cache.
+System.IO.FileNotFoundException: Ubisoft Connect client was not initialized, please start the client at least once to generate user library data.
+   at UplayLibrary.Uplay.GetLocalProductCache() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\Uplay.cs:line 103
+   at UplayLibrary.UplayMetadataProvider..ctor() in C:\Devel\PlayniteExtensions\source\Libraries\UplayLibrary\UplayMetadataProvider.cs:line 22
+20-06 23:28:49.903|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 23:28:57.054|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 23:28:57.093|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 23:28:57.105|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+20-06 23:30:41.318|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 23:32:11.496|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+20-06 23:32:15.366|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+20-06 23:32:15.380|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+20-06 23:32:15.521|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+21-06 08:08:33.635|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+21-06 08:08:36.963|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+21-06 08:08:36.983|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+21-06 08:08:37.093|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+21-06 08:14:12.415|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+21-06 08:14:15.738|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+21-06 08:14:15.766|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+21-06 08:14:15.888|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+21-06 08:28:24.297|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+21-06 08:35:37.950|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+21-06 08:35:40.660|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+21-06 08:35:40.683|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+21-06 08:35:40.707|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+21-06 08:39:29.884|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+21-06 08:39:33.174|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+21-06 08:39:33.207|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+21-06 08:39:33.313|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+21-06 08:53:44.912|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\Administrator\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+21-06 08:53:48.350|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+21-06 08:53:48.377|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+21-06 08:53:48.503|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+10-07 00:22:14.969|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+10-07 00:22:14.980|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+10-07 00:22:16.173|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+10-07 00:22:16.185|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+10-07 00:22:16.197|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+10-07 10:22:27.465|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+10-07 10:22:27.516|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+10-07 10:22:29.920|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+10-07 10:22:29.932|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+10-07 10:22:29.932|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+10-07 10:24:03.859|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+10-07 10:24:03.874|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+10-07 10:24:05.034|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+10-07 10:24:05.041|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+10-07 10:24:05.041|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+10-07 16:12:21.245|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+10-07 16:12:21.294|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+10-07 16:12:23.377|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+10-07 16:12:23.393|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+10-07 16:12:23.393|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+10-07 18:46:27.134|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+10-07 18:46:27.167|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+10-07 18:49:20.556|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+10-07 18:49:20.567|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+10-07 18:49:21.796|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+10-07 18:49:21.798|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+10-07 18:49:21.798|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+10-07 18:49:42.267|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+10-07 18:49:42.267|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+10-07 18:49:43.397|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+10-07 18:49:43.397|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+10-07 18:49:43.408|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:43:33.769|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:43:33.815|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:43:35.995|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:43:35.997|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:43:35.997|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:43:43.582|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:43:43.597|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:44:54.227|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:44:54.255|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:44:55.959|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:44:55.968|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:44:55.968|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:45:11.207|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:45:11.221|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:48:14.229|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:48:14.245|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:48:15.299|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:48:15.299|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:48:15.310|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:48:20.102|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:48:20.117|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:49:35.627|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:49:35.641|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:49:36.402|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:49:36.402|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:49:36.402|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:50:10.957|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:50:10.972|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:50:11.730|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:50:11.730|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:50:11.730|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:50:27.088|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:50:27.103|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:50:27.894|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:50:27.894|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:50:27.905|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:50:52.447|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:50:52.461|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:51:12.895|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:51:12.919|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:51:23.873|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:51:23.888|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:51:24.674|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:51:24.674|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:51:24.685|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:51:53.321|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:51:53.335|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:52:05.881|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:52:05.891|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:53:29.639|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:53:29.657|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:55:03.683|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:55:03.693|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:55:04.820|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 15:55:04.824|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 15:55:04.824|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 15:55:08.877|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:55:08.893|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:55:27.627|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:55:27.637|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:57:58.578|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:57:58.602|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 15:58:09.292|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 15:58:09.304|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:17:37.539|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:17:37.562|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:18:23.851|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:18:23.867|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:18:24.657|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 16:18:24.657|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 16:18:24.668|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 16:27:57.656|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:27:57.670|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:27:58.431|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 16:27:58.434|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 16:27:58.434|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 16:50:06.196|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:50:06.211|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:50:23.929|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:50:23.942|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:51:19.382|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:51:19.400|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:51:20.184|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 16:51:20.184|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 16:51:20.200|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 16:54:11.310|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:54:11.324|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:54:12.102|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 16:54:12.107|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 16:54:12.107|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 16:56:32.476|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:56:32.491|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:56:33.262|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 16:56:33.262|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 16:56:33.280|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 16:57:12.604|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:57:12.618|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:57:13.390|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 16:57:13.390|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 16:57:13.402|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 16:58:41.034|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 16:58:41.048|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 16:58:41.819|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 16:58:41.819|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 16:58:41.827|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:00:24.754|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:00:24.768|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:00:25.550|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:00:25.560|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:00:25.560|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:02:02.480|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:02:02.480|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:02:03.509|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:02:03.512|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:02:03.512|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:04:11.856|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:04:11.856|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:04:12.633|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:04:12.641|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:04:12.641|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:08:34.063|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:08:34.078|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:08:34.833|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:08:34.833|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:08:34.842|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:09:35.176|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:09:35.190|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:09:36.078|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:09:36.078|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:09:36.091|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:20:24.249|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:20:24.263|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:20:25.022|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:20:25.030|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:20:25.030|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:21:28.509|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:21:28.523|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:21:29.294|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:21:29.294|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:21:29.294|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:23:58.421|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:23:58.421|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:23:59.264|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:23:59.264|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:23:59.278|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:24:28.604|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:24:28.614|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:24:29.330|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:24:29.330|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:24:29.343|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:24:57.848|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:24:57.858|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:24:58.920|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:24:58.934|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:24:58.934|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:25:03.238|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:25:03.248|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:25:15.503|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:25:15.515|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:25:16.271|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:25:16.279|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:25:16.279|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:25:43.863|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:25:43.878|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:26:44.712|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:26:44.722|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:26:45.526|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:26:45.527|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:26:45.543|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:27:22.034|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:27:22.044|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:27:22.752|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:27:22.752|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:27:22.764|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:27:35.998|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:27:36.012|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:32:09.191|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:32:09.202|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:34:32.287|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:34:32.297|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:35:24.680|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:35:24.696|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:35:36.614|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:35:36.631|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:36:09.261|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:36:09.272|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:37:49.618|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:37:49.628|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:38:22.517|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:38:22.532|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 17:38:23.804|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 17:38:23.810|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 17:38:23.810|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+11-07 17:40:39.828|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 17:40:39.828|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 20:20:03.951|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+11-07 20:20:03.980|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+11-07 20:20:05.859|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+11-07 20:20:05.859|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+11-07 20:20:05.873|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+12-07 22:22:51.180|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+12-07 22:22:51.229|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+12-07 22:22:53.390|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+12-07 22:22:53.390|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+12-07 22:22:53.404|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.
+12-07 22:23:16.651|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+12-07 22:23:16.651|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+12-07 22:23:38.850|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+12-07 22:23:38.862|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+13-07 00:10:01.380|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+13-07 00:10:01.394|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+13-07 00:11:10.036|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+13-07 00:11:10.051|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+13-07 00:12:55.114|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+13-07 00:12:55.136|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+13-07 00:14:01.180|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+13-07 00:14:01.193|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+13-07 00:16:10.066|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+13-07 00:16:10.081|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+13-07 01:00:02.444|ERROR|SteamLibrary#SharedSteamSettingsViewModel`2:Failed to load Steam API keys.
+System.Security.Cryptography.CryptographicException: Padding is invalid and cannot be removed.
+   at System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   at System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   at System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   at System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   at System.IO.Stream.Close()
+   at System.IO.StreamReader.Dispose(Boolean disposing)
+   at System.IO.TextReader.Dispose()
+   at PlayniteExtensions.Common.Encryption.DecryptFromFile(String inputFile, Encoding encoding, String password) in C:\Devel\PlayniteExtensions\source\Generic\PlayniteExtensions.Common\Encryption.cs:line 86
+   at SteamLibrary.SteamLibrarySettingsViewModel.LoadKeys() in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrarySettingsViewModel.cs:line 194
+13-07 01:00:02.455|DEBUG|SteamLibrary#SteamTagNamer:Opening C:\Users\HandleOS\AppData\Roaming\Playnite\Extensions\SteamLibrary_Builtin\SteamShared\TagLocalization\english.json
+13-07 01:00:03.664|DEBUG|GogLibrary#GogLibrary:Found 0 installed GOG games.
+13-07 01:00:03.668|ERROR|SteamLibrary#SteamLibrary:Failed to import installed Steam games.
+System.Exception: Steam installation not found.
+   at SteamLibrary.SteamLibrary.GetInstalledGames(Boolean includeMods) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 283
+   at SteamLibrary.SteamLibrary.GetGames(LibraryGetGamesArgs args) in C:\Devel\PlayniteExtensions\source\Libraries\SteamLibrary\SteamLibrary.cs:line 632
+13-07 01:00:03.668|DEBUG|UplayLibrary#UplayLibrary:Found 0 installed Ubisoft Connect games.

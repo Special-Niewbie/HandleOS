@@ -1,0 +1,1890 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    mc:Ignorable="d">
+
+    <Style TargetType="{x:Type Main}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Main}">
+                    <Grid x:Name="PART_MainHost"
+                          d:DesignWidth="{StaticResource DesignWidth}"
+                          d:DesignHeight="{StaticResource DesignHeight}"
+                          d:DataContext="{x:Static DesignMainViewModel.DesignIntance}" >
+					
+<!--GridView Background-->						  
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Background" Value="{DynamicResource BorderBackgroundDarkBrush}" />
+                                    <Style.Triggers>
+                                         <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                             <Setter Property="Background" Value="{DynamicResource GridImageBackgroundBrush}" />
+                                         </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+<!--Intro Video-->					
+                            <Grid Name="Intro" Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" Grid.ColumnSpan="3" >
+                                <MediaElement HorizontalAlignment="Center" Height="{StaticResource DesignHeight}" MediaElementBehaviors.Repeat="False" Volume="100" 
+								Name="IntroSource" Source="{ThemeFile 'Background/Intro.mp4'}" Stretch="UniformToFill" Grid.ZIndex="100" Focusable="False" >
+                                    <MediaElement.CacheMode>
+                                        <BitmapCache RenderAtScale="1"/>
+                                    </MediaElement.CacheMode>
+                                </MediaElement>
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Opacity" Value="1"/>
+                                        <Style.Triggers>
+                                            <EventTrigger RoutedEvent="Window.Loaded">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:1" From="1" BeginTime="0:0:4.0" To="0"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                            </Grid>									
+<!--Background Aero-->
+                        <Grid x:Name="MainGrid" Panel.ZIndex="-46" Width="Auto"
+							  VerticalAlignment="Center" >
+
+                            <Grid.Style>
+                                <Style>
+                                    <Setter Property="ItemsControl.Opacity" Value="0"/>
+                                    <Setter Property="ItemsControl.Visibility" Value="Collapsed"/>
+                                    <Setter Property="ItemsControl.Margin" Value="0,0,0,0"/>	
+                                    <Setter Property="ItemsControl.Height" Value="{StaticResource DesignHeight}"/>
+                                    <Style.Triggers>
+
+                                                    <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                        <Setter Property="ItemsControl.Opacity" Value="1" />
+                                                        <Setter Property="ItemsControl.Visibility" Value="Visible" />
+                                                    </DataTrigger>
+
+                                                    <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                        <Setter Property="ItemsControl.Opacity" Value="0.9" />
+                                                        <Setter Property="ItemsControl.Visibility" Value="Visible" />
+                                                    </DataTrigger>
+
+                                                    <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                        <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                                    </DataTrigger>
+
+                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGameItems}" Value="0">
+                                                <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+
+                                    </Style.Triggers>                                
+								</Style>
+                            </Grid.Style>
+
+
+                            <Grid Visibility="Visible">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="7*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="5*"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="5*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Column="1" Grid.Row="1" RenderTransformOrigin="0.5,0.5" >
+                                    <Grid.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleX="16" ScaleY="16"/>
+                                            <SkewTransform/>
+                                            <RotateTransform />
+                                            <TranslateTransform/>
+                                        </TransformGroup>
+                                    </Grid.RenderTransform>
+									
+
+                                    <FadeImage x:Name="Fade" Visibility="Visible" Grid.Row="1" Grid.Column="1" Source="{Binding SelectedGame.DisplayBackgroundImageObject}" 
+										Stretch="UniformToFill" IsBlurEnabled="true" BlurAmount="{Binding ElementName=SizeGridBlur, Path=ActualHeight}"
+										HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" 
+										RenderOptions.BitmapScalingMode="Fant" >
+
+                                            <FadeImage.Style>
+                                                <Style TargetType="FadeImage">
+                                                <Setter Property="Opacity" Value="0.28"/>
+                                                <Style.Triggers>
+
+
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </FadeImage.Style>
+
+										<FadeImage.CacheMode>
+											<BitmapCache  EnableClearType="False"
+														  RenderAtScale="1"
+														  SnapsToDevicePixels="False" />
+										</FadeImage.CacheMode>
+
+                                        <FadeImage.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                <SkewTransform/>
+                                                <RotateTransform />
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </FadeImage.RenderTransform>
+                                    </FadeImage>
+
+                                </Grid>
+
+
+
+                                <Grid x:Name="SizeGrid" Grid.Row="1" Grid.Column="1" Visibility="Hidden" >
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="25*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="25*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid x:Name="SizeGridSecond" Grid.Row="1" Grid.Column="1"/>
+                                    <StackPanel x:Name="SizeGridBlur" Grid.Row="1" Grid.Column="1" MinHeight="0">
+                                        <Grid Height="1"/>
+                                        <Grid Height="{Binding ElementName=SizeGridSecond, Path=ActualHeight}"/>
+                                        <Grid Height="{Binding ElementName=SizeGridSecond, Path=ActualWidth}"/>
+                                    </StackPanel>
+                                </Grid>
+							</Grid>
+							</Grid>
+
+<!--Screen Bottomfade-->											
+					<Border CornerRadius="0" Height="1080" Width="Auto" VerticalAlignment="Top" Margin="0,0,0,0" Grid.ZIndex="-1">
+						<Border.Background>
+							<ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile 'Images/Icons/Details/fade_screen.png'}"/>
+						</Border.Background>
+					</Border>
+<!--Main-->	
+                        <Grid x:Name="PART_ViewHost" >
+                            <Grid.Style>
+                                <Style>
+                                    <Setter Property="ItemsControl.Opacity" Value="0"/>
+                               	    <Setter Property="ItemsControl.Margin" Value="0,0,0,0"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=PART_MainHost, Path=Visibility}" Value="Visible">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:4.0" Duration="0:0:0.5" From="0" To="1" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>										
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="250" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition >
+                            <ColumnDefinition.Style>
+                                <Style TargetType="ColumnDefinition" >
+                                    <Setter Property="Width" Value="0"/>
+                                    <Style.Triggers>
+                                       <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                              <Setter Property="Width" Value="100" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ColumnDefinition.Style>
+                                </ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="100" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="100" />
+                            </Grid.RowDefinitions>	
+							
+<!--Background-->
+			    <Border x:Name="BackgroundImageBorder" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3" 
+					    VerticalAlignment="Top" HorizontalAlignment="Right" Margin="200,0,0,200" >
+                            <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+                				<MultiDataTrigger>
+                    				<MultiDataTrigger.Conditions>
+							<Condition Binding="{Binding ElementName=Trigger, Path=Opacity}" Value="1"/>
+							<Condition Binding="{Binding ElementName=GameDetailsTrigger, Path=Opacity}" Value="0"/>
+							<Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=NewContextVideoAvailable}" Value="True"/>
+							<Condition Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsVideoPlaying}" Value="True"/>
+                    				</MultiDataTrigger.Conditions>
+                    				<MultiDataTrigger.EnterActions>
+                        			<BeginStoryboard>
+                            			<Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:4.5" Duration="0:0:0.2" From="1" To="0"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </MultiDataTrigger.EnterActions>
+                                                <MultiDataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" From="0" To="1"/>
+                            			</Storyboard>
+                        			</BeginStoryboard>
+                    				</MultiDataTrigger.ExitActions>
+                				</MultiDataTrigger>
+                                             	<DataTrigger Binding="{Binding ElementName=StaticBackgroundImageButton, Path=IsChecked}" Value="False">
+                                                 	<Setter Property="Visibility" Value="Collapsed" />
+                                             	</DataTrigger>
+                                             	<DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 	<Setter Property="Visibility" Value="Collapsed" />
+                                             	</DataTrigger>
+                                             	<DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                 	<Setter Property="Visibility" Value="Collapsed" />
+                                             	</DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                            </Border.Style>		
+			    <Grid>
+                            <FadeImage x:Name="PART_ImageBackground" Stretch="UniformToFill" 
+                                        HorizontalAlignment="Center" VerticalAlignment="Top" >
+                            <FadeImage.Style>
+                                    <Style TargetType="FadeImage" >
+                                        <Setter Property="Background" Value="Transparent"/>
+                                        <Style.Triggers>
+
+                                        </Style.Triggers>
+                                    </Style>
+                            </FadeImage.Style>
+							</FadeImage>
+
+                            <Grid.OpacityMask>
+                                    <ImageBrush ImageSource="{ThemeFile 'Images/Icons/Details/FadeBottom.png'}" RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" />
+                            </Grid.OpacityMask>											
+			    </Grid>
+                            <Border.OpacityMask>
+                                    <ImageBrush ImageSource="{ThemeFile 'Images/Icons/Details/FadeLeft.png'}" RenderOptions.BitmapScalingMode="Fant" Stretch="UniformToFill" />
+                            </Border.OpacityMask>	
+			    </Border>
+
+			   <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Left" >
+			   
+			   <StackPanel>	
+
+<!--ChangeView Toggle-->
+			   <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,0,0,0"/>
+                                <Style.Triggers>
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>
+
+<!--Game Title -->
+						 <TextBlock x:Name="GameTitle" Text="{Binding SelectedGame.DisplayName, NotifyOnTargetUpdated=True}" FontFamily="Lato"
+									Foreground="White" FontSize="60" VerticalAlignment="Center" TextWrapping="Wrap" MaxHeight="150" Margin="-84,180,0,-440"
+									TextTrimming="CharacterEllipsis" FontWeight="SemiBold">
+                                    <TextBlock.Style>
+                                        <Style>
+                                            <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+	                                             <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=False}" Value="false">																		
+                                                    <Setter Property="ItemsControl.Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                    <TextBlock.Effect>
+                                        <DropShadowEffect ShadowDepth="2" RenderingBias="Quality" Color="{DynamicResource BlackColor}" />
+                                    </TextBlock.Effect>
+                                </TextBlock>
+								
+<!--Extra Metadata Game Logos -->					
+
+							<ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="-80,-330"/>													
+
+
+<!--GameTitles Infobar-->      
+  
+			
+								<TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                       Text="{Binding DisplayName}"
+                                       Foreground="White" FontFamily="Bahnschrift Light"
+                                       FontSize="50" Margin="-500,-300,0,-500">
+                                </TextBlock>													
+								
+                                                        <Grid  Tag="{DynamicResource DescriptionOnOff}" Style="{DynamicResource DscriptionOnOffStyle}">
+                                                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="-88,390,0,-475">
+                                                                <StackPanel Orientation="Horizontal" Margin="0,1,20,0" Tag="{Binding SelectedGame.Fvorite}" >
+                                                                    <StackPanel.Style>
+                                                                        <Style TargetType="StackPanel">
+                                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                                            <Style.Triggers>
+                                                                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                                </DataTrigger>
+                                                                            </Style.Triggers>
+                                                                        </Style>
+                                                                    </StackPanel.Style>
+                                                                    <TextBlock FontFamily="{DynamicResource FontIcoFont}" Text="&#xef25;" FontSize="25" Foreground="White"/>
+                                                                </StackPanel>
+			
+                                                                <!--TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding SelectedGame.CompletionStatus}" Foreground="#26ff8e" FontSize="19" FontFamily="Segoe UI" Margin="0,-40,20,0"/>
+
+                                                                <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding SelectedGame.Publishers[0]}" FontSize="19" FontFamily="Segoe UI" Foreground="LightGray" MaxWidth="600" TextTrimming="WordEllipsis" Margin="-15,-40,0,0"/-->
+ 
+                                                                <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding SelectedGame.Publishers[0]}" FontSize="19" FontFamily="Segoe UI" Foreground="LightGray" MaxWidth="600" TextTrimming="WordEllipsis" Margin="8,-40,0,0"/>	
+										   
+											  <TextBlock Margin="0,-34,0,0" Text="h" FontFamily="Marlett" FontSize="16" Foreground="LightGray" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                                                                <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding SelectedGame.ReleaseYear}" FontSize="19" FontFamily="Segoe UI" Foreground="LightGray" MaxWidth="600" TextTrimming="WordEllipsis" Margin="0,-40,5,0"/>									   
+											   										                                                  																																	  
+                                                <ItemsControlEx ItemsSource="{Binding SelectedGame.Features}"
+                                                VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                Margin="0,-37,0,0"
+                                                IsTabStop="False" IsEnabled="False">
+                                                    <ItemsControlEx.ItemsPanel>
+                                                       <ItemsPanelTemplate>
+                                                           <StackPanel Orientation="Horizontal" Height="Auto"/>
+                                                       </ItemsPanelTemplate>
+                                                    </ItemsControlEx.ItemsPanel>
+                                                    <ItemsControlEx.ItemTemplate>
+                                                        <DataTemplate>
+                                                        <Grid Margin="0,0,0,5">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="auto" />
+                                                            </Grid.ColumnDefinitions>
+															
+															<Image Grid.Column="0" x:Name="FeatureIconImage"
+															RenderOptions.BitmapScalingMode="Fant"
+															SnapsToDevicePixels="True"
+															Height="20" VerticalAlignment="Bottom"
+															Source="{ThemeFileBinding Name, PathFormat='Images/Icons/Features/User Inputs/{0}.png'}" />
+
+                                                        </Grid>       
+                                                        </DataTemplate>
+                                                    </ItemsControlEx.ItemTemplate>
+                                                </ItemsControlEx>									   
+
+											  <TextBlock  Style="{DynamicResource TextBlockBaseStyle}" Text="{Binding SelectedGame.CriticScore}" Visibility="Hidden" />
+											  <Grid x:Name="StarRaings" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="3,-37,0,0">
+                                
+												<Image x:Name="Unrated" Source="{ThemeFile 'Images/Icons/Features/CriticScore/Unrated.png'}" Visibility="Visible" 
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="1.5,0,0,0" />
+
+												<Image x:Name="ZeroStarImage" Source="{ThemeFile 'Images/Icons/Features/CriticScore/00StarReview.png'}" Visibility="Hidden" 
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-9,0,0,0" />
+                                
+												<Image x:Name="OneStarImage" Source="{ThemeFile 'Images/Icons/Features/CriticScore/01StarReview.png'}" Visibility="Hidden" 
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-16.2,0,0,0" />
+ 
+												<Image x:Name="OneStarImagePLUS" Source="{ThemeFile 'Images/Icons/Features/CriticScore/01StarReview+.png'}" Visibility="Hidden" 
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19.3,0,0,0" />
+                                    
+												<Image x:Name="TwoStarsImage" Source="{ThemeFile 'Images/Icons/Features/CriticScore/02StarReview.png'}" Visibility="Hidden"
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19.3,0,0,0" />
+
+												<Image x:Name="TwoStarsImagePLUS" Source="{ThemeFile 'Images/Icons/Features/CriticScore/02StarReview+.png'}" Visibility="Hidden"
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19.6,0,0,0" />
+                                     
+												<Image x:Name="ThreeStarsImage" Source="{ThemeFile 'Images/Icons/Features/CriticScore/03StarReview.png'}" Visibility="Hidden"
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19.3,0,0,0" />
+
+												<Image x:Name="ThreeStarsImagePLUS" Source="{ThemeFile 'Images/Icons/Features/CriticScore/03StarReview+.png'}" Visibility="Hidden"
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19.3,0,0,0" />
+                                                              
+												<Image x:Name="FourStarsImage" Source="{ThemeFile 'Images/Icons/Features/CriticScore/04StarReview.png'}" Visibility="Hidden"
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19.5,0,0,0" />
+ 
+												<Image x:Name="FourStarsImagePLUS" Source="{ThemeFile 'Images/Icons/Features/CriticScore/04StarReview+.png'}" Visibility="Hidden"
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19,0,0,0" />
+   
+												<Image x:Name="FiveStarsImage" Source="{ThemeFile 'Images/Icons/Features/CriticScore/05StarReview.png'}" Visibility="Hidden"
+												RenderOptions.BitmapScalingMode="Fant" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-19.3,0,0,0" />											
+											   </Grid>
+
+											</StackPanel>			
+
+<!--Genres Buttons--> 
+			<StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="-99,464,0,-395">
+
+			   <Border BorderBrush="{DynamicResource TextAltBrush}" BorderThickness="1" CornerRadius="0" MaxHeight="25" >
+                               <Border.Style>
+                                   <Style TargetType="Border">
+                                   <Setter Property="Margin" Value="19,-197,0,0"/>
+                                   <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedGame.Genres[0]}" Value="{x:Null}">
+                                            	<Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                   </Style.Triggers>
+                                   </Style>
+                                </Border.Style>
+			   <StackPanel >
+			   	<TextBlock Text="{Binding SelectedGame.Genres[0]}" Style="{DynamicResource TextBlockAltBaseStyle}" 
+				 TextAlignment="Center" FontWeight="SemiBold" FontSize="15" Margin="3,1,3,0" />
+			   </StackPanel>
+				</Border>
+															  										   
+			   <Border BorderBrush="{DynamicResource TextAltBrush}" BorderThickness="1" CornerRadius="0" MaxHeight="25" >
+                               <Border.Style>
+                                   <Style TargetType="Border">
+                                   <Setter Property="Margin" Value="8,-197,0,0"/>
+                                   <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedGame.Genres[1]}" Value="{x:Null}">
+                                            	<Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                   </Style.Triggers>
+                                   </Style>
+                                </Border.Style>
+			   <StackPanel >
+			   	<TextBlock Text="{Binding SelectedGame.Genres[1]}" Style="{DynamicResource TextBlockAltBaseStyle}" 
+				 TextAlignment="Center" FontWeight="SemiBold" FontSize="15" Margin="3,1,3,0" />
+			   </StackPanel>
+				</Border>	
+
+			   <Border BorderBrush="{DynamicResource TextAltBrush}" BorderThickness="1" CornerRadius="0" MaxHeight="25" >
+                               <Border.Style>
+                                   <Style TargetType="Border">
+                                   <Setter Property="Margin" Value="8,-197,0,0"/>
+                                   <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedGame.Genres[2]}" Value="{x:Null}">
+                                            	<Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                   </Style.Triggers>
+                                   </Style>
+                                </Border.Style>
+			   <StackPanel >
+			   	<TextBlock Text="{Binding SelectedGame.Genres[2]}" Style="{DynamicResource TextBlockAltBaseStyle}" 
+				 TextAlignment="Center" FontWeight="SemiBold" FontSize="15" Margin="3,1,3,0" />
+			   </StackPanel>
+				</Border>
+	
+			   <Border BorderBrush="{DynamicResource TextAltBrush}" BorderThickness="1" CornerRadius="0" MaxHeight="25" >
+                               <Border.Style>
+                                   <Style TargetType="Border">
+                                   <Setter Property="Margin" Value="8,-197,0,0"/>
+                                   <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedGame.Genres[3]}" Value="{x:Null}">
+                                            	<Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                   </Style.Triggers>
+                                   </Style>
+                                </Border.Style>
+			   <StackPanel >
+			   	<TextBlock Text="{Binding SelectedGame.Genres[3]}" Style="{DynamicResource TextBlockAltBaseStyle}" 
+				 TextAlignment="Center" FontWeight="SemiBold" FontSize="15" Margin="3,1,3,0" />
+			   </StackPanel>
+				</Border>	
+			</StackPanel>						
+
+<!--CURRENT FILTER PRESET NAME-->
+                                        <Grid Grid.Column="2" Grid.Row="2" VerticalAlignment= "Bottom" HorizontalAlignment="Left" Margin="-82,601,0,-500" Grid.ZIndex="56" Tag="{DynamicResource FilterPresetVertical}">
+
+                                            <Grid Tag="{DynamicResource FilterPresetVertical}">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                    <Setter Property="Visibility" Value="Visible"/>	
+													<Style.Triggers>
+														<DataTrigger Binding="{Binding ElementName=PART_ListGameItems, Path=Visibility}" Value="Visible">
+														<DataTrigger.EnterActions>
+														<BeginStoryboard>
+															<Storyboard>
+															<DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:0" Duration="0:0:0.18" From="0" To="1"/>
+															</Storyboard>
+														</BeginStoryboard>
+														</DataTrigger.EnterActions>
+														</DataTrigger>
+													</Style.Triggers>														
+                                                    </Style>
+                                                </Grid.Style>												
+
+											<Border CornerRadius="0" Height="25" Width="4" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-20,5,0,0">
+												<Border.Background>
+													<ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile 'Images/Icons/Details/segment.png.'}"/>
+												</Border.Background>
+											</Border>												
+												
+                                                <StackPanel Orientation="Horizontal">
+                                                    <StackPanel Tag="{DynamicResource DropShadows}">
+                                                        <StackPanel.Style>
+                                                            <Style TargetType="StackPanel">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                                                                        <Setter Property="Effect">
+                                                                            <Setter.Value>
+                                                                                <DropShadowEffect BlurRadius="5" />
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </StackPanel.Style>
+                                                        <TextBlock Text="{Binding ActiveFilterPreset.Name}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="32" FontFamily="Lato" TextTrimming="CharacterEllipsis" FontWeight="Light"/>
+                                                        <Border BorderBrush="{DynamicResource UIBrush}" BorderThickness="1" HorizontalAlignment="Stretch" />
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Grid>                                            
+                                        </Grid>	
+									</Grid>													
+						</StackPanel>	
+						</StackPanel>  
+						</StackPanel>
+<!--HTML Settings-->
+			    <StackPanel Grid.Column="1" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,0,0,0"/>
+                                <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=Trigger, Path=Opacity}" Value="1">
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+							    <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:0" Duration="0:0:1" 
+								From="0" To="1"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.EnterActions>
+                                                <DataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+							   <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" From="1" To="0"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.ExitActions>
+                                            </DataTrigger>
+
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <!--DataTrigger Binding="{Binding ElementName=PART_ElemFilters, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemFiltersAdditional, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ContentFilterItems, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger-->
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>						
+<!--HTML Description-->						
+                    <Grid Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="600" MaxHeight="140" 
+						  Tag="{DynamicResource DescriptionOnOff}" Style="{DynamicResource DscriptionOnOffStyle}" Margin="-80,430,0,100">
+														 
+                            <!--ScrollViewerEx x:Name="PART_ScrollHtmlDescription" FocusVisualStyle="{x:Null}" 
+										    ScrollViewer.VerticalScrollBarVisibility="Hidden" -->											
+                            <HtmlTextView Focusable="False" HtmlText="{Binding SelectedGame.Description}" HtmlFontSize="18" HtmlFontFamily="Segoe UI" 
+										  HtmlForeground="{DynamicResource TextColor}"/>
+							<!--/ScrollViewerEx-->								
+                            <Grid.OpacityMask>
+                                <ImageBrush ImageSource="{ThemeFile 'Images/Icons/Details/ScrollFade.png'}" RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" />
+                            </Grid.OpacityMask>															
+															
+                    </Grid>
+				</StackPanel>
+<!--GameList Panel Settings-->
+                            <DockPanel Grid.Column="1" Grid.Row="1" Panel.ZIndex="41" >
+							
+                           <DockPanel.Style>
+                                <Style TargetType="DockPanel">
+                                <Setter Property="Opacity" Value="1"/>								
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=PART_ListGameItems, Path=Visibility}" Value="Visible">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:0" Duration="0:0:0.4" From="0" To="1"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                           </DockPanel.Style>
+			
+<!--GameList Panel Horizontal-->						
+			
+                                <ListBoxEx x:Name="PART_ListGameItems"
+                                           Background="Transparent" BorderThickness="0"
+                                           DockPanel.Dock="Right" FocusVisualStyle="{x:Null}"
+										   ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+										   ScrollViewer.VerticalScrollBarVisibility="Visible" 
+                                           KeyboardNavigation.DirectionalNavigation="Once" >
+										   
+                                <ListBoxEx.Style>
+                                   <Style TargetType="ListBoxEx">
+										<Setter Property="ItemsControl.Margin" Value="-140,0,-20,-101"/>
+                                    	<Setter Property="Height" Value="auto" />
+                                   <Style.Triggers>
+									<MultiDataTrigger>
+                    			    <MultiDataTrigger.Conditions>
+										<Condition Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True"/>
+                    				</MultiDataTrigger.Conditions>
+                                                         <Setter Property="ListBoxEx.OpacityMask">
+                                                   <Setter.Value>
+                                			<LinearGradientBrush StartPoint="0,0" EndPoint="0.05,0" >
+                                    				<GradientStop Color="#00000000" Offset="0"/>
+                                    				<GradientStop Color="#FF000000" Offset="1"/>
+                                			</LinearGradientBrush>
+                                                   </Setter.Value>
+                                                   </Setter>
+									</MultiDataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                  <Setter Property="Height" Value="340" />
+                                                  <Setter Property="VerticalAlignment" Value="Bottom" />
+                                             </DataTrigger>
+                                   </Style.Triggers>
+                                   </Style>
+                                 </ListBoxEx.Style>
+								</ListBoxEx>
+                            </DockPanel>
+
+			       <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Stretch"
+				     VerticalAlignment="Center" >                            
+								<Grid.Style>
+                                    <Style TargetType="Grid" >
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                        <Style.Triggers>
+                                             <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                            	</Grid.Style>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>		
+						
+<!--Ratings Settings-->
+			    <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,0,0,0"/>
+                                <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=Trigger, Path=Opacity}" Value="1">
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+							    <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:1" Duration="0:0:1.6" 
+								From="0" To="1"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.EnterActions>
+                                                <DataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+							   <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" From="1" To="0"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.ExitActions>
+                                            </DataTrigger>
+
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemFilters, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemFiltersAdditional, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ContentFilterItems, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>
+<!--AgeRatings-->			   
+								<Grid Grid.Column="1" Grid.Row="1" >
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Panel.ZIndex="-41" Margin="0,115,-20,-1270" >
+                                        <ItemsControlEx ItemsSource="{Binding SelectedGame.AgeRatings}"
+                                        IsTabStop="False" IsEnabled="False" Focusable="False">
+
+                                            <ItemsControlEx.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid HorizontalAlignment="Right" VerticalAlignment="Center">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="auto" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <Border x:Name="RatingIcon" Background="Transparent" CornerRadius="0"
+                                                
+                                                Height="75"
+                                                Width="auto"
+                                                Margin="0" Visibility="Visible">
+                                                            <Image x:Name="RatingIconImage" Grid.Column="0"
+                                                   RenderOptions.BitmapScalingMode="Fant"
+                                                   SnapsToDevicePixels="True"
+                                                   Source="{ThemeFileBinding Name, PathFormat='Images/Icons/AgeRating/{0}.png.'}" />
+                                                        </Border>
+                                                    </Grid>
+
+                                                    <DataTemplate.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=RatingIconImage, Path=Source}" Value="{x:Null}">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                        </DataTrigger>
+                                                    </DataTemplate.Triggers>
+                                                </DataTemplate>
+                                            </ItemsControlEx.ItemTemplate>
+                                        </ItemsControlEx>
+                                    </StackPanel>	
+								</Grid>
+			    </StackPanel>
+	
+<!--Scource Background Conerfade-->			   
+		<StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,0,0,0"/>
+                                <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=Trigger, Path=Opacity}" Value="1">
+
+                                                <DataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+							   <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" From="0.6" To="0.6"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.ExitActions>
+                                            </DataTrigger>
+
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <!--DataTrigger Binding="{Binding ElementName=PART_ElemFilters, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemFiltersAdditional, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ContentFilterItems, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger-->
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>
+						<Border Grid.Column="1" Grid.Row="1" CornerRadius="0" Height="1000" Width="1500" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,-1020,-2070" IsEnabled="False" Focusable="False" >
+							<Border.Background>
+								<ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile 'Images/Icons/Details/cornerfade.png.'}"/>
+							</Border.Background>
+						</Border>
+		</StackPanel>
+		
+<!--Profile Settings-->
+			   <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="-230,9,0,0"/>
+                                <Style.Triggers>
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>
+						   
+					</StackPanel>								
+								
+<!--ProfileGrid Settings-->
+			   <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,0,0,0"/>
+                                <Style.Triggers>
+
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>							  
+<!--Profile Avatar -->
+						<Border CornerRadius="50" Height="46" Width="46" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-271,37,0,0" IsEnabled="False" Focusable="False" >
+							<Border.Background>
+								<ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile 'Images/Profile.png.'}"/>
+							</Border.Background>
+						</Border>
+						</StackPanel>					
+<!--Ratings Settings-->
+			   <StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,0,0,0"/>
+                                <Style.Triggers>
+
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>								
+<!--Profile Avatar Gridview-->
+						<Border CornerRadius="50" Height="46" Width="46" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="-271,37,0,0" IsEnabled="False" Focusable="False" >
+							<Border.Background>
+								<ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile 'Images/Profile.png.'}"/>
+							</Border.Background>
+						</Border>
+						</StackPanel>
+						
+<!--Menu Button-->			
+                                <ButtonEx x:Name="PART_ButtonMainMenu" Grid.Column="0"
+                                          Style="{DynamicResource ButtonTopMenu}" Margin="-220,20,221,0" Height="54" Width="54" Background="Transparent" >
+                                    <Button.Content>
+                                        <TextBlock Text="&#xefa2;" FontFamily="{StaticResource FontIcoFont}"                                                   
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
+                                                   Foreground="{DynamicResource TextWhieBrush}" FontSize="0.1" /> 
+                                    </Button.Content>
+                                </ButtonEx>						
+<!--Status Info-->			
+                                <Grid Name="StatusInfo" Grid.Column="1" Grid.Row="0" >
+                                    <StackPanel Margin="-150,5,150,0" Orientation="Horizontal" VerticalAlignment="Bottom" Height="100" HorizontalAlignment="Left" >
+                                        
+										
+<!--Clock Button-->									
+                                        <TextBlock x:Name="PART_TextClock" Style="{DynamicResource TextBlockBaseStyle}"
+                                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,14,0,0"
+                                       Grid.Column="2" FontSize="20" FontFamily="Segoe UI" FontWeight="Bold" >
+									   <TextBlock.Effect>
+                                       <DropShadowEffect ShadowDepth="1" Color="Black"
+                                                         RenderingBias="Quality" BlurRadius="0" />
+                                       </TextBlock.Effect>
+									   </TextBlock>										
+										
+										<ContentControl x:Name="PART_ElemBatteryStatus" Focusable="False" FontSize="32"
+                                            VerticalAlignment="Center" Margin="9,18,0,0"
+                                            Grid.Column="3">
+                                            <ContentControl.Style>
+                                                <Style TargetType="ContentControl">
+                                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Critical">
+                                                            <Setter Property="Content" Value="{DynamicResource BatteryStatusCritical}" />
+                                                            <Setter Property="Foreground" Value="Red" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Low">
+                                                            <Setter Property="Content" Value="{DynamicResource BatteryStatusLow}" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Medium">
+                                                            <Setter Property="Content" Value="{DynamicResource BatteryStatusMedium}" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="High">
+                                                            <Setter Property="Content" Value="{DynamicResource BatteryStatusHigh}" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding PowerStatus.IsCharging}" Value="True">
+                                                            <Setter Property="Content" Value="{DynamicResource BatteryStatusCharging}" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ContentControl.Style>
+											   <ContentControl.Effect>
+												<DropShadowEffect ShadowDepth="1" Color="Black"
+                                                      RenderingBias="Quality" BlurRadius="0" />
+												</ContentControl.Effect>											
+                                        </ContentControl>
+
+                                        <TextBlock x:Name="PART_TextBatteryPercentage" Style="{DynamicResource TextBlockBaseStyle}"
+                                       VerticalAlignment="Center" Margin="8,14,0,0"
+                                       Grid.Column="4" FontSize="19" FontFamily="Segoe UI" >
+									   <TextBlock.Effect>
+                                       <DropShadowEffect ShadowDepth="1" Color="Black"
+                                                         RenderingBias="Quality" BlurRadius="0" />
+                                       </TextBlock.Effect>
+									   </TextBlock>									   							   
+									   
+									
+	
+									</StackPanel>  
+<!--notification button-->      <ButtonEx x:Name="PART_ButtonNotifications" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                          Height="30" Width="30" Background="Transparent" Grid.Column="0" Margin="0,5,22,0" >
+                                    <Button.Content>
+                                        <Grid  >
+                                            <TextBlock Text="&#x25CF;" Foreground="{DynamicResource GlyphBrush}"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center" Panel.ZIndex="50"
+                                                       FontSize="35" Margin="0,-8,0,0" />
+                                        </Grid>
+                                    </Button.Content>
+                                    <Button.Style>
+                                        <Style TargetType="Button" BasedOn="{StaticResource ButtonTopMenu}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Api Notifications.Count}" Value="0">											
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </ButtonEx>	
+
+<!--Update Button-->            <ButtonEx x:Name="PART_ButtonProgramUpdate" VerticalAlignment="Center" HorizontalAlignment="Right"
+                                          Margin="7,60,7,-60" Height="58" MinWidth="58"
+                                          Style="{DynamicResource ButtonTopMenu}"                                          
+                                          Grid.Column="5">
+                                    <ButtonEx.Content>
+                                        <TextBlock Text="&#xef08;" FontFamily="{StaticResource FontIcoFont}"                                                  
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
+                                                   Foreground="{DynamicResource TextWhiteBrush}" FontSize="30" />
+                                    </ButtonEx.Content>
+                                </ButtonEx>		
+
+                                
+                            </Grid>								
+				</Grid>
+				
+<!--Sidebar-->
+                            <Grid Grid.Column="0" Grid.Row="1" Background="Transparent" >
+                            <Grid.Style>
+                                <Style TargetType="Grid" >
+                                    <Setter Property="Opacity" Value="1"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=PART_ListGameItems, Path=Visibility}" Value="Visible">
+                                            <DataTrigger.EnterActions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:0" Duration="0:0:1.3" From="0" To="1"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </DataTrigger.EnterActions>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>							
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+								
+<!--Sidebar Size/Position-->
+                                <FilterPresetSelector x:Name="PART_FilterPresetSelector"
+													  VerticalAlignment="Center" Margin="-140,33,-5,0" Width="30" Grid.Row="1" />
+													  
+							</Grid>
+	
+                            <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="3" FontSize="40"
+                                       Text="{DynamicResource LOCNoGamesFound}"
+                                       TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGameItems}" Value="0">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+<!--Source Settings-->
+			<StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,0,0,0"/>
+                                <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=Trigger, Path=Opacity}" Value="1">
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+							    <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:0.2" Duration="0:0:0.5" From="0" To="0.7"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.EnterActions>
+                                                <DataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+							   <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" From="1" To="0"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.ExitActions>
+                                            </DataTrigger>
+
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                             </DataTrigger>											
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemFilters, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemFiltersAdditional, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ContentFilterItems, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>											 
+											 
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>				
+		   
+<!--Source Icon-->
+			   <StackPanel Orientation="Horizontal" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-64,85,0">
+                               <StackPanel.Style>
+                                   <Style TargetType="StackPanel">
+                                   <Setter Property="Margin" Value="0,0,20,0"/>
+                                   <Style.Triggers>
+                                        <DataTrigger Binding="{Binding SelectedGame.Source.Name}"> 
+                                            	<Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                   </Style.Triggers>
+                                   </Style>
+                                </StackPanel.Style>
+				<Image x:Name="LibraryIcon" RenderOptions.BitmapScalingMode="Fant" MaxHeight="36"
+				 Source="{ThemeFileBinding SelectedGame.Source.Name, PathFormat='Images/Icons/Source/{0}.png'}" />
+
+			   </StackPanel>		   
+			</StackPanel> 	
+			
+<!--GridView Presets Settings-->							
+			<StackPanel Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" >
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="-250,-110,0,0"/>
+                                <Style.Triggers>
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                       	     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                    <Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+                                             </DataTrigger>											 
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>
+						   
+			   
+							<Grid Grid.Column="1" Grid.Row="1" >	
+		   						<Border CornerRadius="0" Height="48" Width="212" VerticalAlignment="Top" Margin="0,0,0,0">
+                                    <Border.Background>
+                                       <ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile 'Images/applogo_clean0.png'}"/>
+                                     </Border.Background>
+								</Border>	
+							</Grid>							
+		
+<!--GridView Presets-->							
+                                        <Grid Grid.Column="1" Grid.Row="1" VerticalAlignment= "Top" HorizontalAlignment="Center" Margin="0,0,0,0" Tag="{DynamicResource FilterPresetVertical}">
+
+                                            <Grid Tag="{DynamicResource FilterPresetVertical}">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="false">
+                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>																							
+
+	
+                                                <StackPanel Orientation="Horizontal">
+                                                    <StackPanel Tag="{DynamicResource DropShadows}">
+                                                        <StackPanel.Style>
+                                                            <Style TargetType="StackPanel">
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                                                                        <Setter Property="Effect">
+                                                                            <Setter.Value>
+                                                                                <DropShadowEffect BlurRadius="5" />
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </StackPanel.Style>
+                                                        <TextBlock Text="{Binding ActiveFilterPreset.Name}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="32" FontFamily="Lato" TextTrimming="CharacterEllipsis" FontWeight="Light"/>
+                                                        <Border BorderBrush="{DynamicResource UIBrush}" BorderThickness="1" HorizontalAlignment="Stretch" />
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Grid>                                            
+                                        </Grid>								
+										
+			</StackPanel>
+			
+<!--Game Counter Filter-->
+			<Border Grid.Row="3" Grid.ColumnSpan="2" Background="#F7262c38" Height="48" VerticalAlignment="Bottom" HorizontalAlignment="Right" Panel.ZIndex="50" CornerRadius="3" Margin="70,0,-70,30">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=PART_MainHost, Path=Visibility}" Value="Visible">
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                        	<Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+				
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="13,0,0,0" >
+						<TextBlock Text="{DynamicResource LOCMetaGameSourceFiltered}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="17" 
+						           Margin="0,2,5,0" FontFamily="Segou UI" FontWeight="Light" Foreground="White"/>
+						<TextBlock Text=":" Style="{DynamicResource TextBlockBaseStyle}" FontSize="16" FontFamily="Segou UI" FontWeight="SemiBold" 
+						           Margin="0,2,5,0" Foreground="White"/>
+						<TextBlock Text="{Binding Items.Count, ElementName=PART_ListGameItems}" Style="{DynamicResource TextBlockBaseStyle}" 
+								   Margin="0,0,13,0" FontFamily="Segou UI" FontSize="20" FontWeight="Bold" Foreground="{DynamicResource GlyphBrush}"/>
+                    </StackPanel>
+			</Border>
+	
+                            <Grid Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" Background="Transparent" >
+								<Grid.Style>
+									<Style>
+										<Setter Property="ItemsControl.Visibility" Value="Visible"/>
+										<Style.Triggers>
+											<DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+													<Setter Property="ItemsControl.Visibility" Value="Collapsed" />
+												</DataTrigger>
+										</Style.Triggers>
+									</Style>
+								</Grid.Style>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Visibility="Collapsed" >
+                                    <!--Install-->
+                                    <ButtonEx x:Name="PART_ButtonInstall"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCInstallGame}" />
+                                    <!--Play-->
+                                    <ButtonEx x:Name="PART_ButtonPlay"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCPlayGame}" />
+                                    <!--Details-->
+                                    <ButtonEx x:Name="PART_ButtonDetails"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCGameDetails}" />
+                                    <!--Options-->
+                                    <ButtonEx x:Name="PART_ButtonGameOptions"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCGameOptions}" />
+                                    <!--Search-->
+                                    <ButtonEx x:Name="PART_ButtonSearch"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCSearchLabel}" />
+                                    <!--Filter-->
+                                    <ButtonEx x:Name="PART_ButtonFilter"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCFilter}" />
+                                </StackPanel>
+								
+								
+								
+								
+<!--Search-->
+			   <StackPanel>
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="0,61,0,0"/>
+                                <Style.Triggers>
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>
+                                <StackPanel Grid.Column="1" x:Name="PART_ElemSearchActive"
+                                            VerticalAlignment="Center" HorizontalAlignment="Left"
+                                            Margin="-82,-657,0,0">
+                                    <TextBlock  FontSize="12"                                                
+                                                TextAlignment="Left"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{DynamicResource LOCGameListSearchResults}"/>
+                                    <TextBlock  Foreground="White"
+                                                TextAlignment="Left" FontSize="32" FontFamily="Lato" TextTrimming="CharacterEllipsis" FontWeight="Light" Margin="0,0,0,0"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{Binding AppSettings.Fullscreen.FilterSettings.Name}"/>
+                                </StackPanel> 
+			   </StackPanel>
+			
+<!--Active Filter Notification-->
+						<StackPanel Grid.Column="0"  Grid.ZIndex="1">
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="-80,-285,0,0" />
+                                <Style.Triggers>
+
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="False">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>	
+
+                                <TextBlock Grid.Column="0" Grid.Row="1" x:Name="PART_ElemExtraFilterActive"
+                                       FontSize="32" Margin="0,0,0,0" 
+                                       VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                       TextAlignment="Center"
+                                       Style="{DynamicResource TextBlockBaseStyle}"
+                                       Text="{DynamicResource LOCGameListExtraFiltered}"/>
+
+						</StackPanel>
+<!--Progress Indicator-->
+                                <StackPanel x:Name="PART_ElemProgressIndicator" Orientation="Horizontal"
+											Grid.Column="3"  Margin="0,-1850,20,0" >
+                                    <TextBlock x:Name="PART_TextProgressTooltip" 
+                                           Margin="0,0,15,0" FontSize="20" VerticalAlignment="Center"
+                                           Style="{DynamicResource TextBlockBaseStyle}">
+										<TextBlock.Effect>
+											<DropShadowEffect ShadowDepth="1" Color="Black"
+                                            RenderingBias="Quality" BlurRadius="0" />
+                                       </TextBlock.Effect>	
+									</TextBlock>   
+                                    <ContentControl Style="{DynamicResource ProgressIndicator}" Focusable="False"
+                                                    Height="38" Width="38" VerticalAlignment="Center" />
+                                </StackPanel>																				
+                            </Grid>
+							
+<!--Change View Button-->								
+                                <CheckBoxEx x:Name="ChangeViewButton" Height="48" Width="48" Margin="-135,-20,0,0" Grid.Column="0" Grid.Row="3"
+										    IsChecked="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}"
+                                            Style="{DynamicResource ChangeViewButton}" />	
+
+				
+                        </Grid>							
+						
+<!--GameDetails Launch-->
+                        <GameDetails x:Name="PART_ElemGameDetails" Grid.RowSpan="3"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+                        <GameStatus x:Name="PART_ElemGameStatus" Grid.RowSpan="3"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>	 
+				
+<!--GridView Settings-->
+			   <StackPanel Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Panel.ZIndex="-56">
+                           <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                <Setter Property="Margin" Value="-230,9,0,0"/>
+                                <Style.Triggers>
+                                             <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                 <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                </Style.Triggers>
+                                </Style>
+                           </StackPanel.Style>
+						   
+			   
+							<!--Grid Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Panel.ZIndex="-56" >	
+		   						<Border CornerRadius="0" Height="100" Width="9200" Margin="0,-9,0,0">
+                                    <Border.Background>
+                                       <ImageBrush RenderOptions.BitmapScalingMode="Fant" ImageSource="{ThemeFile 'Images/Icons/Details/gridviewbar.png'}"/>
+                                     </Border.Background>
+								</Border>	
+							</Grid-->
+							
+				</StackPanel>				
+							
+<!--Filter Panel-->			
+                                <Filters x:Name="PART_ElemFilters" KeyboardNavigation.DirectionalNavigation="Cycle" 
+										 KeyboardNavigation.TabNavigation="Cycle" Background="#A6000000" Height="1080" Width="Auto" Margin="160,-5,0,0"
+                                         DockPanel.Dock="Right" HorizontalAlignment="Right" Focusable="False" />		
+
+                                <ContentControl x:Name="PART_ContentFilterItems" KeyboardNavigation.DirectionalNavigation="Cycle" 
+											KeyboardNavigation.TabNavigation="Cycle" Height="1080" Width="Auto" Margin="160,-5,0,0"
+                                            DockPanel.Dock="Right" HorizontalAlignment="Right" Focusable="False" />		
+											
+                                <FiltersAdditional x:Name="PART_ElemFiltersAdditional" KeyboardNavigation.DirectionalNavigation="Cycle" 
+												   KeyboardNavigation.TabNavigation="Cycle" Height="1080" Width="Auto" Margin="160,-5,0,0"
+                                                   DockPanel.Dock="Right" HorizontalAlignment="Right" Focusable="False" />		
+				   
+<!--Fade Settings-->								
+				<Grid x:Name="TriggerGrid" Grid.Row="0" Height="5" Width="5" Focusable="False" >
+<!--Trailer Fadein-->				
+                    <TextBlock x:Name="Trigger" Text="{Binding SelectedGame.Id, NotifyOnTargetUpdated=True}" Foreground="Transparent">
+						<TextBlock.Triggers>
+							<EventTrigger RoutedEvent="Binding.TargetUpdated">
+							<BeginStoryboard>
+							<Storyboard>
+								<DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" To="0" />
+								<DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" From="0" To="1" BeginTime="0:0:0.3" />
+							</Storyboard>
+							</BeginStoryboard>
+							</EventTrigger>
+						</TextBlock.Triggers>
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+			        </TextBlock>
+
+<!--Trailer Settings-->					
+                    <TextBlock x:Name="AltGameDetailsTrigger" Text="{Binding SelectedGame.Id, NotifyOnTargetUpdated=True}" Foreground="Transparent">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                                        <Setter Property="Opacity" Value="0" />
+                                        <Style.Triggers>
+                				<MultiDataTrigger>
+                    				<MultiDataTrigger.Conditions>
+							<Condition Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible"/>
+                    				</MultiDataTrigger.Conditions>
+                    				<MultiDataTrigger.EnterActions>
+                        			<BeginStoryboard>
+                            			<Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:0" Duration="0:0:0" From="0" To="1"/>
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </MultiDataTrigger.EnterActions>
+                                                <MultiDataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:6.5" Duration="0:0:0" From="1" To="0"/>
+                            			</Storyboard>
+                        			</BeginStoryboard>
+                    				</MultiDataTrigger.ExitActions>
+                				</MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+			        </TextBlock>
+				</Grid>	
+		
+                </Grid>
+				
+<!--StarRaing System-->
+                    <ControlTemplate.Triggers>
+					
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="01">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="02">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="03">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="04">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="05">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="06">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="07">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="08">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="09">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="10">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="11">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="12">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="13">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="14">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="15">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="16">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="17">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="18">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="19">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="20">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="21">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="22">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="23">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="24">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ZeroStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="25">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="26">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="27">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="28">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="29">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="30">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="31">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="32">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="33">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="34">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="35">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="36">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="37">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="38">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="39">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="40">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="41">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="42">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="43">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="44">
+                            <Setter Property="Visibility" Value="Visible" TargetName="OneStarImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="45">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="46">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="47">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="48">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="49">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+				
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="50">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="51">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="52">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="53">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="54">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="55">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="56">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="57">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="58">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="59">
+                            <Setter Property="Visibility" Value="Visible" TargetName="TwoStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="60">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="61">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="62">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="63">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="64">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="65">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="66">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="67">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="68">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="69">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="70">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="71">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="72">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="73">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="74">
+                            <Setter Property="Visibility" Value="Visible" TargetName="ThreeStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="75">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="76">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="77">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="78">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+	                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="79">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="80">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="81">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="82">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="83">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="84">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="85">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="86">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="87">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="88">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="89">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="90">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="91">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="92">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="93">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FourStarsImagePLUS" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="94">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FiveStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="95">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FiveStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="96">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FiveStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="97">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FiveStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="98">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FiveStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="99">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FiveStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+	
+                        <DataTrigger Binding="{Binding SelectedGame.CriticScore}" Value="100">
+                            <Setter Property="Visibility" Value="Visible" TargetName="FiveStarsImage" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="Unrated" />
+                        </DataTrigger>
+		
+                    </ControlTemplate.Triggers>				
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

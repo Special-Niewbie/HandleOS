@@ -1,0 +1,77 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    mc:Ignorable="d">
+
+    <Style x:Key="ListGameItemStyle" TargetType="ListBoxItem">
+        <Setter Property="Background" Value="Black" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="False" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="FocusedOn">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleX"
+                                             From="0.9" To="1.15" Duration="0:0:0.1"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleY"
+                                             From="0.9" To="1.15" Duration="0:0:0.1"/>
+                        </Storyboard>
+                        <Storyboard x:Key="FocusedOff">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleX"
+                                             From="1.15" To="0.9" Duration="0:0:0.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleY"
+                                             From="1.15" To="0.9" Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Margin="0"
+                          RenderTransformOrigin="0.5,1"
+                          d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="35*"/>
+                            <ColumnDefinition Width="43*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RenderTransform>
+                            <ScaleTransform x:Name="ScaleTransform" ScaleX="0.9" ScaleY="0.9" />
+                        </Grid.RenderTransform>
+                        <ContentPresenter Grid.ColumnSpan="2" />
+                        <Border  BorderThickness="4" BorderBrush="{DynamicResource FullscreenBlue}"
+                                Margin="-3" Grid.ColumnSpan="2" CornerRadius="10"/>
+                        <Border x:Name="MainBorder" BorderThickness="4" Style="{DynamicResource AnimatedFullscreenDegrad}"
+                                Margin="-3" Visibility="Collapsed" Grid.ColumnSpan="2" CornerRadius="10">
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Canvas.ZIndex" Value="90" />
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Canvas.ZIndex" Value="90" />
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

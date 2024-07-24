@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="LOCIGDBSettingsImportInstalledLabel">Importar jogos instalados</sys:String>
+  <sys:String x:Key="LOCIGDBSettingsImportUninstalledLabel">Importar jogos não instalados</sys:String>
+  <sys:String x:Key="LOCIGDBLoggedIn">O utilizador já está autenticado</sys:String>
+  <sys:String x:Key="LOCIGDBNotLoggedIn">Requer autenticação</sys:String>
+  <sys:String x:Key="LOCIGDBSettingsImportLibraryLabel">Importar todos os jogos</sys:String>
+  <sys:String x:Key="LOCIGDBPrivateAccount">Conta Privada</sys:String>
+  <sys:String x:Key="LOCIGDBPublicAccount">Conta Pública</sys:String>
+  <!--IGDB-->
+</ResourceDictionary>

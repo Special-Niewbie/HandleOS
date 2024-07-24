@@ -1,0 +1,70 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:pmrk="clr-namespace:Playnite.FullscreenApp.Markup;assembly=Playnite.FullscreenApp">
+    
+    <Style x:Key="HelpMenuBorder" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
+		<Setter Property="Width" Value="400" />
+		<Setter Property="Margin" Value="0,20" />
+		<Setter Property="CornerRadius" Value="10" />
+    </Style>
+
+    <Style x:Key="HelpMenuButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
+        <Setter Property="Margin" Value="10,10" />
+	    <Setter Property="Height" Value="60" />	
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+		<Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}">                            
+												
+						<Border x:Name="MainBorder" Margin="-8" BorderThickness="4" CornerRadius="10" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" />	
+						<Border x:Name="StandardBorder" Background="Transparent" Margin="0" CornerRadius="5" />	
+						<Border x:Name="SubBorder" BorderBrush="{DynamicResource OverlayMenuBackgroundBrush}" Visibility="Hidden" CornerRadius="5" Margin="-4" BorderThickness="4" />
+								
+						<TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                       Margin="0,0,25,0" DockPanel.Dock="Left"
+                                       Foreground="{TemplateBinding Foreground}"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}">                            
+                                <ContentPresenter />
+							</TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="SubBorder" /> 
+							<Setter Property="Background" Value="{DynamicResource ControlBackgroundBrush}" TargetName="StandardBorder" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Foreground" Value="{DynamicResource ControlBackgroundLightBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="HelpMenuHeaderTemplate">
+        <TextBlock Text="{DynamicResource LOCMenuHelpTitle}"
+                   FontSize="26" Style="{DynamicResource TextBlockBaseStyle}" Margin="25,30" FontWeight="Bold" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="HelpMenuSafeModeButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="&#xe72e;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="24"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0"/>
+            <TextBlock Text="{DynamicResource LOCCrashRestartSafe}" VerticalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+	
+    <DataTemplate x:Key="HelpMenuFeedbackButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="&#xefa9;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="24"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,20,0"/>
+            <TextBlock Text="{DynamicResource LOCMenuIssues}" VerticalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+	
+</ResourceDictionary>

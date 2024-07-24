@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="LOCSteamSettingsImportInstalledLabel">Importar jogos instalados</sys:String>
+  <sys:String x:Key="LOCSteamSettingsImportUninstalledLabel">Importar jogos não instalados</sys:String>
+  <sys:String x:Key="LOCSteamLoggedIn">O utilizador já está autenticado</sys:String>
+  <sys:String x:Key="LOCSteamNotLoggedIn">Requer autenticação</sys:String>
+  <sys:String x:Key="LOCSteamSettingsImportLibraryLabel">Importar todos os jogos</sys:String>
+  <sys:String x:Key="LOCSteamPrivateAccount">Conta Privada</sys:String>
+  <sys:String x:Key="LOCSteamPublicAccount">Conta Pública</sys:String>
+  <!--Steam-->
+  <sys:String x:Key="LOCSettingsWhatsSteamName">Qual é o nome da minha conta?</sys:String>
+  <sys:String x:Key="LOCSettingsSteamCatImportWarnTitle">Importar Categorias?</sys:String>
+  <sys:String x:Key="LOCSettingsApiKeyUrlText">Obter chave de API</sys:String>
+</ResourceDictionary>

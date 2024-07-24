@@ -1,0 +1,125 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+		<Setter Property="Height" Value="60" />
+		<Setter Property="Margin" Value="15,6" />	
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}">						
+						<Border x:Name="MainBorder" Margin="-7" BorderThickness="4" CornerRadius="10" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" />		
+						<Border x:Name="SubBorder" BorderBrush="{DynamicResource MainBackgourndBrush}" Visibility="Collapsed" CornerRadius="5" Margin="-3" BorderThickness="4" />	
+						<Border x:Name="StandardBorder" Margin="0" Background="{DynamicResource ControlBackgroundBrush}" CornerRadius="5" />	
+						<TextBlock Style="{DynamicResource ButtonTextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}" FontWeight="Normal"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   Margin="25,0">                            
+                                <ContentPresenter />
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+						<Trigger Property="IsEnabled" Value="False">
+						   <Setter Property="Opacity" Value="0.5" />
+						</Trigger>
+						<Trigger Property="IsFocused" Value="True">
+							<Setter Property="Tag" Value="True" TargetName="MainBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="SubBorder" />
+							<Setter Property="Background" Value="{DynamicResource ControlBackgroundLightBrush}" TargetName="StandardBorder" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Background" Value="{DynamicResource SelectionLightBrush}" TargetName="MainBorder" />
+                        </Trigger> 
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ButtonEx" BasedOn="{StaticResource {x:Type Button}}">
+    </Style>
+	
+    <Style x:Key="GameActionButton" TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+		<Setter Property="Height" Value="60" />
+		<Setter Property="Width" Value="250" />
+		<Setter Property="Margin" Value="15,6" />	
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}">						
+						
+						<Border x:Name="MainBorder" Margin="-7" BorderThickness="4" CornerRadius="10" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" />		
+						<Border x:Name="SubBorder" BorderBrush="{DynamicResource MainBackgourndBrush}" Visibility="Collapsed" CornerRadius="5" Margin="-3" BorderThickness="4" />							
+						
+						<StackPanel Orientation="Horizontal">						
+							<Border x:Name="GameIconButton" Width="75" Background="#505050" CornerRadius="5,0,0,5" >
+								<TextBlock x:Name="GameIconButtonText" Text="&#xe768;" FontFamily="Segoe MDL2 Assets" FontSize="28"
+										   VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0"/>
+							</Border>							
+							
+							<Border x:Name="GameTextButton" Width="175" Background="{DynamicResource ControlBackgroundBrush}" CornerRadius="0,5,5,0" >			
+								<Grid>
+									
+									<Image 	x:Name="ButtonSourceImage" Source="{ThemeFileBinding Source.Name, PathFormat='Icons/Sources/{0}.png'}" 
+											Margin="0,17" HorizontalAlignment="Center" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"/>
+									
+									<TextBlock x:Name="PlayInstallText" Visibility="Collapsed" Style="{DynamicResource ButtonTextBlockBaseStyle}"
+											   Foreground="{TemplateBinding Foreground}" FontWeight="Normal"
+											   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+											   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+											   Margin="0,0">                            
+											<ContentPresenter />
+									</TextBlock>
+								</Grid>								
+							</Border>												
+						</StackPanel>				
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+					
+						<DataTrigger Binding="{Binding IsInstalled}" Value="False">
+                            <Setter Property="Text" Value="&#xe896;" TargetName="GameIconButtonText" />						
+                        </DataTrigger>
+						
+						<DataTrigger Binding="{Binding ElementName=ButtonSourceImage, Path=Source}" Value="{x:Null}">
+							<Setter Property="Visibility" Value="Visible" TargetName="PlayInstallText" />
+						</DataTrigger>
+					
+						<Trigger Property="IsEnabled" Value="False">
+						   <Setter Property="Opacity" Value="0.5" />
+						</Trigger>
+						<Trigger Property="IsFocused" Value="True">
+							<Setter Property="Tag" Value="True" TargetName="MainBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="SubBorder" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Background" Value="{DynamicResource SelectionLightBrush}" TargetName="MainBorder" />
+                        </Trigger> 
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+	
+</ResourceDictionary>

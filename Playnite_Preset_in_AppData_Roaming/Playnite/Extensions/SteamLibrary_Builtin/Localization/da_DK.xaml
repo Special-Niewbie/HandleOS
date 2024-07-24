@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="LOCSteamSettingsImportInstalledLabel">Importer installerede spil</sys:String>
+  <sys:String x:Key="LOCSteamSettingsImportUninstalledLabel">Importer ikke installerede spil</sys:String>
+  <sys:String x:Key="LOCSteamSettingsConnectAccount">Forbind konto</sys:String>
+  <sys:String x:Key="LOCSteamLoginChecking">Tjekker godkendelsesstatus…</sys:String>
+  <sys:String x:Key="LOCSteamLoggedIn">Brugeren er verificeret</sys:String>
+  <sys:String x:Key="LOCSteamNotLoggedIn">Kræver verificering</sys:String>
+  <sys:String x:Key="LOCSteamNotLoggedInError">Det lykkedes ikke at verificere brugeren</sys:String>
+  <sys:String x:Key="LOCSteamAuthenticateLabel">Verificering</sys:String>
+  <sys:String x:Key="LOCSteamSettingsStartGameDirectly">Start spil direkte uden at køre officiel klient</sys:String>
+  <sys:String x:Key="LOCSteamTroubleShootingAccountLink">Fejlfinding for konto synkroniserings problemer</sys:String>
+  <sys:String x:Key="LOCSteamSettingsImportLibraryLabel">Importer alle spil</sys:String>
+  <sys:String x:Key="LOCSteamPrivateAccount">Privat konto</sys:String>
+  <sys:String x:Key="LOCSteamPublicAccount">Offentlig Konto</sys:String>
+  <sys:String x:Key="LOCSteamAPIKey">API Nøgle</sys:String>
+  <sys:String x:Key="LOCSteamStartUsingClient">Begynd at bruge {0} klient</sys:String>
+  <sys:String x:Key="LOCSteamImportPlaytime">Importer spilletid</sys:String>
+  <sys:String x:Key="LOCSteamAccountID">Konto ID</sys:String>
+  <sys:String x:Key="LOCSteamMetadataLanguageLabel">Metadata sprog:</sys:String>
+  <!--Steam-->
+</ResourceDictionary>

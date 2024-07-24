@@ -1,0 +1,1288 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="5,5,12,5" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderAnim">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Background="Transparent">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border Background="{DynamicResource ThemeButtonNoFocus}"
+                                    VerticalAlignment="Center"
+                                    BorderThickness="2" BorderBrush="{DynamicResource UserThemeColor}"
+                                    Grid.Column="0" CornerRadius="24" Margin="0,0,10,0" Width="24" Height="24">
+                                <Viewbox x:Name="CheckIcon" Visibility="Collapsed">
+                                    <TextBlock Text="b" FontFamily="Marlett" Foreground="White"
+                                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Viewbox>
+                            </Border>
+                            <TextBlock FontSize="22"
+                                        FontFamily="Bahnschrift Light"
+                                        Foreground="White"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Grid.Column="1" TextTrimming="WordEllipsis">
+                                <ContentPresenter RecognizesAccessKey="True" />
+                            </TextBlock>
+                        </Grid>
+                        <Border x:Name="BorderFocus" Margin="-8.1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" Visibility="Hidden" CornerRadius="8" />
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="CheckIcon" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDarkBrush}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDarkBrush}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="MoreGamesButton" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundGradient}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="IsChecked" Value="True"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Tag" Value="{DynamicResource StoreButton}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=Top1, Path=IsChecked}" Value="True">
+                <Setter Property="IsChecked" Value="False"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=MoreGames, Path=IsChecked}" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Border BorderBrush="Transparent" CornerRadius="8">
+                                <Grid  Height="225"  Width="400" >
+                                    <Border Name="mask" Background="{TemplateBinding Background}" CornerRadius="8"/>
+                                    <Grid>
+                                        <Grid.OpacityMask>
+                                            <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                        </Grid.OpacityMask>
+                                        <Grid x:Name="BrowseGames" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                            <Grid>
+                                                <ListBoxEx x:Name="MoreGamesGrid"
+                                                                                                    Focusable="False"
+                                                                                                    Background="Transparent" 
+								                                                                    BorderThickness="0"
+                                                                                                    VirtualizingPanel.IsContainerVirtualizable="True"     
+                                                                                                    VirtualizingPanel.IsVirtualizing="True"
+                                                                                                    VirtualizingPanel.ScrollUnit="Item" 
+                                                                                                    VirtualizingPanel.VirtualizationMode="Recycling"     
+                                                                                                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"                                               
+                                                                                                    ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                                                                                    Height="225"
+                                                                                                    Width="400"
+                                                                                                    HorizontalContentAlignment="Center"                                    
+                                                                                                    AlternationCount="{Binding Items.Count, RelativeSource={RelativeSource Self}}"
+                                                                                                    ItemsSource="{Binding ElementName=PART_ListGameItems, Path=ItemsSource}">
+                                                    <ListBoxEx.ItemContainerStyle>
+                                                        <Style TargetType="ListBoxItem">
+                                                            <Setter Property="Background" Value="Transparent" />
+                                                            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                                            <Setter Property="SnapsToDevicePixels" Value="True" />
+                                                            <Setter Property="VerticalAlignment" Value="Top" />
+                                                            <Setter Property="Focusable" Value="False"/>
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                                            <Setter Property="Opacity" Value="1"/>
+                                                            <Setter Property="Template">
+                                                                <Setter.Value>
+                                                                    <ControlTemplate TargetType="ListBoxItem">
+                                                                        <Grid Margin="0,0,-125,0">
+                                                                            <StackPanel>
+                                                                                <Image RenderOptions.BitmapScalingMode="Fant" MaxHeight="225" Width="225" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="{Settings CoverArtStretch}">
+                                                                                    <Image.Effect>
+                                                                                        <DropShadowEffect ShadowDepth="5" BlurRadius="50" Direction="180"/>
+                                                                                    </Image.Effect>
+                                                                                    <Image.Source>
+                                                                                        <PriorityBinding>
+                                                                                            <Binding Path="CoverImageObject" Mode="OneWay" Converter="{StaticResource NullToDependencyPropertyUnsetConverter}"/>
+                                                                                            <Binding Path="DefaultCoverImageObject" Mode="OneWay" />
+                                                                                        </PriorityBinding>
+                                                                                    </Image.Source>
+                                                                                </Image>
+                                                                            </StackPanel>
+                                                                        </Grid>
+                                                                        <ControlTemplate.Triggers>
+                                                                            <Trigger Property="ListBox.AlternationIndex" Value="9">
+                                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                            </Trigger>
+                                                                            <Trigger Property="ListBox.AlternationIndex" Value="10">
+                                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                            </Trigger>
+                                                                            <Trigger Property="ListBox.AlternationIndex" Value="11">
+                                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                            </Trigger>
+                                                                            <Trigger Property="ListBox.AlternationIndex" Value="12">
+                                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                            </Trigger>
+                                                                        </ControlTemplate.Triggers>
+                                                                    </ControlTemplate>
+                                                                </Setter.Value>
+                                                            </Setter>
+                                                        </Style>
+                                                    </ListBoxEx.ItemContainerStyle>
+                                                    <ListBoxEx.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <VirtualizingStackPanel Orientation="Horizontal" HorizontalAlignment="Left"/>
+                                                        </ItemsPanelTemplate>
+                                                    </ListBoxEx.ItemsPanel>
+                                                </ListBoxEx>
+                                            </Grid>
+                                            <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                                <Border.OpacityMask>
+                                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                        <GradientStop Color="Transparent" Offset="0"/>
+                                                        <GradientStop Color="Black" Offset="0.9"/>
+                                                        <GradientStop Color="Black" Offset="1.0"/>
+                                                    </LinearGradientBrush>
+                                                </Border.OpacityMask>
+                                            </Border>
+                                            <TextBlock Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="Browse your games" FontFamily="Segoe UI Semilight" Opacity="0.8" FontSize="26" />
+                                            <Image Margin="0,0,0,25" VerticalAlignment="Center" HorizontalAlignment="Center" Height="55" RenderOptions.BitmapScalingMode="Fant" Source="{ThemeFile 'Images/Xbox/GamePad.png'}">
+                                                <Image.Effect>
+                                                    <DropShadowEffect ShadowDepth="0" BlurRadius="20"/>
+                                                </Image.Effect>
+
+                                            </Image>
+                                        </Grid>
+                                        <Grid x:Name="StoreGames" Visibility="Collapsed" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                            <Grid>
+                                                <Image RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" Source="{ThemeFile 'Images/Xbox/StoreDash.png' }" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                            </Grid>
+                                            <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                                <Border.OpacityMask>
+                                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                        <GradientStop Color="Transparent" Offset="0"/>
+                                                        <GradientStop Color="Black" Offset="0.9"/>
+                                                        <GradientStop Color="Black" Offset="1.0"/>
+                                                    </LinearGradientBrush>
+                                                </Border.OpacityMask>
+                                            </Border>
+                                            <TextBlock Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="Browse the store" FontFamily="Segoe UI Semilight" Opacity="0.8" FontSize="26" />
+                                            <Image Margin="0,0,0,25" VerticalAlignment="Center" HorizontalAlignment="Center" Height="55" RenderOptions.BitmapScalingMode="Fant" Source="{ThemeFile 'Images/Xbox/MStoreDash.png'}"/>
+                                        </Grid>
+
+                                    </Grid>
+
+                                    <Border x:Name="BorderFocus" Margin="-8.1" CornerRadius="8"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" Visibility="Hidden">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                        </Border.Effect>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                    <Setter Property="Visibility" Value="Collapsed" TargetName="BrowseGames"/>
+                                    <Setter Property="Visibility" Value="Visible" TargetName="StoreGames"/>
+                                </DataTrigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=MoreGames, Path=IsChecked}" Value="False">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Border BorderBrush="Transparent" CornerRadius="30">
+                                <Grid Height="60" Margin="0,0,0,0" Width="335">
+                                    <Border Background="{DynamicResource ThemeButtonNoFocus}" CornerRadius="30" Name="mask"/>
+                                    <Grid>
+                                        <Grid.OpacityMask>
+                                            <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                        </Grid.OpacityMask>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" Text="&#xE72B;" FontFamily="Segoe MDL2 Assets" Style="{DynamicResource TextBlockBaseStyle}" />
+                                            <TextBlock x:Name="PlayText" Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}" FontSize="26" FontFamily="Bahnschrift Light"
+                                   HorizontalAlignment="Left" Margin="30,3,0,0"
+                                   VerticalAlignment="Center" Text="{StaticResource LOCBackLabel}">
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <Border x:Name="BorderFocus" Margin="-8.1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" CornerRadius="35" Visibility="Hidden">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                            </Border.Effect>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask"  Value="{DynamicResource ThemeButtonFocus}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask" Value="{DynamicResource ThemeButtonFocus}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="DashItem1" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundGradient}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=DashItem1, Path=IsChecked}" Value="True">
+                <Setter Property="Margin" Value="540,0,0,0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Border BorderBrush="Transparent" CornerRadius="8">
+                                <Grid  Height="225"  Width="400" >
+                                    <Border Name="mask" Background="{TemplateBinding Background}" CornerRadius="8"/>
+                                    <Grid>
+                                        <Grid.OpacityMask>
+                                            <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                        </Grid.OpacityMask>
+                                        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                            <Grid>
+                                                <Image RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" Source="{ThemeFile 'Images/Xbox/AchievementDash.png' }" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                                            </Grid>
+                                            <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                                <Border.OpacityMask>
+                                                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                        <GradientStop Color="Transparent" Offset="0"/>
+                                                        <GradientStop Color="Black" Offset="0.9"/>
+                                                        <GradientStop Color="Black" Offset="1.0"/>
+                                                    </LinearGradientBrush>
+                                                </Border.OpacityMask>
+                                            </Border>
+                                            <TextBlock x:Name="Icon"  Margin="0,0,0,25" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Text="&#127942;" FontFamily="Segoe UI Symbol" FontSize="55" />
+                                            <TextBlock x:Name="Text1"  Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}" Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource LOCSuccessStoryAchievements}" FontFamily="Segoe UI Semilight" Opacity="0.8" FontSize="26" />
+                                            <TextBlock x:Name="Text2" Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="Achievements" FontFamily="Segoe UI Semilight" Opacity="0.8" FontSize="26" />
+                                        </Grid>
+
+                                    </Grid>
+
+                                    <Border x:Name="BorderFocus" Margin="-8.1" CornerRadius="8"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" Visibility="Hidden">
+                                        <Border.Effect>
+                                            <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                        </Border.Effect>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <DataTrigger Binding="{Binding ElementName=Text1, Path=Tag}" Value="False">
+                                    <Setter Property="Visibility" TargetName="Text1" Value="Collapsed" />
+                                    <Setter Property="Visibility" TargetName="Text2" Value="Visible" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=Text1, Path=Tag}" Value="True">
+                                    <Setter Property="Visibility" TargetName="Text1" Value="Visible" />
+                                    <Setter Property="Visibility" TargetName="Text2" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ElementName=Text1, Path=Tag}" Value="False">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </DataTrigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=DashItem1, Path=IsChecked}" Value="False">
+                <Setter Property="Margin" Value="55,150,0,0"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Border BorderBrush="Transparent" CornerRadius="30">
+                                <Grid Height="60" Margin="0,0,0,0" Width="335">
+                                    <Border Background="{DynamicResource ThemeButtonNoFocus}" CornerRadius="30" Name="mask"/>
+                                    <Grid>
+                                        <Grid.OpacityMask>
+                                            <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                        </Grid.OpacityMask>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" Text="&#xE72B;" FontFamily="Segoe MDL2 Assets" Style="{DynamicResource TextBlockBaseStyle}" />
+                                            <TextBlock x:Name="PlayText" Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}" FontSize="26" FontFamily="Bahnschrift Light"
+                                   HorizontalAlignment="Left" Margin="30,3,0,0"
+                                   VerticalAlignment="Center" Text="{StaticResource LOCBackLabel}">
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <Border x:Name="BorderFocus" Margin="-8.1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" CornerRadius="35" Visibility="Hidden">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                            </Border.Effect>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask"  Value="{DynamicResource ThemeButtonFocus}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask" Value="{DynamicResource ThemeButtonFocus}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="DashItem2" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeBackgroundGradient}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderAnim">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Border BorderBrush="Transparent" CornerRadius="8">
+                        <Grid  Height="225"  Width="400" >
+                            <Border Name="mask" Background="{TemplateBinding Background}" CornerRadius="8"/>
+                            <Grid>
+                                <Grid.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                </Grid.OpacityMask>
+                                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                    <Grid>
+                                        <TextBlock Name="VideoPathMicro" Tag="{DynamicResource ExtraMetadataPath}" Visibility="Collapsed">
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock">
+                                                    <Setter Property="Text">
+                                                        <Setter.Value>
+                                                            <MultiBinding StringFormat="{}{0}{1}{2}{3}">
+                                                                <Binding RelativeSource="{RelativeSource Self}" Path="Tag" />
+                                                                <Binding Source="\ExtraMetadata\games\"/>
+                                                                <Binding Path="SelectedGame.Id"/>
+                                                                <Binding Source="\VideoMicroTrailer.mp4" />
+                                                            </MultiBinding>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                        <FadeImage ClipToBounds="True" Source="{Binding SelectedGame.BackgroundImage}" HorizontalAlignment="Center"  RenderOptions.BitmapScalingMode="Fant" SourceUpdateDelay="50" Stretch="UniformToFill"/>
+                                        <MediaElement MediaElementBehaviors.Repeat="True" x:Name="VideoSourceBackgrounds" Tag="{DynamicResource UseAbsoluteExtraMetadataPath}" Stretch="Fill" VerticalAlignment="Top" HorizontalAlignment="Center">
+                                            <MediaElement.Style>
+                                                <Style TargetType="MediaElement">
+                                                    <Setter Property="MediaElement.Source" Value="{Binding ElementName=VideoPathMicro, Path=Text}"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                            <Setter Property="MediaElement.Source" Value="" />
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding ElementName=MoreGames, Path=IsChecked}" Value="False">
+                                                            <Setter Property="MediaElement.Source" Value=""/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </MediaElement.Style>
+                                        </MediaElement>
+                                        <Border Height="30" Margin="20" VerticalAlignment="Top" HorizontalAlignment="Left" Background="#B3000000" CornerRadius="4">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Image Margin="7,0,0,0" Source="{ThemeFileBinding SelectedGame.Source.Name, PathFormat='Images/SourcesDash/{0}.png'}" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"/>
+                                                <TextBlock  Margin="5,0,10,2" FontFamily="Segoe UI Semilight" Foreground="White"
+                                               Text="{Binding SelectedGame.Source}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+                                    <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                        <Border.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                <GradientStop Color="Transparent" Offset="0"/>
+                                                <GradientStop Color="Black" Offset="0.9"/>
+                                                <GradientStop Color="Black" Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Border.OpacityMask>
+                                    </Border>
+                                    <TextBlock Margin="28,0,0,17" Foreground="White" Width="350" HorizontalAlignment="Left" TextTrimming="WordEllipsis" VerticalAlignment="Bottom" Text="{Binding SelectedGame.Source, StringFormat=Play on {0} now!}" FontFamily="Segoe UI Semilight" Opacity="0.65" FontSize="22" />
+                                    <TextBlock Margin="28,0,0,47" Foreground="White" Width="350" HorizontalAlignment="Left" TextTrimming="WordEllipsis" VerticalAlignment="Bottom" Text="{Binding SelectedGame.DisplayName}" FontFamily="Segoe UI Semilight" Opacity="1" FontSize="26" />
+                                </Grid>
+
+                            </Grid>
+
+                            <Border x:Name="BorderFocus" Margin="-8.1" CornerRadius="8"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" Visibility="Hidden">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=DashItem1, Path=IsChecked}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="DashItem3" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ThemeColorMainDark}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderAnim">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                        </Storyboard>
+                        <Storyboard x:Key="Fade" RepeatBehavior="Forever">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item1" BeginTime="0:0:0" From="1" To="1" Duration="0:0:0.01"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item1" BeginTime="0:0:5" From="1" To="0" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item2" BeginTime="0:0:5" From="0" To="1" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item2" BeginTime="0:0:10" From="1" To="0" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item3" BeginTime="0:0:10" From="0" To="1" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item3" BeginTime="0:0:15" From="1" To="0" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item4" BeginTime="0:0:15" From="0" To="1" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item4" BeginTime="0:0:20" From="1" To="0" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item5" BeginTime="0:0:20" From="0" To="1" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item5" BeginTime="0:0:25" From="1" To="0" Duration="0:0:1"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="Item1" BeginTime="0:0:25" From="0" To="1" Duration="0:0:1"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Border BorderBrush="Transparent" CornerRadius="8">
+                        <Grid  Height="225"  Width="400" >
+                            <Border Name="mask" Background="{TemplateBinding Background}" CornerRadius="8"/>
+                            <Grid>
+                                <Grid.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                </Grid.OpacityMask>
+                                <Grid x:Name="Item1" Opacity="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                    <Grid>
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" Source="{ThemeFile 'Images/Xbox/CustomDash/CustomDash1.png' }" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    </Grid>
+                                    <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                        <Border.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                <GradientStop Color="Transparent" Offset="0"/>
+                                                <GradientStop Color="Black" Offset="0.9"/>
+                                                <GradientStop Color="Black" Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Border.OpacityMask>
+                                    </Border>
+                                    <TextBlock Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage1Alt}" FontFamily="Segoe UI Semilight" Opacity="0.65" FontSize="22" />
+                                    <TextBlock Margin="28,0,0,47" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage1}" FontFamily="Segoe UI Semilight" Opacity="1" FontSize="24" />
+                                </Grid>
+                                <Grid x:Name="Item2" Opacity="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                    <Grid>
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" Source="{ThemeFile 'Images/Xbox/CustomDash/CustomDash2.png' }" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    </Grid>
+                                    <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                        <Border.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                <GradientStop Color="Transparent" Offset="0"/>
+                                                <GradientStop Color="Black" Offset="0.9"/>
+                                                <GradientStop Color="Black" Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Border.OpacityMask>
+                                    </Border>
+                                    <TextBlock Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage2Alt}" FontFamily="Segoe UI Semilight" Opacity="0.65" FontSize="22" />
+                                    <TextBlock Margin="28,0,0,47" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage2}" FontFamily="Segoe UI Semilight" Opacity="1" FontSize="24" />
+                                </Grid>
+                                <Grid x:Name="Item3" Opacity="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                    <Grid>
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" Source="{ThemeFile 'Images/Xbox/CustomDash/CustomDash3.png' }" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    </Grid>
+                                    <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                        <Border.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                <GradientStop Color="Transparent" Offset="0"/>
+                                                <GradientStop Color="Black" Offset="0.9"/>
+                                                <GradientStop Color="Black" Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Border.OpacityMask>
+                                    </Border>
+                                    <TextBlock Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage3Alt}" FontFamily="Segoe UI Semilight" Opacity="0.65" FontSize="22" />
+                                    <TextBlock Margin="28,0,0,47" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage3}" FontFamily="Segoe UI Semilight" Opacity="1" FontSize="24" />
+                                </Grid>
+                                <Grid x:Name="Item4" Opacity="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                    <Grid>
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" Source="{ThemeFile 'Images/Xbox/CustomDash/CustomDash4.png' }" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    </Grid>
+                                    <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                        <Border.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                <GradientStop Color="Transparent" Offset="0"/>
+                                                <GradientStop Color="Black" Offset="0.9"/>
+                                                <GradientStop Color="Black" Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Border.OpacityMask>
+                                    </Border>
+                                    <TextBlock Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage4Alt}" FontFamily="Segoe UI Semilight" Opacity="0.65" FontSize="22" />
+                                    <TextBlock Margin="28,0,0,47" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage4}" FontFamily="Segoe UI Semilight" Opacity="1" FontSize="24" />
+                                </Grid>
+                                <Grid x:Name="Item5" Opacity="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0">
+                                    <Grid>
+                                        <Image RenderOptions.BitmapScalingMode="Fant" Stretch="Fill" Source="{ThemeFile 'Images/Xbox/CustomDash/CustomDash5.png' }" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    </Grid>
+                                    <Border Height="225" Width="400" Opacity="0.3" VerticalAlignment="Bottom" Background="{DynamicResource ThemeDarkOverlay}">
+                                        <Border.OpacityMask>
+                                            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" >
+                                                <GradientStop Color="Transparent" Offset="0"/>
+                                                <GradientStop Color="Black" Offset="0.9"/>
+                                                <GradientStop Color="Black" Offset="1.0"/>
+                                            </LinearGradientBrush>
+                                        </Border.OpacityMask>
+                                    </Border>
+                                    <TextBlock Margin="28,0,0,17" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage5Alt}" FontFamily="Segoe UI Semilight" Opacity="0.65" FontSize="22" />
+                                    <TextBlock Margin="28,0,0,47" Foreground="White" VerticalAlignment="Bottom" Text="{DynamicResource DashImage5}" FontFamily="Segoe UI Semilight" Opacity="1" FontSize="24" />
+                                </Grid>
+
+                            </Grid>
+
+                            <Border x:Name="BorderFocus" Margin="-8.1" CornerRadius="8"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" Visibility="Hidden">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <EventTrigger.Actions>
+                                <BeginStoryboard Storyboard="{StaticResource Fade}"/>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        <DataTrigger Binding="{Binding ElementName=DashItem1, Path=IsChecked}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="TrailerButtonDetails" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderAnim">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                        </Storyboard>
+                        <Storyboard x:Key="PlayAnimOn">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PlayButton" From="1" To="0" Duration="0:0:0.2" FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                        <Storyboard x:Key="PlayAnimOff">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PlayButton" From="0" To="1" Duration="0:0:0.2" FillBehavior="HoldEnd"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Border BorderBrush="Transparent" CornerRadius="8">
+                        <Grid >
+                            <Border Name="mask" Background="{TemplateBinding Background}" CornerRadius="8"/>
+                            <Grid>
+                                <Grid.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                </Grid.OpacityMask>
+                            </Grid>
+                            <Image x:Name="PlayButton" Opacity="1" RenderOptions.BitmapScalingMode="Fant" Height="65" Source="{ThemeFile 'Images/Xbox/PlayTrailer.png' }" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image.Effect>
+                                    <DropShadowEffect BlurRadius="50" ShadowDepth="0"/>
+                                </Image.Effect>
+                            </Image>
+
+                            <Border x:Name="BorderFocus" Margin="-4.1" CornerRadius="8"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" Visibility="Hidden">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource PlayAnimOff}"/>
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource PlayAnimOn}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=FocusLogic, Path=MinHeight}" Value="1">
+                            <Setter Property="Focusable" Value="True"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="LoginButton" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderAnim">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Border BorderBrush="Transparent" CornerRadius="385">
+                        <Grid  Height="385"  Width="385" >
+                            <Border Name="mask" CornerRadius="385" Background="{DynamicResource ThemeColorMainDark}"/>
+                            <Grid>
+                                <Grid.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                </Grid.OpacityMask>
+                                <Image Focusable="True" Source="{Binding ElementName=DefaultPicture, Path=Text, Converter={StaticResource ImageStringToImageConverter}}"/>
+                                <Image Focusable="True" Source="{Binding ElementName=ProfilePicturePath, Path=Text, Converter={StaticResource ImageStringToImageConverter}}"/>
+                            </Grid>
+                            <Border x:Name="BorderFocus" Margin="-16" CornerRadius="385"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="10" Visibility="Hidden">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="20"/>
+                                </Border.Effect>
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonTopMenuCheck" TargetType="CheckBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="IsChecked" Value="False"/>
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderAnim">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                        </Storyboard>
+                        <Storyboard x:Key="FocusedOn">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleX"
+                                             From="1" To="1.1" Duration="0:0:0.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleY"
+                                             From="1" To="1.1" Duration="0:0:0.15"/>
+                        </Storyboard>
+                        <Storyboard x:Key="FocusedOff">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleX"
+                                             From="1.1" To="1" Duration="0:0:0.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleY"
+                                             From="1.1" To="1" Duration="0:0:0.15"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid>
+                        <StackPanel Orientation="Vertical">
+                            <Border BorderBrush="Transparent" Width="54" CornerRadius="54">
+                                <Grid RenderTransformOrigin="0.5,0.5">
+                                    <Grid.RenderTransform>
+                                        <ScaleTransform x:Name="ScaleTransform" ScaleX="1" ScaleY="1" />
+                                    </Grid.RenderTransform>
+                                    <Border Background="#66000000" CornerRadius="54" Name="mask"/>
+                                    <Grid Height="54" Width="54" >
+                                        <Grid.OpacityMask>
+                                            <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                        </Grid.OpacityMask>
+                                        <Border x:Name="BorderFocus" Margin="-6"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="3" CornerRadius="54" Visibility="Hidden">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                            </Border.Effect>
+                                        </Border>
+                                    </Grid>
+                                    <TextBlock Text="&#xef65;" Foreground="White" FontFamily="{DynamicResource FontIcoFont}" FontSize="20"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                </Grid>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Background" TargetName="mask"  Value="#E6000000"/>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Background" TargetName="mask" Value="#E6000000"/>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                            </Trigger.ExitActions>
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=MoreGames, Path=IsChecked}" Value="False">
+                <Setter Property="IsChecked" Value="True"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ButtonTopMenuStore" TargetType="CheckBox">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=StoreButton, Path=IsChecked}" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                                </Storyboard>
+                                <Storyboard x:Key="FocusedOn">
+                                    <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleX"
+                                             From="1" To="1.1" Duration="0:0:0.15"/>
+                                    <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleY"
+                                             From="1" To="1.1" Duration="0:0:0.15"/>
+                                </Storyboard>
+                                <Storyboard x:Key="FocusedOff">
+                                    <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleX"
+                                             From="1.1" To="1" Duration="0:0:0.15"/>
+                                    <DoubleAnimation Storyboard.TargetName="ScaleTransform"
+                                             Storyboard.TargetProperty="ScaleY"
+                                             From="1.1" To="1" Duration="0:0:0.15"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Grid>
+                                <StackPanel Orientation="Vertical">
+                                    <Border BorderBrush="Transparent" Width="54" CornerRadius="54">
+                                        <Grid RenderTransformOrigin="0.5,0.5">
+                                            <Grid.RenderTransform>
+                                                <ScaleTransform x:Name="ScaleTransform" ScaleX="1" ScaleY="1" />
+                                            </Grid.RenderTransform>
+                                            <Border Background="#66000000" CornerRadius="54" Name="mask"/>
+                                            <Grid Height="54" Width="54" >
+                                                <Grid.OpacityMask>
+                                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                                </Grid.OpacityMask>
+                                                <Border x:Name="BorderFocus" Margin="-6"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="3" CornerRadius="54" Visibility="Hidden">
+                                                    <Border.Effect>
+                                                        <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                                    </Border.Effect>
+                                                </Border>
+                                            </Grid>
+                                            <Image Margin="0,0,0,0" VerticalAlignment="Center" Height="20" RenderOptions.BitmapScalingMode="Fant" Source="{ThemeFile 'Images/Xbox/MStore.png'}"/>
+                                        </Grid>
+                                    </Border>
+                                </StackPanel>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask"  Value="#E6000000"/>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                                    </Trigger.ExitActions>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                        <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask" Value="#E6000000"/>
+                                    <Trigger.ExitActions>
+                                        <BeginStoryboard Storyboard="{StaticResource FocusedOff}" />
+                                    </Trigger.ExitActions>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                        <BeginStoryboard Storyboard="{StaticResource FocusedOn}" />
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=StoreButton, Path=IsChecked}" Value="False">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.2" FillBehavior="Stop"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Grid x:Name="MainGrid" Background="Transparent" Margin="0,10,0,0" Height="50" HorizontalAlignment="Left" Width="150">
+                                <TextBlock x:Name="BackIcon"  Text="&#xea5c;" Foreground="White" FontFamily="{StaticResource FontIcoFont}" FontSize="30"
+                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+                                <TextBlock x:Name="Back" Text="{DynamicResource LOCBackLabel}" Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center" Margin="0,0,0,0"
+                                   VerticalAlignment="Center" FontSize="24" FontFamily="Bahnschrift Light"  />
+                                <Border x:Name="BorderFocus" Margin="2" CornerRadius="5"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="White"
+                                BorderThickness="4" Visibility="Hidden">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="White"                                                  
+                                                  RenderingBias="Performance" BlurRadius="20"/>
+                                    </Border.Effect>
+                                </Border>
+
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ManageButton" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=ManageButton, Path=IsChecked}" Value="False">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.2" FillBehavior="Stop"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Grid Background="{TemplateBinding Background}" Margin="0,18,0,0" Height="55" HorizontalAlignment="Left" Width="444">
+                                <TextBlock Text="&#xe9b5;" Foreground="White" FontFamily="{DynamicResource FontIcoFont}" FontSize="26"
+                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="80,0,0,5"/>
+                                <TextBlock Text="Manage Filters" Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   HorizontalAlignment="Left" Margin="140,0,0,0"
+                                   VerticalAlignment="Center" FontSize="26" FontFamily="Bahnschrift Light"  />
+                                <Rectangle x:Name="BorderEnable" Width="9" Height="55" Fill="{DynamicResource UserThemeColor}" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                           Visibility="Collapsed"/>
+                                <Border x:Name="BorderFocus" Margin="-2" CornerRadius="0,5,5,0"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4" Visibility="Hidden">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="20"/>
+                                    </Border.Effect>
+                                </Border>
+
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderEnable" />
+                                    <Setter Property="Background" Value="{DynamicResource ThemeButtonNoFocus}"/>
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Visibility" Value="Hidden" TargetName="BorderEnable" />
+                                    <Setter Property="Background" Value="{DynamicResource UserThemeColor}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Visibility" Value="Hidden" TargetName="BorderEnable" />
+                                    <Setter Property="Background" Value="{DynamicResource UserThemeColor}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding ElementName=ManageButton, Path=IsChecked}" Value="True">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="CheckBox">
+                            <ControlTemplate.Resources>
+                                <Storyboard x:Key="BorderAnim">
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                                </Storyboard>
+                            </ControlTemplate.Resources>
+                            <Border BorderBrush="Transparent" CornerRadius="30">
+                                <Grid Height="60" Margin="0,0,0,0" Width="335">
+                                    <Border Background="{DynamicResource ThemeButtonNoFocus}" CornerRadius="30" Name="mask"/>
+                                    <Grid>
+                                        <Grid.OpacityMask>
+                                            <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                        </Grid.OpacityMask>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Margin="20,0,0,0" VerticalAlignment="Center" Text="&#xE72B;" FontFamily="Segoe MDL2 Assets" Style="{DynamicResource TextBlockBaseStyle}" />
+                                            <TextBlock x:Name="PlayText" Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}" FontSize="26" FontFamily="Bahnschrift Light"
+                                   HorizontalAlignment="Left" Margin="30,3,0,0"
+                                   VerticalAlignment="Center" Text="{StaticResource LOCBackLabel}">
+                                            </TextBlock>
+                                        </StackPanel>
+                                        <Border x:Name="BorderFocus" Margin="-8.1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" CornerRadius="35" Visibility="Hidden">
+                                            <Border.Effect>
+                                                <DropShadowEffect ShadowDepth="0" Opacity="1" 
+                                                  Color="{DynamicResource ThemeColor}"                                                  
+                                                  RenderingBias="Performance" BlurRadius="5"/>
+                                            </Border.Effect>
+                                        </Border>
+
+                                    </Grid>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsEnabled" Value="True">
+                                    <Setter Property="Opacity" Value="1" />
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask"  Value="{DynamicResource ThemeButtonFocus}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                                    <Setter Property="Background" TargetName="mask" Value="{DynamicResource ThemeButtonFocus}"/>
+                                    <Trigger.EnterActions>
+                                        <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                                    </Trigger.EnterActions>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="WelcomeButton" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="0,0,0,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderAnim">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Border BorderBrush="Transparent" CornerRadius="8">
+                        <Grid>
+                            <Border Width="310" Height="95" Background="{DynamicResource ThemeButtonNoFocus}" CornerRadius="8" Name="mask"/>
+                            <Grid>
+                                <Grid.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                </Grid.OpacityMask>
+                                <TextBlock FontFamily="Bahnschrift Bold"
+                                   Foreground="White" FontSize="24"
+                                   HorizontalAlignment="Center" FontWeight="Bold"
+                                   VerticalAlignment="Center" Text="I  UNDERSTAND"
+                                   Margin="{TemplateBinding Padding}">
+                                </TextBlock>
+
+                                <Border x:Name="BorderFocus" Margin="-8.1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource UserThemeColor}"
+                                BorderThickness="4.9" Visibility="Hidden" CornerRadius="16" />
+                            </Grid>
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="1" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" TargetName="mask" Value="{DynamicResource ThemeButtonFocus}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="mask" Value="{DynamicResource ThemeButtonFocus}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="CheckBoxEx" BasedOn="{StaticResource {x:Type CheckBox}}">
+    </Style>
+</ResourceDictionary>

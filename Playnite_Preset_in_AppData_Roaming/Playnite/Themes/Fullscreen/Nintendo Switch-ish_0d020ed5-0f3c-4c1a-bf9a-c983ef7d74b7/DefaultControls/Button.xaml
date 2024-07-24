@@ -1,0 +1,554 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="12,10,12,10" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderHighlight" RepeatBehavior="Forever">
+                            <ColorAnimation From="#137bc1" To="#FF93FAF7" Storyboard.TargetProperty="(ListBoxItem.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="BorderFocus" Duration="0:0:0.55" AutoReverse="True"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Background="{TemplateBinding Background}">
+                        <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   Margin="{TemplateBinding Padding}">                            
+                                <ContentPresenter />
+                        </TextBlock>
+
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                x:Name="BorderStandard" />
+                        
+                        <Border x:Name="BorderFocus" Margin="-3"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource SelectionBrush}"
+                                BorderThickness="3" Visibility="Hidden" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="#070707" />                            
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderHighlight}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#070707" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ButtonEx" BasedOn="{StaticResource {x:Type Button}}">
+    </Style>
+
+    <Style x:Key="MoreGames" TargetType="ToggleButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="IsChecked" Value="False"/>
+        <Setter Property="Visibility" Value="Visible"/>
+        <Setter Property="Height" Value="300"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="MinHeight" Value="300"/>
+        <Setter Property="MinWidth" Value="300"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="FocusedOn">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" From="1" To="1.6" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" From="1" To="1.6" Duration="0:0:0.2"/>
+                        </Storyboard>
+                        <Storyboard x:Key="FocusedOff">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" From="1.6" To="1" Duration="0:0:0.2"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" From="1.6" To="1" Duration="0:0:0.2"/>
+                        </Storyboard>
+
+                        <Storyboard x:Key="Checked">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" To="0.5" Duration="0:0:00.01"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" To="0.5" Duration="0:0:00.01"/>
+                        </Storyboard>
+
+                        <Storyboard x:Key="Unchecked">
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" To="1" Duration="0:0:00.01"/>
+                            <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" To="1" Duration="0:0:00.01"/>
+                        </Storyboard>
+
+                        <Storyboard x:Key="IsClickedOpacity099">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.Opacity)">
+                                <DiscreteDoubleKeyFrame  KeyTime="00:00:00.1" Value="0.99"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="IsClickedOpacity1">
+                            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(ToggleButton.Opacity)">
+                                <DiscreteDoubleKeyFrame  KeyTime="00:00:00.1" Value="1"/>
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                        <Storyboard x:Key="BorderHighlight" RepeatBehavior="Forever">
+                            <ColorAnimation From="#137bc1" To="#FF93FAF7" Storyboard.TargetProperty="(ListBoxItem.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="MainBorder" Duration="0:0:0.55" AutoReverse="True"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid x:Name="MoreGamesCover" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" RenderTransformOrigin="0,0">
+                        <Grid.RenderTransform>
+                            <ScaleTransform x:Name="ScaleTransform" ScaleX="1" ScaleY="1"/>
+                        </Grid.RenderTransform>
+                        <Border x:Name="AllGamesMain" CornerRadius="300" Visibility="Visible" Background="#505050" Width="{TemplateBinding MinWidth}" Height="{TemplateBinding MinHeight}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,-70,0,0">
+                            <TextBlock x:Name="AllGames" Style="{DynamicResource TextBlockBaseStyle}" Foreground="#338ebc" Text="{DynamicResource LOCAllGames}" FontSize="40">
+                            </TextBlock>
+                        </StackPanel>
+
+                        <Grid x:Name="Squares" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                    <Border BorderBrush="White" BorderThickness="4" Width="50" Height="50" Margin="0,0,5,0"/>
+                                    <Border BorderBrush="White" BorderThickness="4" Width="50" Height="50"/>
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Border BorderBrush="White" BorderThickness="4" Width="50" Height="50" Margin="0,0,5,0"/>
+                                    <Border BorderBrush="White" BorderThickness="4" Width="50" Height="50"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+
+                        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0">
+                            <TextBlock x:Name="Back" Visibility="Collapsed" Foreground="#338ebc" Style="{DynamicResource TextBlockBaseStyle}" Text="{DynamicResource LOCBackLabel}" FontSize="30"/>
+                        </StackPanel>
+                        <Border Name="MainBorder" CornerRadius="300" BorderThickness="4" BorderBrush="{DynamicResource SelectionBrush}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" Margin="0" Visibility="Collapsed" >
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=MoreGames1,Path=IsChecked}" Value="True"/>
+                                <Condition Binding="{Binding ElementName=PART_ListGameItems, Path=SelectedIndex}" Value="0"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Focusable" Value="False"/>
+                        </MultiDataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=FilterPresetAndButtons, Path=IsKeyboardFocusWithin}" Value="True">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        
+                        <DataTrigger Binding="{Binding ElementName=AllGamesButton, Path=IsChecked}" Value="True">
+                            <Setter Property="IsChecked" Value="True"/>
+                        </DataTrigger>
+
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                        </Trigger>
+
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=MoreGames1,Path=IsFocused}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <MultiDataTrigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderHighlight}"/>
+                            </MultiDataTrigger.EnterActions>
+                        </MultiDataTrigger>
+
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=PART_ListGameItems, Path=Height}" Value="730"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Squares"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="AllGames"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="Back"/>
+                            <Setter Property="Height" Value="80"/>
+                            <Setter Property="Width" Value="200"/>
+                            <Setter Property="MinHeight" Value="80"/>
+                            <Setter Property="MinWidth" Value="200"/>
+                            <Setter Property="Border.CornerRadius" TargetName="AllGamesMain" Value="5"/>
+                            <Setter Property="Border.CornerRadius" TargetName="MainBorder" Value="5"/>
+                            <Setter Property="Margin" Value="100,-150,0,400"/>
+                        </MultiDataTrigger>
+
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
+                            <BeginStoryboard Storyboard="{StaticResource IsClickedOpacity099}"/>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                            <BeginStoryboard Storyboard="{StaticResource IsClickedOpacity1}"/>
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonContextOptions" TargetType="ButtonEx" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderHighlight" RepeatBehavior="Forever">
+                            <ColorAnimation From="#137bc1" To="#FF93FAF7" Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="BorderFocus" Duration="0:0:0.55" AutoReverse="True"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Background="{TemplateBinding Background}">
+                        <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   Margin="{TemplateBinding Padding}" FontSize="40">                            
+                                <ContentPresenter />
+                        </TextBlock>
+
+                        <Border BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                x:Name="BorderStandard" />
+
+                        <Border Margin="-3" CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="White"
+                                BorderThickness="3" Visibility="Visible" />
+
+                        <Border x:Name="BorderFocus" Margin="-3" CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="#137bc1"
+                                BorderThickness="3" Visibility="Hidden" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="#505050" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderHighlight}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#505050" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderHighlight}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="GameMenuButtonsRight" TargetType="ButtonEx" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Padding" Value="18,5,12,5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <ControlTemplate.Resources>
+                        <Storyboard x:Key="BorderHighlight" RepeatBehavior="Forever">
+                            <ColorAnimation From="#137bc1" To="#FF93FAF7" Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="BorderFocus" Duration="0:0:0.55" AutoReverse="True"/>
+                        </Storyboard>
+                    </ControlTemplate.Resources>
+                    <Grid Background="{TemplateBinding Background}">
+                        <Rectangle Fill="#606060" Height="1" VerticalAlignment="Bottom" Margin="0,0,0,-15.6" />
+                        <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}" FontSize="30"
+                                   Margin="25,0,0,0" x:Name="TextContentCheckbox">                             
+                                <ContentPresenter />
+                        </TextBlock>
+
+                        <Border BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                x:Name="BorderStandard" />
+
+                        <Border x:Name="BorderFocus" Margin="-3" CornerRadius="2"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="#137bc1"
+                                BorderThickness="3" Visibility="Hidden" />
+                        <Rectangle Height="50" Margin="10,0,0,0" Width="4" VerticalAlignment="Center" HorizontalAlignment="Left" Fill="Transparent" x:Name="RectangleHover"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="#505050" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                            <Setter Property="Fill" Value="{DynamicResource SelectionLightBrush}" TargetName="RectangleHover"/>
+                            <Setter Property="Foreground" Value="{DynamicResource SelectionLightBrush}" TargetName="TextContentCheckbox" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderHighlight}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#505050" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                            <Setter Property="Fill" Value="{DynamicResource SelectionLightBrush}" TargetName="RectangleHover"/>
+                            <Setter Property="Foreground" Value="{DynamicResource SelectionLightBrush}" TargetName="TextContentCheckbox" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Storyboard="{StaticResource BorderHighlight}"/>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--BUTTONS-->
+    <Style x:Key="ZoomButton" TargetType="ToggleButton">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="IsChecked" Value="False"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid Background="Transparent">
+                        <Border x:Name="Background" Background="#99505050" CornerRadius="75"/>
+                        <Border x:Name="BorderFocus" BorderThickness="3" BorderBrush="{DynamicResource SelectionBrush}" Margin="0" CornerRadius="80" Visibility="Hidden"/>
+                        <StackPanel x:Name="ON" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE740;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel x:Name="OFF" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE73F;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ItemsControl.Visibility" TargetName="ON" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ItemsControl.Visibility" TargetName="OFF" Value="Collapsed"/>
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
+                            <Setter Property="IsChecked" Value="False"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="MuteButton" TargetType="ToggleButton">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="IsChecked" Value="{SettingsBinding Fullscreen.IsMusicMuted, Mode=TwoWay}"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid Background="Transparent">
+                        <Border x:Name="Background" Background="#99505050" CornerRadius="75"/>
+                        <Border x:Name="BorderFocus" BorderThickness="3" BorderBrush="{DynamicResource SelectionBrush}" Margin="0" CornerRadius="80" Visibility="Hidden"/>
+                        <StackPanel x:Name="ON" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE767;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel x:Name="OFF" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE74F;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ItemsControl.Visibility" TargetName="ON" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ItemsControl.Visibility" TargetName="OFF" Value="Collapsed"/>
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
+                            <Setter Property="IsChecked" Value="False"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StopPlayButton" TargetType="ToggleButton">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="IsChecked" Value="False"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid Background="Transparent">
+                        <Border x:Name="Background" Background="#99505050" CornerRadius="75"/>
+                        <Border x:Name="BorderFocus" BorderThickness="3" BorderBrush="{DynamicResource SelectionBrush}" Margin="0" CornerRadius="80" Visibility="Hidden"/>
+                        <StackPanel x:Name="ON" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE71A;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel x:Name="OFF" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE768;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ItemsControl.Visibility" TargetName="ON" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ItemsControl.Visibility" TargetName="OFF" Value="Collapsed"/>
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameStatus, Path=Visibility}" Value="Visible">
+                            <Setter Property="IsChecked" Value="True"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PlayPauseButton" TargetType="ToggleButton">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="IsChecked" Value="False"/>
+        <Setter Property="Width" Value="75"/>
+        <Setter Property="Height" Value="75"/>
+        <Setter Property="Opacity" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid Background="Transparent">
+                        <Border x:Name="Background" Background="#99505050" CornerRadius="75"/>
+                        <Border x:Name="BorderFocus" BorderThickness="3" BorderBrush="{DynamicResource SelectionBrush}" Margin="0" CornerRadius="80" Visibility="Hidden"/>
+                        <StackPanel x:Name="ON" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE769;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel x:Name="OFF" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xE768;" FontFamily="Segoe MDL2 Assets" FontSize="48" Foreground="{TemplateBinding Foreground}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="ItemsControl.Visibility" TargetName="OFF" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="ItemsControl.Visibility" TargetName="ON" Value="Collapsed"/>
+                        </Trigger>
+
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameStatus, Path=Visibility}" Value="Visible">
+                            <Setter Property="IsChecked" Value="True"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

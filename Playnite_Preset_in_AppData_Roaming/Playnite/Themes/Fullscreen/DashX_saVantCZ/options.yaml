@@ -1,0 +1,154 @@
+
+Presets:
+
+    Color:
+        Name: Theme User Color
+        Presets:
+            Default:
+                Name: Default
+                Preview: ThemeColor\01.png
+            2:
+                Name: Color 2
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants02.xaml
+            3:
+                Name: Color 3
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants03.xaml
+            4:
+                Name: Color 4
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants04.xaml
+            5:
+                Name: Color 5
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants05.xaml
+            6:
+                Name: Color 6
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants06.xaml
+            7:
+                Name: Color 7
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants07.xaml
+            8:
+                Name: Color 8
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants08.xaml
+            9:
+                Name: Color 9
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants09.xaml
+            10:
+                Name: Color 10
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants10.xaml
+            11:
+                Name: Color 11
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants11.xaml
+            12:
+                Name: Color 12
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants12.xaml
+            13:
+                Name: Color 13
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants13.xaml
+            14:
+                Name: Color 14
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants14.xaml
+            15:
+                Name: Color 15
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants15.xaml
+            16:
+                Name: Color 16
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants16.xaml
+            17:
+                Name: Color 17
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants17.xaml
+            18:
+                Name: Color 18
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants18.xaml
+            19:
+                Name: Color 19
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants19.xaml
+            20:
+                Name: Color 20
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants20.xaml
+            21:
+                Name: Color 21
+                Preview: ThemeColor\Colors.png
+                Files:
+                    - ThemeColor\Constants21.xaml
+Variables:
+    UserNickName:
+        Title: User Name
+        Type: String
+        Default: Playnite
+    UserRealName:
+        Title: Real Name
+        Type: String
+        Default: Playnite User
+    EditFile:
+        Title: Disable Welcome Message
+        Type: Boolean
+        Default: False
+    Ultimate:
+        Title: Ultimate Tag
+        Type: Boolean
+        Default: True
+    CustomBackground:
+        Title: Custom Static Background (Background/Background.jpg)
+        Type: Boolean
+        Default: False
+    BackgroundVideo:
+        Title: Custom Video Background (Background/BackgroundVideo.mp4)
+        Type: Boolean
+        Default: False
+    GameBackground:
+        Title: Game Background
+        Type: Boolean
+        Default: True
+    WavesDynamic:
+        Title: Waves Dynamic Background
+        Type: Boolean
+        Default: True
+    LockScreenBackground:
+        Title: Waves on Lockscreen
+        Type: Boolean
+        Default: True
+    StoreButton:
+        Title: Store Button for GridView
+        Type: Boolean
+        Default: False
+    FilterPresets:
+        Title: Filter Presets on Main
+        Type: Boolean
+        Default: False

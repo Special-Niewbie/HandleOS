@@ -1,0 +1,10 @@
+{
+  "Version": 1,
+  "ImportInstalledGames": true,
+  "ConnectAccount": false,
+  "ImportUninstalledGames": false,
+  "StartGamesUsingGalaxy": false,
+  "UseAutomaticGameInstalls": false,
+  "UseVerticalCovers": true,
+  "Locale": "en"
+}

@@ -1,0 +1,61 @@
+Presets:
+
+    Layout:
+        Name: Theme Aspect ratio
+        Presets:
+            Default:
+                Name: Default
+            16:10 fix:
+                Name: 16:10 Theme Fix
+                Files:
+                    - Layout\16to10\Main.xaml
+                    - Layout\16to10\GameDetails.xaml
+Variables:
+    IntroVideo:
+        Title: PS5 Intro video
+        Type: Boolean
+        Default: True
+    PressButton:
+        Title: PS5 Press the Button
+        Type: Boolean
+        Default: True
+    MediaScreenshots:
+        Title: Steam Screenshots
+        Type: Boolean
+        Default: True
+    FullscreenMediaScreenshots:
+        Title: Fullscreen Steam Screenshot
+        Type: Boolean
+        Default: True
+    VisualiserScreenshots:
+        Title: Screenshots Visualiser
+        Type: Boolean
+        Default: True
+    FullscreenVisualiserScreenshots:
+        Title: Fullscreen Screenshot Visualiser
+        Type: Boolean
+        Default: True
+    MicroTrailerBackground:
+        Title: Microtrailers as Background
+        Type: Boolean
+        Default: False
+    ExplorePanel:
+        Title: Explore panel
+        Type: Boolean
+        Default: False
+    StarRating:
+        Title: Star Rating for uninstalled
+        Type: Boolean
+        Default: True
+    StarRatingBackground:
+        Title: Star Rating Background
+        Type: Boolean
+        Default: True
+    WelcomeBack:
+        Title: Welcome text on Explore page
+        Type: String
+        Default: Welcome back, Playnite User
+    MenuHeaderText:
+        Title: Settings header text
+        Type: String
+        Default: PS5reborn

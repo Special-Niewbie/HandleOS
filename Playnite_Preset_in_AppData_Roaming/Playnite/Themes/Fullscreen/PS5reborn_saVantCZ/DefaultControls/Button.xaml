@@ -1,0 +1,238 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="12,5,12,5" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}">
+                        <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   Margin="{TemplateBinding Padding}">                            
+                                <ContentPresenter />
+                        </TextBlock>
+
+                        <Border x:Name="MainBorder" Opacity="1" BorderThickness="3" CornerRadius="3" Margin="-6" Style="{DynamicResource PS5Border}" Visibility="Hidden" Tag="False">
+                            <Border.CacheMode>
+                                <BitmapCache EnableClearType="False" 
+                                                 RenderAtScale="1" 
+                                                 SnapsToDevicePixels="False"/>
+                            </Border.CacheMode>
+                        </Border>
+                        <Border x:Name="FlashBorder" CornerRadius="0" Opacity="1" Margin="0" Style="{DynamicResource PS5Cover}"  Visibility="Hidden" Tag="False">
+                            <Border.CacheMode>
+                                <BitmapCache EnableClearType="False" 
+                                                 RenderAtScale="1" 
+                                                 SnapsToDevicePixels="False"/>
+                            </Border.CacheMode>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="FlashBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="FlashBorder" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="FlashBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="FlashBorder" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PS5InstallPlayButton" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="Transparent" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <Border x:Name="BackgroundBorder" Background="{TemplateBinding Background}" Height="72" MinWidth="375" BorderThickness="0" CornerRadius="35" BorderBrush="#5A5A5A" Margin="0"/>
+                        <StackPanel Margin="100,-2,100,2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock x:Name="Text1" FontFamily="Segoe UI Semibold"
+                                   Foreground="White" FontSize="30"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,0,0">                            
+                                <ContentPresenter x:Name="Content" />
+                            </TextBlock>
+                            <TextBlock x:Name="Text2" FontFamily="Segoe UI Semibold" Text="{DynamicResource Game}"
+                                   Foreground="White" FontSize="30"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,0,0">
+                            </TextBlock>
+                        </StackPanel>
+
+                        <Border x:Name="MainBorder" Opacity="1" BorderThickness="3" CornerRadius="36" Margin="-6" Style="{DynamicResource PS5Border}" Visibility="Hidden" Tag="False">
+                            <Border.CacheMode>
+                                <BitmapCache EnableClearType="False" 
+                                                 RenderAtScale="1" 
+                                                 SnapsToDevicePixels="False"/>
+                            </Border.CacheMode>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                            <Setter Property="Background" Value="#40808080" TargetName="BackgroundBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" TargetName="Text1" Value="#2e2e2e"/>
+                            <Setter Property="Foreground" TargetName="Text2" Value="#2e2e2e"/>
+                            <Setter Property="Background" Value="#eeeeee" TargetName="BackgroundBorder"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" TargetName="Text1" Value="#2e2e2e"/>
+                            <Setter Property="Foreground" TargetName="Text2" Value="#2e2e2e"/>
+                            <Setter Property="Background" Value="#eeeeee" TargetName="BackgroundBorder"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=PlayGrid, Path=Opacity}" Value="0">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=LoginButton, Path=IsChecked}" Value="False">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemFilters, Path=Visibility}" Value="Visible">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemFiltersAdditional, Path=Visibility}" Value="Visible">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=PART_ContentFilterItems, Path=Visibility}" Value="Visible">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=MediaLogic, Path=Text}" Value="Media">
+                            <Setter TargetName="Content" Property="Content" Value="{DynamicResource Start}"/>
+                            <Setter TargetName="Text2" Property="Text" Value=""/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PS5DummyButton" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="Transparent" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <Border x:Name="BackgroundBorder" Background="{TemplateBinding Background}" Height="72" BorderThickness="0" CornerRadius="35" BorderBrush="#5A5A5A" Margin="0"/>
+                        <StackPanel Margin="0,-2,0,2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock x:Name="Text1" FontFamily="Segoe UI Semibold"
+                                   Foreground="White" FontSize="30"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,0,0">                            
+                                <ContentPresenter x:Name="Content" />
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                            <Setter Property="Background" Value="#40808080" TargetName="BackgroundBorder"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PS5OptionButton" BasedOn="{StaticResource {x:Type Button}}" TargetType="Button">
+        <Setter Property="Margin" Value="0,0,0,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Focusable" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="Transparent" Margin="0,0,0,0" VerticalAlignment="Top">
+                        <Border x:Name="BackgroundBorder" Width="72" Background="{TemplateBinding Background}" Height="72" BorderThickness="0" CornerRadius="35" BorderBrush="#5A5A5A" Margin="0"/>
+                        <StackPanel Margin="0,-19,0,19" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock x:Name="Text" FontFamily="Segoe UI Semibold"
+                                   Foreground="White" FontSize="50"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Margin="0,0,0,0" Text="...">
+                            </TextBlock>
+                        </StackPanel>
+
+                        <Border x:Name="MainBorder" Opacity="1" BorderThickness="3" CornerRadius="40" Margin="-6" Style="{DynamicResource PS5Border}" Visibility="Hidden" Tag="False">
+                            <Border.CacheMode>
+                                <BitmapCache EnableClearType="False" 
+                                                 RenderAtScale="1" 
+                                                 SnapsToDevicePixels="False"/>
+                            </Border.CacheMode>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}"/>
+                            <Setter Property="Background" Value="#40808080" TargetName="BackgroundBorder"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" TargetName="Text" Value="#2e2e2e"/>
+                            <Setter Property="Background" Value="#eeeeee" TargetName="BackgroundBorder"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" TargetName="Text" Value="#2e2e2e"/>
+                            <Setter Property="Background" Value="#eeeeee" TargetName="BackgroundBorder"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=PlayGrid, Path=Opacity}" Value="0">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=LoginButton, Path=IsChecked}" Value="False">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemFilters, Path=Visibility}" Value="Visible">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=PART_ElemFiltersAdditional, Path=Visibility}" Value="Visible">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=PART_ContentFilterItems, Path=Visibility}" Value="Visible">
+                            <Setter Property="Focusable" Value="False"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ButtonEx" BasedOn="{StaticResource {x:Type Button}}">
+    </Style>
+</ResourceDictionary>

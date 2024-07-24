@@ -1,0 +1,44 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    mc:Ignorable="d">
+
+    <Style x:Key="ListGameItemTemplate" TargetType="{x:Type GameListItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GameListItem}">
+                    <Grid VerticalAlignment="Bottom">
+                        <Image x:Name="PART_ImageCover"
+                               RenderOptions.BitmapScalingMode="Fant" StretchDirection="Both"
+                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                               Stretch="{Settings CoverArtStretch}" />
+                        
+                        <Border Background="#AA000000" x:Name="BorderDarken" Visibility="Collapsed" />
+                       <!-- <Image x:Name="PART_ImagePlatform" MaxHeight="50" MaxWidth="5000"
+                                    RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="25,-78,0,0" ScrollViewer.VerticalScrollBarVisibility="Disabled" UseLayoutRounding="False" Height="49" Width="500" Source="{Binding SelectedGame.Platforms[0].Icon, Converter={StaticResource ImageStringToImageConverter}}" Grid.RowSpan="1" Grid.Row="0" HorizontalAlignment="Left" StretchDirection="DownOnly" Stretch="Uniform" MinWidth="0" MinHeight="0" AllowDrop="False" Panel.ZIndex="5" Grid.ColumnSpan="1" Grid.Column="0" AutomationProperties.IsRowHeader="False" >
+                                    <Image.RenderTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform ScaleY="1"/>
+                                            <SkewTransform/>
+                                            <RotateTransform/>
+                                            <TranslateTransform X="0"/>
+                                        </TransformGroup>
+                                    </Image.RenderTransform>
+
+                                </Image> -->
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding IsInstalled}" Value="False" />
+                                <Condition Binding="{Settings Fullscreen.DarkenUninstalledGamesGrid}" Value="True" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderDarken" />
+                        </MultiDataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

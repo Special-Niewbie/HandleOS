@@ -1,0 +1,47 @@
+{
+  "Positions": {
+    "Main_V2": {
+      "Position": {
+        "X": -7.333333333333333,
+        "Y": -7.333333333333333
+      },
+      "Size": {
+        "X": 836.66666666666663,
+        "Y": 632.0
+      },
+      "State": 2
+    },
+    "AddonsWindow_2": {
+      "Position": {
+        "X": 180.66666666666666,
+        "Y": 108.0
+      },
+      "Size": null,
+      "State": 0
+    },
+    "EditGame_V2": {
+      "Position": {
+        "X": 377.33333333333331,
+        "Y": 239.33333333333331
+      },
+      "Size": null,
+      "State": 0
+    },
+    "SettingsWindow": {
+      "Position": {
+        "X": 0.0,
+        "Y": 0.0
+      },
+      "Size": null,
+      "State": 0
+    },
+    "InstalledGamesWindow": {
+      "Position": {
+        "X": 130.0,
+        "Y": 164.66666666666666
+      },
+      "Size": null,
+      "State": 0
+    }
+  }
+}

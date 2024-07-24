@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="LOCGOGSettingsImportInstalledLabel">Εισαγωγή εγκατεστημένων παιχνιδιών</sys:String>
+  <sys:String x:Key="LOCGOGSettingsImportUninstalledLabel">Εισαγωγή μη εγκατεστημένων παιχνιδιών</sys:String>
+  <sys:String x:Key="LOCGOGSettingsConnectAccount">Σύνδεση λογαριασμού</sys:String>
+  <sys:String x:Key="LOCGOGLoginChecking">Έλεγχος κατάστασης πιστοποίησης...</sys:String>
+  <sys:String x:Key="LOCGOGLoggedIn">Ο χρήστης είναι πιστοποιημένος</sys:String>
+  <sys:String x:Key="LOCGOGNotLoggedIn">Απαιτείται πιστοποίηση</sys:String>
+  <sys:String x:Key="LOCGOGNotLoggedInError">Αδυναμία πιστοποίησης του χρήστη</sys:String>
+  <sys:String x:Key="LOCGOGAuthenticateLabel">Πιστοποίηση</sys:String>
+  <sys:String x:Key="LOCGOGSettingsStartGameDirectly">Απευθείας εκκίνηση των παιχνιδιών χωρίς τη χρήση της επίσημης εφαρμογής</sys:String>
+  <sys:String x:Key="LOCGOGTroubleShootingAccountLink">Αντιμετώπιση προβλημάτων συγχρονισμού του λογαριασμού</sys:String>
+  <sys:String x:Key="LOCGOGTroubleShootingIssues">Αντιμετώπιση προβλημάτων</sys:String>
+  <sys:String x:Key="LOCGOGSettingsImportLibraryLabel">Εισαγωγή όλων των παιχνιδιών</sys:String>
+  <sys:String x:Key="LOCGOGPrivateAccount">Ιδιωτικός Λογαριασμός</sys:String>
+  <sys:String x:Key="LOCGOGPublicAccount">Δημόσιος Λογαριασμός</sys:String>
+  <sys:String x:Key="LOCGOGAPIKey">Κλειδί API</sys:String>
+  <sys:String x:Key="LOCGOGStartUsingClient">Ξεκινήστε να χρησιμοποιείτε την εφαρμογή {0}</sys:String>
+  <sys:String x:Key="LOCGOGImportPlaytime">Εισαγωγή ωρών παιχνιδιού</sys:String>
+  <sys:String x:Key="LOCGOGAccountID">ID Λογαριασμού</sys:String>
+  <sys:String x:Key="LOCGOGMetadataLanguageLabel">Γλώσσα μεταδεδόμενων:</sys:String>
+  <!--GOG-->
+  <sys:String x:Key="LOCGOGUseLogin">Είσοδος Χρήστη</sys:String>
+  <sys:String x:Key="LOCGOGUseAccountName">Όνομα Χρήστη</sys:String>
+  <sys:String x:Key="LOCGOGAccountSyncDescription" xml:space="preserve">Συνδεθείτε στον λογαριασμό σας ή χρησιμοποιείστε το όνομα του δημοσίου λογαριασμού σας για τον πλήρη συγχρονισμό της βιβλιοθήκης σας. Να σημειωθεί πως η επιλογή "Όνομα Λογαριασμού" λειτουργεί μόνο όταν οι βιβλιοθήκες παιχνιδιών έχουν οριστεί ως δημοσίως ορατές στις ρυθμίσεις απορρήτου του GOG.</sys:String>
+  <sys:String x:Key="LOCSettingsGOGUseGalaxy">Εκκινήστε τα παιχνίδια με το GOG Galaxy</sys:String>
+  <sys:String x:Key="LOCSettingsGOGUseGalaxyTooltip">Αυτό θα ενεργοποιήσει δυνατότητες του GOG Galaxy όπως αποθήκευση στο νέφος, χρονομέτρηση παιχνιδιών, κλπ.</sys:String>
+  <sys:String x:Key="LOCGOGSettingsUseAutomaticGameInstalls">Αυτόματη εκκίνηση της διαδικασίας εγκατάστασης παιχνιδιών όταν επιλέγεται "εγκατάσταση" στο GOG Galaxy</sys:String>
+  <sys:String x:Key="LOCGOGSettingsUseAutomaticGameInstallsTooltip" xml:space="preserve">Εάν ενεργοποιηθεί, η διαδικασία εγκατάστασης θα ξεκινάει αυτόματα στην προεπιλεγμένη θέση εγκατάστασης που έχετε ρυθμίσει.
+Εάν απενεργοποιηθεί, θα ανοίγει η σελίδα του παιχνιδιού για να γίνει η διαδικασία εγκατάστασης χειροκίνητα.</sys:String>
+</ResourceDictionary>

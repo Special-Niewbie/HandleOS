@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+  <sys:String x:Key="LOCIGDBSettingsImportInstalledLabel">استيراد الألعاب المثبتة</sys:String>
+  <sys:String x:Key="LOCIGDBSettingsImportUninstalledLabel">استيراد الألعاب الغير المثبتة</sys:String>
+  <sys:String x:Key="LOCIGDBSettingsConnectAccount">ربط الحساب</sys:String>
+  <sys:String x:Key="LOCIGDBLoginChecking">جاري التحقق من حالة المصادقة…</sys:String>
+  <sys:String x:Key="LOCIGDBLoggedIn">تم مصادقة المستخدم</sys:String>
+  <sys:String x:Key="LOCIGDBNotLoggedIn">يتطلب المصادقة</sys:String>
+  <sys:String x:Key="LOCIGDBNotLoggedInError">فشل في مصادقة المستخدم.</sys:String>
+  <sys:String x:Key="LOCIGDBAuthenticateLabel">مصادقة</sys:String>
+  <sys:String x:Key="LOCIGDBSettingsStartGameDirectly">بدء تشغيل الألعاب مباشرة دون تشغيل المنصة الرسمية</sys:String>
+  <sys:String x:Key="LOCIGDBTroubleShootingAccountLink">استكشاف مشاكل مزامنة الحساب وإصلاحها</sys:String>
+  <sys:String x:Key="LOCIGDBTroubleShootingIssues">استكشاف الأخطاء وإصلاحها</sys:String>
+  <sys:String x:Key="LOCIGDBSettingsImportLibraryLabel">استيراد جميع الألعاب</sys:String>
+  <sys:String x:Key="LOCIGDBPrivateAccount">حساب خاص</sys:String>
+  <sys:String x:Key="LOCIGDBPublicAccount">حساب عام</sys:String>
+  <sys:String x:Key="LOCIGDBAPIKey">مفتاح API</sys:String>
+  <sys:String x:Key="LOCIGDBStartUsingClient">بدء باستخدام {0} عميل</sys:String>
+  <sys:String x:Key="LOCIGDBImportPlaytime">استيراد وقت التشغيل</sys:String>
+  <sys:String x:Key="LOCIGDBAccountID">تعريف الحساب</sys:String>
+  <sys:String x:Key="LOCIGDBMetadataLanguageLabel">لغة بيانات التعريف:</sys:String>
+  <!--IGDB-->
+  <sys:String x:Key="LOCIgdbUseScreenshotIfNecessary">استخدم لقطات الشاشة في حالة عدم توفر العمل الفني</sys:String>
+  <sys:String x:Key="LOCIgdbMultipleArtworkOptionsTitle">اذا اكثر من صورة متاحات اذن استخدم:</sys:String>
+  <sys:String x:Key="LOCIgdbSelectBackgroundTitle">حدد صورة خلفية لـ{0}</sys:String>
+  <sys:String x:Key="LOCIgdbCoverAsIcon">استبدال صورة الغلاف المزروعة للأيقونة</sys:String>
+</ResourceDictionary>

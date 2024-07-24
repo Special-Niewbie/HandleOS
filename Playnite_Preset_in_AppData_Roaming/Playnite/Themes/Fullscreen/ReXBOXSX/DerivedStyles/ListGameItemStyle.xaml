@@ -1,0 +1,74 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    mc:Ignorable="d">
+
+    <Style x:Key="ListGameItemStyle" TargetType="ListBoxItem">        
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Grid Margin="{Settings FullscreenItemSpacingMargin}"
+                          d:DataContext="{x:Static DesignMainViewModel.DesignSelectedGameIntance}">
+                        <ContentPresenter />
+						
+						<Border x:Name="MainBorder" Opacity="0" Margin="-8" BorderThickness="4" CornerRadius="10" Style="{DynamicResource AnimatedCoverBrush}" Tag="False" Visibility="Collapsed" >			
+						</Border>
+						<Border x:Name="SubBorder" BorderBrush="{DynamicResource MainBackgourndBrush}" Visibility="Collapsed"
+								CornerRadius="5" Margin="-4" BorderThickness="4" />	
+													
+						<Border x:Name="GameTitle" Visibility="Collapsed" CornerRadius="0,0,4,4" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="45" Background="#AA000000">
+								<TextBlock Text="{Binding DisplayName}" TextTrimming="CharacterEllipsis"
+                                   Style="{DynamicResource TextBlockBaseStyle}"
+                                   FontSize="{DynamicResource FontSizeSmall}"
+                                   HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                                   TextAlignment="Left" Margin="10"                                    
+                                />
+						</Border>
+
+						<Border x:Name="IconSource" Background="#AA000000" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="7" Height="30" Visibility="Visible">
+                            <Image x:Name="IconSourceImage" Source="{ThemeFileBinding Source.Name, PathFormat='Icons/Sources/{0}.png'}" Margin="7,6" HorizontalAlignment="Center" VerticalAlignment="Center" RenderOptions.BitmapScalingMode="Fant"/>
+                        </Border>
+						
+						<Border x:Name="IconInstall" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#AA000000" Margin="7" Width="30" Height="30" CornerRadius="5" Visibility="Collapsed">
+                            <TextBlock TextWrapping="Wrap" Text="&#xE896;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" VerticalAlignment="Center" Foreground="White" HorizontalAlignment="Center" FontSize="20"/>
+						</Border>  	
+				
+					 </Grid>
+					
+                    <ControlTemplate.Triggers>						
+					
+						<DataTrigger Binding="{Binding IsInstalled}" Value="False">
+                            <Setter Property="Visibility" Value="Visible" TargetName="IconInstall" />
+                        </DataTrigger>
+						
+						<DataTrigger Binding="{Settings Fullscreen.ShowGameTitles}" Value="True">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="IconInstall" />
+							<Setter Property="Visibility" Value="Collapsed" TargetName="IconSource" />
+							<Setter Property="Visibility" Value="Visible" TargetName="GameTitle" />
+                        </DataTrigger>	
+					
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />															   
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="SubBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="GameTitle" />
+							<Setter Property="Visibility" Value="Collapsed" TargetName="IconInstall" />
+							<Setter Property="Visibility" Value="Collapsed" TargetName="IconSource" />
+                            <Setter Property="Canvas.ZIndex" Value="90" />
+                        </Trigger>											
+
+						<DataTrigger Binding="{Binding ElementName=IconSourceImage, Path=Source}" Value="{x:Null}">
+							<Setter Property="Visibility" Value="Collapsed" TargetName="IconSource" />
+						</DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
