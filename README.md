@@ -112,6 +112,11 @@ Ko-fi:
 
 
 
+### Info for Developers
+Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamarin***, and ***AutoHotkey***.
+
+
+
 
 
 ## Credits
