@@ -26,12 +26,6 @@ Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Downl
 
 
 
-<div style="text-align: center;">
-    <img height="256" src="Git_assets/first_boot.gif"/>
-</div>
-
-
-
 
 
 
@@ -73,6 +67,14 @@ PayPal:
 Ko-fi:
 
 [![Donate with Ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/special_niewbie)
+
+
+
+
+
+<div style="text-align: center;">
+    <img height="256" src="Git_assets/first_boot.gif"/>
+</div>
 
 
 
