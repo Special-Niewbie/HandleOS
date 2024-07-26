@@ -9,10 +9,9 @@
 </div>
 
 
-
 <a href="README.md" style="color: #2079C8;">
 
-Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="#features" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="Info_for_Developers.md" style="color: #2079C8;">Developers Info Area</a>
+Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="Info_for_Developers.md" style="color: #2079C8;">Developers Info Area</a>
 
 
 
@@ -20,10 +19,13 @@ Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Downl
 
 
 
-
-<div align="center">  
-    <img height="240" src="Git_assets/HandleOS_Box.png"/>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/main_Console2Desk.png" style="margin-left: auto;"/>
+    <img height="256" src="Git_assets/first_boot.gif" style="margin-left: auto;"/>
 </div>
+
+
 
 
 
@@ -48,6 +50,12 @@ HandleOS aspires to become a benchmark in the world of gaming performance. I act
 No matter your expertise - whether you're a developer, an icon designer, a PC enthusiast, or just someone with a knack for tweaking registry keys or features - your contributions are valuable. Please help us improve this project and make it a true community effort.
 
 My goal is to create a community of enthusiasts eager to get the most out of these products, considering that both Linux and Windows have their Pros and Cons. If you appreciate my work and have the means, I would be grateful if you could contribute to this project or make a small donation to support me in continuing to develop.
+
+
+
+You can find instructions and the ISO here, or by selecting the tab above:
+
+<a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> 
 
 
 
