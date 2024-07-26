@@ -32,6 +32,11 @@ Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Downl
 
 
 
+
+
+
+
+
 ![](https://img.shields.io/github/stars/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/forks/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/tag/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/release/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/issues/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/downloads/Special-Niewbie/HandleOS/total.svg)
 
 
