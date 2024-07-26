@@ -22,9 +22,13 @@ Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Downl
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
     <img height="240" src="Git_assets/main_Console2Desk.png" style="margin-left: auto;"/>
-    <img height="256" src="Git_assets/first_boot.gif" style="margin-left: auto;"/>
 </div>
 
+
+
+<div style="text-align: center;">
+    <img height="256" src="Git_assets/first_boot.gif"/>
+</div>
 
 
 
@@ -40,8 +44,7 @@ Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Downl
 
 
 
-
-HandleOS is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original Windows 11 from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
+**HandleOS** is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original Windows 11 from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
 
 After months of rigorous testing, I have significantly improved HandleOS performance, increasing FPS, enhancing stability, and reducing power consumption. If you're concerned about safety, rest assured: there is no unusual software or content present, only my completely open-source tools (with an external Open-Source UI called `Playnite`) and optimizations aimed at optimizing resources for Handled gaming . This is the result of my passion!
 

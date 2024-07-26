@@ -117,7 +117,12 @@ As we can see in the image, there are 7 options in this first version:
   If you encounter problems with the program/service, you can always close it. However, it's not recommended as we'll see more functions of `HotKeys4Console2Desk` shortly.
 
 ***HotKeys4Console2Desk*** doesn't just stop there. When you plug in or unplug the charger, respective sounds will play along with a charging icon appearing. If you're gaming and don't notice the battery level, from 20% battery onward, you'll be notified every 5% with the respective icon, so you can save your gaming sessions in time.
+
+
+
 <img height="120" src="Git_assets/features/hotkeys4c2d_chargeIcon.png"/>
+
+
 
 You can also use the multitasking function to switch between apps if you're running a scaling app in parallel with your game. Below, you'll find the list of button combinations. Additionally, in an emergency, you can call up `Console2Desk` from anywhere on your computer if needed.
 
