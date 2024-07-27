@@ -1,12 +1,18 @@
-*Page Working Progress...............*
+<table style="width: 100%; border-collapse: collapse; text-align: center;">
+  <tr>
+    <td style="border: 4px solid #000; background-color: #f0f0f0;">
+      <h1><strong>Welcome to HandleOS</strong></h1>
+    </td>
+  </tr>
+  <tr>
+    <td style="border: 2px solid #000;">
+      <img height="260" src="Git_assets/HandleOS_GitVid.gif"/>
+    </td>
+  </tr>
+</table>
 
 
-<div style="text-align: center;">
-  <h1><strong>Welcome to HandleOS</strong></h1>
-</div>
-<div align="center">  
-    <img height="260" src="Git_assets/HandleOS_GitVid.gif"/>
-</div>
+
 
 
 <a href="README.md" style="color: #2079C8;">
@@ -93,7 +99,7 @@ Ko-fi:
 | <img width=32px src="Git_assets/gpu.png">  **GPU**           | Any<br />(with drivers compatible or modded for modern OS) |
 | <img width=32px src="Git_assets/windows.ico">  **HDD/SSD**   |                 15 GB <br />(Tested by VM)                 |
 | <img width=36px src="Git_assets/controller.png">↺ <img width=32px src="Git_assets/monitor.ico">Console Mode / Desktop Mode |                             ✅                              |
-| <img width=32px src="Git_assets/computerchip.ico">  **TPM**  |          <img width=20px src="Git_assets/x.png">           |
+| <img width=32px src="Git_assets/computerchip.ico">  **TPM**  |          <img width=19px src="Git_assets/x.png">           |
 
 **NOTE**: The benchmark and RAM consumption of approximately 1 GB, is based on a system with limited hardware characteristics. This value is intended to reflect the OS's lightness. HandleOS, by nature of being based on Windows, may use slightly more RAM if you have a large amount available on your PC, especially if there are default drivers that Windows has founded in its local database. Conversely, if the system has very limited specifications, HandleOS will adjust and use less RAM accordingly.
 
@@ -139,6 +145,26 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 - A special thanks to my trusty test subject, the Rog Ally and one of my very old pc Samsung NF210, and all the SSDs that bravely endured my endless experiments.
 
 
+
+
+
+
+
+## Sources of Study
+
+A special acknowledgment to the resources that have been instrumental in the development of this project: 
+
+- [Seven Forum](https://www.sevenforums.com/) 
+- [Ten Forum](https://www.tenforums.com/) 
+- [Eleven Forum](https://www.elevenforum.com) 
+- [Microsoft Development Site](https://developer.microsoft.com)
+- [CodeProject](https://www.codeproject.com) 
+- [AutoHotkey](https://www.autohotkey.com) 
+- [GitHub Repository](https://github.com) 
+- [Playnite](https://github.com/JosefNemec/Playnite/) 
+- [Nintendo Switch-ish](https://github.com/davidkgriggs/Nintendo-Switch-ish) 
+- [Smokeless UMAF](https://github.com/DavidS95/Smokeless_UMAF)
+- and more...
 
 
 

@@ -104,6 +104,8 @@ As we can see in the image, there are 7 options in this first version:
 - **Change Computer Icon**  
   A utility that lets you change the desktop icon of your handheld. More icons for other devices on the market will be added in the future. If your device's icon is missing, please write to me in the Discussions section of the `HandleOS` project.
 
+  <img height="220" src="Git_assets/features/change_desktop_icon.png"/>
+  
 - **Print Service ON/OFF**  
   To limit Windows background services, the print services have been disabled. If you need a printer, you can enable or disable these background services with a simple click.
 

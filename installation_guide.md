@@ -16,6 +16,8 @@ This tool, called `Smokless_UMAF_Settings_HandleOS` in a zip file, is **ONLY for
 
 Download my borrowed ISO, and the necessary tool from the following link: [Download HandleOS ISO](https://drive.google.com/drive/folders/17-bPnBSjUiEPouGeiwU6VQjYxb9h5uiE?usp=drive_link).
 
+***Note:*** This ISO `23H2` includes the `July 2024` cumulative security updates: `kb5039895`  &  `kb5040442`
+
 
 ## Post-Installation
 
