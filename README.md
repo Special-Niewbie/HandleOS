@@ -1,7 +1,7 @@
 <table style="width: 100%; border-collapse: collapse; text-align: center;">
   <tr>
     <td style="border: 4px solid #000; background-color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100px;">
-       <h1><strong> Welcome to HandleOS </strong></h1>
+      <h1><strong>  Welcome to HandleOS</strong></h1>
     </td>
   </tr>
   <tr>
@@ -10,6 +10,7 @@
     </td>
   </tr>
 </table>
+
 
 
 
