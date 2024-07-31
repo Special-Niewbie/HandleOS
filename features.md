@@ -89,7 +89,9 @@ This button installs and uninstalls the MS Store. Unlike other projects, an exte
 
 ### HotKeys4Console2Desk
 
-<img height="120" src="Git_assets/features/hotkeys4c2d_trayIcon.png"/>                 <img height="220" src="Git_assets/features/hotkeys4c2d_trayIconMenu.png"/> 
+<img height="120" src="Git_assets/features/hotkeys4c2d_trayIcon.png"/>                 <img height="220" src="Git_assets/features/hotkeys4c2d_trayIconMenu.png"/>
+
+- *From Version 1.1.0*  <img height="24" src="Git_assets/features/FromVersion1.1.0.png"/>
 
 `HotKeys4Console2Desk` is the lightweight assistant for `Console2Desk`. It's an application/service that runs in the background without a graphical interface, except for its presence in the System Tray. Above, you can see images showing its appearance in the system tray, where we have an icon, and right-clicking on it reveals other secondary options.
 
@@ -115,6 +117,13 @@ As we can see in the image, there are 7 options in this first version:
 - **Splash Video ON/OFF**  
   This option disables the HandleOS splash video that plays at every first launch of Playnite in `Desktop Mode`. Alternatively, you can keep it active or change the boot/waiting video that plays while Playnite loads.
 
+- **Configure Switch Buttons**  
+  This option it's  to customize controller/handled buttons for switching between active system windows. 
+
+  * *Credits for the suggestion go to `Prob`.*
+  
+  <img height="320" src="Git_assets/features/ConfigureSwitchButtons.png"/>
+  
 - **Exit**  
   If you encounter problems with the program/service, you can always close it. However, it's not recommended as we'll see more functions of `HotKeys4Console2Desk` shortly.
 

@@ -57,14 +57,17 @@
             buttonAllyStockRes = new Button();
             buttonIntegerScaling = new Button();
             panel1 = new Panel();
+            label1 = new Label();
+            pictureBox1610 = new PictureBox();
             pictureBoxCheckVRAM = new PictureBox();
-            button_IncreaseRAM_System = new Button();
             pictureBoxDonation2 = new PictureBox();
             pictureBoxDonation1 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
+            button1610UltimateRes = new Button();
             buttonMiniConsoleWindow = new Button();
+            button_IncreaseRAM_System = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxIntegerScaling).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).BeginInit();
@@ -79,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes).BeginInit();
             panelTitle.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1610).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCheckVRAM).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDonation2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDonation1).BeginInit();
@@ -481,11 +485,11 @@
             buttonAllyUltimateRes.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
             buttonAllyUltimateRes.FlatStyle = FlatStyle.Flat;
             buttonAllyUltimateRes.ForeColor = SystemColors.ControlLight;
-            buttonAllyUltimateRes.Location = new Point(0, 38);
+            buttonAllyUltimateRes.Location = new Point(0, 35);
             buttonAllyUltimateRes.Name = "buttonAllyUltimateRes";
-            buttonAllyUltimateRes.Size = new Size(200, 60);
+            buttonAllyUltimateRes.Size = new Size(99, 60);
             buttonAllyUltimateRes.TabIndex = 0;
-            buttonAllyUltimateRes.Text = "  Unlock (15)\r\nRog Ally Ultimate Resolutions";
+            buttonAllyUltimateRes.Text = "15 Resolutions 16:9 Screen ";
             buttonAllyUltimateRes.UseVisualStyleBackColor = true;
             buttonAllyUltimateRes.Click += buttonAllyUltimateRes_Click;
             // 
@@ -522,7 +526,7 @@
             buttonAllyStockRes.Name = "buttonAllyStockRes";
             buttonAllyStockRes.Size = new Size(200, 60);
             buttonAllyStockRes.TabIndex = 2;
-            buttonAllyStockRes.Text = "Rog Ally Stock Resolutions (3)";
+            buttonAllyStockRes.Text = "Stock Resolutions";
             buttonAllyStockRes.UseVisualStyleBackColor = true;
             buttonAllyStockRes.Click += buttonAllyStockRes_Click;
             // 
@@ -544,14 +548,17 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(31, 31, 31);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox1610);
             panel1.Controls.Add(pictureBoxCheckVRAM);
-            panel1.Controls.Add(button_IncreaseRAM_System);
             panel1.Controls.Add(pictureBoxDonation2);
             panel1.Controls.Add(pictureBoxDonation1);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(button1610UltimateRes);
             panel1.Controls.Add(buttonMiniConsoleWindow);
+            panel1.Controls.Add(button_IncreaseRAM_System);
             panel1.Controls.Add(buttonIntegerScaling);
             panel1.Controls.Add(buttonAllyStockRes);
             panel1.Controls.Add(panelTitle);
@@ -562,6 +569,25 @@
             panel1.Size = new Size(200, 465);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // label1
+            // 
+            label1.BorderStyle = BorderStyle.Fixed3D;
+            label1.Location = new Point(99, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(2, 48);
+            label1.TabIndex = 20;
+            // 
+            // pictureBox1610
+            // 
+            pictureBox1610.Image = Properties.Resources.green_check_mark_icon_56x56;
+            pictureBox1610.Location = new Point(180, 35);
+            pictureBox1610.Name = "pictureBox1610";
+            pictureBox1610.Size = new Size(11, 11);
+            pictureBox1610.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1610.TabIndex = 18;
+            pictureBox1610.TabStop = false;
+            pictureBox1610.Click += pictureBox1610_Click;
             // 
             // pictureBoxCheckVRAM
             // 
@@ -577,25 +603,6 @@
             pictureBoxCheckVRAM.Click += pictureBoxCheckVRAM_Click;
             pictureBoxCheckVRAM.MouseLeave += pictureBoxCheckVRAM_MouseLeave;
             pictureBoxCheckVRAM.MouseHover += pictureBoxCheckVRAM_MouseHover;
-            // 
-            // button_IncreaseRAM_System
-            // 
-            button_IncreaseRAM_System.FlatAppearance.BorderSize = 0;
-            button_IncreaseRAM_System.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
-            button_IncreaseRAM_System.FlatStyle = FlatStyle.Flat;
-            button_IncreaseRAM_System.ForeColor = SystemColors.ControlLight;
-            button_IncreaseRAM_System.Image = Properties.Resources.VRAM;
-            button_IncreaseRAM_System.ImageAlign = ContentAlignment.MiddleLeft;
-            button_IncreaseRAM_System.Location = new Point(0, 227);
-            button_IncreaseRAM_System.Name = "button_IncreaseRAM_System";
-            button_IncreaseRAM_System.Padding = new Padding(12, 0, 0, 0);
-            button_IncreaseRAM_System.Size = new Size(200, 60);
-            button_IncreaseRAM_System.TabIndex = 13;
-            button_IncreaseRAM_System.Text = " Set - Increase \r\nVRAM System";
-            button_IncreaseRAM_System.UseVisualStyleBackColor = true;
-            button_IncreaseRAM_System.Click += button_IncreaseRAM_System_Click;
-            button_IncreaseRAM_System.MouseLeave += button_IncreaseRAM_System_MouseLeave;
-            button_IncreaseRAM_System.MouseHover += button_IncreaseRAM_System_MouseHover;
             // 
             // pictureBoxDonation2
             // 
@@ -651,13 +658,27 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.green_check_mark_icon_56x56;
-            pictureBox1.Location = new Point(180, 42);
+            pictureBox1.Location = new Point(2, 35);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(11, 11);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // button1610UltimateRes
+            // 
+            button1610UltimateRes.FlatAppearance.BorderSize = 0;
+            button1610UltimateRes.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
+            button1610UltimateRes.FlatStyle = FlatStyle.Flat;
+            button1610UltimateRes.ForeColor = SystemColors.ControlLight;
+            button1610UltimateRes.Location = new Point(101, 35);
+            button1610UltimateRes.Name = "button1610UltimateRes";
+            button1610UltimateRes.Size = new Size(99, 60);
+            button1610UltimateRes.TabIndex = 19;
+            button1610UltimateRes.Text = "15 Resolutions 16:10 Screen ";
+            button1610UltimateRes.UseVisualStyleBackColor = true;
+            button1610UltimateRes.Click += button1610UltimateRes_Click;
             // 
             // buttonMiniConsoleWindow
             // 
@@ -675,6 +696,25 @@
             buttonMiniConsoleWindow.Text = "Minimize/Restore \r\nPlaynite Window";
             buttonMiniConsoleWindow.UseVisualStyleBackColor = true;
             buttonMiniConsoleWindow.Click += buttonMiniConsoleWindow_Click;
+            // 
+            // button_IncreaseRAM_System
+            // 
+            button_IncreaseRAM_System.FlatAppearance.BorderSize = 0;
+            button_IncreaseRAM_System.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
+            button_IncreaseRAM_System.FlatStyle = FlatStyle.Flat;
+            button_IncreaseRAM_System.ForeColor = SystemColors.ControlLight;
+            button_IncreaseRAM_System.Image = Properties.Resources.VRAM;
+            button_IncreaseRAM_System.ImageAlign = ContentAlignment.MiddleLeft;
+            button_IncreaseRAM_System.Location = new Point(0, 227);
+            button_IncreaseRAM_System.Name = "button_IncreaseRAM_System";
+            button_IncreaseRAM_System.Padding = new Padding(12, 0, 0, 0);
+            button_IncreaseRAM_System.Size = new Size(200, 60);
+            button_IncreaseRAM_System.TabIndex = 13;
+            button_IncreaseRAM_System.Text = " Set - Increase \r\nVRAM System";
+            button_IncreaseRAM_System.UseVisualStyleBackColor = true;
+            button_IncreaseRAM_System.Click += button_IncreaseRAM_System_Click;
+            button_IncreaseRAM_System.MouseLeave += button_IncreaseRAM_System_MouseLeave;
+            button_IncreaseRAM_System.MouseHover += button_IncreaseRAM_System_MouseHover;
             // 
             // Form1
             // 
@@ -705,6 +745,7 @@
             panelTitle.ResumeLayout(false);
             panelTitle.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1610).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCheckVRAM).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDonation2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDonation1).EndInit();
@@ -751,5 +792,8 @@
         private Special_Niewbie_Button msStoreButton;
         private Button button_IncreaseRAM_System;
         private PictureBox pictureBoxCheckVRAM;
+        private PictureBox pictureBox1610;
+        private Button button1610UltimateRes;
+        private Label label1;
     }
 }

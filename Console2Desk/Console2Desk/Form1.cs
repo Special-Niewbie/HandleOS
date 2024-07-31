@@ -88,6 +88,9 @@ namespace Console2Desk
             buttonAllyStockRes.MouseLeave += buttonAllyStockRes_MouseLeave;
             buttonIntegerScaling.MouseEnter += buttonIntegerScaling_MouseEnter;
             buttonIntegerScaling.MouseLeave += buttonIntegerScaling_MouseLeave;
+            button_IncreaseRAM_System.MouseEnter += button_IncreaseRAM_System_MouseEnter;
+            button1610UltimateRes.MouseEnter += button1610UltimateRes_MouseEnter;
+            button1610UltimateRes.MouseLeave += button1610UltimateRes_MouseLeave;
 
             desktopButton1.Click += desktopButton1_Click;
             consoleButton1.Click += consoleButton1_Click;
@@ -200,7 +203,22 @@ namespace Console2Desk
             }
         }
 
-
+        // Function to compare two byte arrays
+        private bool ArraysEqual(byte[] a1, byte[] a2)
+        {
+            if (a1 == null || a2 == null || a1.Length != a2.Length)
+            {
+                return false;
+            }
+            for (int i = 0; i < a1.Length; i++)
+            {
+                if (a1[i] != a2[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
         public void CheckRegistrySettings()
         {
             #region Check the Registry Values for Resolutions Checked/Unchecked
@@ -209,29 +227,20 @@ namespace Console2Desk
                 // Gets all the names of the subkeys in the main registry key
                 string[] subKeyNames = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}").GetSubKeyNames();
 
-                // Search the subkey names for the correct value to use
-                string subKeyName = null;
-                foreach (string name in subKeyNames)
+                bool found16_9 = false;
+                bool found16_10 = false;
+
+                // Iterate through all subkey names to find the one with the correct DriverDesc
+                foreach (string subKeyName in subKeyNames)
                 {
-                    if (name.EndsWith("0000") || name.EndsWith("0001"))
+                    try
                     {
-                        subKeyName = name;
-                        break;
-                    }
-                }
-
-                if (subKeyName == null)
-                {
-                    MessageBox.Show("Unable to find appropriate subkey.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Opens the registry subkey for reading
-                using (RegistryKey key = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Control\Class\{{4d36e968-e325-11ce-bfc1-08002be10318}}\{subKeyName}"))
-                {
-                    // Check if the registry keys match the expected values
-                    if (key != null &&
-                        ArraysEqual((byte[])key.GetValue("DALNonStandardModesBCD1"), new byte[] {
+                        using (RegistryKey key = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Control\Class\{{4d36e968-e325-11ce-bfc1-08002be10318}}\{subKeyName}"))
+                        {
+                            if (key != null && (string)key.GetValue("DriverDesc") == "AMD Radeon Graphics")
+                            {
+                                // Check if the registry keys match the expected values for 16:9 resolutions
+                                if (ArraysEqual((byte[])key.GetValue("DALNonStandardModesBCD1"), new byte[] {
                             0x19, 0x20, 0x10, 0x80, 0x17, 0x60, 0x09, 0x90,
                             0x16, 0x00, 0x09, 0x00, 0x13, 0x66, 0x07, 0x68,
                             0x12, 0x80, 0x07, 0x20, 0x11, 0x20, 0x06, 0x30,
@@ -240,53 +249,108 @@ namespace Console2Desk
                             0x10, 0x24, 0x05, 0x76, 0x09, 0x60, 0x05, 0x40,
                             0x08, 0x54, 0x04, 0x80, 0x06, 0x40, 0x03, 0x60
                         }) &&
-                        ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD1"), new byte[] {
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD1"), new byte[] {
                             0x51, 0x20, 0x28, 0x80, 0x38, 0x40, 0x24, 0x00,
                             0x51, 0x20, 0x21, 0x60, 0x38, 0x40, 0x21, 0x60,
                             0x32, 0x00, 0x18, 0x00, 0x30, 0x72, 0x17, 0x28,
                             0x38, 0x40, 0x16, 0x20, 0x25, 0x60, 0x16, 0x00
-                        }) &&
-                        ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD2"), new byte[] {
+                                }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD2"), new byte[] {
                             0x20, 0x48, 0x15, 0x36, 0x25, 0x60, 0x14, 0x40,
                             0x19, 0x20, 0x12, 0x00, 0x16, 0x00, 0x12, 0x00,
                             0x16, 0x80, 0x10, 0x50, 0x12, 0x80, 0x10, 0x24,
                             0x16, 0x00, 0x10, 0x00, 0x12, 0x80, 0x08, 0x00
-                        }) &&
-                        ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD3"), new byte[] {
+                                }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD3"), new byte[] {
                             0x10, 0x24, 0x07, 0x68, 0x11, 0x28, 0x06, 0x34,
                             0x08, 0x00, 0x06, 0x00, 0x06, 0x40, 0x04, 0x80,
                             0x08, 0x54, 0x04, 0x80
-                        }) &&
-                        ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD4"), new byte[] {
+                                }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD4"), new byte[] {
                             0x10, 0x24, 0x07, 0x68, 0x11, 0x28, 0x06, 0x34,
                             0x08, 0x00, 0x06, 0x00, 0x06, 0x40, 0x04, 0x80,
                             0x08, 0x54, 0x04, 0x80
-                        }) &&
-                        ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD5"), new byte[] {
+                                }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD5"), new byte[] {
                             0x11, 0x20, 0x06, 0x30, 0x10, 0x24, 0x07, 0x68,
                             0x09, 0x60, 0x05, 0x40, 0x08, 0x54, 0x04, 0x80,
                             0x03, 0x20, 0x02, 0x40
-                        }))
-                    {
-                        // If the registry keys match the expected values, show the pictureBox1
-                        pictureBox1.Visible = true;
-                        pictureBox2.Visible = false;
+                                }))
+                                {
+                                    // If the registry keys match the expected values for 16:9, show pictureBox1
+                                    pictureBox1.Visible = true;
+                                    pictureBox1610.Visible = false;
+                                    pictureBox2.Visible = false;
+                                    found16_9 = true;
+                                    break;
+                                }
+
+                                // Check if the registry keys match the expected values for 16:10 resolutions
+                                if (ArraysEqual((byte[])key.GetValue("DALNonStandardModesBCD1"), new byte[] {
+                            0x19, 0x20, 0x12, 0x00, 0x17, 0x60, 0x10, 0x80,
+                            0x16, 0x00, 0x10, 0x00, 0x14, 0x40, 0x09, 0x00,
+                            0x12, 0x80, 0x08, 0x00, 0x11, 0x20, 0x07, 0x20,
+                            0x10, 0x24, 0x06, 0x40, 0x09, 0x60, 0x07, 0x20,
+                            0x08, 0x00, 0x05, 0x40, 0x07, 0x20, 0x05, 0x40,
+                            0x06, 0x40, 0x04, 0x80
+                        }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD1"), new byte[] {
+                            0x25, 0x60, 0x16, 0x00, 0x19, 0x20, 0x12, 0x00,
+                            0x17, 0x60, 0x10, 0x80, 0x16, 0x00, 0x10, 0x00,
+                            0x14, 0x40, 0x09, 0x00, 0x12, 0x80, 0x08, 0x00,
+                            0x11, 0x20, 0x07, 0x20, 0x10, 0x24, 0x06, 0x40
+                                }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD2"), new byte[] {
+                            0x19, 0x20, 0x12, 0x00, 0x17, 0x60, 0x10, 0x80,
+                            0x16, 0x00, 0x10, 0x00, 0x14, 0x40, 0x09, 0x00,
+                            0x12, 0x80, 0x08, 0x00, 0x11, 0x20, 0x07, 0x20,
+                            0x10, 0x24, 0x06, 0x40
+                                }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD3"), new byte[] {
+                            0x19, 0x20, 0x12, 0x00, 0x17, 0x60, 0x10, 0x80,
+                            0x16, 0x00, 0x10, 0x00, 0x14, 0x40, 0x09, 0x00,
+                            0x12, 0x80, 0x08, 0x00, 0x11, 0x20, 0x07, 0x20
+                                }) &&
+                                ArraysEqual((byte[])key.GetValue("DALRestrictedModesBCD4"), new byte[] {
+                            0x19, 0x20, 0x12, 0x00, 0x17, 0x60, 0x10, 0x80,
+                            0x16, 0x00, 0x10, 0x00, 0x14, 0x40, 0x09, 0x00
+                                }))
+                                {
+                                    // If the registry keys match the expected values for 16:10, show pictureBox1610
+                                    pictureBox1610.Visible = true;
+                                    pictureBox1.Visible = false;
+                                    pictureBox2.Visible = false;
+                                    found16_10 = true;
+                                    break;
+                                }
+                            }
+                        }
                     }
-                    else
+                    catch (UnauthorizedAccessException ex)
                     {
-                        // If the registry keys do not match the expected values, hide the pictureBox1
-                        pictureBox1.Visible = false;
-                        pictureBox2.Visible = true;
+                        // Log or handle the exception as needed
+                        Console.WriteLine($"Access denied to registry key: {subKeyName}. Error: {ex.Message}");
                     }
+                    catch (Exception ex)
+                    {
+                        // Handle other potential exceptions here
+                        Console.WriteLine($"Error accessing registry key: {subKeyName}. Error: {ex.Message}");
+                    }
+                }
+
+                // If no matching 16:9 or 16:10 resolutions found, show pictureBox2
+                if (!found16_9 && !found16_10)
+                {
+                    pictureBox2.Visible = true;
+                    pictureBox1.Visible = false;
+                    pictureBox1610.Visible = false;
                 }
             }
             catch (Exception ex)
             {
-                // If an error occurs, it hides the pictureBox1 and displays an error message
-                pictureBox1.Visible = false;
-                MessageBox.Show("Error checking registry keys: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Handle exceptions for the whole method, such as inability to open the main registry key
+                Console.WriteLine($"Error accessing registry: {ex.Message}");
             }
-
             #endregion
         }
 
@@ -401,6 +465,19 @@ namespace Console2Desk
             pictureBox1.BackColor = Color.Transparent;
         }
 
+        private void button1610UltimateRes_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxRes.Visible = true;
+            pictureBox1610.BackColor = Color.MediumSlateBlue;
+            pictureBoxRes.BringToFront();
+        }
+
+        private void button1610UltimateRes_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxRes.Visible = false;
+            pictureBox1610.BackColor = Color.Transparent;
+        }
+
         private void buttonAllyUltimateRes_Click(object sender, EventArgs e)
         {
             // Calling the CodeForallyUltimateButton method from the ButtonallyUltimate.cs file
@@ -427,6 +504,33 @@ namespace Console2Desk
                 });
             }
 
+        }
+
+        private void button1610UltimateRes_Click(object sender, EventArgs e)
+        {
+            // Calling the CodeForallyUltimateButton method from the ButtonallyUltimate.cs file
+            Button1610Ultimate.CodeFor1610UltimateButton(this);
+
+            // Show info message
+            string message = "Please note that the Windows Display Resolution Settings may have limitations in displaying all the resolutions added with this button. To see the complete list of resolutions, including any specific resolution you might need, follow these steps:\n\n" +
+                     "1. Go to Settings -> System -> Display -> Advanced display settings.\n" +
+                     "2. Click on 'Display adapter properties for Display 1'.\n" +
+                     "3. Press the 'List All Modes' button.\n\n" +
+                     "Would you like to visit the guide for more information?";
+
+            DialogResult result = MessageBox.Show(message, "Display Resolution Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            // Check if the user clicked Yes
+            if (result == DialogResult.Yes)
+            {
+                // Open the URL in the default browser
+                string url = "https://github.com/Special-Niewbie/Asus-Rog-Ally-Ultimate-Resolutions";
+                System.Diagnostics.Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
         }
 
         private void buttonAllyStockRes_Click(object sender, EventArgs e)
@@ -474,6 +578,11 @@ namespace Console2Desk
 
         }
 
+        private void button_IncreaseRAM_System_MouseEnter(object sender, EventArgs e)
+        {
+            pictureBoxCheckVRAM.BackColor = Color.MediumSlateBlue;
+        }
+
         private void button_IncreaseRAM_System_Click(object sender, EventArgs e)
         {
             Code_for_IncreaseRAM_System increaseRAMSystem = new Code_for_IncreaseRAM_System();
@@ -509,6 +618,11 @@ namespace Console2Desk
 
         }
 
+        private void pictureBox1610_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -521,23 +635,6 @@ namespace Console2Desk
         private void PictureBox1_MouseLeave(object sender, EventArgs e)
         {
             pictureBox1.BackColor = Color.Transparent; // Restores the default background color when the mouse leaves the pictureBox1
-        }
-
-        // Function to compare two byte arrays
-        private bool ArraysEqual(byte[] a1, byte[] a2)
-        {
-            if (a1 == null || a2 == null || a1.Length != a2.Length)
-            {
-                return false;
-            }
-            for (int i = 0; i < a1.Length; i++)
-            {
-                if (a1[i] != a2[i])
-                {
-                    return false;
-                }
-            }
-            return true;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -948,5 +1045,6 @@ namespace Console2Desk
 
             Cursor.Current = Cursors.Default;
         }
+
     }
 }

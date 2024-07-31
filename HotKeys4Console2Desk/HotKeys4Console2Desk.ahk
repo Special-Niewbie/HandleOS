@@ -17,26 +17,27 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 #Include libs\XBOX360.ahk
+#Include libs\SwitchControls.ahk
 #Include libs\BatteryEffect.ahk
 #Include libs\ChangeComputerIcon.ahk
 
 #Persistent
 
 IniFile := A_ScriptDir . "\on_off.ini"
-CheckAndCreateIni()
+CheckAndCreateOnOffIni()
+
+CheckAndCreateSwitch_ControlsIni()
 
 Console2DeskExePath := "C:\Program Files\Console2Desk\Console2Desk.exe"
 PlayniteFullscreenExePath := A_AppData . "\..\Local\Playnite\Playnite.FullscreenApp.exe"
 PlayniteDesktopExePath := A_AppData . "\..\Local\Playnite\Playnite.DesktopApp.exe"
+x360 := []
 
 ; Variabili globali
 global isVideoPlaying := false
 global playniteStarted := false
 global firstRun := true
 global timerStarted := false 
-
-; Check for Updates
-CheckForUpdates()
 
 Menu, Tray, Tip, HotKeys4Console2Desk
 
@@ -53,93 +54,80 @@ Menu, Tray, Add, , Separator
 Menu, Tray, Add, Print Service ON/OFF, ToggleSpoolerSvc  ; SpoolerSVC toggle option
 Menu, Tray, Add, Update Service ON/OFF, ToggleUpdateSvc  ; UpdateSVC toggle option
 Menu, Tray, Add, Splash Video ON/OFF, ToggleVideo  ; Video toggle option
+Menu, Tray, Add, Configure Switch Buttons, ShowConfigGUI
+Menu, Tray, Icon, Configure Switch Buttons, HandleOS_icons.dll, 11
 Menu, Tray, Add, Exit, QuitNow ; added exit script option
 
-; Update SpoolerSVC menu item at startup
-UpdateSpoolerSvcMenu()
-; Update UpdateSVC menu item at startup
-UpdateUpdateSvcMenu()
-; Update Video menu item at startup
-UpdateVideoMenu()
+; Check for Updates
+CheckForUpdates()
+
+; Function to check and create the ini file if it doesn't exist
+CheckAndCreateOnOffIni() {
+    global IniFile
+    if (!FileExist(IniFile)) {
+        FileAppend, [Settings]`nVideoState=0, %IniFile%
+    }
+}
 
 ;Instance the Controller Manager
 manager := new Xbox360LibControllerManager()
 
 ;Initialize Controller (0-3), you can use 4 controllers
-player1 := manager.InitializeController(0)
+loop 4 {
+    x360[A_Index -1] := manager.InitializeController(A_Index -1)
+}
 
-SetTimer, CheckController, 350  ; Runs the Check Controller function every 350 milliseconds.
-SetTimer, CheckPlaynite, 250  ; Runs the Check Playnite function every 500 milliseconds after initial script run.
+;CoordMode, ToolTip, Screen  ; for Controller Debug connection
 
 ; Function to check the status of the controller.
-CheckController:
-
-	player1.Update()
+loop {
+	; Update SpoolerSVC menu item at startup
+	UpdateSpoolerSvcMenu()
+	; Update UpdateSVC menu item at startup
+	UpdateUpdateSvcMenu()
+	; Update Video menu item at startup
+	UpdateVideoMenu()
 	BatteryCheck()
-
-	; Manages the BACK+START key combination
-    if (player1.BACK && player1.START) {
-        ;Run, explorer.exe "C:\Program Files\Console2Desk\Console2Desk.exe"  Old implementation	
-		;Run, %ComSpec% /c ""%Console2DeskExePath%"", , Hide	             Old implementation	
-		; Stop the scheduled task first
-        Run, schtasks /end /tn "Console2Desk",, Hide
+	CheckPlaynite()
+	x := 0
+	;msg := ""
+	while x < 4 {
+        control := x360[x]
+		control.Update()
+		;msg .= "Player" . (x+1) . "`n"
+		;msg .= "Connected: " . (control.IsConnected ? "Yes" : "No") . "`n"
+		if (control.IsConnected){
+			; Manages the BACK+START key combination
+			if (control.BACK && control.START) {
+				; Stop the scheduled task first
+				Run, schtasks /end /tn "Console2Desk",, Hide
 		
-		Sleep 250
-		; Then Start the scheduled task
-        Run, schtasks /run /tn "Console2Desk",, Hide
+				Sleep 250
+				; Then Start the scheduled task
+				Run, schtasks /run /tn "Console2Desk",, Hide
 		
-		; Set the vibration
-        player1.BV := [65535, 65535]   ; Set both engine speeds to maximum
-        Sleep 400                      ; Wait 400 milliseconds
-        player1.BV := [0, 0]           ; Turn off the vibration
+				; Set the vibration
+				control.BV := [65535, 65535]   ; Set both engine speeds to maximum
+				Sleep 400                      ; Wait 400 milliseconds
+				control.BV := [0, 0]           ; Turn off the vibration
 		
+			}
+			
+			; Manages the configured switch combination
+            if (CheckSwitchCombination(control)) {
+                SwitchToNextWindow()
+                Sleep 50
+                control.BV := [65535, 65535]
+                Sleep 250  ; Delay to prevent rapid multiple presses
+                control.BV := [0, 0]
+            }
+	
+		}
+		;msg .= "`n" ; for Debug
+		x++
 	}
-	
-	; Manages BACK + LB for the ALT key
-    if (player1.BACK && player1.LB) {
-        Send, {Alt down}
-    } else {
-        Send, {Alt up}
-    }
-
-    ; Gestisce RB
-    if (player1.RB) {
-        if (player1.BACK && player1.LB) {
-            ; If BACK and LB are pressed, minimize all windows and send TAB
-            WinMinimizeAll
-			
-            Sleep, 200  ; Wait to make sure all windows have been minimized
-            Send, {Tab}
-            player1.BV := [65535, 65535]
-            Sleep, 100  ; Delay to prevent rapid multiple presses
-            player1.BV := [0, 0]
-        }
-        ; If BACK and LB are not pressed, do nothing (RB works normally)
-    }
-	
-	; Manages LB + LS for the ALT key
-    if (player1.LB && player1.LS) {
-        Send, {Alt down}
-    } else {
-        Send, {Alt up}
-    }
-	
-	; Manages X
-    if (player1.X) {
-        if (player1.LB && player1.LS) {
-            ; If LB and LS are pressed, minimize all windows and send TAB
-            WinMinimizeAll
-			
-            Sleep, 200  ; Wait to make sure all windows have been minimized
-            Send, {Tab}
-            player1.BV := [65535, 65535]
-            Sleep, 100  ; Delay to prevent rapid multiple presses
-            player1.BV := [0, 0]
-        }
-        ; If LB and LS are not pressed, do nothing (X works normally)
-    }
-
-return
+	;ToolTip, %msg%, 0, 500 ; for Debug
+}
 
 ; Manages the Ctrl+Shift+F7 key combination
 ^+F7::
@@ -153,15 +141,11 @@ return
     Run, schtasks /run /tn "Console2Desk",, Hide
 	
 	; Set the vibration
-    player1.BV := [65535, 65535]   ; Set both engine speeds to maximum
+    control.BV := [65535, 65535]   ; Set both engine speeds to maximum
     Sleep 400                      ; Wait 400 milliseconds
-    player1.BV := [0, 0]           ; Turn off the vibration
+    control.BV := [0, 0]           ; Turn off the vibration
 
 return
-
-OpenScriptSite() {
-    Run, https://github.com/Special-Niewbie/
-}
 
 CheckForUpdates() {
     localVersionFile := A_ScriptDir . "\version"
@@ -194,9 +178,58 @@ CheckForUpdates() {
     }
 }
 
+; Function to get a list of active windows, including minimized ones
+GetActiveWindowList() {
+    windows := []
+    WinGet, id, List,,, Program Manager
+    ; debugMsg := "Windows found:`n" ; Commented out debug message initialization
+    Loop, %id%
+    {
+        this_id := id%A_Index%
+        WinGetTitle, title, ahk_id %this_id%
+        WinGet, style, Style, ahk_id %this_id%
+        WinGet, exStyle, ExStyle, ahk_id %this_id%
+        
+        ; Check if the window is visible or minimized
+        isVisible := (style & 0x10000000)  ; WS_VISIBLE
+        isMinimized := (style & 0x20000000)  ; WS_MINIMIZE
+        
+        ; debugMsg .= title . " (Visible: " . isVisible . ", Minimized: " . isMinimized . ")`n" ; Commented out debug message for each window
+        
+        ; Include all windows with a non-empty title, both visible and minimized
+        if (title != "")
+            windows.Push({id: this_id, title: title})
+    }
+    ; debugMsg .= "Total filtered windows: " . windows.Length() ; Commented out debug message for total windows
+    ; MsgBox, %debugMsg% ; Commented out MsgBox displaying debug message
+    return windows
+}
+
+; Function to switch to the next window
+SwitchToNextWindow() {
+    static currentIndex := 0
+    windows := GetActiveWindowList()
+    windowCount := windows.Length()
+    
+    if (windowCount > 0) {
+        currentIndex := Mod(currentIndex + 1, windowCount)
+        if (currentIndex = 0)
+            currentIndex := windowCount
+        
+        nextWindow := windows[currentIndex]
+        nextWindowTitle := nextWindow.title
+        ; MsgBox, Switching to: %currentIndex% / %windowCount% - %nextWindowTitle% ; Commented out MsgBox displaying current switching info
+        WinActivate, % "ahk_id " . nextWindow.id
+        WinRestore, % "ahk_id " . nextWindow.id  ; Restore the window if it was minimized
+    } else {
+        ; MsgBox, No windows found to switch to. ; Commented out MsgBox displaying no windows found message
+    }
+}
+
+
 UpdateSpoolerSvcMenu() {
     ; Get the current status of the Spooler service
-    RunWait, %ComSpec% /c sc query spooler | find "RUNNING", , Hide
+    RunWait, %ComSpec% /c sc query Spooler | find "RUNNING", , Hide
     if (ErrorLevel = 0) {
         ; Spooler service is running
         Menu, Tray, Icon, Print Service ON/OFF, Imageres.dll, 45  ; Icon for SpoolerSVC ON
@@ -218,14 +251,6 @@ UpdateUpdateSvcMenu() {
     }
 }
 
-; Function to check and create the ini file if it doesn't exist
-CheckAndCreateIni() {
-    global IniFile
-    if (!FileExist(IniFile)) {
-        FileAppend, [Settings]`nVideoState=0, %IniFile%
-    }
-}
-
 ; Function to update the video menu item based on the ini file value
 UpdateVideoMenu() {
     global IniFile
@@ -233,63 +258,15 @@ UpdateVideoMenu() {
     if (VideoState = 0) {
         Menu, Tray, Icon, Splash Video ON/OFF, Imageres.dll, 19  ; Icon for Video ON
     } else {
-        Menu, Tray, Icon, Splash Video ON/OFF, Imageres.dll, 94  ; Icon for Video OFF
+        Menu, Tray, Icon, Splash Video ON/OFF, Imageres.dll, 231  ; Icon for Video OFF
     }
 }
 
-; Function to show version information
-ShowVersionInfo:
-    versionFile := A_ScriptDir . "\version"
-    if (!FileExist(versionFile)) {
-        MsgBox, 16, Error, The version file was not found.
-        ExitApp
-    }
-    FileRead, currentVersion, %versionFile%
-    MsgBox, 64, Version Info, Script Version: %currentVersion% `n`nAuthor: Special-Niewbie Softwares `nCopyright(C) 2024 Special-Niewbie Softwares
-return
-
-ToggleSpoolerSvc:
-    ; Get the current status of the Spooler service
-    RunWait, %ComSpec% /c sc query spooler | find "RUNNING", , Hide
-    if (ErrorLevel = 0) {
-        ; Spooler service is running, so stop it
-        Run, %ComSpec% /c sc config spooler start= disabled && net stop spooler && net stop printnotify,, Hide
-    } else {
-        ; Spooler service is not running, so start it
-        Run, %ComSpec% /c sc config spooler start= auto && net start spooler && net start printnotify,, Hide
-    }
-	Sleep 500
-    ; Update the menu text
-    UpdateSpoolerSvcMenu()
-return
-
-ToggleUpdateSvc:
-    ; Get the current status of the Update service
-    RunWait, %ComSpec% /c sc query wuauserv | find "RUNNING", , Hide
-    if (ErrorLevel = 0) {
-        ; Update service is running, so stop it
-        Run, %ComSpec% /c sc config wuauserv start= disabled && sc config bits start= disabled && sc config UsoSvc start= demand && net stop wuauserv && net stop bits && net stop UsoSvc,, Hide
-    } else {
-        ; Update service is not running, so start it
-        Run, %ComSpec% /c sc config wuauserv start= demand && sc config bits start= demand && sc config UsoSvc start= delayed-auto && net start wuauserv && net start bits && net start UsoSvc,, Hide
-    }
-	Sleep 500
-    ; Update the menu text
-    UpdateUpdateSvcMenu()
-return
-
-; Function to toggle the video state in the ini file
-ToggleVideo:
-    global IniFile
-    IniRead, VideoState, %IniFile%, Settings, VideoState, 0
-    if (VideoState = 0) {
-        IniWrite, 1, %IniFile%, Settings, VideoState
-    } else {
-        IniWrite, 0, %IniFile%, Settings, VideoState
-    }
-    Sleep 500
-    UpdateVideoMenu()
-return
+; Function to check if a process is running.
+ProcessExists(processName) {
+    Process, Exist, %processName%
+    return ErrorLevel
+}
 
 ; Function to check if Playnite is started and start the splash screen video
 CheckPlaynite() {
@@ -331,27 +308,55 @@ CheckPlaynite() {
     SetTimer, CheckPlaynite, Off
 }
 
-TabsNavigation() {
+OpenScriptSite:
+    Run, https://github.com/Special-Niewbie/
+return
 
-}
+; Function to show version information
+ShowVersionInfo:
+    versionFile := A_ScriptDir . "\version"
+    if (!FileExist(versionFile)) {
+        MsgBox, 16, Error, The version file was not found.
+        ExitApp
+    }
+    FileRead, currentVersion, %versionFile%
+    MsgBox, 64, Version Info, Script Version: %currentVersion% `n`nAuthor: Special-Niewbie Softwares `nCopyright(C) 2024 Special-Niewbie Softwares
+return
 
+ToggleSpoolerSvc:
+    ; Get the current status of the Spooler service
+    RunWait, %ComSpec% /c sc query Spooler | find "RUNNING", , Hide
+    if (ErrorLevel = 0) {
+        ; Spooler service is running, so stop it
+        Run, %ComSpec% /c sc config Spooler start= disabled && net stop Spooler && net stop printnotify,, Hide
+    } else {
+        ; Spooler service is not running, so start it
+        Run, %ComSpec% /c sc config Spooler start= auto && net start Spooler && net start printnotify,, Hide
+    }
+return
 
-; Function to check if a process is running.
-ProcessExists(processName) {
-    Process, Exist, %processName%
-    return ErrorLevel
-}
+ToggleUpdateSvc:
+    ; Get the current status of the Update service
+    RunWait, %ComSpec% /c sc query wuauserv | find "RUNNING", , Hide
+    if (ErrorLevel = 0) {
+        ; Update service is running, so stop it
+        Run, %ComSpec% /c sc config wuauserv start= disabled && sc config bits start= disabled && sc config UsoSvc start= demand && net stop wuauserv && net stop bits && net stop UsoSvc,, Hide
+    } else {
+        ; Update service is not running, so start it
+        Run, %ComSpec% /c sc config wuauserv start= demand && sc config bits start= demand && sc config UsoSvc start= delayed-auto && net start wuauserv && net start bits && net start UsoSvc,, Hide
+    }
+return
 
-#IfWinExist ahk_exe ffplay.exe
-^F3:: ; CTRL-F3 = Esci dal lettore e dallo script
-    SoundBeep, 1000
-    Process, Close, ffplay.exe
-    ExitApp
-#IfWinExist
-
-; PAUSE:
-	;Pause Toggle
-; return
+; Function to toggle the video state in the ini file
+ToggleVideo:
+    global IniFile
+    IniRead, VideoState, %IniFile%, Settings, VideoState, 0
+    if (VideoState = 0) {
+        IniWrite, 1, %IniFile%, Settings, VideoState
+    } else {
+        IniWrite, 0, %IniFile%, Settings, VideoState
+    }
+return
 
 QuitNow: ; exit script label 
 	ExitApp 

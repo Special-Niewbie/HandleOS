@@ -495,3 +495,6 @@ C:\Progetti_in_C\C#\Console2Desk\Console2Desk\bin\Debug\net7.0-windows\HotKeys4C
 C:\Progetti_in_C\C#\Console2Desk\Console2Desk\bin\Debug\net7.0-windows\on_off.ini
 C:\Progetti_in_C\C#\Console2Desk\Console2Desk\bin\Debug\net7.0-windows\ffplay.exe
 C:\Progetti_in_C\C#\Console2Desk\Console2Desk\bin\Debug\net7.0-windows\vid\splash_screen_video.mp4
+C:\Progetti_in_C\C#\Console2Desk\Console2Desk\bin\Debug\net7.0-windows\Forwarders\Control_Panel.exe
+C:\Progetti_in_C\C#\Console2Desk\Console2Desk\bin\Debug\net7.0-windows\Forwarders\File_Explorer_Classic.exe
+C:\Progetti_in_C\C#\Console2Desk\Console2Desk\bin\Debug\net7.0-windows\sources\Controller_List.png
