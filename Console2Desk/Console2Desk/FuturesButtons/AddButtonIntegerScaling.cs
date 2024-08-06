@@ -23,7 +23,7 @@ namespace Console2Desk.FuturesButtons
 {
     internal class AddButtonIntegerScaling
     {
-        public static void CodeForaddButtonIntegerScaling(PictureBox pictureBox3)
+        public static void CodeForaddButtonIntegerScaling(PictureBox pictureBox3, MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
@@ -55,20 +55,20 @@ namespace Console2Desk.FuturesButtons
                 if (keysAdded)
                 {
                     // If keys have been added, it shows an informational message
-                    MessageBox.Show("Registry keys modified successfully. You may need to restart your computer to apply these changes. Please check AMD Adrenaline software for Integer Scaling support.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    messagesBoxImplementation.ShowMessage("Registry keys modified successfully. You may need to restart your computer to apply these changes. Please check AMD Adrenaline software for Integer Scaling support.", "Success", MessageBoxButtons.OK);
                     pictureBox3.Visible = true;
                 }
                 else
                 {
                     // If no key was added, it shows an error message
-                    MessageBox.Show("Integer Scaling was not added because the predefined registry paths do not exist. Please contact the developer on GitHub for further assistance.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messagesBoxImplementation.ShowMessage("Integer Scaling was not added because the predefined registry paths do not exist. Please contact the developer on GitHub for further assistance.", "Error", MessageBoxButtons.OK);
                     pictureBox3.Visible = false;
                 }
             }
             catch (Exception ex)
             {
                 // If an error occurs, displays a generic error message
-                MessageBox.Show("Error modifying registry keys: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Error modifying registry keys: " + ex.Message, "Error", MessageBoxButtons.OK);
             }
         }
     }

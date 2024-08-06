@@ -18,13 +18,19 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 using Microsoft.Win32;
+using System.Diagnostics;
 
 namespace Console2Desk.FuturesButtons
 {
     internal class Button1610Ultimate
     {
-        public static void CodeFor1610UltimateButton(Form1 form)
+        public static void CodeFor1610UltimateButton(Form1 form, MessagesBoxImplementation messagesBoxImplementation)
         {
+            string backupFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "RegistryBackup_16_10.reg");
+
+            // Create the backup before making changes
+            BackupRegistryKey(backupFilePath);
+
             try
             {
                 // Gets all the names of the subkeys in the main registry key
@@ -33,7 +39,7 @@ namespace Console2Desk.FuturesButtons
                 {
                     if (mainKey == null)
                     {
-                        MessageBox.Show("Unable to access the registry key.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messagesBoxImplementation.ShowMessage("Unable to access the registry key.", "Error", MessageBoxButtons.OK);
                         return;
                     }
                     subKeyNames = mainKey.GetSubKeyNames();
@@ -72,7 +78,7 @@ namespace Console2Desk.FuturesButtons
 
                 if (subKeyName == null)
                 {
-                    MessageBox.Show("Unable to find the appropriate subkey.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messagesBoxImplementation.ShowMessage("Unable to find the appropriate subkey.", "Error", MessageBoxButtons.OK);
                     return;
                 }
 
@@ -83,7 +89,7 @@ namespace Console2Desk.FuturesButtons
                     {
                         if (key != null)
                         {
-                            // Set the values ​​of the required registry keys
+                            // Set the values of the required registry keys
                             key.SetValue("DALNonStandardModesBCD1", new byte[] {
                                 0x19, 0x20, 0x12, 0x00, 0x17, 0x60, 0x10, 0x80,
                                 0x16, 0x00, 0x10, 0x00, 0x14, 0x40, 0x09, 0x00,
@@ -127,23 +133,51 @@ namespace Console2Desk.FuturesButtons
                                 0x07, 0x20, 0x05, 0x40, 0x06, 0x40, 0x04, 0x80
                             }, RegistryValueKind.Binary);
 
-                            MessageBox.Show("Registry keys modified successfully. You may need to restart your computer to apply these changes.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            messagesBoxImplementation.ShowMessage("Registry keys modified successfully. You may need to restart your computer to apply these changes.", "Success", MessageBoxButtons.OK);
                             form.CheckRegistrySettings();
                         }
                         else
                         {
-                            MessageBox.Show("Unable to create or access the registry key.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            messagesBoxImplementation.ShowMessage("Unable to create or access the registry key.", "Error", MessageBoxButtons.OK);
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show("Error modifying registry keys: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // MessageBox.Show("Error modifying registry keys: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error accessing registry: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Error accessing registry: " + ex.Message, "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private static void BackupRegistryKey(string backupFilePath)
+        {
+            try
+            {
+                ProcessStartInfo processStartInfo = new ProcessStartInfo
+                {
+                    FileName = "reg",
+                    Arguments = $"export \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Class\\{{4d36e968-e325-11ce-bfc1-08002be10318}}\" \"{backupFilePath}\" /y",
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                using (Process process = Process.Start(processStartInfo))
+                {
+                    process.WaitForExit();
+                    if (process.ExitCode != 0)
+                    {
+                        DependencyContainer.MessagesBoxImplementation.ShowMessage("Failed to backup registry key.", "Error", MessageBoxButtons.OK);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DependencyContainer.MessagesBoxImplementation.ShowMessage("Error backing up registry: " + ex.Message, "Error", MessageBoxButtons.OK);
             }
         }
     }

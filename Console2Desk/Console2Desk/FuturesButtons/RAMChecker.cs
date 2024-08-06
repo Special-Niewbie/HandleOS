@@ -1,5 +1,4 @@
 ﻿using System.Diagnostics;
-using System.Drawing;
 
 namespace Console2Desk.FuturesButtons
 {
@@ -12,7 +11,7 @@ namespace Console2Desk.FuturesButtons
             this.pictureBoxCheckVRAM = pictureBoxCheckVRAM;
         }
 
-        public async Task CheckVirtualMemorySettingsAsync()
+        public async Task CheckVirtualMemorySettingsAsync(MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
@@ -57,15 +56,13 @@ namespace Console2Desk.FuturesButtons
                                 bool initialSizeCorrect = currentInitialSize == initialSize;
                                 bool maximumSizeCorrect = currentMaximumSize == maximumSize;
 
-                                if (initialSizeCorrect && maximumSizeCorrect)
+                                if (currentInitialSize == 16 && currentMaximumSize == 8192)
                                 {
-                                    // MessageBox.Show("Settings are correct.", "Debug Info");
                                     pictureBoxCheckVRAM.Visible = true;
                                     pictureBoxCheckVRAM.Image = Properties.Resources.green_check_mark_icon_56x56;
                                 }
                                 else
                                 {
-                                    // MessageBox.Show("Settings are incorrect.", "Debug Info");
                                     pictureBoxCheckVRAM.Visible = true;
                                     pictureBoxCheckVRAM.Image = Properties.Resources.WarningInfo;
                                 }
@@ -73,7 +70,7 @@ namespace Console2Desk.FuturesButtons
                             }
                             else
                             {
-                                MessageBox.Show($"Unexpected format in regTokens: {string.Join(", ", regTokens)}", "Debug Info");
+                                //MessageBox.Show($"Unexpected format in regTokens: {string.Join(", ", regTokens)}", "Debug Info");
                             }
                         }
                     }
@@ -81,7 +78,7 @@ namespace Console2Desk.FuturesButtons
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while checking virtual memory settings: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage($"An error occurred while checking virtual memory settings: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
 
@@ -111,7 +108,7 @@ namespace Console2Desk.FuturesButtons
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while executing command '{command}': {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred while executing command '{command}': {ex.Message}", "Error", MessageBoxButtons.OK);
                 return string.Empty;
             }
         }

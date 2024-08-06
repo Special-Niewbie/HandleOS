@@ -19,57 +19,78 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 using Microsoft.Win32;
 using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Console2Desk.TouchButtons
 {
     internal class DesktopButton
     {
-        public static void CodeFordesktopButton1(Special_Niewbie_Button Button, string explorerPath)
+        [DllImport("user32.dll")]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll")]
+        private static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
+        private const uint WM_CLOSE = 0x0010;
+        private const string ExplorerClassName = "CabinetWClass"; // Classe della finestra di File Explorer
+
+        public static void CodeFordesktopButton1(MessagesBoxImplementation messagesBoxImplementation, Special_Niewbie_Button Button, string explorerPath)
         {
             try
             {
-                // Open the registry key for modification
+                // Apri la chiave di registro per la modifica
                 using (RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon", true))
                 {
-                    // Check if the key exists before modifying it
                     if (key != null)
                     {
-                        // Set the value of the "Shell" key to explorer.exe
                         key.SetValue("Shell", explorerPath);
-                        AutoClosingMessageBox.Show("Desktop Mode applied successfully.", "Success", 500); // It closes automatically after 1 second
+                        AutoClosingMessageBox.Show("Desktop Mode applied successfully.", "Success", 500); // Si chiude automaticamente dopo 1 secondo
                     }
                     else
                     {
-                        MessageBox.Show("Registry key not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return; // Exit method if registry key not found
+                        messagesBoxImplementation.ShowMessage("Registry key not found.", "Error", MessageBoxButtons.OK);
+                        return; // Esci se la chiave di registro non è trovata
                     }
                 }
 
-                // Restart explorer.exe
+                // Riavvia explorer.exe
                 Process.Start("explorer.exe");
 
-                // After modifying the registry key, perform the restart action
+                // Modifica le chiavi di registro per il riavvio di explorer.exe
                 using (RegistryKey key01menu = Registry.ClassesRoot.CreateSubKey(@"DesktopBackground\Shell\Restart Explorer\shell\01menu\command", true))
                 using (RegistryKey key02menu = Registry.ClassesRoot.CreateSubKey(@"DesktopBackground\Shell\Restart Explorer\shell\02menu\command", true))
                 {
-                    // Check if the keys exist before modifying them
                     if (key01menu != null && key02menu != null)
                     {
-                        // Set the value of the "command" keys to the command for restarting explorer.exe
                         key01menu.SetValue("", @"cmd.exe /c taskkill /f /im explorer.exe");
                         key02menu.SetValue("", @"cmd.exe /c taskkill /f /im explorer.exe");
                     }
                     else
                     {
-                        MessageBox.Show("One or more registry keys not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messagesBoxImplementation.ShowMessage("One or more registry keys not found.", "Error", MessageBoxButtons.OK);
                     }
                 }
+
+                // Dopo aver riavviato explorer.exe, aspetta 3 secondi e chiudi eventuali nuove finestre di File Explorer
+                Task.Delay(1500).ContinueWith(t => CloseNewExplorerWindows());
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error modifying registry keys or restarting explorer.exe: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Error modifying registry keys or restarting explorer.exe: " + ex.Message, "Error", MessageBoxButtons.OK);
             }
+        }
 
+        private static void CloseNewExplorerWindows()
+        {
+            // Cerca e chiudi tutte le finestre di File Explorer
+            IntPtr hwnd = FindWindow(ExplorerClassName, null);
+
+            while (hwnd != IntPtr.Zero)
+            {
+                PostMessage(hwnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+                hwnd = FindWindow(ExplorerClassName, null);
+            }
         }
     }
 }

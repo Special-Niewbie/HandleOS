@@ -48,7 +48,7 @@ namespace Console2Desk
             // If another instance is already running, exit
             if (isAnotherInstanceRunning)
             {
-                MessageBox.Show("The program is running 2 times already. Please ensure that only one instance of the program is running at a time.", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage("The program is running 2 times already. Please ensure that only one instance of the program is running at a time.", "Attention", MessageBoxButtons.OK);
                 return;
             }
             // To customize application configuration such as set high DPI settings or default font,

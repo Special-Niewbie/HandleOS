@@ -45,9 +45,9 @@ Menu, Tray, Add, Close, Close
 ; Creating a Transparent GUI
 Gui, New, +Caption
 Gui, +AlwaysOnTop +ToolWindow -Caption +LastFound
-Gui, Color, 0x7C4600  ; Background Black Color
+Gui, Color, 0x0A3081  ; Background Black Color
 Gui, Add, Picture, x0 y0 w%ImageWidth% h%ImageHeight% vMyIcon gMyIconClick, %A_Temp%\FEClassic56x56.png
-WinSet, TransColor, 0x7C4600
+WinSet, TransColor, 0x0A3081
 Gui, Show, NA x%PosX% y%PosY%, File Explorer Touch
 
 ; Instance the Controller Manager

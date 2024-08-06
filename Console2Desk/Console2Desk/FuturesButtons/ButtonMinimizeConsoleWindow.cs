@@ -34,20 +34,20 @@ namespace Console2Desk.FuturesButtons
 
         private const int SW_MINIMIZE = 6;
         private const int SW_RESTORE = 9;
-        public static void CodeForbuttonMiniConsoleWindow(Form1 form)
+        public static void CodeForbuttonMiniConsoleWindow(Form1 form, MessagesBoxImplementation messagesBoxImplementation)
         {
             string settingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Console2Desk", "Settings.ini");
 
             if (!File.Exists(settingsPath))
             {
-                MessageBox.Show("Settings.ini not found. Please configure the settings first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Settings.ini not found. Please configure the settings first.", "Error", MessageBoxButtons.OK);
                 return;
             }
 
             string[] settings = File.ReadAllLines(settingsPath);
             if (settings.Length == 0)
             {
-                MessageBox.Show("Settings.ini is empty. Please configure the settings first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Settings.ini is empty. Please configure the settings first.", "Error", MessageBoxButtons.OK);
                 return;
             }
 
@@ -70,7 +70,7 @@ namespace Console2Desk.FuturesButtons
             }
             else
             {
-                MessageBox.Show("Invalid settings in Settings.ini. Please configure the settings correctly.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Invalid settings in Settings.ini. Please configure the settings correctly.", "Error", MessageBoxButtons.OK);
                 return;
             }
 
@@ -99,7 +99,7 @@ namespace Console2Desk.FuturesButtons
 
             if (!foundProcess)
             {
-                MessageBox.Show($"No {selectedApp} application is currently running.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage($"No {selectedApp} application is currently running.", "Error", MessageBoxButtons.OK);
             }
         }
     }

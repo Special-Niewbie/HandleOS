@@ -58,14 +58,14 @@ namespace Console2Desk.SettingsButton
             else
             {
                 // If the operating system language is not supported, return the default English name
-                MessageBox.Show("I'm sorry, but the language of your operating system is not supported. " +
+                DependencyContainer.MessagesBoxImplementation.ShowMessage("I'm sorry, but the language of your operating system is not supported. " +
                     "Please visit the developer's GitHub page to request support for your language: https://github.com/Special-Niewbie. " +
-                    "\n\n Tring to using and checking the default English name drivers.");
+                    "\n\n Tring to using and checking the default English name drivers.", "Warning", MessageBoxButtons.OK);
                 return "HID-compliant touch screen";
             }
         }
 
-        public void code4touchScreenEnDbButton(Special_Niewbie_Button touchScreenEnDbButton)
+        public void code4touchScreenEnDbButton(Special_Niewbie_Button touchScreenEnDbButton, MessagesBoxImplementation messagesBoxImplementation)
         {
             string searchString = GetLocalizedTouchScreenName();
 
@@ -91,32 +91,32 @@ namespace Console2Desk.SettingsButton
                                 {
                                     DisableDevice(device);
                                     touchScreenEnDbButton.Image = Properties.Resources.touchscreen_Disable48;
-                                    MessageBox.Show("Touchscreen device DISABLED.");
+                                    messagesBoxImplementation.ShowMessage("Touchscreen device DISABLED.", "Success", MessageBoxButtons.OK);
                                 }
                                 else
                                 {
                                     EnableDevice(device);
                                     touchScreenEnDbButton.Image = Properties.Resources.touchscreen_Enabled48;
-                                    MessageBox.Show("Touchscreen device ENABLED.");
+                                    messagesBoxImplementation.ShowMessage("Touchscreen device ENABLED.", "Success", MessageBoxButtons.OK);
                                 }
 
                                 foundTouchscreen = true;
                             }
                             else
                             {
-                                MessageBox.Show("Error: Null touchscreen device object.");
+                                messagesBoxImplementation.ShowMessage("Error: Null touchscreen device object.", "Error", MessageBoxButtons.OK);
                             }
                         }
                     }
 
                     if (!foundTouchscreen)
                     {
-                        MessageBox.Show("No touchscreen devices found.");
+                        messagesBoxImplementation.ShowMessage("No touchscreen devices found.", "Error", MessageBoxButtons.OK);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No device with the description '" + searchString + "' found.");
+                    messagesBoxImplementation.ShowMessage("No device with the description '" + searchString + "' found.", "Warning", MessageBoxButtons.OK);
                 }
             }
         }

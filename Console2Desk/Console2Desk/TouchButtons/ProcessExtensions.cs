@@ -4,10 +4,7 @@
     Otherwise, it could be risky for the end user to run any game or external program 
     with high privileges.
 */
-
-using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 
@@ -15,6 +12,7 @@ namespace Console2Desk.TouchButtons
 {
     public static class ProcessExtensions
     {
+
         [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Auto)]
         private static extern bool CreateProcessWithTokenW(
         IntPtr hToken,

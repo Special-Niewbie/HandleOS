@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace Console2Desk.FuturesButtons
 {
@@ -31,10 +26,23 @@ namespace Console2Desk.FuturesButtons
         }
 
         // Method to increase system RAM
-        public void IncreaseRAM()
+        public void IncreaseRAM(MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
+                // Show warning message to the user
+                DialogResult dialogResult = messagesBoxImplementation.ShowMessage(
+                    "If you are using HandleOS with at least 16GB of RAM, this feature is not necessary. This feature is useful for HandleOS or Windows OS installations with limited RAM between 1GB to 4GB to rebalance system RAM usage. If you are in this scenario, press YES. Otherwise, press NO.",
+                    "RAM Virtual Increase Warning",
+                    MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.No)
+                {
+                    // User chose not to proceed
+                    messagesBoxImplementation.ShowMessage("Operation cancelled.", "Cancelled", MessageBoxButtons.OK);
+                    return;
+                }
+
                 // Get total physical memory using SystemInfo
                 string output = ExecuteCmd("Systeminfo | find \"Total Physical Memory\"");
 
@@ -57,11 +65,11 @@ namespace Console2Desk.FuturesButtons
                     double RAM_GB = RAM / 1024.0;
                     double maximumSize_GB = maximumSize / 1024.0;
 
-                    MessageBox.Show($"Congratulations! RAM available in the system has been increased from {RAM_GB:N2} GB to {maximumSize_GB:N2} GB.", "RAM Increased Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    messagesBoxImplementation.ShowMessage($"Congratulations! RAM available in the system has been increased from {RAM_GB:N2} GB to {maximumSize_GB:N2} GB.", "RAM Increased Successfully", MessageBoxButtons.OK);
 
                     // Ask the user if they want to restart the system
-                    DialogResult dialogResult = MessageBox.Show("Do you want to restart the system to apply the changes?", "Restart Required", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
+                    DialogResult restartDialogResult = messagesBoxImplementation.ShowMessage("Do you want to restart the system to apply the changes?", "Restart Required", MessageBoxButtons.YesNo);
+                    if (restartDialogResult == DialogResult.Yes)
                     {
                         // Riavvia il sistema
                         ExecuteCmd("Shutdown -r -t 5 -c \"REBOOTING SYSTEM\"");
@@ -69,12 +77,12 @@ namespace Console2Desk.FuturesButtons
                 }
                 else
                 {
-                    MessageBox.Show("Unable to retrieve installed RAM amount.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messagesBoxImplementation.ShowMessage("Unable to retrieve installed RAM amount.", "Error", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)
             {
-                //MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
     }

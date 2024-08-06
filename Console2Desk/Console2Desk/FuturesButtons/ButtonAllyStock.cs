@@ -23,7 +23,7 @@ namespace Console2Desk.FuturesButtons
 {
     internal class ButtonAllyStock
     {
-        public static void CodeForallyStockButton(Form1 form)
+        public static void CodeForallyStockButton(Form1 form, MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace Console2Desk.FuturesButtons
                 {
                     if (mainKey == null)
                     {
-                        MessageBox.Show("Unable to access the registry key.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messagesBoxImplementation.ShowMessage("Unable to access the registry key.", "Error", MessageBoxButtons.OK);
                         return;
                     }
                     subKeyNames = mainKey.GetSubKeyNames();
@@ -72,7 +72,7 @@ namespace Console2Desk.FuturesButtons
 
                 if (subKeyName == null)
                 {
-                    MessageBox.Show("Unable to find the appropriate subkey.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messagesBoxImplementation.ShowMessage("Unable to find the appropriate subkey.", "Error", MessageBoxButtons.OK);
                     return;
                 }
 
@@ -125,12 +125,12 @@ namespace Console2Desk.FuturesButtons
                             key.SetValue("DALRestrictedModesBCD4", new byte[0], RegistryValueKind.Binary);
                             key.SetValue("DALRestrictedModesBCD5", new byte[0], RegistryValueKind.Binary);
 
-                            MessageBox.Show("Registry keys reset successfully. You may need to restart your computer to apply these changes.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            messagesBoxImplementation.ShowMessage("Registry keys reset successfully. You may need to restart your computer to apply these changes.", "Success", MessageBoxButtons.OK);
                             form.CheckRegistrySettings();
                         }
                         else
                         {
-                            MessageBox.Show("Unable to create or access the registry key.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            messagesBoxImplementation.ShowMessage("Unable to create or access the registry key.", "Error", MessageBoxButtons.OK);
                         }
                     }
                 }
@@ -140,12 +140,12 @@ namespace Console2Desk.FuturesButtons
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error accessing or creating registry key. Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messagesBoxImplementation.ShowMessage($"Error accessing or creating registry key. Error: {ex.Message}", "Error", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
     }

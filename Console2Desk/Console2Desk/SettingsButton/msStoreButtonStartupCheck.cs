@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace Console2Desk.SettingsButton
 {
     internal class msStoreButtonStartupCheck
     {
-        public static void CheckMsStoreInstallation(Button msStoreButton)
+        public static void CheckMsStoreInstallation(Button msStoreButton, MessagesBoxImplementation messagesBoxImplementation)
         {
             // Run the check in a separate thread
             Thread checkThread = new Thread(() =>
@@ -58,7 +53,7 @@ namespace Console2Desk.SettingsButton
                     // Show error message on the main thread
                     msStoreButton.Invoke((MethodInvoker)delegate
                     {
-                        MessageBox.Show($"An error occurred while checking MS Store installation: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messagesBoxImplementation.ShowMessage($"An error occurred while checking MS Store installation: {ex.Message}", "Error", MessageBoxButtons.OK);
                     });
                 }
             });

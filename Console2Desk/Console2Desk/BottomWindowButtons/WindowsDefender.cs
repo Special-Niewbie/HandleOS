@@ -23,7 +23,7 @@ namespace Console2Desk.BottomWindowButtons
 {
     internal class WindowsDefender
     {
-        public static void DisableRealTimeProtection()
+        public static void DisableRealTimeProtection(MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
@@ -42,12 +42,12 @@ namespace Console2Desk.BottomWindowButtons
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while disabling Real-Time Protection: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage($"An error occurred while disabling Real-Time Protection: {ex.Message}", "Error", MessageBoxButtons.OK);
                 Cursor.Current = Cursors.Default;
             }
         }
 
-        public static void EnableRealTimeProtection()
+        public static void EnableRealTimeProtection(MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
@@ -66,12 +66,12 @@ namespace Console2Desk.BottomWindowButtons
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred while enabling Real-Time Protection: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage($"An error occurred while enabling Real-Time Protection: {ex.Message}", "Error", MessageBoxButtons.OK);
                 Cursor.Current = Cursors.Default;
             }
         }
 
-        public static void OpenWindowsDefender()
+        public static void OpenWindowsDefender(MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
@@ -92,7 +92,7 @@ namespace Console2Desk.BottomWindowButtons
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
     }

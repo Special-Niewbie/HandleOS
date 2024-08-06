@@ -1,3 +1,5 @@
-2024/07/10-11:04:08.702 17c4 Reusing MANIFEST C:\Users\HandleOS\AppData\Roaming\Playnite\browsercache\Local Storage\leveldb/MANIFEST-000009
-2024/07/10-11:04:08.710 17c4 Recovering log #11
-2024/07/10-11:04:08.712 17c4 Reusing old log C:\Users\HandleOS\AppData\Roaming\Playnite\browsercache\Local Storage\leveldb/000011.log 
+2024/08/06-04:11:15.469 d54 Recovering log #11
+2024/08/06-04:11:15.484 d54 Level-0 table #13: started
+2024/08/06-04:11:15.521 d54 Level-0 table #13: 608 bytes OK
+2024/08/06-04:11:15.559 d54 Delete type=0 #11
+2024/08/06-04:11:15.559 d54 Delete type=3 #9

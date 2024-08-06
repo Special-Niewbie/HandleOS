@@ -1,26 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using Microsoft.Win32;
+﻿using System.Diagnostics;
 using System.Runtime.InteropServices;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Reflection;
+
 
 namespace Console2Desk
 {
     public partial class AboutBox : Form
     {
         private WinTheme winTheme;
-        public AboutBox()
+
+        private Form _form;
+        private System.Windows.Forms.Timer _timer;
+
+        public AboutBox(Form form, System.Windows.Forms.Timer timer)
         {
             InitializeComponent();
-            winTheme = new WinTheme(this.Handle);
+            _form = form;
+            _timer = timer;
+            
+
+            WinTheme winTheme = new WinTheme(this.Handle);
             winTheme.ApplyTheme();
             this.MaximizeBox = false;
 
@@ -30,6 +28,8 @@ namespace Console2Desk
 
             pictureBox2.MouseDown += pictureBox2_MouseDown;
 
+            this.Shown += AboutBox_Shown;
+            this.FormClosed += AboutBox_FormClosed;
         }
         private void AboutBox_Load(object sender, EventArgs e)
         {
@@ -43,6 +43,26 @@ namespace Console2Desk
             {
                 labelVersionDescription.Text = "Version: Unknown";
             }
+        }
+
+        private void AboutBox_Shown(object sender, EventArgs e)
+        {
+            PauseTimer(); // Pause the timer when the AboutBox is shown
+        }
+
+        private void AboutBox_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ResumeTimer(); // Resume the timer when the AboutBox is closed
+        }
+
+        private void PauseTimer()
+        {
+            _timer?.Stop();
+        }
+
+        private void ResumeTimer()
+        {
+            _timer?.Start();
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -91,12 +111,12 @@ namespace Console2Desk
                 }
                 catch (System.ComponentModel.Win32Exception ex)
                 {
-                    MessageBox.Show("Unable to open the default browser. Make sure it's properly configured on your system.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DependencyContainer.MessagesBoxImplementation.ShowMessage("Unable to open the default browser. Make sure it's properly configured on your system.", "Error", MessageBoxButtons.OK);
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
 
                 }
             }
@@ -109,7 +129,12 @@ namespace Console2Desk
 
         private void labelVersionDescription_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5223,11 +5223,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Console2Desk\\Console2Desk\\Console2Desk.csproj",
+      "projectUniqueName": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Console2Desk.csproj",
       "projectName": "Console2Desk",
-      "projectPath": "C:\\Console2Desk\\Console2Desk\\Console2Desk.csproj",
+      "projectPath": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Console2Desk.csproj",
       "packagesPath": "C:\\Users\\HandleOS\\.nuget\\packages\\",
-      "outputPath": "C:\\Console2Desk\\Console2Desk\\obj\\",
+      "outputPath": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

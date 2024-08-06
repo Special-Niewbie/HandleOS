@@ -24,14 +24,14 @@ namespace Console2Desk.TouchButtons
 {
     public class ConsoleButton
     {
-        public static void CodeForconsoleButton1(Special_Niewbie_Button Button, string fullscreenAppPath, string defaultFullscreenSteamAppPath)
+        public static void CodeForconsoleButton1(Special_Niewbie_Button Button, string fullscreenAppPath, string defaultFullscreenSteamAppPath, MessagesBoxImplementation messagesBoxImplementation)
         {
             string settingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Console2Desk", "Settings.ini");
             string selectedPath = string.Empty;
 
             if (!File.Exists(settingsPath))
             {
-                DialogResult result = MessageBox.Show("Settings.ini not found. Do you want to apply default settings with Playnite?", "Settings Not Found", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = messagesBoxImplementation.ShowMessage("Settings.ini not found. Do you want to apply default settings with Playnite?", "Settings Not Found", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
                     // Apply default settings with Playnite
@@ -56,13 +56,13 @@ namespace Console2Desk.TouchButtons
 
                         if (string.IsNullOrEmpty(selectedPath))
                         {
-                            MessageBox.Show("Invalid settings. Please configure the settings first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            messagesBoxImplementation.ShowMessage("Invalid settings. Please configure the settings first.", "Error", MessageBoxButtons.OK);
                             return;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Settings not configured. Please configure the settings first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messagesBoxImplementation.ShowMessage("Settings not configured. Please configure the settings first.", "Error", MessageBoxButtons.OK);
                         return;
                     }
                 }
@@ -87,7 +87,7 @@ namespace Console2Desk.TouchButtons
                 }
                 else
                 {
-                    MessageBox.Show("Invalid settings. Please configure the settings first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    messagesBoxImplementation.ShowMessage("Invalid settings. Please configure the settings first.", "Error", MessageBoxButtons.OK);
                     return;
                 }
             }
@@ -105,14 +105,14 @@ namespace Console2Desk.TouchButtons
                     }
                     else
                     {
-                        MessageBox.Show("Registry key not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messagesBoxImplementation.ShowMessage("Registry key not found.", "Error", MessageBoxButtons.OK);
                         return; // Exit the method if the registry key was not found
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error modifying registry key: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Error modifying registry key: " + ex.Message, "Error", MessageBoxButtons.OK);
                 return; // Exit the method on error
             }
 
@@ -127,7 +127,7 @@ namespace Console2Desk.TouchButtons
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error killing explorer.exe process: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("Error killing explorer.exe process: " + ex.Message, "Error", MessageBoxButtons.OK);
                 return; // Exit the method on error
             }
 

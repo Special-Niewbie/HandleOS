@@ -69,6 +69,9 @@
     <None Update="Forwarders\File_Explorer_Classic.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Forwarders\UT_Classic.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="HotKeys4Console2Desk.exe">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -73,6 +73,16 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3ResLegion {
+            get {
+                object obj = ResourceManager.GetObject("_3ResLegion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Addon_IS {
             get {
                 object obj = ResourceManager.GetObject("Addon_IS", resourceCulture);
@@ -96,6 +106,26 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap Amd_Adrenaline70x70 {
             get {
                 object obj = ResourceManager.GetObject("Amd_Adrenaline70x70", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AMDgpu {
+            get {
+                object obj = ResourceManager.GetObject("AMDgpu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bcd {
+            get {
+                object obj = ResourceManager.GetObject("Bcd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap Console2DeskSettings32 {
             get {
                 object obj = ResourceManager.GetObject("Console2DeskSettings32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CoreIsolation_CFG {
+            get {
+                object obj = ResourceManager.GetObject("CoreIsolation_CFG", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +253,39 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LegionGoRes {
+            get {
+                object obj = ResourceManager.GetObject("LegionGoRes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Low_Latency {
+            get {
+                object obj = ResourceManager.GetObject("Low_Latency", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Meltdown_Spectre256 {
+            get {
+                object obj = ResourceManager.GetObject("Meltdown_Spectre256", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -346,6 +416,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap steam64 {
             get {
                 object obj = ResourceManager.GetObject("steam64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap System_Devices {
+            get {
+                object obj = ResourceManager.GetObject("System_Devices", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8473,3 +8473,957 @@ System.UnauthorizedAccessException: Access to the path 'C:\Windows\System32\Com\
 13-07 01:09:35.609|DEBUG|PlayniteApplication:Releasing Playnite resources...
 13-07 01:09:35.631|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: c7813202-9a7a-4228-9d5f-65706a16e974
 13-07 01:09:35.648|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: c7813202-9a7a-4228-9d5f-65706a16e974, True
+06-08 03:06:59.464|INFO |ProgramEntry:App arguments: '--hidesplashscreen'
+06-08 03:07:04.002|INFO |PlayniteApplication:Application started from 'C:\Users\HandleOS\AppData\Local\Playnite'
+06-08 03:07:05.055|ERROR|FullscreenApplication:Failed to load game controller mappings:
+06-08 03:07:05.055|ERROR|FullscreenApplication:Invalid RWops
+06-08 03:07:05.747|INFO |ExtensionFactory:Loaded plugin: DKG Theme Modifier, version 2.8.3
+06-08 03:07:05.777|INFO |ExtensionFactory:Loaded plugin: Epic Store library integration, version 2.20
+06-08 03:07:05.836|INFO |ExtensionFactory:Loaded plugin: GOG library integration, version 2.19
+06-08 03:07:05.853|INFO |ExtensionFactory:Loaded plugin: IGDB metadata provider, version 2.10
+06-08 03:07:05.876|INFO |ExtensionFactory:Loaded plugin: EA app library integration, version 2.13
+06-08 03:07:06.155|INFO |ExtensionFactory:Loaded plugin: Steam library integration, version 2.23
+06-08 03:07:06.179|INFO |ExtensionFactory:Loaded plugin: Ubisoft Connect library integration, version 2.6
+06-08 03:07:06.194|INFO |ExtensionFactory:Loaded plugin: Wikipedia Metadata, version 1.6
+06-08 03:07:06.194|INFO |ExtensionFactory:Loaded plugin: Xbox library integration, version 2.14
+06-08 03:07:06.505|DEBUG|WindowFactory:Show window Playnite.FullscreenApp.Windows.MainWindowFactory: f751103f-4dfe-46d8-8575-e015a4c75250
+06-08 03:07:08.373|DEBUG|GamesCollectionViewEntry:Reloading collection item view properties.
+06-08 03:07:08.459|INFO |GameDatabase:Opening db C:\Users\HandleOS\AppData\Roaming\Playnite\library
+06-08 03:07:08.531|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 3cfe7335-d33a-4836-839a-45c2fc517d5d
+06-08 03:07:09.223|DEBUG|ExecutionTimer:--- Timer 'DatabaseLoadCollections', 742 ms to complete.
+06-08 03:07:09.364|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 3cfe7335-d33a-4836-839a-45c2fc517d5d, True
+06-08 03:07:09.779|DEBUG|BaseCollectionView:Updating collection view settings.
+06-08 03:07:09.822|WARN |MainViewModelBase:Startup library update disabled because of no internet connection.
+06-08 03:07:09.833|INFO |PlayniteApplication:Application 10.33.0.16167 started
+06-08 03:07:14.858|DEBUG|Downloader:Downloading string content from https://www.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 03:07:15.174|WARN |Updater:Failed to download update manifest from main URL
+System.Net.WebException: The remote name could not be resolved: 'www.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 03:07:15.174|DEBUG|Downloader:Downloading string content from https://api.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 03:07:15.197|WARN |Updater:Failed to download update manifest from secondary URL
+System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 03:07:15.197|WARN |PlayniteApplication:Failed to process program update.
+System.Exception: Failed to download update manifest.
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 207
+   at Playnite.Updater.get_IsUpdateAvailable() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 47
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1248
+06-08 03:07:15.317|ERROR|Addons:Failed to check for addon for update. IGDBMetadata_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.352|ERROR|Addons:Failed to check for addon for update. WikipediaMetadata_6c1bdd62-77bf-4866-a264-11544508687c
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.369|ERROR|Addons:Failed to check for addon for update. EpicGamesLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.369|ERROR|Addons:Failed to check for addon for update. GogLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.384|ERROR|Addons:Failed to check for addon for update. OriginLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.384|ERROR|Addons:Failed to check for addon for update. SteamLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.409|ERROR|Addons:Failed to check for addon for update. UplayLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.418|ERROR|Addons:Failed to check for addon for update. XboxLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.434|ERROR|Addons:Failed to check for addon for update. DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.489|ERROR|Addons:Failed to check for addon for update. (u)biquity_e71482ce-33e2-4b23-aaea-de576975d3a9
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.489|ERROR|Addons:Failed to check for addon for update. DashX_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.518|ERROR|Addons:Failed to check for addon for update. Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.529|ERROR|Addons:Failed to check for addon for update. Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.529|ERROR|Addons:Failed to check for addon for update. PlayniteLike_903a52e7-d923-48e2-907c-8829a9307c6a
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.542|ERROR|Addons:Failed to check for addon for update. PS5reborn_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.542|ERROR|Addons:Failed to check for addon for update. ReXBOXSX
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:07:15.556|WARN |PlayniteApplication:Failed to process addon update check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.Addons.CheckAddonUpdates(ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 127
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1290
+06-08 03:07:15.672|WARN |PlayniteApplication:Failed to process addon blacklist check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.PlayniteApplication.CheckAddonBlacklist() in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1225
+06-08 03:07:31.203|DEBUG|WindowFactory:Show dialog window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: b551fce2-bbe6-4862-9a6b-d5047a9e7233
+06-08 03:07:37.238|DEBUG|WindowFactory:Closing window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: b551fce2-bbe6-4862-9a6b-d5047a9e7233, True
+06-08 03:07:39.054|INFO |PlayniteApplication:Shutting down Playnite and starting an app.
+06-08 03:07:39.161|DEBUG|PlayniteApplication:Releasing Playnite resources...
+06-08 03:07:39.248|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 368dbb99-33eb-4cbb-bb04-28f72beb6fb9
+06-08 03:07:39.338|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 368dbb99-33eb-4cbb-bb04-28f72beb6fb9, True
+06-08 03:07:39.472|DEBUG|ProcessStarter:Starting process: shutdown.exe, -r -t 0, , False
+06-08 03:07:40.201|INFO |PlayniteApplication:Shutting down Playnite
+06-08 03:08:30.369|INFO |ProgramEntry:App arguments: '--hidesplashscreen'
+06-08 03:08:37.662|INFO |PlayniteApplication:Application started from 'C:\Users\HandleOS\AppData\Local\Playnite'
+06-08 03:08:42.593|ERROR|FullscreenApplication:Failed to load game controller mappings:
+06-08 03:08:42.593|ERROR|FullscreenApplication:Invalid RWops
+06-08 03:08:44.347|INFO |ExtensionFactory:Loaded plugin: DKG Theme Modifier, version 2.8.3
+06-08 03:08:44.512|INFO |ExtensionFactory:Loaded plugin: Epic Store library integration, version 2.20
+06-08 03:08:44.656|INFO |ExtensionFactory:Loaded plugin: GOG library integration, version 2.19
+06-08 03:08:44.804|INFO |ExtensionFactory:Loaded plugin: IGDB metadata provider, version 2.10
+06-08 03:08:44.931|INFO |ExtensionFactory:Loaded plugin: EA app library integration, version 2.13
+06-08 03:08:46.305|INFO |ExtensionFactory:Loaded plugin: Steam library integration, version 2.23
+06-08 03:08:46.423|INFO |ExtensionFactory:Loaded plugin: Ubisoft Connect library integration, version 2.6
+06-08 03:08:46.542|INFO |ExtensionFactory:Loaded plugin: Wikipedia Metadata, version 1.6
+06-08 03:08:46.735|INFO |ExtensionFactory:Loaded plugin: Xbox library integration, version 2.14
+06-08 03:08:47.537|DEBUG|WindowFactory:Show window Playnite.FullscreenApp.Windows.MainWindowFactory: 17e3442d-f475-488d-b3e2-4331efd03ee5
+06-08 03:08:50.487|DEBUG|GamesCollectionViewEntry:Reloading collection item view properties.
+06-08 03:08:50.513|INFO |GameDatabase:Opening db C:\Users\HandleOS\AppData\Roaming\Playnite\library
+06-08 03:08:50.531|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: f41c421a-0d80-451f-92cb-8e5f79a6cff6
+06-08 03:08:50.955|DEBUG|ExecutionTimer:--- Timer 'DatabaseLoadCollections', 429 ms to complete.
+06-08 03:08:51.004|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: f41c421a-0d80-451f-92cb-8e5f79a6cff6, True
+06-08 03:08:51.187|DEBUG|BaseCollectionView:Updating collection view settings.
+06-08 03:08:51.252|WARN |MainViewModelBase:Startup library update disabled because of no internet connection.
+06-08 03:08:51.252|INFO |PlayniteApplication:Application 10.33.0.16167 started
+06-08 03:08:56.372|DEBUG|Downloader:Downloading string content from https://www.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 03:08:56.974|WARN |Updater:Failed to download update manifest from main URL
+System.Net.WebException: The remote name could not be resolved: 'www.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 03:08:57.112|DEBUG|Downloader:Downloading string content from https://api.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 03:08:57.123|WARN |Updater:Failed to download update manifest from secondary URL
+System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 03:08:57.123|WARN |PlayniteApplication:Failed to process program update.
+System.Exception: Failed to download update manifest.
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 207
+   at Playnite.Updater.get_IsUpdateAvailable() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 47
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1248
+06-08 03:08:57.368|ERROR|Addons:Failed to check for addon for update. IGDBMetadata_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.416|ERROR|Addons:Failed to check for addon for update. WikipediaMetadata_6c1bdd62-77bf-4866-a264-11544508687c
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.416|ERROR|Addons:Failed to check for addon for update. EpicGamesLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.449|ERROR|Addons:Failed to check for addon for update. GogLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.449|ERROR|Addons:Failed to check for addon for update. OriginLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.466|ERROR|Addons:Failed to check for addon for update. SteamLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.488|ERROR|Addons:Failed to check for addon for update. UplayLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.488|ERROR|Addons:Failed to check for addon for update. XboxLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.519|ERROR|Addons:Failed to check for addon for update. DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.519|ERROR|Addons:Failed to check for addon for update. (u)biquity_e71482ce-33e2-4b23-aaea-de576975d3a9
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.519|ERROR|Addons:Failed to check for addon for update. DashX_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.569|ERROR|Addons:Failed to check for addon for update. Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.586|ERROR|Addons:Failed to check for addon for update. Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.590|ERROR|Addons:Failed to check for addon for update. PlayniteLike_903a52e7-d923-48e2-907c-8829a9307c6a
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.590|ERROR|Addons:Failed to check for addon for update. PS5reborn_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.616|ERROR|Addons:Failed to check for addon for update. ReXBOXSX
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:08:57.621|WARN |PlayniteApplication:Failed to process addon update check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.Addons.CheckAddonUpdates(ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 127
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1290
+06-08 03:08:57.656|WARN |PlayniteApplication:Failed to process addon blacklist check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.PlayniteApplication.CheckAddonBlacklist() in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1225
+06-08 03:08:58.685|INFO |GamesEditor:Starting Windows Task Manager, e845fe6a-6df4-4821-8437-bc16827af45b, 4f6a5d77a2ae885790ee81fac32cc7a3, 00000000-0000-0000-0000-000000000000
+06-08 03:09:01.543|DEBUG|GamesEditor:Using generic controller start a game.
+06-08 03:09:01.675|DEBUG|ProcessStarter:Starting process: C:\Windows\System32\Taskmgr.exe, , C:\Windows\System32, False
+06-08 03:09:03.134|INFO |GamesEditor:Started Windows Task Manager game.
+06-08 03:30:01.349|INFO |GamesEditor:Game Windows Task Manager stopped after 1257 seconds.
+06-08 03:30:09.734|INFO |GamesEditor:Starting Console2Desk, 25569eeb-cf33-4132-94b4-a278c6bf02ac, 161a92e9e6aca6914d1c0fa7cb8c689d, 00000000-0000-0000-0000-000000000000
+06-08 03:30:09.761|DEBUG|GamesEditor:Using generic controller start a game.
+06-08 03:30:09.780|DEBUG|ProcessStarter:Starting process: C:\Program Files\Console2Desk\Console2Desk.exe, , C:\Program Files\Console2Desk, False
+06-08 03:30:13.608|INFO |GamesEditor:Started Console2Desk game.
+06-08 03:30:42.727|INFO |GamesEditor:Game Console2Desk stopped after 28 seconds.
+06-08 03:30:51.389|DEBUG|WindowFactory:Show dialog window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: 29aebec5-af83-4b95-b96b-d9bca0eae42a
+06-08 03:30:56.806|DEBUG|WindowFactory:Closing window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: 29aebec5-af83-4b95-b96b-d9bca0eae42a, True
+06-08 03:30:56.917|DEBUG|WindowFactory:Show dialog window Playnite.FullscreenApp.Windows.SettingsWindowFactory: a7039bb4-1d0b-4543-8935-f0556470c03d
+06-08 03:30:59.802|DEBUG|WindowFactory:Closing window Playnite.FullscreenApp.Windows.SettingsWindowFactory: a7039bb4-1d0b-4543-8935-f0556470c03d, True
+06-08 03:31:02.236|DEBUG|WindowFactory:Show dialog window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: 74e990a2-3464-4cdf-8c38-4772623d51da
+06-08 03:31:05.666|DEBUG|WindowFactory:Closing window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: 74e990a2-3464-4cdf-8c38-4772623d51da, True
+06-08 03:31:05.708|INFO |MainViewModelBase:Switching to Desktop mode.
+06-08 03:31:05.708|DEBUG|WindowFactory:Closing window Playnite.FullscreenApp.Windows.MainWindowFactory: 17e3442d-f475-488d-b3e2-4331efd03ee5, 
+06-08 03:31:05.904|INFO |PlayniteApplication:Shutting down Playnite and starting an app.
+06-08 03:31:06.101|DEBUG|PlayniteApplication:Releasing Playnite resources...
+06-08 03:31:06.177|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: e5f9b57f-6e83-4df8-8f43-4ab8ac4d3a55
+06-08 03:31:06.403|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: e5f9b57f-6e83-4df8-8f43-4ab8ac4d3a55, True
+06-08 03:31:06.807|DEBUG|ProcessStarter:Starting process: C:\Users\HandleOS\AppData\Local\Playnite\Playnite.DesktopApp.exe, --masterinstance --nolibupdate --startdesktop, , False
+06-08 03:31:08.266|INFO |ProgramEntry:App arguments: '--masterinstance,--nolibupdate,--startdesktop'
+06-08 03:31:13.485|INFO |PlayniteApplication:Application started from 'C:\Users\HandleOS\AppData\Local\Playnite'
+06-08 03:31:14.525|INFO |ExtensionFactory:Loaded plugin: DKG Theme Modifier, version 2.8.3
+06-08 03:31:14.569|INFO |ExtensionFactory:Loaded plugin: Epic Store library integration, version 2.20
+06-08 03:31:14.591|INFO |ExtensionFactory:Loaded plugin: GOG library integration, version 2.19
+06-08 03:31:14.633|INFO |ExtensionFactory:Loaded plugin: IGDB metadata provider, version 2.10
+06-08 03:31:14.645|INFO |ExtensionFactory:Loaded plugin: EA app library integration, version 2.13
+06-08 03:31:14.852|INFO |ExtensionFactory:Loaded plugin: Steam library integration, version 2.23
+06-08 03:31:14.867|INFO |ExtensionFactory:Loaded plugin: Ubisoft Connect library integration, version 2.6
+06-08 03:31:14.871|INFO |ExtensionFactory:Loaded plugin: Wikipedia Metadata, version 1.6
+06-08 03:31:14.897|INFO |ExtensionFactory:Loaded plugin: Xbox library integration, version 2.14
+06-08 03:31:15.155|DEBUG|WindowFactory:Show window Playnite.DesktopApp.Windows.MainWindowFactory: b09238ac-30ad-48b7-848b-06b751990414
+06-08 03:31:16.321|DEBUG|GamesCollectionViewEntry:Reloading collection item view properties.
+06-08 03:31:16.618|INFO |GameDatabase:Opening db C:\Users\HandleOS\AppData\Roaming\Playnite\library
+06-08 03:31:16.639|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 5fa215a9-98a5-4ae6-9cfd-5a7a626911ee
+06-08 03:31:16.950|DEBUG|ExecutionTimer:--- Timer 'DatabaseLoadCollections', 329 ms to complete.
+06-08 03:31:18.040|INFO |DatabaseStats:Completely recalculating database statistics...
+06-08 03:31:18.081|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 5fa215a9-98a5-4ae6-9cfd-5a7a626911ee, True
+06-08 03:31:18.550|WARN |MainViewModelBase:Startup library update disabled via cmdline.
+06-08 03:31:18.673|INFO |PlayniteApplication:Executing command "SwitchMode" from pipe with arguments "desktop"
+06-08 03:31:18.673|INFO |PlayniteApplication:Application 10.33.0.16167 started
+06-08 03:31:23.677|DEBUG|Downloader:Downloading string content from https://www.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 03:31:23.902|WARN |Updater:Failed to download update manifest from main URL
+System.Net.WebException: The remote name could not be resolved: 'www.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 03:31:23.902|DEBUG|Downloader:Downloading string content from https://api.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 03:31:23.918|WARN |Updater:Failed to download update manifest from secondary URL
+System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 03:31:23.918|WARN |PlayniteApplication:Failed to process program update.
+System.Exception: Failed to download update manifest.
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 207
+   at Playnite.Updater.get_IsUpdateAvailable() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 47
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1248
+06-08 03:31:24.023|ERROR|Addons:Failed to check for addon for update. IGDBMetadata_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.029|ERROR|Addons:Failed to check for addon for update. WikipediaMetadata_6c1bdd62-77bf-4866-a264-11544508687c
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.029|ERROR|Addons:Failed to check for addon for update. EpicGamesLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.029|ERROR|Addons:Failed to check for addon for update. GogLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.042|ERROR|Addons:Failed to check for addon for update. OriginLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.042|ERROR|Addons:Failed to check for addon for update. SteamLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.042|ERROR|Addons:Failed to check for addon for update. UplayLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.042|ERROR|Addons:Failed to check for addon for update. XboxLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.059|ERROR|Addons:Failed to check for addon for update. DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.059|ERROR|Addons:Failed to check for addon for update. (u)biquity_e71482ce-33e2-4b23-aaea-de576975d3a9
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.087|ERROR|Addons:Failed to check for addon for update. DashX_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.102|ERROR|Addons:Failed to check for addon for update. Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.108|ERROR|Addons:Failed to check for addon for update. Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.108|ERROR|Addons:Failed to check for addon for update. PlayniteLike_903a52e7-d923-48e2-907c-8829a9307c6a
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.108|ERROR|Addons:Failed to check for addon for update. PS5reborn_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.123|ERROR|Addons:Failed to check for addon for update. ReXBOXSX
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 03:31:24.123|WARN |PlayniteApplication:Failed to process addon update check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.Addons.CheckAddonUpdates(ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 127
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1290
+06-08 03:31:24.146|WARN |PlayniteApplication:Failed to process addon blacklist check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.PlayniteApplication.CheckAddonBlacklist() in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1225
+06-08 03:31:40.543|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 77675310-7790-42a3-a453-8f4f9b52dc23
+06-08 04:02:53.264|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: bffab555-ebdb-4084-8a4e-81096a04ac6f
+06-08 04:02:53.283|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: bffab555-ebdb-4084-8a4e-81096a04ac6f, True
+06-08 04:03:11.944|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 2c42ceaf-f6a4-466c-9fe9-4f463c75ea42
+06-08 04:03:11.960|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 2c42ceaf-f6a4-466c-9fe9-4f463c75ea42, True
+06-08 04:03:26.068|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 1003fb81-103b-4298-9f31-da280f1e3efe
+06-08 04:03:26.089|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 1003fb81-103b-4298-9f31-da280f1e3efe, True
+06-08 04:03:41.326|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: 77675310-7790-42a3-a453-8f4f9b52dc23, True
+06-08 04:04:42.609|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 07668fc0-124c-4253-8483-525158635b13
+06-08 04:11:00.550|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 8774b074-f74a-4201-9ae4-76014ad095da
+06-08 04:11:00.568|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 8774b074-f74a-4201-9ae4-76014ad095da, True
+06-08 04:11:15.387|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: d0487fb2-30e1-40da-96f1-6d3b6c4af779
+06-08 04:11:16.702|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: d0487fb2-30e1-40da-96f1-6d3b6c4af779, True
+06-08 04:11:16.735|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GoogleImageDownloadWindowFactory: 0340d869-31ad-4043-8251-3ceeef0456de
+06-08 04:11:28.001|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 44ee8f22-a524-4046-841c-eecc7d8f23d3
+06-08 04:11:28.018|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 44ee8f22-a524-4046-841c-eecc7d8f23d3, True
+06-08 04:12:29.117|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 32c7e5ed-a485-4e01-8e94-b0e63b32a6ca
+06-08 04:12:29.131|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 32c7e5ed-a485-4e01-8e94-b0e63b32a6ca, True
+06-08 04:12:37.912|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 5d684beb-40ea-4a42-98ef-d9295fee0aac
+06-08 04:12:37.927|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 5d684beb-40ea-4a42-98ef-d9295fee0aac, True
+06-08 04:17:25.469|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 4ee1b275-0db8-4abd-9fcd-1635f870a73d
+06-08 04:17:25.487|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 4ee1b275-0db8-4abd-9fcd-1635f870a73d, True
+06-08 04:18:59.204|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: f71ebcbd-bbaf-4d53-b33d-acd066263a26
+06-08 04:18:59.225|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: f71ebcbd-bbaf-4d53-b33d-acd066263a26, True
+06-08 04:19:02.530|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: ae6a4da2-88ad-4f9c-9a2b-e0cd0d50c25a
+06-08 04:19:02.553|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: ae6a4da2-88ad-4f9c-9a2b-e0cd0d50c25a, True
+06-08 04:20:06.325|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: 07668fc0-124c-4253-8483-525158635b13, True
+06-08 04:20:55.501|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 60ddcd94-1df5-4d94-86fc-bd97fde17a8d
+06-08 04:21:19.096|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: f580ca89-0832-4781-be0c-db773a52f857
+06-08 04:22:23.585|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 7e6fbb83-20e1-4473-9887-aedc567c4acc
+06-08 04:22:23.603|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 7e6fbb83-20e1-4473-9887-aedc567c4acc, True
+06-08 04:52:09.711|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 36be8127-d5f2-46e4-ade4-93c84d40d17c
+06-08 04:56:58.753|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: 36be8127-d5f2-46e4-ade4-93c84d40d17c, True
+06-08 04:57:01.901|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: c83cb88e-a0b1-4b9e-b2b0-a84b1635375b
+06-08 04:57:23.840|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: c83cb88e-a0b1-4b9e-b2b0-a84b1635375b, True
+06-08 04:57:26.864|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: e9be3be7-6267-4a8f-b71c-715c52998987
+06-08 04:57:38.164|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: e9be3be7-6267-4a8f-b71c-715c52998987, False
+06-08 04:57:41.696|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: c907b2c9-d9e2-4db2-92b8-d74661dd1c5c
+06-08 04:58:03.605|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: c907b2c9-d9e2-4db2-92b8-d74661dd1c5c, True
+06-08 04:58:06.934|INFO |GamesEditor:Starting User Tools Folder, 2ab60095-9c8f-4008-9006-c3cbf1aa31a2, 4a3fad79-4331-40ce-8800-90b57042301a, 00000000-0000-0000-0000-000000000000
+06-08 04:58:08.169|DEBUG|GamesEditor:Using generic controller start a game.
+06-08 04:58:08.169|DEBUG|ProcessStarter:Starting process: C:\Program Files\Console2Desk\Forwarders\UT_Classic.exe, , C:\Program Files\Console2Desk\Forwarders, False
+06-08 04:58:08.371|INFO |GamesEditor:Started User Tools Folder game.
+06-08 04:58:14.528|INFO |GamesEditor:Game User Tools Folder stopped after 6 seconds.
+06-08 04:58:36.974|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 64c981f4-4d59-489d-8ab2-53cf4022cfcc
+06-08 04:58:49.052|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 58c8c21f-d95d-4ea8-9410-4719ce9209a7
+06-08 04:59:03.721|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 3f33896a-6436-4cd6-94d4-3d634c2a00c0
+06-08 05:01:19.918|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 2ae080e5-a149-4b56-be2f-870b3c7a09bb
+06-08 05:10:25.235|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 305ae1ab-06e7-4275-b5d8-eb83f6641b5b
+06-08 05:10:25.287|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 305ae1ab-06e7-4275-b5d8-eb83f6641b5b, True
+06-08 05:10:55.732|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 2a514f4a-7b7d-455c-a33a-d728bfe16594
+06-08 05:10:55.752|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 2a514f4a-7b7d-455c-a33a-d728bfe16594, True
+06-08 05:11:00.755|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: 2ae080e5-a149-4b56-be2f-870b3c7a09bb, True
+06-08 05:11:12.202|DEBUG|WindowFactory:Show dialog window Playnite.DesktopApp.Windows.GameEditWindowFactory: 1180e5a1-53d1-498e-b137-2b95af56ccfa
+06-08 05:11:32.238|DEBUG|WindowFactory:Closing window Playnite.DesktopApp.Windows.GameEditWindowFactory: 1180e5a1-53d1-498e-b137-2b95af56ccfa, True
+06-08 05:11:37.581|INFO |PlayniteApplication:Shutting down Playnite
+06-08 05:11:37.655|DEBUG|PlayniteApplication:Releasing Playnite resources...
+06-08 05:11:37.720|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 921a9118-7193-4e8d-b399-61cf01058043
+06-08 05:11:37.744|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 921a9118-7193-4e8d-b399-61cf01058043, True
+06-08 05:20:00.562|INFO |ProgramEntry:App arguments: '--hidesplashscreen'
+06-08 05:20:06.559|INFO |PlayniteApplication:Application started from 'C:\Users\HandleOS\AppData\Local\Playnite'
+06-08 05:20:09.441|ERROR|FullscreenApplication:Failed to load game controller mappings:
+06-08 05:20:09.441|ERROR|FullscreenApplication:Invalid RWops
+06-08 05:20:10.306|INFO |ExtensionFactory:Loaded plugin: DKG Theme Modifier, version 2.8.3
+06-08 05:20:10.348|INFO |ExtensionFactory:Loaded plugin: Epic Store library integration, version 2.20
+06-08 05:20:10.378|INFO |ExtensionFactory:Loaded plugin: GOG library integration, version 2.19
+06-08 05:20:10.414|INFO |ExtensionFactory:Loaded plugin: IGDB metadata provider, version 2.10
+06-08 05:20:10.446|INFO |ExtensionFactory:Loaded plugin: EA app library integration, version 2.13
+06-08 05:20:10.704|INFO |ExtensionFactory:Loaded plugin: Steam library integration, version 2.23
+06-08 05:20:10.742|INFO |ExtensionFactory:Loaded plugin: Ubisoft Connect library integration, version 2.6
+06-08 05:20:10.772|INFO |ExtensionFactory:Loaded plugin: Wikipedia Metadata, version 1.6
+06-08 05:20:10.816|INFO |ExtensionFactory:Loaded plugin: Xbox library integration, version 2.14
+06-08 05:20:11.252|DEBUG|WindowFactory:Show window Playnite.FullscreenApp.Windows.MainWindowFactory: 21d1303a-5b43-4207-af8e-07178c62944c
+06-08 05:20:13.487|DEBUG|GamesCollectionViewEntry:Reloading collection item view properties.
+06-08 05:20:13.524|INFO |GameDatabase:Opening db C:\Users\HandleOS\AppData\Roaming\Playnite\library
+06-08 05:20:13.565|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: d20a7618-03f2-4b12-a21c-4a82c9c4d495
+06-08 05:20:13.898|DEBUG|ExecutionTimer:--- Timer 'DatabaseLoadCollections', 363 ms to complete.
+06-08 05:20:14.161|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: d20a7618-03f2-4b12-a21c-4a82c9c4d495, True
+06-08 05:20:14.339|DEBUG|BaseCollectionView:Updating collection view settings.
+06-08 05:20:14.390|WARN |MainViewModelBase:Startup library update disabled because of no internet connection.
+06-08 05:20:14.390|INFO |PlayniteApplication:Application 10.33.0.16167 started
+06-08 05:20:19.418|DEBUG|Downloader:Downloading string content from https://www.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 05:20:19.752|WARN |Updater:Failed to download update manifest from main URL
+System.Net.WebException: The remote name could not be resolved: 'www.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 05:20:19.790|DEBUG|Downloader:Downloading string content from https://api.playnite.link/update/stable/10.33/update.json using System.Text.UTF8Encoding encoding.
+06-08 05:20:19.794|WARN |Updater:Failed to download update manifest from secondary URL
+System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.WebClient.DownloadDataInternal(Uri address, WebRequest& request)
+   at System.Net.WebClient.DownloadString(Uri address)
+   at System.Net.WebClient.DownloadString(String address)
+   at Playnite.Common.Web.Downloader.DownloadString(String url, Encoding encoding) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 98
+   at Playnite.Common.Web.Downloader.DownloadString(String url) in C:\projects\playnite\source\Playnite\Common\Web\Downloader.cs:line 69
+   at Playnite.Updater.GetUpdateManifestData(String url) in C:\projects\playnite\source\Playnite\App\Updater.cs:line 226
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 182
+06-08 05:20:19.794|WARN |PlayniteApplication:Failed to process program update.
+System.Exception: Failed to download update manifest.
+   at Playnite.Updater.DownloadManifest() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 207
+   at Playnite.Updater.get_IsUpdateAvailable() in C:\projects\playnite\source\Playnite\App\Updater.cs:line 47
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1248
+06-08 05:20:19.904|ERROR|Addons:Failed to check for addon for update. IGDBMetadata_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.921|ERROR|Addons:Failed to check for addon for update. WikipediaMetadata_6c1bdd62-77bf-4866-a264-11544508687c
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.921|ERROR|Addons:Failed to check for addon for update. EpicGamesLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.933|ERROR|Addons:Failed to check for addon for update. GogLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.933|ERROR|Addons:Failed to check for addon for update. OriginLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.950|ERROR|Addons:Failed to check for addon for update. SteamLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.950|ERROR|Addons:Failed to check for addon for update. UplayLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.966|ERROR|Addons:Failed to check for addon for update. XboxLibrary_Builtin
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.966|ERROR|Addons:Failed to check for addon for update. DKGThemeModifier_ee4ed2de-7e02-4447-8441-685d320b0520
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.987|ERROR|Addons:Failed to check for addon for update. (u)biquity_e71482ce-33e2-4b23-aaea-de576975d3a9
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.987|ERROR|Addons:Failed to check for addon for update. DashX_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.997|ERROR|Addons:Failed to check for addon for update. Nintendo Switch-ish_0d020ed5-0f3c-4c1a-bf9a-c983ef7d74b7
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:19.997|ERROR|Addons:Failed to check for addon for update. Playnite Deck_905f24da-b02b-40df-9f6b-14c41fcdb05d
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:20.012|ERROR|Addons:Failed to check for addon for update. PlayniteLike_903a52e7-d923-48e2-907c-8829a9307c6a
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:20.012|ERROR|Addons:Failed to check for addon for update. PS5reborn_saVantCZ
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:20.031|ERROR|Addons:Failed to check for addon for update. ReXBOXSX
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Addons.CheckAddonsForUpdate(IEnumerable`1 manifests, ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 64
+06-08 05:20:20.031|WARN |PlayniteApplication:Failed to process addon update check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.Addons.CheckAddonUpdates(ServicesClient serviceClient) in C:\projects\playnite\source\Playnite\Addons\Addons.cs:line 127
+   at Playnite.PlayniteApplication.CheckForUpdates(Boolean checkProgram, Boolean checkAddons) in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1290
+06-08 05:20:20.057|WARN |PlayniteApplication:Failed to process addon blacklist check.
+System.Net.Http.HttpRequestException: An error occurred while sending the request. ---> System.Net.WebException: The remote name could not be resolved: 'api.playnite.link'
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.Http.HttpClientHandler.GetResponseCallback(IAsyncResult ar)
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Playnite.Services.BaseServicesClient.ExecuteGetRequest[T](String subUrl) in C:\projects\playnite\source\Playnite\Services\BaseServicesClient.cs:line 34
+   at Playnite.Services.ServicesClient.GetAddonBlacklist() in C:\projects\playnite\source\Playnite\Services\ServicesClient.cs:line 71
+   at Playnite.PlayniteApplication.CheckAddonBlacklist() in C:\projects\playnite\source\Playnite\App\PlayniteApplication.cs:line 1225
+06-08 05:20:25.504|INFO |GamesEditor:Starting Windows File Explorer Classic, 8a9a95c6-e7e4-4010-9c6e-9fbf16d9839e, 1db84dd95752eb70c6507e740a4beb77, 00000000-0000-0000-0000-000000000000
+06-08 05:20:26.773|DEBUG|GamesEditor:Using generic controller start a game.
+06-08 05:20:26.908|DEBUG|ProcessStarter:Starting process: C:\Program Files\Console2Desk\forwarders\File_Explorer_Classic.exe, , C:\Windows, False
+06-08 05:20:27.216|INFO |GamesEditor:Started Windows File Explorer Classic game.
+06-08 05:24:38.757|INFO |GamesEditor:Game Windows File Explorer Classic stopped after 251 seconds.
+06-08 05:24:43.585|INFO |GamesEditor:Starting User Tools Folder, 2ab60095-9c8f-4008-9006-c3cbf1aa31a2, 4a3fad79-4331-40ce-8800-90b57042301a, 00000000-0000-0000-0000-000000000000
+06-08 05:24:43.613|DEBUG|GamesEditor:Using generic controller start a game.
+06-08 05:24:43.631|DEBUG|ProcessStarter:Starting process: C:\Program Files\Console2Desk\Forwarders\UT_Classic.exe, , C:\Program Files\Console2Desk\Forwarders, False
+06-08 05:24:43.673|INFO |GamesEditor:Started User Tools Folder game.
+06-08 05:24:51.749|INFO |GamesEditor:Game User Tools Folder stopped after 8 seconds.
+06-08 05:24:59.888|DEBUG|WindowFactory:Show dialog window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: f481903e-ec59-40c6-b002-7192976be4ac
+06-08 05:25:03.115|DEBUG|WindowFactory:Closing window Playnite.FullscreenApp.Windows.MainMenuWindowFactory: f481903e-ec59-40c6-b002-7192976be4ac, True
+06-08 05:25:03.137|DEBUG|WindowFactory:Closing window Playnite.FullscreenApp.Windows.MainWindowFactory: 21d1303a-5b43-4207-af8e-07178c62944c, 
+06-08 05:25:03.137|INFO |PlayniteApplication:Shutting down Playnite
+06-08 05:25:03.280|DEBUG|PlayniteApplication:Releasing Playnite resources...
+06-08 05:25:03.346|DEBUG|WindowFactory:Show dialog window Playnite.Windows.ProgressWindowFactory: 4fe9b656-364c-4e5b-8a73-a6cf2d95b459
+06-08 05:25:03.448|DEBUG|WindowFactory:Closing window Playnite.Windows.ProgressWindowFactory: 4fe9b656-364c-4e5b-8a73-a6cf2d95b459, True

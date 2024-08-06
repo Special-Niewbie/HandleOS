@@ -23,10 +23,10 @@ namespace Console2Desk.SettingsButton
 {
     internal class RestorePauseUpgrade
     {
-        public static void Execute(Special_Niewbie_Button Button)
+        public static void Execute(Special_Niewbie_Button Button, MessagesBoxImplementation messagesBoxImplementation)
         {
             // Ask the user for confirmation before proceeding
-            DialogResult result = MessageBox.Show("Are you sure you want to restore the Windows Upgrade pause settings until the year 3000?", "Confirm Restore", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult result = messagesBoxImplementation.ShowMessage("Are you sure you want to restore the Windows Upgrade pause settings until the year 3000?", "Confirm Restore", MessageBoxButtons.YesNo);
 
             // Check the user's response
             if (result == DialogResult.Yes)
@@ -88,7 +88,7 @@ namespace Console2Desk.SettingsButton
                         key.SetValue("PausedFeatureDate", "2023-08-05 23:00:00", RegistryValueKind.String);
                     }
 
-                    Console.WriteLine("Windows Upgrade, pause settings successfully modified.");
+                    messagesBoxImplementation.ShowMessage("Windows Upgrade, pause settings successfully modified.", "Success", MessageBoxButtons.OK);
                 }
                 catch (Exception ex)
                 {

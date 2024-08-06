@@ -5,6 +5,7 @@ namespace Console2Desk.BottomWindowButtons
 {
     internal class pictureBoxWifiFunction
     {
+
         private static System.Windows.Forms.Timer gifTimer = new System.Windows.Forms.Timer(); // Timer statement
         private static PictureBox pictureBoxWifi; // Reference to pictureBoxWifi
 
@@ -52,13 +53,13 @@ namespace Console2Desk.BottomWindowButtons
             catch (Exception ex)
             {
                 // Handle any exceptions when reading the registry key
-                MessageBox.Show($"Error reading registry key: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error reading registry key: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
 
             // Return false if an error occurs or if the Shell key value is not explorer.exe
             return false;
         }
-        public static void CodeForpictureBoxWifi(Form1 form, PictureBox wifiPictureBox)
+        public static void CodeForpictureBoxWifi(Form1 form, PictureBox wifiPictureBox, MessagesBoxImplementation messagesBoxImplementation)
         {
             // We make sure the timer is set up
             SetupTimer();
@@ -68,7 +69,7 @@ namespace Console2Desk.BottomWindowButtons
             // Check if the system is in Desktop mode
             if (!IsDesktopMode())
             {
-                MessageBox.Show("This feature is only available in Desktop Mode. Please switch to Desktop Mode to select the WiFi network.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                messagesBoxImplementation.ShowMessage("This feature is only available in Desktop Mode. Please switch to Desktop Mode to select the WiFi network.", "Error", MessageBoxButtons.OK);
                 return;
             }
             else

@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
+﻿using System.Globalization;
 using System.Management;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Console2Desk.SettingsButton
 {
     internal static class TouchScreenStartupCheck
     {
-        public static void CheckTouchScreenStatus(Special_Niewbie_Button touchScreenEnDbButton)
+        public static void CheckTouchScreenStatus(Special_Niewbie_Button touchScreenEnDbButton, MessagesBoxImplementation messagesBoxImplementation)
         {
             string searchString = GetLocalizedTouchScreenName();
 

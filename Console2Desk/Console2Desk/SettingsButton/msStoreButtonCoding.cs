@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 
 namespace Console2Desk.SettingsButton
 {
     internal class msStoreButtonCoding
     {
-        public static void ExecuteMsStoreCommand(Button msStoreButton)
+        public static void ExecuteMsStoreCommand(Button msStoreButton, MessagesBoxImplementation messagesBoxImplementation)
         {
             try
             {
@@ -32,7 +27,7 @@ namespace Console2Desk.SettingsButton
                 {
                     if (checkProcess == null)
                     {
-                        MessageBox.Show("Failed to start PowerShell process.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        messagesBoxImplementation.ShowMessage("Failed to start PowerShell process.", "Error", MessageBoxButtons.OK);
                         return;
                     }
 
@@ -45,7 +40,7 @@ namespace Console2Desk.SettingsButton
                     string confirmationMessage = $"Are you sure you want to {actionMessage} Microsoft Windows Store?";
 
                     // Ask for confirmation from the user
-                    DialogResult confirmationResult = MessageBox.Show(confirmationMessage, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult confirmationResult = messagesBoxImplementation.ShowMessage(confirmationMessage, "Confirmation", MessageBoxButtons.YesNo);
 
                     if (confirmationResult == DialogResult.Yes)
                     {
@@ -76,7 +71,7 @@ namespace Console2Desk.SettingsButton
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -117,7 +112,7 @@ namespace Console2Desk.SettingsButton
                 {
                     if (process == null)
                     {
-                        MessageBox.Show("Failed to start PowerShell process.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DependencyContainer.MessagesBoxImplementation.ShowMessage("Failed to start PowerShell process.", "Error", MessageBoxButtons.OK);
                         return;
                     }
 
@@ -127,18 +122,18 @@ namespace Console2Desk.SettingsButton
 
                     if (process.ExitCode == 0)
                     {
-                        MessageBox.Show(successMessage, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DependencyContainer.MessagesBoxImplementation.ShowMessage(successMessage, "Success", MessageBoxButtons.OK);
                     }
                     else
                     {
                         string errorMessage = $"{failureMessage}\n\nError details:\n{error}\n\nOutput:\n{output}";
-                        MessageBox.Show(errorMessage, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        DependencyContainer.MessagesBoxImplementation.ShowMessage(errorMessage, "Error", MessageBoxButtons.OK);
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
     }

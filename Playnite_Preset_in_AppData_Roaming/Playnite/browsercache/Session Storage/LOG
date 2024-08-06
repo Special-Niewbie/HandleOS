@@ -1,3 +1,13 @@
-2024/07/10-11:04:08.980 17c4 Reusing MANIFEST C:\Users\HandleOS\AppData\Roaming\Playnite\browsercache\Session Storage/MANIFEST-000010
-2024/07/10-11:04:08.993 17c4 Recovering log #12
-2024/07/10-11:04:08.996 17c4 Reusing old log C:\Users\HandleOS\AppData\Roaming\Playnite\browsercache\Session Storage/000012.log 
+2024/08/06-04:11:18.890 d54 Recovering log #12
+2024/08/06-04:11:18.891 d54 Level-0 table #14: started
+2024/08/06-04:11:18.909 d54 Level-0 table #14: 3115 bytes OK
+2024/08/06-04:11:18.937 d54 Delete type=0 #12
+2024/08/06-04:11:18.938 d54 Delete type=3 #10
+2024/08/06-04:11:18.941 11c0 Compacting 4@0 + 0@1 files
+2024/08/06-04:11:18.977 11c0 Generated table #16@0: 2 keys, 144 bytes
+2024/08/06-04:11:18.977 11c0 Compacted 4@0 + 0@1 files => 144 bytes
+2024/08/06-04:11:18.981 11c0 compacted to: files[ 0 1 0 0 0 0 0 ]
+2024/08/06-04:11:18.983 11c0 Delete type=2 #5
+2024/08/06-04:11:18.983 11c0 Delete type=2 #8
+2024/08/06-04:11:18.983 11c0 Delete type=2 #11
+2024/08/06-04:11:18.983 11c0 Delete type=2 #14

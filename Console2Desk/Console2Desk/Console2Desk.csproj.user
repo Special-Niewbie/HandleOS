@@ -10,6 +10,9 @@
     <Compile Update="Special_Niewbie_Button.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="ToggleSwitchDev\ControlToggles.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="TouchButtons\ConsoleSettingsButton.cs">
       <SubType>Form</SubType>
     </Compile>

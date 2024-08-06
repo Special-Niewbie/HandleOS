@@ -31,13 +31,12 @@ CheckAndCreateSwitch_ControlsIni()
 Console2DeskExePath := "C:\Program Files\Console2Desk\Console2Desk.exe"
 PlayniteFullscreenExePath := A_AppData . "\..\Local\Playnite\Playnite.FullscreenApp.exe"
 PlayniteDesktopExePath := A_AppData . "\..\Local\Playnite\Playnite.DesktopApp.exe"
-x360 := []
 
 ; Variabili globali
 global isVideoPlaying := false
 global playniteStarted := false
 global firstRun := true
-global timerStarted := false 
+global timerStarted := false
 
 Menu, Tray, Tip, HotKeys4Console2Desk
 
@@ -51,6 +50,7 @@ Menu, Tray, Add, Change Computer Icon, ChangeComputerIcon  ; Change Computer Ico
 Menu, Tray, Icon, Change Computer Icon, Imageres.dll, 187
 ; Menu, Tray, Add, Pause, PAUSE
 Menu, Tray, Add, , Separator
+Menu, Tray, Add, Microsoft using your Webcam ON/OFF, ToggleWebcamTelemetry
 Menu, Tray, Add, Print Service ON/OFF, ToggleSpoolerSvc  ; SpoolerSVC toggle option
 Menu, Tray, Add, Update Service ON/OFF, ToggleUpdateSvc  ; UpdateSVC toggle option
 Menu, Tray, Add, Splash Video ON/OFF, ToggleVideo  ; Video toggle option
@@ -61,6 +61,16 @@ Menu, Tray, Add, Exit, QuitNow ; added exit script option
 ; Check for Updates
 CheckForUpdates()
 
+UpdateWebcamTelemetryMenu()
+; Update SpoolerSVC menu item at startup
+UpdateSpoolerSvcMenu()
+; Update UpdateSVC menu item at startup
+UpdateUpdateSvcMenu()
+; Update Video menu item at startup
+UpdateVideoMenu()
+
+CheckPlaynite()
+
 ; Function to check and create the ini file if it doesn't exist
 CheckAndCreateOnOffIni() {
     global IniFile
@@ -69,65 +79,36 @@ CheckAndCreateOnOffIni() {
     }
 }
 
+
+SetTimer, CheckControllers, 150
+
 ;Instance the Controller Manager
 manager := new Xbox360LibControllerManager()
 
 ;Initialize Controller (0-3), you can use 4 controllers
-loop 4 {
-    x360[A_Index -1] := manager.InitializeController(A_Index -1)
-}
+player1 := manager.InitializeController(0)
 
-;CoordMode, ToolTip, Screen  ; for Controller Debug connection
-
-; Function to check the status of the controller.
-loop {
-	; Update SpoolerSVC menu item at startup
-	UpdateSpoolerSvcMenu()
-	; Update UpdateSVC menu item at startup
-	UpdateUpdateSvcMenu()
-	; Update Video menu item at startup
-	UpdateVideoMenu()
+; Function to check the status of the controllers.
+CheckControllers:
 	BatteryCheck()
-	CheckPlaynite()
-	x := 0
-	;msg := ""
-	while x < 4 {
-        control := x360[x]
-		control.Update()
-		;msg .= "Player" . (x+1) . "`n"
-		;msg .= "Connected: " . (control.IsConnected ? "Yes" : "No") . "`n"
-		if (control.IsConnected){
-			; Manages the BACK+START key combination
-			if (control.BACK && control.START) {
-				; Stop the scheduled task first
-				Run, schtasks /end /tn "Console2Desk",, Hide
-		
-				Sleep 250
-				; Then Start the scheduled task
-				Run, schtasks /run /tn "Console2Desk",, Hide
-		
-				; Set the vibration
-				control.BV := [65535, 65535]   ; Set both engine speeds to maximum
-				Sleep 400                      ; Wait 400 milliseconds
-				control.BV := [0, 0]           ; Turn off the vibration
-		
-			}
-			
-			; Manages the configured switch combination
-            if (CheckSwitchCombination(control)) {
-                SwitchToNextWindow()
-                Sleep 50
-                control.BV := [65535, 65535]
-                Sleep 250  ; Delay to prevent rapid multiple presses
-                control.BV := [0, 0]
-            }
+	player1.Update()
 	
-		}
-		;msg .= "`n" ; for Debug
-		x++
+	if (player1.BACK && player1.START) {
+	Run, schtasks /end /tn "Console2Desk",, Hide
+	Sleep 250
+	Run, schtasks /run /tn "Console2Desk",, Hide
+	player1.BV := [65535, 65535]
+	Sleep 400
+	player1.BV := [0, 0]
 	}
-	;ToolTip, %msg%, 0, 500 ; for Debug
-}
+	if (CheckSwitchCombination(player1)) {
+	SwitchToNextWindow()
+	Sleep 50
+	player1.BV := [65535, 65535]
+	Sleep 250
+	player1.BV := [0, 0]
+	}
+return
 
 ; Manages the Ctrl+Shift+F7 key combination
 ^+F7::
@@ -144,6 +125,10 @@ loop {
     control.BV := [65535, 65535]   ; Set both engine speeds to maximum
     Sleep 400                      ; Wait 400 milliseconds
     control.BV := [0, 0]           ; Turn off the vibration
+
+return
+
+SlowUpdates:
 
 return
 
@@ -226,6 +211,17 @@ SwitchToNextWindow() {
     }
 }
 
+UpdateWebcamTelemetryMenu() {
+    ; Check the current status of the webcam telemetry task
+    RunWait, %ComSpec% /c schtasks /query /TN "Microsoft\Windows\Device Information\Device" | find "Disabled", , Hide
+    if (ErrorLevel = 1) {
+        ; Task is enabled
+        Menu, Tray, Icon, Microsoft using your Webcam ON/OFF, shell32.dll, 118  ; Icon for telemetry ON
+    } else {
+        ; Task is disabled
+        Menu, Tray, Icon, Microsoft using your Webcam ON/OFF, Imageres.dll, 231 ; Icon for telemetry OFF
+    }
+}
 
 UpdateSpoolerSvcMenu() {
     ; Get the current status of the Spooler service
@@ -323,6 +319,20 @@ ShowVersionInfo:
     MsgBox, 64, Version Info, Script Version: %currentVersion% `n`nAuthor: Special-Niewbie Softwares `nCopyright(C) 2024 Special-Niewbie Softwares
 return
 
+ToggleWebcamTelemetry:
+    ; Check the current status of the webcam telemetry task
+    RunWait, %ComSpec% /c schtasks /query /TN "Microsoft\Windows\Device Information\Device" | find "Disabled", , Hide
+    if (ErrorLevel = 1) {
+        ; Task is enabled, so disable it
+        RunWait, %ComSpec% /c schtasks /change /TN "Microsoft\Windows\Device Information\Device" /Disable, , Hide
+    } else {
+        ; Task is disabled, so enable it
+        RunWait, %ComSpec% /c schtasks /change /TN "Microsoft\Windows\Device Information\Device" /Enable, , Hide
+    }
+    ; Update the menu icon to reflect the new status
+    UpdateWebcamTelemetryMenu()
+return
+
 ToggleSpoolerSvc:
     ; Get the current status of the Spooler service
     RunWait, %ComSpec% /c sc query Spooler | find "RUNNING", , Hide
@@ -333,6 +343,8 @@ ToggleSpoolerSvc:
         ; Spooler service is not running, so start it
         Run, %ComSpec% /c sc config Spooler start= auto && net start Spooler && net start printnotify,, Hide
     }
+	; Update SpoolerSVC menu item at startup
+	UpdateSpoolerSvcMenu()
 return
 
 ToggleUpdateSvc:
@@ -345,6 +357,8 @@ ToggleUpdateSvc:
         ; Update service is not running, so start it
         Run, %ComSpec% /c sc config wuauserv start= demand && sc config bits start= demand && sc config UsoSvc start= delayed-auto && net start wuauserv && net start bits && net start UsoSvc,, Hide
     }
+	; Update UpdateSVC menu item at startup
+	UpdateUpdateSvcMenu()
 return
 
 ; Function to toggle the video state in the ini file
@@ -356,6 +370,8 @@ ToggleVideo:
     } else {
         IniWrite, 0, %IniFile%, Settings, VideoState
     }
+	; Update Video menu item at startup
+	UpdateVideoMenu()
 return
 
 QuitNow: ; exit script label 
