@@ -26,8 +26,9 @@
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
-    <img height="240" src="Git_assets/main_Console2Desk.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/c2d_main_v.2.0.0.png" style="margin-left: auto;"/>
 </div>
+
 
 
 
@@ -114,6 +115,21 @@ Ko-fi:
 | <img width=32px src="Git_assets/Pause_updates-icon.png">  Full Upgradable (by default it's suspended to reduce services in background) |        ✅        |
 | <img width=32px src="Git_assets/defender.ico">  Windows Defender (just `Core isolation` and `Cloud-submissions` are disabled) |        ✅        |
 | <img height="28" src="Git_assets/fps.png"> Lightweight OS = FPS Boost |        ✅        |
+
+
+
+### Benchmark (based on RAM 2GB / CPU 2 Core 4 Threads)
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="240" src="Git_assets/Benchmarks/HandleOSv2_Playnite_Open_CPU.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/Benchmarks/HandleOSv2_RAM.png" style="margin-left: auto;"/>
+</div>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="240" src="Git_assets/Benchmarks/HandleOSv2_UserServices.png"
+</div>
+
+
 
 
 
