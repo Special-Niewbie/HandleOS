@@ -243,6 +243,16 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HandTouchKeyboard {
+            get {
+                object obj = ResourceManager.GetObject("HandTouchKeyboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IntegerScaling_icon {
             get {
                 object obj = ResourceManager.GetObject("IntegerScaling_icon", resourceCulture);
@@ -296,6 +306,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap MS_Store42x42 {
             get {
                 object obj = ResourceManager.GetObject("MS_Store42x42", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NetworkLowLatency {
+            get {
+                object obj = ResourceManager.GetObject("NetworkLowLatency", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -456,6 +476,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap VRAM {
             get {
                 object obj = ResourceManager.GetObject("VRAM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vramPlus {
+            get {
+                object obj = ResourceManager.GetObject("vramPlus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

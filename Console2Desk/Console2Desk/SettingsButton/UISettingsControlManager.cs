@@ -30,7 +30,8 @@ namespace Console2Desk.SettingsButton
             ControlToggles controlSystemDevices, Label labelSystemDevices, PictureBox pictureBoxSystemDevices, ControlToggles controlCoreIsolation_Exploid,
             Label labelCoreIsolation_CFG, PictureBox pictureBoxCoreIsolation_CFG, ControlToggles controlBCDMemoryUsage,
             Label labelBCDMemoryUsage, PictureBox pictureBCDMemoryUsage, ControlToggles controlReduceWindowsLatency,
-            PictureBox pictureBoxReduceWindowsLatency, Label labelReduceWindowsLatency)
+            PictureBox pictureBoxReduceWindowsLatency, Label labelReduceWindowsLatency, Label labelReduceNetworkLatency, 
+            PictureBox pictureBoxReduceNetworkLatency, ControlToggles controlReduceNetworkLatency)
         {
             buttonOpenFileExplorer.Visible = false;
             buttonRestorePauseUpgrade.Visible = false;
@@ -58,12 +59,15 @@ namespace Console2Desk.SettingsButton
             controlReduceWindowsLatency.Visible = false;
             pictureBoxReduceWindowsLatency.Visible = false;
             labelReduceWindowsLatency.Visible = false;
+            labelReduceNetworkLatency.Visible = false;
+            pictureBoxReduceNetworkLatency.Visible = false;
+            controlReduceNetworkLatency.Visible = false;
 
         }
         
 
         public static void EnableDesktopButton(Special_Niewbie_Button desktopButton1, Special_Niewbie_Button consoleButton1,
-            PictureBox pictureBoxAMDadrenaline, PictureBox pictureBoxAMDadrenalinePress, PictureBox pictureBoxRealTime_ON,
+            PictureBox pictureBoxResetTouchKeyboard, PictureBox pictureBoxAMDadrenaline, PictureBox pictureBoxAMDadrenalinePress, PictureBox pictureBoxRealTime_ON,
             PictureBox pictureBox4, PictureBox pictureBoxRealTime_OFF, PictureBox pictureBoxWifi)
         {
             desktopButton1.Enabled = true;
@@ -74,6 +78,7 @@ namespace Console2Desk.SettingsButton
             consoleButton1.BackColor = Color.FromArgb(50, 50, 50);
             consoleButton1.BorderColor = Color.FromArgb(227, 227, 227);
 
+            pictureBoxResetTouchKeyboard.Enabled = true;
             pictureBoxAMDadrenaline.Enabled = true;
             pictureBoxAMDadrenalinePress.Enabled = true;
             pictureBoxRealTime_ON.Enabled = true;

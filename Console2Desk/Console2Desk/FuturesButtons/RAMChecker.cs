@@ -5,40 +5,36 @@ namespace Console2Desk.FuturesButtons
     internal class RAMChecker
     {
         private PictureBox pictureBoxCheckVRAM;
+        private PictureBox pictureBoxVramPlus;
 
-        public RAMChecker(PictureBox pictureBoxCheckVRAM)
+        public RAMChecker(PictureBox pictureBoxCheckVRAM, PictureBox pictureBoxVramPlus)
         {
             this.pictureBoxCheckVRAM = pictureBoxCheckVRAM;
+            this.pictureBoxVramPlus = pictureBoxVramPlus;
         }
 
-        public async Task CheckVirtualMemorySettingsAsync(MessagesBoxImplementation messagesBoxImplementation)
+        public async Task CheckVirtualMemorySettingsAsync(MessagesBoxImplementation messagesBoxImplementations)
         {
             try
             {
+                // Get the total physical memory
                 string output = await ExecuteCmdAsync("Systeminfo | find \"Total Physical Memory\"");
-                // MessageBox.Show($"Output: {output}", "Debug Info");
-
                 string[] tokens = output.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
+
                 if (tokens.Length >= 5)
                 {
                     string ramString = tokens[3] + tokens[4];
-                    // MessageBox.Show($"RAM String: {ramString}", "Debug Info");
-
-                    // Removing any non-numeric characters and converting to ulong
                     string ramNumericString = new string(ramString.Where(char.IsDigit).ToArray());
                     ulong RAM = ulong.Parse(ramNumericString);
 
-                    // Calculating initial and maximum size in MB
+                    // Calculate initial and maximum size in MB
                     ulong initialSize = RAM * 3 / 2;
                     ulong maximumSize = RAM * 3;
 
-                    // MessageBox.Show($"Initial Size: {initialSize} MB, Maximum Size: {maximumSize} MB", "Debug Info");
-
+                    // Get the current paging file settings
                     string regOutput = await ExecuteCmdAsync("reg query \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v PagingFiles");
-                    // MessageBox.Show($"Reg Output: {regOutput}", "Debug Info");
-
-                    // Parsing the reg output to get the values
                     string[] regLines = regOutput.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+
                     foreach (string line in regLines)
                     {
                         if (line.Contains("PagingFiles"))
@@ -46,39 +42,38 @@ namespace Console2Desk.FuturesButtons
                             string[] regTokens = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
                             if (regTokens.Length >= 5)
                             {
-                                string pagingFilePath = regTokens[2]; // c:\pagefile.sys
                                 ulong currentInitialSize = ulong.Parse(regTokens[3]);
                                 ulong currentMaximumSize = ulong.Parse(regTokens[4]);
 
-                                // MessageBox.Show($"Current Initial Size: {currentInitialSize} MB, Current Maximum Size: {currentMaximumSize} MB", "Debug Info");
-
-                                // Comparing the actual sizes
-                                bool initialSizeCorrect = currentInitialSize == initialSize;
-                                bool maximumSizeCorrect = currentMaximumSize == maximumSize;
-
+                                // Set icons based on VRAM settings
                                 if (currentInitialSize == 16 && currentMaximumSize == 8192)
                                 {
                                     pictureBoxCheckVRAM.Visible = true;
                                     pictureBoxCheckVRAM.Image = Properties.Resources.green_check_mark_icon_56x56;
+                                }
+                                else if (currentInitialSize == initialSize && currentMaximumSize == maximumSize)
+                                {
+                                    pictureBoxVramPlus.Visible = true;
+                                    pictureBoxVramPlus.Image = Properties.Resources.vramPlus;
                                 }
                                 else
                                 {
                                     pictureBoxCheckVRAM.Visible = true;
                                     pictureBoxCheckVRAM.Image = Properties.Resources.WarningInfo;
                                 }
-                                return; // Exit the method after processing PagingFiles value
-                            }
-                            else
-                            {
-                                //MessageBox.Show($"Unexpected format in regTokens: {string.Join(", ", regTokens)}", "Debug Info");
+                                return;
                             }
                         }
                     }
+
+                    // Handle cases where the paging file settings could not be found
+                    pictureBoxCheckVRAM.Visible = true;
+                    pictureBoxCheckVRAM.Image = Properties.Resources.WarningInfo;
                 }
             }
             catch (Exception ex)
             {
-                messagesBoxImplementation.ShowMessage($"An error occurred while checking virtual memory settings: {ex.Message}", "Error", MessageBoxButtons.OK);
+                messagesBoxImplementations.ShowMessage($"An error occurred while checking virtual memory settings: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
 

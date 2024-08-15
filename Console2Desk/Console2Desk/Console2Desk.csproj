@@ -12,6 +12,8 @@
     <Authors>Special-Niewbie Softwares</Authors>
     <Copyright>Copyright © 2024 Special-Niewbie - GPL license </Copyright>
     <Platforms>AnyCPU;x64</Platforms>
+    <PackageProjectUrl>https://github.com/Special-Niewbie/HandleOS</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Special-Niewbie/HandleOS</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -51,6 +53,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="AudioCCMode.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AUTHORS">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -90,6 +95,9 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Update="sources\Controller_List.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="sources\DPAD-HandleOS.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="version">

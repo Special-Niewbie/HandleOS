@@ -24,10 +24,22 @@ namespace Console2Desk.SettingsButton
                         // Notify the user that Secure Boot needs to be disabled
                         memoryToggleSwitch.Invoke((MethodInvoker)delegate
                         {
-                            messagesBoxImplementation.ShowMessage(
-                                "Secure Boot is enabled. Please disable Secure Boot to apply changes.",
+                            var result = messagesBoxImplementation.ShowMessage(
+                                "Secure Boot is enabled. Please disable Secure Boot to apply changes.\n\n" +
+                                "Before making changes to the BCD, it is recommended to read the guide on how to restore the BCD in case you encounter boot issues. If you are interested, press YES to open the guide (https://github.com/Special-Niewbie/HandleOS/blob/main/BCDFix.md) and learn the fix procedure. Otherwise, press NO to ignore this recommendation.\n\n" +
+                                "Please be aware that using this procedure may affect online competitive games and could risk a ban. However, better to apply it with offline Games!",
                                 "Secure Boot Enabled",
-                                MessageBoxButtons.OK);
+                                MessageBoxButtons.YesNo);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // Open the guide URL in the default web browser
+                                Process.Start(new ProcessStartInfo
+                                {
+                                    FileName = "https://github.com/Special-Niewbie/HandleOS/blob/main/BCDFix.md",
+                                    UseShellExecute = true
+                                });
+                            }
                         });
                         return; // Exit if Secure Boot is enabled
                     }

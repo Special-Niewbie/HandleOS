@@ -30,20 +30,23 @@ namespace Console2Desk.FuturesButtons
         {
             try
             {
-                // Show warning message to the user
+                // Show the message box asking whether to apply VRAM+ or base VRAM settings
                 DialogResult dialogResult = messagesBoxImplementation.ShowMessage(
-                    "If you are using HandleOS with at least 16GB of RAM, this feature is not necessary. This feature is useful for HandleOS or Windows OS installations with limited RAM between 1GB to 4GB to rebalance system RAM usage. If you are in this scenario, press YES. Otherwise, press NO.",
-                    "RAM Virtual Increase Warning",
-                    MessageBoxButtons.YesNo);
+                    "Do you want to apply VRAM+ settings for HandleOS?\n\n" +
+                    "- Press YES to apply VRAM+ settings, which will increase the RAM to 3 times its current size, suitable for some AAA games.\n\n" +
+                    "- Press NO to apply the basic VRAM settings, suitable for all scenarios.\n\n" +
+                    "- Press CANCEL to do nothing.",
+                    "Select VRAM Settings",
+                    MessageBoxButtons.YesNoCancel);
 
-                if (dialogResult == DialogResult.No)
+                if (dialogResult == DialogResult.Cancel)
                 {
-                    // User chose not to proceed
+                    // User chose to cancel the operation
                     messagesBoxImplementation.ShowMessage("Operation cancelled.", "Cancelled", MessageBoxButtons.OK);
                     return;
                 }
 
-                // Get total physical memory using SystemInfo
+                // Get total physical memory using Systeminfo
                 string output = ExecuteCmd("Systeminfo | find \"Total Physical Memory\"");
 
                 // Parsing the output to get the total RAM
@@ -53,9 +56,20 @@ namespace Console2Desk.FuturesButtons
                     string ramString = tokens[3] + tokens[4]; // Merge tokens to get RAM without spaces and commas
                     ulong RAM = ulong.Parse(ramString);
 
-                    // InitialSize and maximumSize calculation
-                    ulong initialSize = RAM * 3 / 2;
-                    ulong maximumSize = RAM * 3;
+                    ulong initialSize, maximumSize;
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        // Calculate initialSize and maximumSize for VRAM+
+                        initialSize = RAM * 3 / 2;
+                        maximumSize = RAM * 3;
+                    }
+                    else // DialogResult.No
+                    {
+                        // Use static values for VRAM base settings
+                        initialSize = 16;
+                        maximumSize = 8192;
+                    }
 
                     // Sets the paging file size in the registry
                     string regCommand = $"Reg add \"HKLM\\SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Memory Management\" /v \"PagingFiles\" /t REG_MULTI_SZ /d \"c:\\pagefile.sys {initialSize} {maximumSize}\" /f";
@@ -71,7 +85,7 @@ namespace Console2Desk.FuturesButtons
                     DialogResult restartDialogResult = messagesBoxImplementation.ShowMessage("Do you want to restart the system to apply the changes?", "Restart Required", MessageBoxButtons.YesNo);
                     if (restartDialogResult == DialogResult.Yes)
                     {
-                        // Riavvia il sistema
+                        // Restart the system
                         ExecuteCmd("Shutdown -r -t 5 -c \"REBOOTING SYSTEM\"");
                     }
                 }

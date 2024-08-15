@@ -32,6 +32,9 @@
             pictureBoxIntegerScaling = new PictureBox();
             panel2 = new Panel();
             panel4Toggle = new Panel();
+            labelReduceNetworkLatency = new Label();
+            pictureBoxReduceNetworkLatency = new PictureBox();
+            controlReduceNetworkLatency = new ToggleSwitchDev.ControlToggles();
             label1 = new Label();
             controlReduceWindowsLatency = new ToggleSwitchDev.ControlToggles();
             pictureBoxReduceWindowsLatency = new PictureBox();
@@ -53,6 +56,9 @@
             label2 = new Label();
             labelAMDnoShutter = new Label();
             buttonRestorePauseUpgrade = new Special_Niewbie_Button();
+            label3 = new Label();
+            pictureBoxResetTouchKeyboardPress = new PictureBox();
+            pictureBoxResetTouchKeyboard = new PictureBox();
             msStoreButton = new Special_Niewbie_Button();
             buttonChangeConsoleSettings = new Special_Niewbie_Button();
             buttonXinputTest = new Special_Niewbie_Button();
@@ -80,6 +86,7 @@
             buttonAllyStockRes = new Button();
             buttonIntegerScaling = new Button();
             panel1 = new Panel();
+            pictureBoxVramPlus = new PictureBox();
             pictureBoxStockRes1610 = new PictureBox();
             pictureBox2 = new PictureBox();
             button1610_StockRes = new Button();
@@ -97,12 +104,15 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxIntegerScaling).BeginInit();
             panel2.SuspendLayout();
             panel4Toggle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxReduceNetworkLatency).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxReduceWindowsLatency).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBCDMemoryUsage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoreIsolation_CFG).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSystemDevices).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDnoShutter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMeltdown_Spectre).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboardPress).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_OFF).BeginInit();
@@ -117,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1610StockRes).BeginInit();
             panelTitle.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxVramPlus).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes1610).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1610).BeginInit();
@@ -144,6 +155,9 @@
             panel2.BackColor = Color.FromArgb(40, 40, 40);
             panel2.Controls.Add(panel4Toggle);
             panel2.Controls.Add(buttonRestorePauseUpgrade);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(pictureBoxResetTouchKeyboardPress);
+            panel2.Controls.Add(pictureBoxResetTouchKeyboard);
             panel2.Controls.Add(msStoreButton);
             panel2.Controls.Add(buttonChangeConsoleSettings);
             panel2.Controls.Add(buttonXinputTest);
@@ -178,6 +192,9 @@
             // 
             panel4Toggle.BackColor = Color.FromArgb(50, 50, 50);
             panel4Toggle.BorderStyle = BorderStyle.FixedSingle;
+            panel4Toggle.Controls.Add(labelReduceNetworkLatency);
+            panel4Toggle.Controls.Add(pictureBoxReduceNetworkLatency);
+            panel4Toggle.Controls.Add(controlReduceNetworkLatency);
             panel4Toggle.Controls.Add(label1);
             panel4Toggle.Controls.Add(controlReduceWindowsLatency);
             panel4Toggle.Controls.Add(pictureBoxReduceWindowsLatency);
@@ -200,17 +217,60 @@
             panel4Toggle.Controls.Add(labelAMDnoShutter);
             panel4Toggle.Location = new Point(269, 7);
             panel4Toggle.Name = "panel4Toggle";
-            panel4Toggle.Size = new Size(303, 267);
+            panel4Toggle.Size = new Size(303, 324);
             panel4Toggle.TabIndex = 31;
             panel4Toggle.Visible = false;
             panel4Toggle.Paint += panel4Toggle_Paint;
+            // 
+            // labelReduceNetworkLatency
+            // 
+            labelReduceNetworkLatency.AutoSize = true;
+            labelReduceNetworkLatency.ForeColor = SystemColors.ControlLightLight;
+            labelReduceNetworkLatency.Location = new Point(55, 157);
+            labelReduceNetworkLatency.Name = "labelReduceNetworkLatency";
+            labelReduceNetworkLatency.Size = new Size(138, 30);
+            labelReduceNetworkLatency.TabIndex = 52;
+            labelReduceNetworkLatency.Text = "Reduce Network Latency\r\n(set to ON):";
+            labelReduceNetworkLatency.Visible = false;
+            labelReduceNetworkLatency.Click += labelReduceNetworkLatency_Click;
+            // 
+            // pictureBoxReduceNetworkLatency
+            // 
+            pictureBoxReduceNetworkLatency.BackColor = Color.Transparent;
+            pictureBoxReduceNetworkLatency.Image = Properties.Resources.NetworkLowLatency;
+            pictureBoxReduceNetworkLatency.Location = new Point(9, 157);
+            pictureBoxReduceNetworkLatency.Name = "pictureBoxReduceNetworkLatency";
+            pictureBoxReduceNetworkLatency.Size = new Size(33, 30);
+            pictureBoxReduceNetworkLatency.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxReduceNetworkLatency.TabIndex = 51;
+            pictureBoxReduceNetworkLatency.TabStop = false;
+            pictureBoxReduceNetworkLatency.Visible = false;
+            pictureBoxReduceNetworkLatency.Click += pictureBoxReduceNetworkLatency_Click;
+            // 
+            // controlReduceNetworkLatency
+            // 
+            controlReduceNetworkLatency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlReduceNetworkLatency.BorderColor = Color.LightGray;
+            controlReduceNetworkLatency.ForeColor = Color.White;
+            controlReduceNetworkLatency.IsOn = false;
+            controlReduceNetworkLatency.Location = new Point(249, 163);
+            controlReduceNetworkLatency.Name = "controlReduceNetworkLatency";
+            controlReduceNetworkLatency.OffColor = Color.DarkGray;
+            controlReduceNetworkLatency.OffText = "OFF";
+            controlReduceNetworkLatency.OnColor = Color.MediumSlateBlue;
+            controlReduceNetworkLatency.OnText = "ON";
+            controlReduceNetworkLatency.Size = new Size(34, 19);
+            controlReduceNetworkLatency.TabIndex = 50;
+            controlReduceNetworkLatency.TextEnabled = true;
+            controlReduceNetworkLatency.Visible = false;
+            controlReduceNetworkLatency.Click += controlReduceNetworkLatency_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlLight;
-            label1.Location = new Point(44, 163);
+            label1.Location = new Point(44, 218);
             label1.Name = "label1";
             label1.Size = new Size(219, 19);
             label1.TabIndex = 49;
@@ -222,7 +282,7 @@
             controlReduceWindowsLatency.BorderColor = Color.LightGray;
             controlReduceWindowsLatency.ForeColor = Color.White;
             controlReduceWindowsLatency.IsOn = false;
-            controlReduceWindowsLatency.Location = new Point(249, 226);
+            controlReduceWindowsLatency.Location = new Point(249, 281);
             controlReduceWindowsLatency.Name = "controlReduceWindowsLatency";
             controlReduceWindowsLatency.OffColor = Color.DarkGray;
             controlReduceWindowsLatency.OffText = "OFF";
@@ -238,7 +298,7 @@
             // 
             pictureBoxReduceWindowsLatency.BackColor = Color.Transparent;
             pictureBoxReduceWindowsLatency.Image = Properties.Resources.Low_Latency;
-            pictureBoxReduceWindowsLatency.Location = new Point(9, 220);
+            pictureBoxReduceWindowsLatency.Location = new Point(9, 275);
             pictureBoxReduceWindowsLatency.Name = "pictureBoxReduceWindowsLatency";
             pictureBoxReduceWindowsLatency.Size = new Size(33, 30);
             pictureBoxReduceWindowsLatency.SizeMode = PictureBoxSizeMode.Zoom;
@@ -251,7 +311,7 @@
             // 
             labelReduceWindowsLatency.AutoSize = true;
             labelReduceWindowsLatency.ForeColor = SystemColors.ControlLightLight;
-            labelReduceWindowsLatency.Location = new Point(55, 220);
+            labelReduceWindowsLatency.Location = new Point(55, 275);
             labelReduceWindowsLatency.Name = "labelReduceWindowsLatency";
             labelReduceWindowsLatency.Size = new Size(174, 30);
             labelReduceWindowsLatency.TabIndex = 46;
@@ -265,7 +325,7 @@
             controlBCDMemoryUsage.BorderColor = Color.LightGray;
             controlBCDMemoryUsage.ForeColor = Color.White;
             controlBCDMemoryUsage.IsOn = false;
-            controlBCDMemoryUsage.Location = new Point(249, 193);
+            controlBCDMemoryUsage.Location = new Point(249, 248);
             controlBCDMemoryUsage.Name = "controlBCDMemoryUsage";
             controlBCDMemoryUsage.OffColor = Color.DarkGray;
             controlBCDMemoryUsage.OffText = "OFF";
@@ -281,7 +341,7 @@
             // 
             labelBCDMemoryUsage.AutoSize = true;
             labelBCDMemoryUsage.ForeColor = SystemColors.ControlLightLight;
-            labelBCDMemoryUsage.Location = new Point(55, 187);
+            labelBCDMemoryUsage.Location = new Point(55, 242);
             labelBCDMemoryUsage.Name = "labelBCDMemoryUsage";
             labelBCDMemoryUsage.Size = new Size(171, 30);
             labelBCDMemoryUsage.TabIndex = 44;
@@ -293,7 +353,7 @@
             // 
             pictureBCDMemoryUsage.BackColor = Color.Transparent;
             pictureBCDMemoryUsage.Image = Properties.Resources.Bcd;
-            pictureBCDMemoryUsage.Location = new Point(9, 187);
+            pictureBCDMemoryUsage.Location = new Point(9, 242);
             pictureBCDMemoryUsage.Name = "pictureBCDMemoryUsage";
             pictureBCDMemoryUsage.Size = new Size(33, 30);
             pictureBCDMemoryUsage.SizeMode = PictureBoxSizeMode.Zoom;
@@ -510,6 +570,44 @@
             buttonRestorePauseUpgrade.UseVisualStyleBackColor = false;
             buttonRestorePauseUpgrade.Visible = false;
             buttonRestorePauseUpgrade.Click += buttonRestorePauseUpgrade_Click;
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top;
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ControlLight;
+            label3.Location = new Point(195, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(199, 15);
+            label3.TabIndex = 34;
+            label3.Text = "Fix Touch Keyboard keep Poping-Up";
+            label3.Click += label3_Click;
+            // 
+            // pictureBoxResetTouchKeyboardPress
+            // 
+            pictureBoxResetTouchKeyboardPress.Anchor = AnchorStyles.Top;
+            pictureBoxResetTouchKeyboardPress.Image = Properties.Resources.HandTouchKeyboard;
+            pictureBoxResetTouchKeyboardPress.Location = new Point(272, 17);
+            pictureBoxResetTouchKeyboardPress.Name = "pictureBoxResetTouchKeyboardPress";
+            pictureBoxResetTouchKeyboardPress.Size = new Size(44, 36);
+            pictureBoxResetTouchKeyboardPress.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxResetTouchKeyboardPress.TabIndex = 35;
+            pictureBoxResetTouchKeyboardPress.TabStop = false;
+            pictureBoxResetTouchKeyboardPress.Visible = false;
+            pictureBoxResetTouchKeyboardPress.Click += pictureBoxResetTouchKeyboardPress_Click;
+            // 
+            // pictureBoxResetTouchKeyboard
+            // 
+            pictureBoxResetTouchKeyboard.Anchor = AnchorStyles.Top;
+            pictureBoxResetTouchKeyboard.Cursor = Cursors.Hand;
+            pictureBoxResetTouchKeyboard.Image = Properties.Resources.HandTouchKeyboard;
+            pictureBoxResetTouchKeyboard.Location = new Point(268, 14);
+            pictureBoxResetTouchKeyboard.Name = "pictureBoxResetTouchKeyboard";
+            pictureBoxResetTouchKeyboard.Size = new Size(52, 44);
+            pictureBoxResetTouchKeyboard.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxResetTouchKeyboard.TabIndex = 34;
+            pictureBoxResetTouchKeyboard.TabStop = false;
+            pictureBoxResetTouchKeyboard.Click += pictureBoxResetTouchKeyboard_Click;
             // 
             // msStoreButton
             // 
@@ -761,7 +859,7 @@
             consoleButton1.HoverColor = Color.MediumSlateBlue;
             consoleButton1.Image = Properties.Resources.Gaming_Icon64x64;
             consoleButton1.ImageAlign = ContentAlignment.BottomCenter;
-            consoleButton1.Location = new Point(312, 57);
+            consoleButton1.Location = new Point(312, 61);
             consoleButton1.Name = "consoleButton1";
             consoleButton1.Size = new Size(240, 300);
             consoleButton1.TabIndex = 8;
@@ -783,7 +881,7 @@
             desktopButton1.ForeColor = Color.White;
             desktopButton1.HoverColor = Color.MediumSlateBlue;
             desktopButton1.Image = Properties.Resources.Computer_icon64x64;
-            desktopButton1.Location = new Point(33, 57);
+            desktopButton1.Location = new Point(33, 61);
             desktopButton1.Name = "desktopButton1";
             desktopButton1.Size = new Size(240, 300);
             desktopButton1.TabIndex = 7;
@@ -923,6 +1021,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(31, 31, 31);
+            panel1.Controls.Add(pictureBoxVramPlus);
             panel1.Controls.Add(pictureBoxStockRes1610);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(button1610_StockRes);
@@ -947,6 +1046,18 @@
             panel1.Size = new Size(200, 465);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBoxVramPlus
+            // 
+            pictureBoxVramPlus.Image = Properties.Resources.vramPlus;
+            pictureBoxVramPlus.Location = new Point(145, 230);
+            pictureBoxVramPlus.Name = "pictureBoxVramPlus";
+            pictureBoxVramPlus.Size = new Size(49, 14);
+            pictureBoxVramPlus.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxVramPlus.TabIndex = 36;
+            pictureBoxVramPlus.TabStop = false;
+            pictureBoxVramPlus.Visible = false;
+            pictureBoxVramPlus.Click += pictureBoxVramPlus_Click;
             // 
             // pictureBoxStockRes1610
             // 
@@ -1147,12 +1258,15 @@
             panel2.PerformLayout();
             panel4Toggle.ResumeLayout(false);
             panel4Toggle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxReduceNetworkLatency).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxReduceWindowsLatency).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBCDMemoryUsage).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCoreIsolation_CFG).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSystemDevices).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDnoShutter).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMeltdown_Spectre).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboardPress).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboard).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_OFF).EndInit();
@@ -1168,6 +1282,7 @@
             panelTitle.ResumeLayout(false);
             panelTitle.PerformLayout();
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBoxVramPlus).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes1610).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1610).EndInit();
@@ -1245,5 +1360,12 @@
         private PictureBox pictureBoxReduceWindowsLatency;
         private ToggleSwitchDev.ControlToggles controlReduceWindowsLatency;
         private Label label1;
+        private PictureBox pictureBoxVramPlus;
+        private PictureBox pictureBoxResetTouchKeyboard;
+        private Label label3;
+        private PictureBox pictureBoxResetTouchKeyboardPress;
+        private Label labelReduceNetworkLatency;
+        private PictureBox pictureBoxReduceNetworkLatency;
+        private ToggleSwitchDev.ControlToggles controlReduceNetworkLatency;
     }
 }

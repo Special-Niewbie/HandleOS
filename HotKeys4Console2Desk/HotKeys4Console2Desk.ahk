@@ -32,11 +32,19 @@ Console2DeskExePath := "C:\Program Files\Console2Desk\Console2Desk.exe"
 PlayniteFullscreenExePath := A_AppData . "\..\Local\Playnite\Playnite.FullscreenApp.exe"
 PlayniteDesktopExePath := A_AppData . "\..\Local\Playnite\Playnite.DesktopApp.exe"
 
-; Variabili globali
+; Global variables
 global isVideoPlaying := false
 global playniteStarted := false
 global firstRun := true
 global timerStarted := false
+; Tab Global variables
+global windowList := []
+global currentWindowIndex := 0
+global isMenuVisible := false
+global menuGui := 0
+global highlightedIndex := 0
+global PreviewBar, PreviewText, JustDotText, Icon1, Icon2, Icon3, Icon4, Icon5, TitleText, ImagePic
+global lastActivity := A_TickCount
 
 Menu, Tray, Tip, HotKeys4Console2Desk
 
@@ -79,8 +87,11 @@ CheckAndCreateOnOffIni() {
     }
 }
 
+Run, %A_ScriptDir%\AudioCCMode.exe
 
 SetTimer, CheckControllers, 150
+; Timer che controlla l'inattività
+SetTimer, CheckInactivity, 1000
 
 ;Instance the Controller Manager
 manager := new Xbox360LibControllerManager()
@@ -102,12 +113,39 @@ CheckControllers:
 	player1.BV := [0, 0]
 	}
 	if (CheckSwitchCombination(player1)) {
-	SwitchToNextWindow()
-	Sleep 50
-	player1.BV := [65535, 65535]
-	Sleep 250
-	player1.BV := [0, 0]
-	}
+        if (windowList.Length() == 0) {
+            UpdateWindowList()
+        }
+        
+        SwitchToNextWindow()
+        
+        if (!isMenuVisible) {
+            isMenuVisible := true
+            ShowWindowMenu()            
+        } else {
+            UpdateWindowMenu()
+        }
+        
+        player1.BV := [65535, 65535]
+        Sleep 150
+        player1.BV := [0, 0]
+		; Update last active time when a key is pressed
+        lastActivity := A_TickCount
+    } else if (isMenuVisible) {
+        if (player1.A) {
+            ActivateCurrentWindow()
+			player1.BV := [65535, 65535]
+			Sleep 150
+			player1.BV := [0, 0]
+			lastActivity := A_TickCount
+        } else if (player1.LEFT) {
+            NavigateMenu(-1)
+			lastActivity := A_TickCount
+        } else if (player1.RIGHT) {
+            NavigateMenu(1)
+			lastActivity := A_TickCount
+        }
+    }
 return
 
 ; Manages the Ctrl+Shift+F7 key combination
@@ -125,10 +163,6 @@ return
     control.BV := [65535, 65535]   ; Set both engine speeds to maximum
     Sleep 400                      ; Wait 400 milliseconds
     control.BV := [0, 0]           ; Turn off the vibration
-
-return
-
-SlowUpdates:
 
 return
 
@@ -156,59 +190,227 @@ CheckForUpdates() {
 
         ; Check if the downloaded content is not an HTTP error (ex. 404: Not Found)
         if (InStr(latestVersion, "404: Not Found") = 0 && localVersion != latestVersion) {
-            MsgBox, 64, Update Available, A new version is available: %latestVersion%`n`nYou are currently using version: %localVersion%`n`nWould you like to visit the project page on GitHub to Download it?
-            ifMsgBox, OK
+            ; Show a simple message box with YES and NO buttons
+            MsgBox, 4,, A new version is available: %latestVersion%`n`nYou are currently using version: %localVersion%`n`nWould you like to visit the project page on GitHub to Download it?
+            IfMsgBox, Yes
+            {
                 Run, https://github.com/Special-Niewbie/HandleOS
+            }
         }
+        else {
+            ;MsgBox, 64, No Update, You are already using the latest version.
+        }
+    }
+    else {
+        ; Handle error if the file could not be downloaded or if it contains HTTP errors
+        ;MsgBox, 16, Error, Unable to check for updates. Please check your internet connection or try again later.
     }
 }
 
-; Function to get a list of active windows, including minimized ones
-GetActiveWindowList() {
-    windows := []
+; Function to update the list of active windows
+UpdateWindowList() {
+    windowList := []
     WinGet, id, List,,, Program Manager
-    ; debugMsg := "Windows found:`n" ; Commented out debug message initialization
     Loop, %id%
     {
         this_id := id%A_Index%
         WinGetTitle, title, ahk_id %this_id%
         WinGet, style, Style, ahk_id %this_id%
-        WinGet, exStyle, ExStyle, ahk_id %this_id%
-        
-        ; Check if the window is visible or minimized
-        isVisible := (style & 0x10000000)  ; WS_VISIBLE
-        isMinimized := (style & 0x20000000)  ; WS_MINIMIZE
-        
-        ; debugMsg .= title . " (Visible: " . isVisible . ", Minimized: " . isMinimized . ")`n" ; Commented out debug message for each window
-        
-        ; Include all windows with a non-empty title, both visible and minimized
-        if (title != "")
-            windows.Push({id: this_id, title: title})
+        WinGet, exePath, ProcessPath, ahk_id %this_id%
+
+        ; Include all windows with a non-empty title
+        if (title != "" && IsWindow(this_id))
+            windowList.Push({id: this_id, title: title, path: exePath})
     }
-    ; debugMsg .= "Total filtered windows: " . windows.Length() ; Commented out debug message for total windows
-    ; MsgBox, %debugMsg% ; Commented out MsgBox displaying debug message
-    return windows
 }
 
 ; Function to switch to the next window
 SwitchToNextWindow() {
-    static currentIndex := 0
-    windows := GetActiveWindowList()
-    windowCount := windows.Length()
-    
-    if (windowCount > 0) {
-        currentIndex := Mod(currentIndex + 1, windowCount)
-        if (currentIndex = 0)
-            currentIndex := windowCount
+    if (windowList.Length() > 0) {
+        currentWindowIndex := Mod(currentWindowIndex + 1, windowList.Length())
+        if (currentWindowIndex = 0)
+            currentWindowIndex := windowList.Length()
         
-        nextWindow := windows[currentIndex]
-        nextWindowTitle := nextWindow.title
-        ; MsgBox, Switching to: %currentIndex% / %windowCount% - %nextWindowTitle% ; Commented out MsgBox displaying current switching info
+        ; Aggiorna l'indice evidenziato
+        highlightedIndex := Min(windowList.Length(), Max(1, currentWindowIndex - 2))
+        
+        nextWindow := windowList[currentWindowIndex]
         WinActivate, % "ahk_id " . nextWindow.id
-        WinRestore, % "ahk_id " . nextWindow.id  ; Restore the window if it was minimized
-    } else {
-        ; MsgBox, No windows found to switch to. ; Commented out MsgBox displaying no windows found message
+        WinRestore, % "ahk_id " . nextWindow.id
+        
+        UpdateWindowMenu()
     }
+}
+
+; Function to show the window selection menu
+ShowWindowMenu() {
+    ; Calculate the position to center the GUI on the screen
+    ScreenWidth := A_ScreenWidth
+    ScreenHeight := A_ScreenHeight
+    GuiWidth := 350
+    GuiHeight := 240
+    X := (ScreenWidth-200 - GuiWidth) // 2
+    Y := (ScreenHeight - GuiHeight) // 2
+    
+    ; Updates the window list and current index
+    UpdateWindowList()
+    currentWindowIndex := 1
+    highlightedIndex := 1
+    
+    ; Create the GUI if it doesn't already exist
+    if !menuGui {
+        Gui, New, +AlwaysOnTop -Caption +ToolWindow, Window Switcher
+        Gui, Color, 1d1d1d
+        Gui, Font, s10 cWhite, Roboto
+
+        ; Add elements to the GUI
+        Gui, Add, Progress, w325 h30 Background333333 vPreviewBar
+        Gui, Add, Text, xp+5 yp+5 w315 h20 BackgroundTrans vPreviewText Center, PreviewText
+        
+		Gui, Font, s12 c6A5CCD, Roboto
+		Gui, Add, Text, xm+92 w10 h20 vJustDotText, ⌄
+		Gui, Font, s10 cE5E4E8, Roboto Light
+        Gui, Add, Picture, xm+80 y+1 w36 h36 vIcon1
+        Gui, Add, Picture, x+10 w36 h36 vIcon2
+        Gui, Add, Picture, x+10 w36 h36 vIcon3
+        Gui, Add, Picture, x+10 w36 h36 vIcon4
+        Gui, Add, Picture, x+10 w36 h36 vIcon5
+        Gui, Add, Text, xm y+30 w325 h40 vTitleText Center
+		Gui, Add, Picture, xm+40 w256 h55 vImagePic, %A_ScriptDir%\sources\DPAD-HandleOS.png
+
+    }
+    
+    ; Show GUI
+    Gui, Show, x%X% y%Y% w%GuiWidth% h%GuiHeight%, Window Switcher
+    menuGui := WinExist("A")
+    GuiControl,, PreviewText, % "HandleOS Tab View"  ; Assicura che il testo di anteprima venga visualizzato
+    GuiControl,, TitleText, % ""  ; Rimuovi eventuali testi residui
+    UpdateWindowMenu()
+}
+
+
+; Function to update the window menu
+UpdateWindowMenu() {
+    if (!menuGui) {
+        return
+    }
+    
+    Gui, %menuGui%:Default
+    
+    numIcons := Min(windowList.Length(), 5)
+    
+    Loop, 5 {
+        index := A_Index + currentWindowIndex - 1
+        if (index >= 1 && index <= windowList.Length()) {
+            window := windowList[index]
+            ; Load and set the icon for the Picture control
+            hIcon := GetWindowIcon(window.path)
+            GuiControl,, Icon%A_Index%, % "HICON:" . hIcon
+        } else {
+            GuiControl,, Icon%A_Index%, ; Remove icon if not visible
+        }
+    }
+    
+    currentWindow := windowList[currentWindowIndex]
+    GuiControl,, TitleText, % currentWindow.title
+    
+    ; Refresh the highlighted index and show the correct icon
+    UpdateHighlight()
+}
+
+; Function to update the highlighted icon
+UpdateHighlight() {
+    if (!menuGui) {
+        return
+    }
+    
+    Gui, %menuGui%:Default
+    
+    Loop, 5 {
+        if (A_Index = highlightedIndex) {
+            ; Show highlighted icon
+            GuiControl, +Border, Icon%A_Index%, w70 h70
+        } else {
+            ; Hide highlighted icon
+            GuiControl, -Border, Icon%A_Index%
+        }
+    }
+}
+
+; Function to get the window icon
+GetWindowIcon(exePath) {
+    ; Load the icon from the application executable
+    hIcon := 0
+    if (exePath != "") {
+        ; Use the ExtractIcon function to get the icon
+        hIcon := DllCall("Shell32.dll\ExtractIcon", "Ptr", 0, "Str", exePath, "UInt", 0, "Ptr")
+    }
+    if (hIcon = 0) {
+        ; Use default icon if failed
+        hIcon := DllCall("User32.dll\LoadIcon", "Ptr", 0, "Str", 32512)  ; IDI_APPLICATION
+    }
+    return hIcon
+}
+
+; Function to hide the window menu
+HideWindowMenu() {
+    if (menuGui) {
+        Gui, %menuGui%:Destroy
+        menuGui := 0
+        isMenuVisible := false
+    } else {
+        MsgBox, The GUI is not created or invalid.
+    }
+}
+
+; Function to activate the current window and hide the menu
+ActivateCurrentWindow() {
+    if (windowList.Length() > 0) {
+        WinActivate, % "ahk_id " . windowList[currentWindowIndex].id
+        WinRestore, % "ahk_id " . windowList[currentWindowIndex].id
+    }
+    HideWindowMenu()
+}
+
+NoActivityCurrentWindow() {
+
+    HideWindowMenu()
+}
+
+; Function to navigate the menu
+NavigateMenu(direction) {
+    if (windowList.Length() > 0) {
+        newIndex := currentWindowIndex + direction
+        
+        ; Manage the menu end
+        if (newIndex < 1) {
+            newIndex := windowList.Length()
+        } else if (newIndex > windowList.Length()) {
+            newIndex := 1
+        }
+        
+        currentWindowIndex := newIndex
+        highlightedIndex := Min(windowList.Length(), Max(1, currentWindowIndex - 2))
+        
+        UpdateWindowMenu()
+    }
+}
+
+; Check whether the target window is activation target
+IsWindow(hWnd){
+    WinGet, dwStyle, Style, ahk_id %hWnd%
+    if ((dwStyle&0x08000000) || !(dwStyle&0x10000000)) {
+        return false
+    }
+    WinGet, dwExStyle, ExStyle, ahk_id %hWnd%
+    if (dwExStyle & 0x00000080) {
+        return false
+    }
+    WinGetClass, szClass, ahk_id %hWnd%
+    if (szClass = "TApplication") {
+        return false
+    }
+    return true
 }
 
 UpdateWebcamTelemetryMenu() {
@@ -304,6 +506,29 @@ CheckPlaynite() {
     SetTimer, CheckPlaynite, Off
 }
 
+CheckInactivity:
+    ; Check if more than 5000 milliseconds (5 seconds) have passed since the last input
+    if (A_TickCount - lastActivity > 5000) {
+        ; Only call Activate Current Window if the GUI is visible
+        if (isMenuVisible) {
+            NoActivityCurrentWindow()
+        }
+        ; Update the last active time to avoid repeated actions
+        lastActivity := A_TickCount
+    }
+return
+
+; YES/No Buttons for Updates Custom Window
+YesButton:
+    ; Open the GitHub page
+    Run, https://github.com/Special-Niewbie/HandleOS
+	Gui, Destroy
+return
+
+NoButton:
+	Gui, Destroy
+return
+
 OpenScriptSite:
     Run, https://github.com/Special-Niewbie/
 return
@@ -375,6 +600,8 @@ ToggleVideo:
 return
 
 QuitNow: ; exit script label 
+	RunWait, %ComSpec% /c taskkill /F /IM AudioCCMode.exe,, Hide
+	Sleep 250
 	ExitApp 
 return
 

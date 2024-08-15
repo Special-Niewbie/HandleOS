@@ -24,6 +24,7 @@ using Console2Desk.TouchButtons;
 using Console2Desk.FuturesButtons;
 using Console2Desk.BottomWindowButtons;
 using Console2Desk.SettingsButton;
+using Console2Desk.ToggleSwitchDev;
 
 
 namespace Console2Desk
@@ -52,6 +53,7 @@ namespace Console2Desk
         private bool _isWifiDelayActive = false;
         private const int WifiDelay = 50000; // 50 seconds in milliseconds
 
+        private bool _isWindowMinimized = false;
 
         private bool isDragging = false;
         private Point lastCursor;
@@ -73,6 +75,8 @@ namespace Console2Desk
             InitializeComponent();
             this.TopMost = true;
             this.Load += Form1_Load;
+            this.Resize += Form1_Resize;
+
             SetForegroundWindow(this.Handle);
 
             winTheme = new WinTheme(this.Handle);
@@ -128,6 +132,15 @@ namespace Console2Desk
             pictureBox3.MouseLeave += PictureBox3_MouseLeave;
             pictureBoxCheckVRAM.MouseHover += pictureBoxCheckVRAM_MouseHover;
             pictureBoxCheckVRAM.MouseLeave += pictureBoxCheckVRAM_MouseLeave;
+            pictureBoxVramPlus.MouseHover += pictureBoxVramPlus_MouseHover;
+            pictureBoxVramPlus.MouseLeave += pictureBoxVramPlus_MouseLeave;
+
+
+            pictureBoxResetTouchKeyboard.MouseUp += pictureBoxResetTouchKeyboard_MouseUp;
+            pictureBoxResetTouchKeyboard.MouseDown += pictureBoxResetTouchKeyboard_MouseDown;
+            pictureBoxResetTouchKeyboardPress.MouseUp += pictureBoxResetTouchKeyboardPress_MouseUp;
+            pictureBoxResetTouchKeyboardPress.MouseDown += pictureBoxResetTouchKeyboardPress_MouseDown;
+
 
             pictureBoxAMDadrenaline.MouseDown += pictureBoxAMDadrenaline_MouseDown;
             pictureBoxAMDadrenaline.MouseUp += pictureBoxAMDadrenaline_MouseUp;
@@ -160,6 +173,10 @@ namespace Console2Desk
             _topMostTimer.Interval = 1000; // 1 second
             _topMostTimer.Tick += (s, args) =>
             {
+                if (this.WindowState == FormWindowState.Minimized)
+                {
+                    return; // Non eseguire il codice se la finestra è minimizzata
+                }
                 if (!_isAboutBoxOpen && DependencyContainer.MessagesBoxImplementation != null &&
                     DependencyContainer.MessagesBoxImplementation.IsTimerActive && !_isWifiDelayActive)
                 {
@@ -172,7 +189,7 @@ namespace Console2Desk
 
             // Timer for handling WiFi button delay
             _wifiDelayTimer = new System.Windows.Forms.Timer();
-            _wifiDelayTimer.Interval = WifiDelay; // 10 seconds
+            _wifiDelayTimer.Interval = WifiDelay; // 50 seconds
             _wifiDelayTimer.Tick += (s, args) =>
             {
                 _isWifiDelayActive = false;
@@ -189,7 +206,7 @@ namespace Console2Desk
             this.MinimumSize = new Size(minWidth, minHeight);
 
 
-            RAMChecker ramChecker = new RAMChecker(pictureBoxCheckVRAM);
+            RAMChecker ramChecker = new RAMChecker(pictureBoxCheckVRAM, pictureBoxVramPlus);
             ramChecker.CheckVirtualMemorySettingsAsync(DependencyContainer.MessagesBoxImplementation);
 
             CodeForAMD_NoShutterCheck.CheckEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
@@ -198,6 +215,7 @@ namespace Console2Desk
             CodeForControlBCDMemoryUsageCheck.CheckBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
             CodeForReduceWindowsLatencyCheck.CheckReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
             msStoreButtonStartupCheck.CheckMsStoreInstallation(msStoreButton, DependencyContainer.MessagesBoxImplementation);
+            CodeForReduceNetworkLatencyCheck.CheckReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
 
             try
             {
@@ -252,9 +270,26 @@ namespace Console2Desk
             // Manage window state changes
             if (this.WindowState == FormWindowState.Minimized)
             {
-                this.WindowState = FormWindowState.Normal;
+                // Ferma il timer quando la finestra è minimizzata
+                if (_topMostTimer != null && _topMostTimer.Enabled)
+                {
+                    _topMostTimer.Stop();
+                }
+                _isWindowMinimized = true;
+
+                //Keep the code below to be more aggressive on TopMost if necessary
+                //this.WindowState = FormWindowState.Normal;
                 SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
                 SetForegroundWindow(this.Handle); // Ensures the window stays on top
+            }
+            else if (this.WindowState == FormWindowState.Normal && _isWindowMinimized)
+            {
+                // Riavvia il timer quando la finestra è ripristinata
+                if (_topMostTimer != null && !_topMostTimer.Enabled)
+                {
+                    _topMostTimer.Start();
+                }
+                _isWindowMinimized = false;
             }
 
             // Manage minimum resizing
@@ -458,9 +493,10 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
 
                 // Restore static icon
@@ -535,9 +571,9 @@ namespace Console2Desk
 
 
         private async void consoleButton1_Click(object sender, EventArgs e)
-        {           
+        {
             // Call the method to handle console button click
-            ConsoleButton.CodeForconsoleButton1(consoleButton1, fullscreenAppPath, defaultFullscreenSteamAppPath, DependencyContainer.MessagesBoxImplementation);
+            ConsoleButton.CodeForconsoleButton1(DependencyContainer.MessagesBoxImplementation, consoleButton1, fullscreenAppPath, defaultFullscreenSteamAppPath);
 
         }
         //----------------End - Touch-Buttons
@@ -701,6 +737,7 @@ namespace Console2Desk
         private void button_IncreaseRAM_System_MouseEnter(object sender, EventArgs e)
         {
             pictureBoxCheckVRAM.BackColor = Color.MediumSlateBlue;
+            pictureBoxVramPlus.BackColor = Color.MediumSlateBlue;
         }
 
         private void button_IncreaseRAM_System_Click(object sender, EventArgs e)
@@ -711,10 +748,12 @@ namespace Console2Desk
         private void button_IncreaseRAM_System_MouseHover(object sender, EventArgs e)
         {
             pictureBoxCheckVRAM.BackColor = Color.MediumSlateBlue;
+            pictureBoxVramPlus.BackColor = Color.MediumSlateBlue;
         }
         private void button_IncreaseRAM_System_MouseLeave(object sender, EventArgs e)
         {
             pictureBoxCheckVRAM.BackColor = Color.Transparent;
+            pictureBoxVramPlus.BackColor = Color.Transparent;
         }
 
         private void buttonMiniConsoleWindow_Click(object sender, EventArgs e)
@@ -825,6 +864,20 @@ namespace Console2Desk
         }
 
         private void pictureBoxCheckVRAM_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxVramPlus_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void pictureBoxVramPlus_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxVramPlus_MouseLeave(object sender, EventArgs e)
         {
 
         }
@@ -990,6 +1043,7 @@ namespace Console2Desk
             CodeForSystemDevicesCheck.CheckSystemDevices(controlSystemDevices, DependencyContainer.MessagesBoxImplementation);
             CodeForControlBCDMemoryUsageCheck.CheckBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
             CodeForReduceWindowsLatencyCheck.CheckReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
+            CodeForReduceNetworkLatencyCheck.CheckReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
 
             // Check if the button is visible
             if (buttonRestorePauseUpgrade.Visible)
@@ -1009,10 +1063,11 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
                 // Enable the desktop button
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
 
                 // Restore static icon
@@ -1048,6 +1103,9 @@ namespace Console2Desk
                 controlReduceWindowsLatency.Visible = true;
                 pictureBoxReduceWindowsLatency.Visible = true;
                 labelReduceWindowsLatency.Visible = true;
+                labelReduceNetworkLatency.Visible = true;
+                pictureBoxReduceNetworkLatency.Visible = true;
+                controlReduceNetworkLatency.Visible = true;
 
 
                 desktopButton1.Enabled = false;
@@ -1058,6 +1116,7 @@ namespace Console2Desk
                 consoleButton1.BackColor = Color.FromArgb(40, 40, 40);
                 consoleButton1.BorderColor = Color.Gray;
 
+                pictureBoxResetTouchKeyboard.Enabled = false;
                 pictureBoxAMDadrenaline.Enabled = false;
                 pictureBoxAMDadrenalinePress.Enabled = false;
                 pictureBoxRealTime_ON.Enabled = false;
@@ -1080,11 +1139,12 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
         }
 
@@ -1145,11 +1205,12 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
         }
         public void touchScreenEnDbButton_Click(object sender, EventArgs e)
@@ -1165,11 +1226,12 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
         }
 
@@ -1181,11 +1243,12 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
         }
 
@@ -1206,11 +1269,12 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
         }
 
@@ -1227,11 +1291,12 @@ namespace Console2Desk
                     labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency);
+                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
-                pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
+                pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
         }
 
@@ -1341,35 +1406,63 @@ namespace Console2Desk
 
         //#########End - Settings
 
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxResetTouchKeyboard_Click(object sender, EventArgs e)
+        {
+
+        }
+        private async void pictureBoxResetTouchKeyboard_MouseDown(object sender, EventArgs e)
+        {
+            Cursor = Cursors.WaitCursor;
+            // Cambia l'immagine quando il mouse viene premuto           
+            pictureBoxResetTouchKeyboard.Visible = false;
+            pictureBoxResetTouchKeyboardPress.Visible = true;
+
+            // Chiama il metodo asincrono per resettare la tastiera touch
+            await CodeForResetTouchKeyboard.ResetTouchKeyboardAsync();
+
+            // Mostra un messaggio di successo all'utente
+            MessageBox.Show("The Touch Keyboard has been reset successfully. If the keyboard reappears, please close it manually to avoid further issues. " +
+                "If the problem persists, try running this function again and then move the Controller D-Pad left and right and press some buttons. " +
+                "After that, you may need to close the keyboard manually once again, and the issue should not reoccur.",
+                "Success",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Cursor = Cursors.Default;
+        }
+        private void pictureBoxResetTouchKeyboard_MouseUp(object sender, MouseEventArgs e)
+        {
+            // Restores the default image when the mouse is released
+            pictureBoxResetTouchKeyboard.Visible = true;
+            pictureBoxResetTouchKeyboardPress.Visible = false;
+        }
+
+        private void pictureBoxResetTouchKeyboardPress_MouseDown(object sender, MouseEventArgs e)
+        {
+            pictureBoxResetTouchKeyboardPress.Visible = true;
+            pictureBoxResetTouchKeyboard.Visible = false;
+        }
+
+        private void pictureBoxResetTouchKeyboardPress_Click(object sender, EventArgs e)
+        {
+            pictureBoxResetTouchKeyboardPress.Visible = true;
+            pictureBoxResetTouchKeyboard.Visible = false;
+        }
+
+        private void pictureBoxResetTouchKeyboardPress_MouseUp(object sender, EventArgs e)
+        {
+            pictureBoxResetTouchKeyboard.Visible = true;
+            pictureBoxResetTouchKeyboardPress.Visible = false;
+        }
         private void buttonAbout_Click(object sender, EventArgs e)
         {
             _isAboutBoxOpen = true;
             AboutBox aboutBox = new AboutBox(this, _topMostTimer);
             aboutBox.FormClosed += (s, args) => _isAboutBoxOpen = false;
             aboutBox.Show();
-
-        }
-
-        public void PauseTimer()
-        {
-            if (_topMostTimer != null)
-            {
-                _topMostTimer.Stop();
-                Console.WriteLine("Timer paused");
-            }
-        }
-
-        public void ResumeTimer()
-        {
-            if (_topMostTimer != null)
-            {
-                _topMostTimer.Start();
-                Console.WriteLine("Timer resumed");
-            }
-        }
-
-        private void buttonRealTimeProtection_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -1404,6 +1497,36 @@ namespace Console2Desk
             DependencyContainer.MessagesBoxImplementation.ShowMessage("Windows Defender Real-Time Protection disabled successfully.", "Information", MessageBoxButtons.OK);
 
             Cursor.Current = Cursors.Default;
+        }
+
+        private void labelReduceNetworkLatency_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxReduceNetworkLatency_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void controlReduceNetworkLatency_Click(object sender, EventArgs e)
+        {
+            CodeForReduceNetworkLatency.ToggleReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
+
+            // Show a message to restart the system
+            var result = DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                "Changes will take effect after a system restart.\n\n" +
+                "Please note that this procedure improves latency in online competitive games. However, the improvements apply only to the current network you are connected to. If you connect to a different network, you will need to enable this switch again for each new network. To disable the improvement for a previously activated network, you need to reconnect to that network (keeping the same IP) and then switch it off.\n\n" +
+                "Do you want to restart now?",
+                "Information",
+                MessageBoxButtons.YesNo);
+
+
+            if (result == DialogResult.Yes)
+            {
+                // Restart the system
+                Process.Start("shutdown.exe", "/r /t 0");
+            }
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Console2Desk.TouchButtons
 {
     public class ConsoleButton
     {
-        public static void CodeForconsoleButton1(Special_Niewbie_Button Button, string fullscreenAppPath, string defaultFullscreenSteamAppPath, MessagesBoxImplementation messagesBoxImplementation)
+        public static void CodeForconsoleButton1(MessagesBoxImplementation messagesBoxImplementation, Special_Niewbie_Button Button, string fullscreenAppPath, string defaultFullscreenSteamAppPath)
         {
             string settingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Console2Desk", "Settings.ini");
             string selectedPath = string.Empty;
