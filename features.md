@@ -158,11 +158,9 @@ As shown in the picture below, this opens the Background settings for what to ma
        - **Explanation**   
          By default, Core Isolation and CFG are set to OFF to optimize performance, especially on systems with limited resources. Enabling these features provides additional security but may impact system performance. So for majority of the situation it's safe to keep turning OFF, consider enabling them if you require enhanced protection against potential threats and are willing to trade off some performance for increased security.
 
-11. **Reduce Network Latency**
-        The `Reduce Network Latency` option is designed to optimize your network performance by adjusting the handling of network packets for online competitive Games. Here’s a brief overview of how it works and when to use it:
-
-    **Understanding Nagle's Algorithm**
-        Nagle's Algorithm is a technique used to improve network efficiency by reducing the number of small packets sent over the network. It works by buffering small packets until a full-sized packet can be sent. This can be beneficial for high-bandwidth connections with large data transfers but may introduce delays in latency-sensitive applications.
+11. **Reduce Network Latency:**
+    The `Reduce Network Latency` option is designed to optimize your network performance by adjusting the handling of network packets for online competitive Games. Here’s a brief overview of how it works and when to use it:
+- **Understanding Nagle's Algorithm** - Nagle's Algorithm is a technique used to improve network efficiency by reducing the number of small packets sent over the network. It works by buffering small packets until a full-sized packet can be sent. This can be beneficial for high-bandwidth connections with large data transfers but may introduce delays in latency-sensitive applications.
         
     *Recommendations*
         
@@ -178,7 +176,7 @@ As shown in the picture below, this opens the Background settings for what to ma
         
     By adjusting this setting, you can better tailor your network performance to match your specific needs, whether you require low latency for interactive applications or optimized bandwidth for large data transfers.
     
-12. **Optimize Memory and Reduce Stutter by BCD** (set to ON):
+13. **Optimize Memory and Reduce Stutter by BCD** (set to ON):
         This setting is designed to optimize memory performance and reduce stuttering by modifying the Boot Configuration Data (BCD). To use this feature effectively, `Secure Boot` must be completely disabled in the BIOS. If Secure Boot is enabled, this optimization will not function as intended.  
 
       - **How It Works:** 
@@ -188,7 +186,7 @@ As shown in the picture below, this opens the Background settings for what to ma
           -  ***Reverting to Standard Settings:***   
             If you encounter issues with USB devices that are functional but corrupted, or if you wish to return to default system settings, you can turn the switch to OFF and re-enable `Secure Boot` in the BIOS. This will revert the system to its standard configuration and should resolve any related issues.
 
-13. **Reduce High DPC/ISR Latencies in Windows** (set to ON):
+14. **Reduce High DPC/ISR Latencies in Windows** (set to ON):
         This setting activates a Windows tweak package that is not included by default in the operating system. It helps to mitigate issues related to high DPC (Deferred Procedure Call) and ISR (Interrupt Service Routine) latencies. It's safe to keep **ON**.  
        - **What It Does:**
          - **Tell Windows to stop tolerating high DPC/ISR latencies:**  
