@@ -16,8 +16,9 @@ This is where `Console2Desk` and its companion `HotKeys4Console2Desk` come into 
   <h3><strong>Console2Desk v.2.0</strong></h3>
 </div>
 <div align="center">  
-    <img height="420" src="Git_assets/features/c2d_main_v.2.0.0.png"/>
+    <img height="420" src="Git_assets/features/c2d_main_v.2.3.0.png"/>
 </div>
+
 
 
 
@@ -27,21 +28,24 @@ This is where `Console2Desk` and its companion `HotKeys4Console2Desk` come into 
 ### 1. Add Features
 
 - **Unlock 15 16:9/16:10 Resolutions**: This function, initially designed only for the Rog Ally 16:9 screen, has been expanded in the second version to include support for 16:10 screens as well (thanks to Prob for testing it). It increases the base screen resolutions from 3 to a total of 15. This is particularly advantageous for adapting screen resolutions to different scenarios, especially for older arcade or PC games that were designed for lower resolutions and might not run properly on newer systems with higher default resolutions.
+
 - **Stock 3 16:9/16:10 Resolutions**: This function restores the Stock screen functions in case, for some reason, you want fewer available resolutions.
+
 - **Add Integer Scaling voice in AMD Software: Adrenalin Edition**: This button is only for AMD APUs. It adds Integer Scaling, which is not implemented in Handhelds for some reason. This is particularly suitable for those with a handheld with a 2k (or higher) screen or those who connect the handheld to a PC monitor. This function is a "must-have" because it allows you to play natively at half resolution without degrading the image, thus increasing in-game performance.
-- **Set - Increase VRAM System**: With `HandleOS_23H2v2`, you generally do not need to use this button. The new version of HandleOS includes optimizations for memory management that are sufficient for all scenarios. For instance, if you have 16GB of physical RAM, the pre-configured 8GB of virtual RAM (in an APU scenario) is typically enough. However, if you have only 8GB or 4GB of physical RAM, you may consider using this button. This button is primarily useful for older systems with very limited physical RAM, where it can help optimize physical RAM usage by leveraging virtual RAM. It is also beneficial in specific cases where a higher amount of virtual RAM is needed and its benefits are clear. For the vast majority of scenarios, it is recommended to stick with the default settings already configured in HandleOS_23H2v2 to maintain the best performances.
+
+- **Set - Increase VRAM System:** With `HandleOS_23H2v2`, you generally do not need to use this button except for 2 scenario as below. 
+
+  - The new version of HandleOS includes optimizations for memory management that are sufficient for most scenarios. For instance, if you have 16GB of physical RAM, the pre-configured `HandleOS 8GB` of virtual RAM (in an APU scenario) is typically enough for System and GPU.
+
+    However, if you have only `8GB` or `4GB` of physical RAM, you may consider using this button. This is particularly useful for older systems with very limited, where it can help optimize physical RAM usage by leveraging virtual RAM. 
+
+  - Additionally, for scenarios involving `AAA games` like ***Hellblade 2*** or ***Alan Wake 2***, which are not launch on stock Windows due to insufficient physical GPU memory on first Handled generations, the new ***VRAM+*** feature in HandleOS ensures that these games can run at any resolution without encountering GPU memory errors in-game. 
+    - In conclusion , while the default VRAM settings in `HandleOS_23H2v2` are suitable for most cases and you should use it to don't let the OS to use more RAM, activating `VRAM+` is recommended in situations with limited RAM or when playing demanding AAA games where in normal case wont boot and you must to activate it.
+
+  For the vast majority of scenarios, it is recommended to stick with the default settings already configured in HandleOS_23H2v2 to maintain the best performance. However, in cases of limited physical RAM or when dealing with specific AAA games, enabling VRAM+ can provide the necessary boost to ensure smooth operation.
+
 - **Minimize/Restore Playnite Window**: As the name suggests, this is useful if you need to force Playnite into the background for some reason. You can use Console2Desk temporarily to keep and minimize Playnite in the background.
-- **Fix Touch Keyboard**
-  If you (in the same section) frequently switch between `Desktop Mode` and `Console Mode` - this happens in quick succession - Windows may sometimes encounter a bug that causes the Touch Keyboard to pop up every time you interact with the system.
 
-  *What This Button Does*
-  The Fix Touch Keyboard button helps resolve this issue by resetting the `Touch Keyboard` functionality. After using this button, if the keyboard continues to reappear, please follow these steps:
-
-  ***Close the Keyboard Manually:*** If the Touch Keyboard still appears, close it manually to prevent further interruptions.
-  ***Run the Function Again:*** Press the `Fix Touch Keyboard` button once more.
-  ***Use the Controller:*** Move the Controller D-Pad left and right and press some buttons in meantime the button it's resetting the service.
-  ***Close the Keyboard Again**:* If necessary, after could pop-up again for just a time , press the `X` on the Keyboard Window and close the keyboard manually again.
-  This process should address the issue and prevent the keyboard from reappearing in the future.
 - **PayPal**: As you might guess, this is the donation section where you can donate directly to me and support the HandleOS project if you enjoyed it.
 
 ### 2. Settings Menu
@@ -64,7 +68,26 @@ The `AMD Adrenalin` icon opens the AMD Adrenalin Center if you want to check or 
 The central icon opens `Windows Security Settings` only if you are in `Desktop Mode` in case you need Windows Defender settings. The other two icons, regardless of whether you are in `Desktop Mode` or `Console Mode`, temporarily activate or deactivate Windows Defender if you need the full potential of the console without antivirus background services in-game (temporary). These work only if you have `Tamper Protection` - **disabled**; Tamper Protection security it is the service that prevents software from turning off the antivirus. I intentionally made in this light way to disable only if you turn off manually the Tamper Protection, because I didn't want the C2D software to be too invasive in this regard.
 
 ### 8. Wifi Settings
+
 Icon to facilitate touchscreen use, by opening the settings for available Wifi networks (only if you are in `Desktop Mode`).
+
+### 9. **Fix Touch Keyboard**:
+
+If you turn on your Handled/PC and for some reason frequently switch few times between `Desktop Mode` and `Console Mode` - this happens in quick succession - Windows may sometimes encounter a bug that causes the Touch Keyboard to pop up every time you interact with the system.
+
+*What This Button Does*:
+The Fix Touch Keyboard button helps resolve this issue by resetting the `Touch Keyboard` functionality. After using this button, if the keyboard continues to reappear, please follow these steps:
+
+- ***Close the Virtual Touch Keyboard:*** If the Touch Keyboard still appears, close it manually by pressing `X` window button to prevent further interruptions.
+
+- ***Run the Function Again:*** Press the `Fix Touch Keyboard` button once more.
+  - ***Use the Controller:*** Move the Controller D-Pad left and right and press some buttons in meantime the Fix Touch Keyboard button it's resetting the service (around 5 seconds).
+  
+  - ***Close the Keyboard Again**:* After reset, if necessary,  could pop-up the Touch Keyboard again for just a time , press the `X` on the Keyboard Window and close the keyboard manually again, and the problem it's solved.
+    This process should address the issue and prevent the keyboard from reappearing.
+    
+    
+    
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -124,59 +147,58 @@ As shown in the picture below, this opens the Background settings for what to ma
 
 10. **Core Isolation + CFG** (set to OFF):
 
-      - **What is Core Isolation Memory Integrity?**    
-        Core isolation provides enhanced protection against malware and other attacks by isolating critical system processes from the operating system and device. Memory integrity, a feature of core isolation, helps prevent malicious code from interfering with high-security processes. By enabling Memory Integrity, you add an additional layer of defense to protect your system from potential attacks. 
-      - **What is Control Flow Guard (CFG)?**    
-        Control Flow Guard (CFG) is a security feature designed to protect against memory corruption vulnerabilities. It achieves this by enforcing strict restrictions on where an application can execute code from, making it much harder for exploits to execute arbitrary code through vulnerabilities like buffer overflows. CFG builds on previous exploit mitigation technologies such as /GS (Buffer Security Check), DEP (Data Execution Prevention), and ASLR (Address Space Layout Randomization).
-      - **Benefits of Core Isolation and CFG:**  
-        - Prevent memory corruption and ransomware attacks by isolating critical system processes.
-        - Restrict server capabilities to minimize the attack surface and reduce the risk of exploitation.  
-        - Make it more difficult for attackers to exploit vulnerabilities and execute arbitrary code. 
-      - **Explanation**   
-        By default, Core Isolation and CFG are set to OFF to optimize performance, especially on systems with limited resources. Enabling these features provides additional security but may impact system performance. So for majority of the situation it's safe to keep turning OFF, consider enabling them if you require enhanced protection against potential threats and are willing to trade off some performance for increased security.
+       - **What is Core Isolation Memory Integrity?**    
+         Core isolation provides enhanced protection against malware and other attacks by isolating critical system processes from the operating system and device. Memory integrity, a feature of core isolation, helps prevent malicious code from interfering with high-security processes. By enabling Memory Integrity, you add an additional layer of defense to protect your system from potential attacks. 
+       - **What is Control Flow Guard (CFG)?**    
+         Control Flow Guard (CFG) is a security feature designed to protect against memory corruption vulnerabilities. It achieves this by enforcing strict restrictions on where an application can execute code from, making it much harder for exploits to execute arbitrary code through vulnerabilities like buffer overflows. CFG builds on previous exploit mitigation technologies such as /GS (Buffer Security Check), DEP (Data Execution Prevention), and ASLR (Address Space Layout Randomization).
+       - **Benefits of Core Isolation and CFG:**  
+         - Prevent memory corruption and ransomware attacks by isolating critical system processes.
+         - Restrict server capabilities to minimize the attack surface and reduce the risk of exploitation.  
+         - Make it more difficult for attackers to exploit vulnerabilities and execute arbitrary code. 
+       - **Explanation**   
+         By default, Core Isolation and CFG are set to OFF to optimize performance, especially on systems with limited resources. Enabling these features provides additional security but may impact system performance. So for majority of the situation it's safe to keep turning OFF, consider enabling them if you require enhanced protection against potential threats and are willing to trade off some performance for increased security.
 
 11. **Reduce Network Latency**
-      The `Reduce Network Latency` option is designed to optimize your network performance by adjusting the handling of network packets for online competitive Games. Here’s a brief overview of how it works and when to use it:
+        The `Reduce Network Latency` option is designed to optimize your network performance by adjusting the handling of network packets for online competitive Games. Here’s a brief overview of how it works and when to use it:
 
-      **Understanding Nagle's Algorithm**
-      Nagle's Algorithm is a technique used to improve network efficiency by reducing the number of small packets sent over the network. It works by buffering small packets until a full-sized packet can be sent. This can be beneficial for high-bandwidth connections with large data transfers but may introduce delays in latency-sensitive applications.
+        **Understanding Nagle's Algorithm**
+        Nagle's Algorithm is a technique used to improve network efficiency by reducing the number of small packets sent over the network. It works by buffering small packets until a full-sized packet can be sent. This can be beneficial for high-bandwidth connections with large data transfers but may introduce delays in latency-sensitive applications.
+        
+        *Recommendations*
+        
+        - **For Low Latency Connections:** If you prioritize low latency and need immediate responsiveness (e.g., for online gaming or real-time applications), it is advisable to turn off Nagle's Algorithm. This allows the sender to send packets of any size immediately, reducing delays caused by buffering.
+        
+        - **For High Bandwidth Large Transfers:** If your primary use involves high-bandwidth connections with large data transfers (e.g., file downloads or streaming), enabling Nagle's Algorithm can be beneficial. It helps optimize the use of network bandwidth by minimizing the number of packets sent, which can improve overall transfer efficiency.
 
-      *Recommendations*
-
-      - **For Low Latency Connections:** If you prioritize low latency and need immediate responsiveness (e.g., for online gaming or real-time applications), it is advisable to turn off Nagle's Algorithm. This allows the sender to send packets of any size immediately, reducing delays caused by buffering.
-
-      - **For High Bandwidth Large Transfers:** If your primary use involves high-bandwidth connections with large data transfers (e.g., file downloads or streaming), enabling Nagle's Algorithm can be beneficial. It helps optimize the use of network bandwidth by minimizing the number of packets sent, which can improve overall transfer efficiency.
-
-      
-
-      > ***Important Note***:
-      > This switch applies the `Reduce Network Latency` setting, only to the currently connected network and IP address. If you change your IP address or switch to a different network, you will need to re-enable the switch to apply the setting to the new network or IP.
-      >
-      > By adjusting this setting, you can better tailor your network performance to match your specific needs, whether you require low latency for interactive applications or optimized bandwidth for large data transfers.
-
+    
+    ​    
+    
+        > ***Important Note***:
+        > This switch applies the `Reduce Network Latency` setting, only to the currently connected network and IP address. If you change your IP address or switch to a different network, you will need to re-enable the switch to apply the setting to the new network or IP.
+        >
+        > By adjusting this setting, you can better tailor your network performance to match your specific needs, whether you require low latency for interactive applications or optimized bandwidth for large data transfers.
+    
 12. **Optimize Memory and Reduce Stutter by BCD** (set to ON):
-      This setting is designed to optimize memory performance and reduce stuttering by modifying the Boot Configuration Data (BCD). To use this feature effectively, `Secure Boot` must be completely disabled in the BIOS. If Secure Boot is enabled, this optimization will not function as intended.  
+        This setting is designed to optimize memory performance and reduce stuttering by modifying the Boot Configuration Data (BCD). To use this feature effectively, `Secure Boot` must be completely disabled in the BIOS. If Secure Boot is enabled, this optimization will not function as intended.  
 
-        - **How It Works:** 
-          ***i.*** The optimization avoids the use of non-contiguous portions of low-memory from the operating system. This boosts memory performance and can improve micro-stuttering in about 80% of cases.
-
-          ***ii.*** It also addresses command buffer stutter, particularly after disabling 5-level paging on 10th generation Intel processors. 
-          ***Note*:** that this optimization can cause system instability or freezes if the memory sticks are unstable.
-
-        - **Reverting to Standard Settings:**   
-          If you encounter issues with USB devices that are functional but corrupted, or if you wish to return to default system settings, you can turn the switch to OFF and re-enable `Secure Boot` in the BIOS. This will revert the system to its standard configuration and should resolve any related issues.
+      - **How It Works:** 
+        - ***i.*** The optimization avoids the use of non-contiguous portions of low-memory from the operating system. This boosts memory performance and can improve micro-stuttering in about 80% of cases.
+          - ***ii.*** It also addresses command buffer stutter, particularly after disabling 5-level paging on 10th generation Intel processors. 
+            Note: that this optimization can cause system instability or freezes if the memory sticks are unstable.
+          -  ***Reverting to Standard Settings:***   
+            If you encounter issues with USB devices that are functional but corrupted, or if you wish to return to default system settings, you can turn the switch to OFF and re-enable `Secure Boot` in the BIOS. This will revert the system to its standard configuration and should resolve any related issues.
 
 13. **Reduce High DPC/ISR Latencies in Windows** (set to ON):
         This setting activates a Windows tweak package that is not included by default in the operating system. It helps to mitigate issues related to high DPC (Deferred Procedure Call) and ISR (Interrupt Service Routine) latencies. It's safe to keep **ON**.  
-        **What It Does:** 
-
-        - **Tell Windows to stop tolerating high DPC/ISR latencies:** 
-          By enabling this tweak, Windows is instructed to handle high latency events more aggressively, which can lead to improved system responsiveness and performance.
-
-          **Understanding DPC and ISR:** 
-
-          ***i.*** **DPC (Deferred Procedure Call):** DPCs are used to defer the execution of a task that must be handled at a later time. High DPC latency can cause system delays and affect real-time performance.
-          ***ii.*** **ISR (Interrupt Service Routine):** ISRs are routines that handle hardware interrupts. High ISR latency can lead to delays in processing these interrupts, which can affect the system's responsiveness. By reducing high DPC and ISR latencies, this setting aims to enhance overall system performance and responsiveness.
+       - **What It Does:**
+         - **Tell Windows to stop tolerating high DPC/ISR latencies:**  
+           By enabling this tweak, Windows is instructed to handle high latency events more aggressively, which can lead to improved system responsiveness and performance.
+    
+    - **Understanding DPC and ISR:**
+      - ***i.*** **DPC (Deferred Procedure Call):**  
+        DPCs are used to defer the execution of a task that must be handled at a later time. High DPC latency can cause system delays and affect real-time performance.
+      - ***ii.*** **ISR (Interrupt Service Routine):**  
+        ISRs are routines that handle hardware interrupts. High ISR latency can lead to delays in processing these interrupts, which can affect the system's responsiveness. By reducing high DPC and ISR latencies, this setting aims to enhance overall system performance and responsiveness.
 
 
 
@@ -240,6 +262,20 @@ As we can see in the image, there are 9 options in this first version:
   
   <img height="320" src="Git_assets/features/ConfigureSwitchButtons.png"/>
   
+  About `Configure Switch Buttons`, the key combinations are as follows:
+  
+  - **Keyboard**
+    - `CTRL+SHIFT+F7` = Opens Console2Desk
+  
+  - **Controller/Gamepad**
+    - `SELECT+START` = Opens Console2Desk (with a small vibration)
+    - `SELECT+LB+RB` = As Default, switch between applications (with a small vibration).
+    - `Configure Switch Buttons` = Customize your own buttons to switch between applications (with a small vibration). *Thanks to Prob for suggestions.*
+  
+  > ***NOTE***: `SELECT` button which means *BACK* button on XBOX controller - and the switch function has two methods. We learned that *`Lenovo Legion Go`* uses combinations with `SELECT+LB or RB`, which can cause conflicts with switch application buttons. Therefore, if you have this problem with default configurations `SELECT+LB+RB` , now you can `Configure Switch Buttons`.
+  
+  
+  
 - **Exit**  
   If you encounter problems with the program/service, you can always close it. However, it's not recommended as we'll see more functions of `HotKeys4Console2Desk` shortly.
 
@@ -273,21 +309,3 @@ You can use `HandleOS Tab View` in two ways:
 2. **Interactive View**: Use the D-Pad on your controller to navigate through the available windows. Press the `A` button to select a window for immediate switching.
 
 This dual functionality makes it easier to manage your switch between windows more efficiently.
-
-
-
-
-
-About `Configure Switch Buttons`, the key combinations are as follows:
-
-**Keyboard**
-
-- `CTRL+SHIFT+F7` = Opens Console2Desk
-
-**Controller/Gamepad**
-
-- `SELECT+START` = Opens Console2Desk (with a small vibration)
-- `SELECT+LB+RB` = As Default, switch between applications (with a small vibration).
-- `Configure Switch Buttons` = Customize your own buttons to switch between applications (with a small vibration). *Thanks to Prob for suggestions.*
-
-***NOTE***: `SELECT` button which means *BACK* button on XBOX controller - and the switch function has two methods. We learned that *`Lenovo Legion Go`* uses combinations with `SELECT+LB or RB`, which can cause conflicts with switch application buttons. Therefore, if you have this problem with default configurations `SELECT+LB+RB` , now you can `Configure Switch Buttons`.

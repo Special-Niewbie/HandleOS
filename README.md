@@ -113,7 +113,7 @@ Ko-fi:
 | <img width=32px src="Git_assets/pipelines.ico">  OS Debloated |        ✅        |
 | <img width=36px src="Git_assets/bitlocker.png">  Device Encryption |        ✅        |
 | <img width=32px src="Git_assets/Pause_updates-icon.png">  Full Upgradable (by default it's suspended to reduce services in background) |        ✅        |
-| <img width=32px src="Git_assets/defender.ico">  Windows Defender (just `Core isolation` and `Cloud-submissions` are disabled) |        ✅        |
+| <img width=32px src="Git_assets/defender.ico">  Windows Defender (just `Cloud-submissions` are completely disabled) |        ✅        |
 | <img height="28" src="Git_assets/fps.png"> Lightweight OS = FPS Boost |        ✅        |
 
 
