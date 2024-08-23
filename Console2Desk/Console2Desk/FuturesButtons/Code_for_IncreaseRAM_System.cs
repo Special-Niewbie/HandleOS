@@ -46,23 +46,18 @@ namespace Console2Desk.FuturesButtons
                     return;
                 }
 
-                // Get total physical memory using Systeminfo
-                string output = ExecuteCmd("Systeminfo | find \"Total Physical Memory\"");
+                // Get total physical memory using PowerShell
+                string output = ExecuteCmd("powershell -command \"(Get-WmiObject -Class Win32_ComputerSystem | Select-Object -ExpandProperty TotalPhysicalMemory) / 1MB\"");
 
-                // Parsing the output to get the total RAM
-                string[] tokens = output.Split(new char[] { ' ', ',' }, StringSplitOptions.RemoveEmptyEntries);
-                if (tokens.Length >= 5)
+                if (double.TryParse(output.Trim(), out double RAM))
                 {
-                    string ramString = tokens[3] + tokens[4]; // Merge tokens to get RAM without spaces and commas
-                    ulong RAM = ulong.Parse(ramString);
-
                     ulong initialSize, maximumSize;
 
                     if (dialogResult == DialogResult.Yes)
                     {
                         // Calculate initialSize and maximumSize for VRAM+
-                        initialSize = RAM * 3 / 2;
-                        maximumSize = RAM * 3;
+                        initialSize = (ulong)(RAM * 3 / 2);
+                        maximumSize = (ulong)(RAM * 3);
                     }
                     else // DialogResult.No
                     {
