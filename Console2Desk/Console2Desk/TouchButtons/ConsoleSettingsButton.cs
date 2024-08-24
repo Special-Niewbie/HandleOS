@@ -15,13 +15,22 @@ namespace Console2Desk.TouchButtons
     {
         private WinTheme winTheme;
         private string settingsPath;
-        public ConsoleSettingsButton()
+
+        private Form _form;
+        private System.Windows.Forms.Timer _timer;
+        public ConsoleSettingsButton(Form1 form, System.Windows.Forms.Timer timer)
         {
             InitializeComponent();
+            _form = form;
+            _timer = timer;
             winTheme = new WinTheme(this.Handle);
             winTheme.ApplyTheme();
             settingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Console2Desk", "Settings.ini");
             LoadSettings();
+
+            // Registra gli eventi per fermare e riprendere il timer
+            this.Shown += ConsoleSettingsButton_Shown;
+            this.FormClosed += ConsoleSettingsButton_FormClosed;
         }
 
         private void LoadSettings()
@@ -49,6 +58,26 @@ namespace Console2Desk.TouchButtons
                     }
                 }
             }
+        }
+
+        private void ConsoleSettingsButton_Shown(object sender, EventArgs e)
+        {
+            PauseTimer(); // Pause the timer when the AboutBox is shown
+        }
+
+        private void ConsoleSettingsButton_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ResumeTimer(); // Resume the timer when the AboutBox is closed
+        }
+
+        private void PauseTimer()
+        {
+            _timer?.Stop();
+        }
+
+        private void ResumeTimer()
+        {
+            _timer?.Start();
         }
 
         private void radioButtonPlaynite_CheckedChanged(object sender, EventArgs e)

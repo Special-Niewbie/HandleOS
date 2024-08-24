@@ -19,12 +19,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 using Microsoft.Win32;
 using System.Diagnostics;
+using System.Windows.Forms;
 
 namespace Console2Desk.TouchButtons
 {
-    public class ConsoleButton
+    public class ConsoleTouchButton
     {
-        public static void CodeForconsoleButton1(MessagesBoxImplementation messagesBoxImplementation, Special_Niewbie_Button Button, string fullscreenAppPath, string defaultFullscreenSteamAppPath)
+        public static void CodeForTouchConsoleButton(MessagesBoxImplementation messagesBoxImplementation, Special_Niewbie_Button Button, string fullscreenAppPath, string defaultFullscreenSteamAppPath, Form1 form, System.Windows.Forms.Timer timer)
         {
             string settingsPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Console2Desk", "Settings.ini");
             string selectedPath = string.Empty;
@@ -42,7 +43,7 @@ namespace Console2Desk.TouchButtons
                 else
                 {
                     // Open the ConsoleSettingsButton form to configure settings
-                    using (ConsoleSettingsButton settingsForm = new ConsoleSettingsButton())
+                    using (ConsoleSettingsButton settingsForm = new ConsoleSettingsButton(form, timer))
                     {
                         settingsForm.ShowDialog();
                     }

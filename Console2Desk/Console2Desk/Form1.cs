@@ -40,6 +40,18 @@ namespace Console2Desk
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
+        //###################################
+        // For trak the Window and suspend the TopMost timer when is open by the buttonOpenFileExplorer
+        [DllImport("user32.dll")]
+        private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+
+        [DllImport("user32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool IsWindow(IntPtr hWnd);
+
+        private IntPtr _explorerWindowHandle = IntPtr.Zero;
+        //###################################
+
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
         private const uint SWP_NOMOVE = 0x0002;
         private const uint SWP_NOSIZE = 0x0001;
@@ -48,6 +60,9 @@ namespace Console2Desk
 
         private System.Windows.Forms.Timer _topMostTimer;
         private bool _isAboutBoxOpen = false;
+        private bool _isConsoleSettingsOpen = false;
+        private Process _explorerProcess;
+        private bool _isExplorerOpen = false;
 
         private System.Windows.Forms.Timer _wifiDelayTimer;
         private bool _isWifiDelayActive = false;
@@ -177,7 +192,7 @@ namespace Console2Desk
                 {
                     return; // Non eseguire il codice se la finestra è minimizzata
                 }
-                if (!_isAboutBoxOpen && DependencyContainer.MessagesBoxImplementation != null &&
+                if (!_isAboutBoxOpen && !_isConsoleSettingsOpen && !_isExplorerOpen && DependencyContainer.MessagesBoxImplementation != null &&
                     DependencyContainer.MessagesBoxImplementation.IsTimerActive && !_isWifiDelayActive)
                 {
                     SetWindowPos(this.Handle, HWND_TOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
@@ -565,7 +580,7 @@ namespace Console2Desk
         private async void desktopButton1_Click(object sender, EventArgs e)
         {
             // Call the method to handle desktop button click
-            DesktopButton.CodeFordesktopButton1(DependencyContainer.MessagesBoxImplementation, desktopButton1, explorerPath);
+            DesktopButton.CodeForTouchDesktopButton(DependencyContainer.MessagesBoxImplementation, desktopButton1, explorerPath);
 
         }
 
@@ -573,7 +588,7 @@ namespace Console2Desk
         private async void consoleButton1_Click(object sender, EventArgs e)
         {
             // Call the method to handle console button click
-            ConsoleButton.CodeForconsoleButton1(DependencyContainer.MessagesBoxImplementation, consoleButton1, fullscreenAppPath, defaultFullscreenSteamAppPath);
+            ConsoleTouchButton.CodeForTouchConsoleButton(DependencyContainer.MessagesBoxImplementation, consoleButton1, fullscreenAppPath, defaultFullscreenSteamAppPath, this, _topMostTimer);
 
         }
         //----------------End - Touch-Buttons
@@ -1147,6 +1162,23 @@ namespace Console2Desk
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi);
         }
+        private void MonitorExplorerProcess()
+        {
+            try
+            {
+                // Wait for the Explorer process to exit
+                _explorerProcess.WaitForExit();
+
+                // Once the process exits, reset the flag and restart the timer
+                _isExplorerOpen = false;
+                _topMostTimer.Start();
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions related to the monitoring process
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred while monitoring the process: {ex.Message}", "Error", MessageBoxButtons.OK);
+            }
+        }
 
         private void buttonOpenFileExplorer_Click(object sender, EventArgs e)
         {
@@ -1156,7 +1188,37 @@ namespace Console2Desk
                 string folderPath = "::{20D04FE0-3AEA-1069-A2D8-08002B30309D}";
 
                 // Launch File Explorer with the specified path
-                Process.Start("explorer.exe", folderPath);
+                _explorerProcess = Process.Start("explorer.exe", folderPath);
+                _isExplorerOpen = true;
+                _topMostTimer.Stop(); // Stop the timer when File Explorer is opened
+                                      // Send Form1 to the back
+                this.WindowState = FormWindowState.Minimized;
+
+                // Wait for the process to have a window
+                Task.Delay(500).Wait(); // Wait for the window to open
+
+                // Find the window handle of the new Explorer window
+                _explorerWindowHandle = FindWindow(null, "This PC");
+
+                // Monitor the Explorer window in a separate thread or using a timer
+                System.Windows.Forms.Timer windowMonitorTimer = new System.Windows.Forms.Timer();
+                windowMonitorTimer.Interval = 1000; // Check every second
+                windowMonitorTimer.Tick += (s, args) =>
+                {
+                    if (_explorerWindowHandle == IntPtr.Zero || !IsWindow(_explorerWindowHandle))
+                    {
+                        // Window is closed, restart the TopMost timer
+                        _isExplorerOpen = false;
+                        _topMostTimer.Start();
+                        windowMonitorTimer.Stop(); // Stop monitoring
+
+                        // Restore Form1 to normal state
+                        this.WindowState = FormWindowState.Normal;
+                        Task.Delay(250).Wait();
+                        this.BringToFront(); // Optionally bring Form1 to the front
+                    }
+                };
+                windowMonitorTimer.Start();
             }
             catch (Exception ex)
             {
@@ -1254,10 +1316,12 @@ namespace Console2Desk
 
         private void buttonChangeConsoleSettings_Click(object sender, EventArgs e)
         {
+            _isConsoleSettingsOpen = true;
             // Open the ConsoleSettingsButton form to configure settings
-            using (ConsoleSettingsButton settingsForm = new ConsoleSettingsButton())
+            using (ConsoleSettingsButton settingsForm = new ConsoleSettingsButton(this, _topMostTimer))
             {
-                settingsForm.ShowDialog();
+                settingsForm.FormClosed += (s, args) => _isConsoleSettingsOpen = false;
+                settingsForm.ShowDialog();                
             }
         }
 

@@ -26,8 +26,9 @@
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
-    <img height="240" src="Git_assets/c2d_main_v.2.0.0.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/c2d_main_v.2.5.0.png" style="margin-left: auto;"/>
 </div>
+
 
 
 

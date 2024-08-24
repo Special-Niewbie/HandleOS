@@ -122,9 +122,12 @@ As shown in the picture below, this opens the Background settings for what to ma
 ### Let's Boost the FPS (Menu)
 
 7. **AMD GPU No-Shutter** (set to ON):
-     By default, this option is set to OFF. You should enable this feature only after you have completed installing all your drivers. The `AMD GPU No-Shutter` function is compatible exclusively with AMD GPUs and APUs. When activated, it is designed to reduce or eliminate in-game shuttering, as it helps improve the responsiveness of your GPU.  If you have an AMD GPU or APU, you can turn this option ON after all drivers are installed to improve your gaming experience by minimizing shuttering.
 
-8. **Meltdown / Spectre Protection** (set by default to OFF):
+8. By default, this option is set to OFF and should only be enabled after you have installed all your drivers. The AMD GPU No-Shutter function is compatible exclusively with AMD GPUs and APUs. When activated, it  eliminates in-game stuttering by improving the responsiveness of your GPU.
+
+     This feature disables the Ultra Low Power State (ULPS) on AMD GPUs, which typically puts the GPU to sleep when not in use (or in meantime you are using it but not in full power). Frequent switching between active and sleep states can cause stuttering during gaming or streaming. Disabling ULPS keeps the GPU consistently active (work normally), reducing stuttering and improving performance, especially when the GPU isn't fully utilized. This is particularly beneficial for gaming and streaming with low demanding GPU, where a consistent GPU performance and low consumptions are crucial.
+
+9. **Meltdown / Spectre Protection** (set by default to OFF):
      In early 2018, the PC industry was significantly impacted by the discovery that certain processor design features, used to enhance the performance of modern PCs, could be exploited to create severe security vulnerabilities known as Meltdown and Spectre. The industry has been actively addressing these threats through updates to operating systems, motherboard BIOSes, and CPU firmware. 
      **Meltdown and Spectre Protection:** 
 
@@ -137,7 +140,7 @@ As shown in the picture below, this opens the Background settings for what to ma
      - **Additional Tips:** 
        You can toggle this function ON or OFF temporarily if you notice performance differences in specific games or applications, especially AAA titles. - To ensure that changes take effect, it is best to restart your PC after making modifications to this setting.
 
-9. **Some System Devices for Virtual Machine** (set to OFF): 
+10. **Some System Devices for Virtual Machine** (set to OFF): 
      This switch should be turned OFF only after you have completed the initial installation of all drivers on your PC, and on each ON/ OFF must to restart the Computer . 
      Here’s how to use this setting: 
 
@@ -145,27 +148,27 @@ As shown in the picture below, this opens the Background settings for what to ma
      - **Virtual Machines and Custom Drivers**: If you are not using virtual machines on your Handheld/PC and do not install custom drivers for any connected hardware, or if you are not installing drivers from unknown or untrusted sources, it is generally safe to disable this switch. Disabling it can lead to improved system performance, including more stable FPS and better responsiveness, especially on systems with limited power like Handhelds.
      - **When to Keep ON**: If you are using virtual machines, or if you are installing custom or unknown drivers, it is advisable to keep this switch ON to ensure system stability and compatibility. By turning this switch OFF, you may experience performance improvements such as more stable FPS and increased responsiveness, particularly beneficial for systems with limited resources. However, ensure that you have completed all necessary driver installations and are not using virtual machines before making this change.
 
-10. **Core Isolation + CFG** (set to OFF):
+11. **Core Isolation + CFG** (set to OFF):
 
-       - **What is Core Isolation Memory Integrity?**    
-         Core isolation provides enhanced protection against malware and other attacks by isolating critical system processes from the operating system and device. Memory integrity, a feature of core isolation, helps prevent malicious code from interfering with high-security processes. By enabling Memory Integrity, you add an additional layer of defense to protect your system from potential attacks. 
-       - **What is Control Flow Guard (CFG)?**    
-         Control Flow Guard (CFG) is a security feature designed to protect against memory corruption vulnerabilities. It achieves this by enforcing strict restrictions on where an application can execute code from, making it much harder for exploits to execute arbitrary code through vulnerabilities like buffer overflows. CFG builds on previous exploit mitigation technologies such as /GS (Buffer Security Check), DEP (Data Execution Prevention), and ASLR (Address Space Layout Randomization).
-       - **Benefits of Core Isolation and CFG:**  
-         - Prevent memory corruption and ransomware attacks by isolating critical system processes.
-         - Restrict server capabilities to minimize the attack surface and reduce the risk of exploitation.  
-         - Make it more difficult for attackers to exploit vulnerabilities and execute arbitrary code. 
-       - **Explanation**   
-         By default, Core Isolation and CFG are set to OFF to optimize performance, especially on systems with limited resources. Enabling these features provides additional security but may impact system performance. So for majority of the situation it's safe to keep turning OFF, consider enabling them if you require enhanced protection against potential threats and are willing to trade off some performance for increased security.
+         - **What is Core Isolation Memory Integrity?**    
+           Core isolation provides enhanced protection against malware and other attacks by isolating critical system processes from the operating system and device. Memory integrity, a feature of core isolation, helps prevent malicious code from interfering with high-security processes. By enabling Memory Integrity, you add an additional layer of defense to protect your system from potential attacks. 
+         - **What is Control Flow Guard (CFG)?**    
+           Control Flow Guard (CFG) is a security feature designed to protect against memory corruption vulnerabilities. It achieves this by enforcing strict restrictions on where an application can execute code from, making it much harder for exploits to execute arbitrary code through vulnerabilities like buffer overflows. CFG builds on previous exploit mitigation technologies such as /GS (Buffer Security Check), DEP (Data Execution Prevention), and ASLR (Address Space Layout Randomization).
+         - **Benefits of Core Isolation and CFG:**  
+           - Prevent memory corruption and ransomware attacks by isolating critical system processes.
+           - Restrict server capabilities to minimize the attack surface and reduce the risk of exploitation.  
+           - Make it more difficult for attackers to exploit vulnerabilities and execute arbitrary code. 
+         - **Explanation**   
+           By default, Core Isolation and CFG are set to OFF to optimize performance, especially on systems with limited resources. Enabling these features provides additional security but may impact system performance. So for majority of the situation it's safe to keep turning OFF, consider enabling them if you require enhanced protection against potential threats and are willing to trade off some performance for increased security.
 
-11. **Reduce Network Latency:**
-    The `Reduce Network Latency` option is designed to optimize your network performance by adjusting the handling of network packets for online competitive Games. Here’s a brief overview of how it works and when to use it:
+12. **Reduce Network Latency:**
+      The `Reduce Network Latency` option is designed to optimize your network performance by adjusting the handling of network packets for online competitive Games. Here’s a brief overview of how it works and when to use it:
 - **Understanding Nagle's Algorithm** - Nagle's Algorithm is a technique used to improve network efficiency by reducing the number of small packets sent over the network. It works by buffering small packets until a full-sized packet can be sent. This can be beneficial for high-bandwidth connections with large data transfers but may introduce delays in latency-sensitive applications.
         
     *Recommendations*
         
     - **For Low Latency Connections:** If you prioritize low latency and need immediate responsiveness (e.g., for online gaming or real-time applications), it is advisable to turn off Nagle's Algorithm. This allows the sender to send packets of any size immediately, reducing delays caused by buffering.
-        
+      
         - **For High Bandwidth Large Transfers:** If your primary use involves high-bandwidth connections with large data transfers (e.g., file downloads or streaming), enabling Nagle's Algorithm can be beneficial. It helps optimize the use of network bandwidth by minimizing the number of packets sent, which can improve overall transfer efficiency.
 
     
@@ -210,13 +213,18 @@ As shown in the picture below, this opens the Background settings for what to ma
 
 **In `HandleOS 23H2v2` New File Explorer Icon and Playnite Forwarder**
 
-- New File Explorer Icon: Redesigned for better usability.
-- New Playnite Forwarder: Quickly access the Tools folder for frequently used system utilities.
-  Reference images below:
+- New File Explorer Icon: Redesigned for better consistency of style. 
+  Reference image:  <img height="38" src="Git_assets/features/Material_Folder.png"/> <img height="118" src="Git_assets/features/FileExplorerBanner.png"/>
 
-<img height="78" src="Git_assets/features/Material_Folder.png"/>                 <img height="78" src="Git_assets/features/Tools.png"/>
+- New Playnite Forwarder: 
+  Quickly access the Tools folder for frequently used system utilities.
+  Reference image:  <img height="38" src="Git_assets/features/Tools.png"/><img height="118" src="Git_assets/features/ToolsBanner.png"/>
+  
+- **What are Forwarders?**
 
+  Forwarders are small helper tools for the Playnite UI. They allow Playnite to open system components, like `File Explorer`, and then go into the background, letting you perform your tasks without Playnite's limitations. These forwarders are simple floating buttons; when clicked, they close the forwarder and components and return Playnite to full-screen mode, ready for use again.
 
+​                 
 
 ### HotKeys4Console2Desk
 
