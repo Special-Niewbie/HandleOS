@@ -150,15 +150,15 @@ As shown in the picture below, this opens the Background settings for what to ma
 
 11. **Core Isolation + CFG** (set to OFF):
 
-         - **What is Core Isolation Memory Integrity?**    
+    - **What is Core Isolation Memory Integrity?**    
            Core isolation provides enhanced protection against malware and other attacks by isolating critical system processes from the operating system and device. Memory integrity, a feature of core isolation, helps prevent malicious code from interfering with high-security processes. By enabling Memory Integrity, you add an additional layer of defense to protect your system from potential attacks. 
-         - **What is Control Flow Guard (CFG)?**    
+    - **What is Control Flow Guard (CFG)?**    
            Control Flow Guard (CFG) is a security feature designed to protect against memory corruption vulnerabilities. It achieves this by enforcing strict restrictions on where an application can execute code from, making it much harder for exploits to execute arbitrary code through vulnerabilities like buffer overflows. CFG builds on previous exploit mitigation technologies such as /GS (Buffer Security Check), DEP (Data Execution Prevention), and ASLR (Address Space Layout Randomization).
-         - **Benefits of Core Isolation and CFG:**  
+    - **Benefits of Core Isolation and CFG:**  
            - Prevent memory corruption and ransomware attacks by isolating critical system processes.
            - Restrict server capabilities to minimize the attack surface and reduce the risk of exploitation.  
            - Make it more difficult for attackers to exploit vulnerabilities and execute arbitrary code. 
-         - **Explanation**   
+    - **Explanation**   
            By default, Core Isolation and CFG are set to OFF to optimize performance, especially on systems with limited resources. Enabling these features provides additional security but may impact system performance. So for majority of the situation it's safe to keep turning OFF, consider enabling them if you require enhanced protection against potential threats and are willing to trade off some performance for increased security.
 
 12. **Reduce Network Latency:**
