@@ -268,6 +268,8 @@ As we can see in the image, there are 9 options in this first version:
   
   <img height="320" src="Git_assets/features/ConfigureSwitchButtons.png"/>
   
+  Below, you'll find the list of button combinations. Additionally, in an emergency, you can call up `Console2Desk` from anywhere on your computer if needed.
+  
   About `Configure Switch Buttons`, the key combinations are as follows:
   
   - **Keyboard**
@@ -293,7 +295,7 @@ As we can see in the image, there are 9 options in this first version:
 
 
 
-You can also use the multitasking function to switch between apps if you're running a scaling app in parallel with your game. Below, you'll find the list of button combinations. Additionally, in an emergency, you can call up `Console2Desk` from anywhere on your computer if needed.
+
 
 ### AudioCCMode Volume Control (Version 2.2.0 and later)
 
@@ -306,6 +308,8 @@ Now, thanks to the new `AudioCCMode` service, HandleOS can handle all physical v
 ## HandleOS Tab View (Version 2.2.0 and later)
 
 <img height="220" src="Git_assets/features/HandleOSTabView.png"/>
+
+You can also use the multitasking function to switch between apps if you're running a scaling app in parallel with your game. 
 
 Starting from version 2.2.0, `HandleOS Tab View` is an enhanced window switching experience in `Console Mode`. 
 

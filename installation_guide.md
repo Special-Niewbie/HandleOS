@@ -29,7 +29,7 @@ Download my borrowed ISO, and the necessary tool from the following link: [Downl
 
    - Here it's the serial SHA256 Hash ISO number:
 
-     1. (Old Version- deprecated) HandleOS 23H2 genuine SHA256 = `1be41e42f21e899ba17f26685aee6e1f24a5afbcc00611685a6841588fb97de0`
+     1. ~~(Old Version- deprecated) HandleOS 23H2 genuine SHA256 = `1be41e42f21e899ba17f26685aee6e1f24a5afbcc00611685a6841588fb97de0`~~
    
      1. HandleOS 23H2v2 genuine SHA256 = `634a06f5ad10e38c937f332f04ee371049f60be0b25139e0f52c15f2e06b5710`
      
