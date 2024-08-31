@@ -142,6 +142,7 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 ## YouTubers Video ![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
 
 1. Italian Language
+
     [![YouTube Video](https://img.youtube.com/vi/BSlDsv-Qafo/0.jpg)](https://www.youtube.com/watch?v=BSlDsv-Qafo)
 
 
