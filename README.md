@@ -130,6 +130,15 @@ Ko-fi:
     <img height="240" src="Git_assets/Benchmarks/HandleOSv2_UserServices.png"
 </div>
 
+### HandleOS Benchmark
+From Version of 2.7.0, C2D has a new companion for our handhelds: the new **HandleOS Benchmark**. This tool, revived from the past and completely redesigned and rebuilt from the ground up, offers more consistent scores based on averages directly from Windows 7.
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="350" src="Git_assets/HandleOS_BanchMain.png" style="margin-left: auto;"/>
+    <img height="350" src="Git_assets/HandleOS_BanchScores.png" style="margin-left: auto;"/>
+</div>
+
+
 
 
 
