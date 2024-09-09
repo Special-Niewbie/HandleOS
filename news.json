@@ -1,0 +1,12 @@
+[
+  {
+    "title": "NEWS test.",
+    "icon": "C:/Program Files/Console2Desk/sources/alert.png",
+    "status": "Pending"
+  }, 
+  {
+    "title": "OK.",
+    "icon": "C:/Program Files/Console2Desk/sources/ok.png",
+    "status": ""
+  }
+]
