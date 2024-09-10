@@ -1,12 +1,12 @@
 [
   {
-    "title": "All 2024H2 Windows Update Hold it within further confirmation",
+    "title": "All 24H2 Windows Update Hold it within further confirmation",
     "icon": "C:/Program Files/Console2Desk/sources/alert.png",
     "status": "Pending"
   }, 
   {
-    "title": "All 2023H2 Windows Update can be installed",
+    "title": "All 23H2 Windows Update can be installed",
     "icon": "C:/Program Files/Console2Desk/sources/ok.png",
-    "status": "OK"
+    "status": ""
   }
 ]
