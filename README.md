@@ -177,7 +177,7 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 
 <a href="https://github.com/Special-Niewbie/HandleOS/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Special-Niewbie/HandleOS" />
-</a> @AderitoSilva
+</a>
 
 
 
