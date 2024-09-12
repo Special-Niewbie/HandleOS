@@ -31,7 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBoxIntegerScaling = new PictureBox();
             panel2 = new Panel();
+            special_Niewbie_ButtonRestoreBoost = new Special_Niewbie_Button();
+            special_Niewbie_ButtonHOB = new Special_Niewbie_Button();
+            buttonMiniConsoleWindowNew = new Special_Niewbie_Button();
             panel4Toggle = new Panel();
+            uacToggleSwitch = new ToggleSwitchDev.ControlToggles();
+            labelUAC = new Label();
+            pictureBoxUAC = new PictureBox();
             labelReduceNetworkLatency = new Label();
             pictureBoxReduceNetworkLatency = new PictureBox();
             controlReduceNetworkLatency = new ToggleSwitchDev.ControlToggles();
@@ -66,6 +72,7 @@
             buttonOpenFileExplorer = new Special_Niewbie_Button();
             pictureBoxSettings = new PictureBox();
             labelOpenWDsettings = new Label();
+            buttonInfo = new Button();
             pictureBox4 = new PictureBox();
             pictureBoxRealTime_OFF = new PictureBox();
             pictureBoxRealTime_ON = new PictureBox();
@@ -75,17 +82,21 @@
             pictureBoxWifi = new PictureBox();
             consoleButton1 = new Special_Niewbie_Button();
             desktopButton1 = new Special_Niewbie_Button();
+            labelCountDown = new Label();
             pictureBoxIS_Addon = new PictureBox();
             pictureBoxRes = new PictureBox();
             pictureBox1610Res = new PictureBox();
             pictureBoxStockRes = new PictureBox();
             pictureBox1610StockRes = new PictureBox();
+            pictureBoxControllers = new PictureBox();
             buttonAllyUltimateRes = new Button();
             panelTitle = new Panel();
             labelTitle = new Label();
             buttonAllyStockRes = new Button();
             buttonIntegerScaling = new Button();
             panel1 = new Panel();
+            label4 = new Label();
+            customListBox1 = new CustomListBox();
             pictureBoxVramPlus = new PictureBox();
             pictureBoxStockRes1610 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -99,11 +110,11 @@
             pictureBox3 = new PictureBox();
             pictureBox1 = new PictureBox();
             button1610UltimateRes = new Button();
-            buttonMiniConsoleWindow = new Button();
             button_IncreaseRAM_System = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxIntegerScaling).BeginInit();
             panel2.SuspendLayout();
             panel4Toggle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUAC).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxReduceNetworkLatency).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxReduceWindowsLatency).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBCDMemoryUsage).BeginInit();
@@ -125,6 +136,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1610Res).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1610StockRes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxControllers).BeginInit();
             panelTitle.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVramPlus).BeginInit();
@@ -141,7 +153,7 @@
             // pictureBoxIntegerScaling
             // 
             pictureBoxIntegerScaling.Image = Properties.Resources.IntegerScaling_icon;
-            pictureBoxIntegerScaling.Location = new Point(6, 108);
+            pictureBoxIntegerScaling.Location = new Point(206, 106);
             pictureBoxIntegerScaling.Name = "pictureBoxIntegerScaling";
             pictureBoxIntegerScaling.Size = new Size(419, 190);
             pictureBoxIntegerScaling.SizeMode = PictureBoxSizeMode.Zoom;
@@ -154,6 +166,9 @@
             // 
             panel2.BackColor = Color.FromArgb(40, 40, 40);
             panel2.Controls.Add(panel4Toggle);
+            panel2.Controls.Add(special_Niewbie_ButtonRestoreBoost);
+            panel2.Controls.Add(special_Niewbie_ButtonHOB);
+            panel2.Controls.Add(buttonMiniConsoleWindowNew);
             panel2.Controls.Add(buttonRestorePauseUpgrade);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBoxResetTouchKeyboardPress);
@@ -165,6 +180,7 @@
             panel2.Controls.Add(buttonOpenFileExplorer);
             panel2.Controls.Add(pictureBoxSettings);
             panel2.Controls.Add(labelOpenWDsettings);
+            panel2.Controls.Add(buttonInfo);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBoxRealTime_OFF);
             panel2.Controls.Add(pictureBoxRealTime_ON);
@@ -175,23 +191,99 @@
             panel2.Controls.Add(consoleButton1);
             panel2.Controls.Add(desktopButton1);
             panel2.Controls.Add(pictureBoxIntegerScaling);
+            panel2.Controls.Add(labelCountDown);
             panel2.Controls.Add(pictureBoxIS_Addon);
             panel2.Controls.Add(pictureBoxRes);
             panel2.Controls.Add(pictureBox1610Res);
             panel2.Controls.Add(pictureBoxStockRes);
             panel2.Controls.Add(pictureBox1610StockRes);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(200, 0);
+            panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 3, 3, 10);
             panel2.Name = "panel2";
-            panel2.Size = new Size(584, 465);
+            panel2.Size = new Size(784, 465);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // special_Niewbie_ButtonRestoreBoost
+            // 
+            special_Niewbie_ButtonRestoreBoost.BackColor = Color.FromArgb(50, 50, 50);
+            special_Niewbie_ButtonRestoreBoost.BorderColor = Color.FromArgb(227, 227, 227);
+            special_Niewbie_ButtonRestoreBoost.BorderRadius = 20;
+            special_Niewbie_ButtonRestoreBoost.BorderSize = 1;
+            special_Niewbie_ButtonRestoreBoost.FlatAppearance.BorderSize = 0;
+            special_Niewbie_ButtonRestoreBoost.FlatStyle = FlatStyle.Flat;
+            special_Niewbie_ButtonRestoreBoost.ForeColor = Color.White;
+            special_Niewbie_ButtonRestoreBoost.HoverColor = Color.MediumSlateBlue;
+            special_Niewbie_ButtonRestoreBoost.Image = Properties.Resources.HandleIconRestoreBoost;
+            special_Niewbie_ButtonRestoreBoost.Location = new Point(469, 399);
+            special_Niewbie_ButtonRestoreBoost.Name = "special_Niewbie_ButtonRestoreBoost";
+            special_Niewbie_ButtonRestoreBoost.RightToLeft = RightToLeft.No;
+            special_Niewbie_ButtonRestoreBoost.Size = new Size(200, 60);
+            special_Niewbie_ButtonRestoreBoost.TabIndex = 40;
+            special_Niewbie_ButtonRestoreBoost.Text = "      HandleOS           \r\n        Restore Boost        ";
+            special_Niewbie_ButtonRestoreBoost.TextAlign = ContentAlignment.MiddleRight;
+            special_Niewbie_ButtonRestoreBoost.TextColor = Color.White;
+            special_Niewbie_ButtonRestoreBoost.TextImageRelation = TextImageRelation.ImageBeforeText;
+            special_Niewbie_ButtonRestoreBoost.UseVisualStyleBackColor = false;
+            special_Niewbie_ButtonRestoreBoost.Visible = false;
+            special_Niewbie_ButtonRestoreBoost.Click += special_Niewbie_ButtonRestoreBoost_Click;
+            // 
+            // special_Niewbie_ButtonHOB
+            // 
+            special_Niewbie_ButtonHOB.BackColor = Color.FromArgb(50, 50, 50);
+            special_Niewbie_ButtonHOB.BorderColor = Color.FromArgb(227, 227, 227);
+            special_Niewbie_ButtonHOB.BorderRadius = 20;
+            special_Niewbie_ButtonHOB.BorderSize = 1;
+            special_Niewbie_ButtonHOB.FlatAppearance.BorderSize = 0;
+            special_Niewbie_ButtonHOB.FlatStyle = FlatStyle.Flat;
+            special_Niewbie_ButtonHOB.ForeColor = Color.White;
+            special_Niewbie_ButtonHOB.HoverColor = Color.MediumSlateBlue;
+            special_Niewbie_ButtonHOB.Image = Properties.Resources.Console2DeskiconBenchmark40;
+            special_Niewbie_ButtonHOB.Location = new Point(250, 399);
+            special_Niewbie_ButtonHOB.Name = "special_Niewbie_ButtonHOB";
+            special_Niewbie_ButtonHOB.RightToLeft = RightToLeft.No;
+            special_Niewbie_ButtonHOB.Size = new Size(200, 60);
+            special_Niewbie_ButtonHOB.TabIndex = 36;
+            special_Niewbie_ButtonHOB.Text = "           HandleOS\r\n           Benchmark";
+            special_Niewbie_ButtonHOB.TextColor = Color.White;
+            special_Niewbie_ButtonHOB.TextImageRelation = TextImageRelation.ImageBeforeText;
+            special_Niewbie_ButtonHOB.UseVisualStyleBackColor = false;
+            special_Niewbie_ButtonHOB.Visible = false;
+            special_Niewbie_ButtonHOB.Click += special_Niewbie_ButtonHOB_Click;
+            // 
+            // buttonMiniConsoleWindowNew
+            // 
+            buttonMiniConsoleWindowNew.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            buttonMiniConsoleWindowNew.BackColor = Color.FromArgb(50, 50, 50);
+            buttonMiniConsoleWindowNew.BorderColor = Color.FromArgb(227, 227, 227);
+            buttonMiniConsoleWindowNew.BorderRadius = 26;
+            buttonMiniConsoleWindowNew.BorderSize = 1;
+            buttonMiniConsoleWindowNew.FlatAppearance.BorderSize = 0;
+            buttonMiniConsoleWindowNew.FlatStyle = FlatStyle.Flat;
+            buttonMiniConsoleWindowNew.Font = new Font("Segoe UI", 7.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonMiniConsoleWindowNew.ForeColor = Color.White;
+            buttonMiniConsoleWindowNew.HoverColor = Color.MediumSlateBlue;
+            buttonMiniConsoleWindowNew.Image = Properties.Resources.Resize_icon24x24;
+            buttonMiniConsoleWindowNew.Location = new Point(233, 398);
+            buttonMiniConsoleWindowNew.Name = "buttonMiniConsoleWindowNew";
+            buttonMiniConsoleWindowNew.RightToLeft = RightToLeft.No;
+            buttonMiniConsoleWindowNew.Size = new Size(135, 45);
+            buttonMiniConsoleWindowNew.TabIndex = 39;
+            buttonMiniConsoleWindowNew.Text = "  Min/Rest/Open \r\n  Steam - Playnite";
+            buttonMiniConsoleWindowNew.TextAlign = ContentAlignment.MiddleRight;
+            buttonMiniConsoleWindowNew.TextColor = Color.White;
+            buttonMiniConsoleWindowNew.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonMiniConsoleWindowNew.UseVisualStyleBackColor = false;
+            buttonMiniConsoleWindowNew.Click += buttonMiniConsoleWindowNew_Click;
             // 
             // panel4Toggle
             // 
             panel4Toggle.BackColor = Color.FromArgb(50, 50, 50);
             panel4Toggle.BorderStyle = BorderStyle.FixedSingle;
+            panel4Toggle.Controls.Add(uacToggleSwitch);
+            panel4Toggle.Controls.Add(labelUAC);
+            panel4Toggle.Controls.Add(pictureBoxUAC);
             panel4Toggle.Controls.Add(labelReduceNetworkLatency);
             panel4Toggle.Controls.Add(pictureBoxReduceNetworkLatency);
             panel4Toggle.Controls.Add(controlReduceNetworkLatency);
@@ -215,18 +307,61 @@
             panel4Toggle.Controls.Add(pictureBoxMeltdown_Spectre);
             panel4Toggle.Controls.Add(label2);
             panel4Toggle.Controls.Add(labelAMDnoShutter);
-            panel4Toggle.Location = new Point(269, 7);
+            panel4Toggle.Location = new Point(469, 3);
             panel4Toggle.Name = "panel4Toggle";
-            panel4Toggle.Size = new Size(303, 324);
+            panel4Toggle.Size = new Size(303, 390);
             panel4Toggle.TabIndex = 31;
             panel4Toggle.Visible = false;
             panel4Toggle.Paint += panel4Toggle_Paint;
+            // 
+            // uacToggleSwitch
+            // 
+            uacToggleSwitch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uacToggleSwitch.BorderColor = Color.LightGray;
+            uacToggleSwitch.ForeColor = Color.White;
+            uacToggleSwitch.IsOn = false;
+            uacToggleSwitch.Location = new Point(249, 194);
+            uacToggleSwitch.Name = "uacToggleSwitch";
+            uacToggleSwitch.OffColor = Color.DarkGray;
+            uacToggleSwitch.OffText = "OFF";
+            uacToggleSwitch.OnColor = Color.MediumSlateBlue;
+            uacToggleSwitch.OnText = "ON";
+            uacToggleSwitch.Size = new Size(34, 19);
+            uacToggleSwitch.TabIndex = 56;
+            uacToggleSwitch.TextEnabled = true;
+            uacToggleSwitch.Visible = false;
+            uacToggleSwitch.Click += uacToggleSwitch_Click;
+            // 
+            // labelUAC
+            // 
+            labelUAC.AutoSize = true;
+            labelUAC.ForeColor = SystemColors.ControlLightLight;
+            labelUAC.Location = new Point(55, 188);
+            labelUAC.Name = "labelUAC";
+            labelUAC.Size = new Size(156, 30);
+            labelUAC.TabIndex = 55;
+            labelUAC.Text = "User Account Control (UAC)\r\n(set to OFF):";
+            labelUAC.Visible = false;
+            labelUAC.Click += labelUAC_Click;
+            // 
+            // pictureBoxUAC
+            // 
+            pictureBoxUAC.BackColor = Color.Transparent;
+            pictureBoxUAC.Image = Properties.Resources.UAC;
+            pictureBoxUAC.Location = new Point(9, 188);
+            pictureBoxUAC.Name = "pictureBoxUAC";
+            pictureBoxUAC.Size = new Size(33, 30);
+            pictureBoxUAC.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxUAC.TabIndex = 54;
+            pictureBoxUAC.TabStop = false;
+            pictureBoxUAC.Visible = false;
+            pictureBoxUAC.Click += pictureBoxUAC_Click;
             // 
             // labelReduceNetworkLatency
             // 
             labelReduceNetworkLatency.AutoSize = true;
             labelReduceNetworkLatency.ForeColor = SystemColors.ControlLightLight;
-            labelReduceNetworkLatency.Location = new Point(55, 157);
+            labelReduceNetworkLatency.Location = new Point(55, 155);
             labelReduceNetworkLatency.Name = "labelReduceNetworkLatency";
             labelReduceNetworkLatency.Size = new Size(138, 30);
             labelReduceNetworkLatency.TabIndex = 52;
@@ -238,7 +373,7 @@
             // 
             pictureBoxReduceNetworkLatency.BackColor = Color.Transparent;
             pictureBoxReduceNetworkLatency.Image = Properties.Resources.NetworkLowLatency;
-            pictureBoxReduceNetworkLatency.Location = new Point(9, 157);
+            pictureBoxReduceNetworkLatency.Location = new Point(9, 155);
             pictureBoxReduceNetworkLatency.Name = "pictureBoxReduceNetworkLatency";
             pictureBoxReduceNetworkLatency.Size = new Size(33, 30);
             pictureBoxReduceNetworkLatency.SizeMode = PictureBoxSizeMode.Zoom;
@@ -253,7 +388,7 @@
             controlReduceNetworkLatency.BorderColor = Color.LightGray;
             controlReduceNetworkLatency.ForeColor = Color.White;
             controlReduceNetworkLatency.IsOn = false;
-            controlReduceNetworkLatency.Location = new Point(249, 163);
+            controlReduceNetworkLatency.Location = new Point(249, 161);
             controlReduceNetworkLatency.Name = "controlReduceNetworkLatency";
             controlReduceNetworkLatency.OffColor = Color.DarkGray;
             controlReduceNetworkLatency.OffText = "OFF";
@@ -270,7 +405,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlLight;
-            label1.Location = new Point(44, 218);
+            label1.Location = new Point(44, 284);
             label1.Name = "label1";
             label1.Size = new Size(219, 19);
             label1.TabIndex = 49;
@@ -282,7 +417,7 @@
             controlReduceWindowsLatency.BorderColor = Color.LightGray;
             controlReduceWindowsLatency.ForeColor = Color.White;
             controlReduceWindowsLatency.IsOn = false;
-            controlReduceWindowsLatency.Location = new Point(249, 281);
+            controlReduceWindowsLatency.Location = new Point(249, 347);
             controlReduceWindowsLatency.Name = "controlReduceWindowsLatency";
             controlReduceWindowsLatency.OffColor = Color.DarkGray;
             controlReduceWindowsLatency.OffText = "OFF";
@@ -298,7 +433,7 @@
             // 
             pictureBoxReduceWindowsLatency.BackColor = Color.Transparent;
             pictureBoxReduceWindowsLatency.Image = Properties.Resources.Low_Latency;
-            pictureBoxReduceWindowsLatency.Location = new Point(9, 275);
+            pictureBoxReduceWindowsLatency.Location = new Point(9, 341);
             pictureBoxReduceWindowsLatency.Name = "pictureBoxReduceWindowsLatency";
             pictureBoxReduceWindowsLatency.Size = new Size(33, 30);
             pictureBoxReduceWindowsLatency.SizeMode = PictureBoxSizeMode.Zoom;
@@ -311,7 +446,7 @@
             // 
             labelReduceWindowsLatency.AutoSize = true;
             labelReduceWindowsLatency.ForeColor = SystemColors.ControlLightLight;
-            labelReduceWindowsLatency.Location = new Point(55, 275);
+            labelReduceWindowsLatency.Location = new Point(55, 341);
             labelReduceWindowsLatency.Name = "labelReduceWindowsLatency";
             labelReduceWindowsLatency.Size = new Size(174, 30);
             labelReduceWindowsLatency.TabIndex = 46;
@@ -325,7 +460,7 @@
             controlBCDMemoryUsage.BorderColor = Color.LightGray;
             controlBCDMemoryUsage.ForeColor = Color.White;
             controlBCDMemoryUsage.IsOn = false;
-            controlBCDMemoryUsage.Location = new Point(249, 248);
+            controlBCDMemoryUsage.Location = new Point(249, 314);
             controlBCDMemoryUsage.Name = "controlBCDMemoryUsage";
             controlBCDMemoryUsage.OffColor = Color.DarkGray;
             controlBCDMemoryUsage.OffText = "OFF";
@@ -341,7 +476,7 @@
             // 
             labelBCDMemoryUsage.AutoSize = true;
             labelBCDMemoryUsage.ForeColor = SystemColors.ControlLightLight;
-            labelBCDMemoryUsage.Location = new Point(55, 242);
+            labelBCDMemoryUsage.Location = new Point(55, 308);
             labelBCDMemoryUsage.Name = "labelBCDMemoryUsage";
             labelBCDMemoryUsage.Size = new Size(171, 30);
             labelBCDMemoryUsage.TabIndex = 44;
@@ -353,7 +488,7 @@
             // 
             pictureBCDMemoryUsage.BackColor = Color.Transparent;
             pictureBCDMemoryUsage.Image = Properties.Resources.Bcd;
-            pictureBCDMemoryUsage.Location = new Point(9, 242);
+            pictureBCDMemoryUsage.Location = new Point(9, 308);
             pictureBCDMemoryUsage.Name = "pictureBCDMemoryUsage";
             pictureBCDMemoryUsage.Size = new Size(33, 30);
             pictureBCDMemoryUsage.SizeMode = PictureBoxSizeMode.Zoom;
@@ -366,7 +501,7 @@
             // 
             labelCoreIsolation_CFG.AutoSize = true;
             labelCoreIsolation_CFG.ForeColor = SystemColors.ControlLightLight;
-            labelCoreIsolation_CFG.Location = new Point(55, 124);
+            labelCoreIsolation_CFG.Location = new Point(55, 122);
             labelCoreIsolation_CFG.Name = "labelCoreIsolation_CFG";
             labelCoreIsolation_CFG.Size = new Size(119, 30);
             labelCoreIsolation_CFG.TabIndex = 42;
@@ -378,7 +513,7 @@
             // 
             pictureBoxCoreIsolation_CFG.BackColor = Color.Transparent;
             pictureBoxCoreIsolation_CFG.Image = Properties.Resources.CoreIsolation_CFG;
-            pictureBoxCoreIsolation_CFG.Location = new Point(9, 124);
+            pictureBoxCoreIsolation_CFG.Location = new Point(9, 122);
             pictureBoxCoreIsolation_CFG.Name = "pictureBoxCoreIsolation_CFG";
             pictureBoxCoreIsolation_CFG.Size = new Size(33, 30);
             pictureBoxCoreIsolation_CFG.SizeMode = PictureBoxSizeMode.Zoom;
@@ -393,7 +528,7 @@
             controlCoreIsolation_Exploid.BorderColor = Color.LightGray;
             controlCoreIsolation_Exploid.ForeColor = Color.White;
             controlCoreIsolation_Exploid.IsOn = false;
-            controlCoreIsolation_Exploid.Location = new Point(249, 130);
+            controlCoreIsolation_Exploid.Location = new Point(249, 128);
             controlCoreIsolation_Exploid.Name = "controlCoreIsolation_Exploid";
             controlCoreIsolation_Exploid.OffColor = Color.DarkGray;
             controlCoreIsolation_Exploid.OffText = "OFF";
@@ -411,7 +546,7 @@
             controlSystemDevices.BorderColor = Color.LightGray;
             controlSystemDevices.ForeColor = Color.White;
             controlSystemDevices.IsOn = false;
-            controlSystemDevices.Location = new Point(249, 97);
+            controlSystemDevices.Location = new Point(249, 95);
             controlSystemDevices.Name = "controlSystemDevices";
             controlSystemDevices.OffColor = Color.DarkGray;
             controlSystemDevices.OffText = "OFF";
@@ -429,7 +564,7 @@
             controlMeltdownSpectreProtectionOnOff.BorderColor = Color.LightGray;
             controlMeltdownSpectreProtectionOnOff.ForeColor = Color.White;
             controlMeltdownSpectreProtectionOnOff.IsOn = false;
-            controlMeltdownSpectreProtectionOnOff.Location = new Point(249, 64);
+            controlMeltdownSpectreProtectionOnOff.Location = new Point(249, 62);
             controlMeltdownSpectreProtectionOnOff.Name = "controlMeltdownSpectreProtectionOnOff";
             controlMeltdownSpectreProtectionOnOff.OffColor = Color.DarkGray;
             controlMeltdownSpectreProtectionOnOff.OffText = "OFF";
@@ -447,7 +582,7 @@
             controlAMDnoShutter.BorderColor = Color.LightGray;
             controlAMDnoShutter.ForeColor = Color.White;
             controlAMDnoShutter.IsOn = false;
-            controlAMDnoShutter.Location = new Point(249, 31);
+            controlAMDnoShutter.Location = new Point(249, 29);
             controlAMDnoShutter.Name = "controlAMDnoShutter";
             controlAMDnoShutter.OffColor = Color.DarkGray;
             controlAMDnoShutter.OffText = "OFF";
@@ -463,7 +598,7 @@
             // 
             labelSystemDevices.AutoSize = true;
             labelSystemDevices.ForeColor = SystemColors.ControlLightLight;
-            labelSystemDevices.Location = new Point(55, 91);
+            labelSystemDevices.Location = new Point(55, 89);
             labelSystemDevices.Name = "labelSystemDevices";
             labelSystemDevices.Size = new Size(157, 30);
             labelSystemDevices.TabIndex = 38;
@@ -475,7 +610,7 @@
             // 
             pictureBoxSystemDevices.BackColor = Color.Transparent;
             pictureBoxSystemDevices.Image = Properties.Resources.System_Devices;
-            pictureBoxSystemDevices.Location = new Point(9, 91);
+            pictureBoxSystemDevices.Location = new Point(9, 89);
             pictureBoxSystemDevices.Name = "pictureBoxSystemDevices";
             pictureBoxSystemDevices.Size = new Size(33, 30);
             pictureBoxSystemDevices.SizeMode = PictureBoxSizeMode.Zoom;
@@ -488,7 +623,7 @@
             // 
             pictureBoxAMDnoShutter.BackColor = Color.Transparent;
             pictureBoxAMDnoShutter.Image = Properties.Resources.AMDgpu;
-            pictureBoxAMDnoShutter.Location = new Point(9, 25);
+            pictureBoxAMDnoShutter.Location = new Point(9, 23);
             pictureBoxAMDnoShutter.Name = "pictureBoxAMDnoShutter";
             pictureBoxAMDnoShutter.Size = new Size(33, 30);
             pictureBoxAMDnoShutter.SizeMode = PictureBoxSizeMode.Zoom;
@@ -501,7 +636,7 @@
             // 
             labelMeltdown_Spectre.AutoSize = true;
             labelMeltdown_Spectre.ForeColor = SystemColors.ControlLightLight;
-            labelMeltdown_Spectre.Location = new Point(55, 58);
+            labelMeltdown_Spectre.Location = new Point(55, 56);
             labelMeltdown_Spectre.Name = "labelMeltdown_Spectre";
             labelMeltdown_Spectre.Size = new Size(169, 30);
             labelMeltdown_Spectre.TabIndex = 34;
@@ -513,7 +648,7 @@
             // 
             pictureBoxMeltdown_Spectre.BackColor = Color.Transparent;
             pictureBoxMeltdown_Spectre.Image = Properties.Resources.Meltdown_Spectre256;
-            pictureBoxMeltdown_Spectre.Location = new Point(9, 58);
+            pictureBoxMeltdown_Spectre.Location = new Point(9, 56);
             pictureBoxMeltdown_Spectre.Name = "pictureBoxMeltdown_Spectre";
             pictureBoxMeltdown_Spectre.Size = new Size(33, 30);
             pictureBoxMeltdown_Spectre.SizeMode = PictureBoxSizeMode.Zoom;
@@ -527,7 +662,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ControlLight;
-            label2.Location = new Point(87, 0);
+            label2.Location = new Point(87, -2);
             label2.Name = "label2";
             label2.Size = new Size(133, 19);
             label2.TabIndex = 32;
@@ -539,7 +674,7 @@
             // 
             labelAMDnoShutter.AutoSize = true;
             labelAMDnoShutter.ForeColor = SystemColors.ControlLightLight;
-            labelAMDnoShutter.Location = new Point(55, 25);
+            labelAMDnoShutter.Location = new Point(55, 23);
             labelAMDnoShutter.Name = "labelAMDnoShutter";
             labelAMDnoShutter.Size = new Size(125, 30);
             labelAMDnoShutter.TabIndex = 31;
@@ -559,12 +694,11 @@
             buttonRestorePauseUpgrade.HoverColor = Color.MediumSlateBlue;
             buttonRestorePauseUpgrade.Image = Properties.Resources.PauseUpgrades48x48;
             buttonRestorePauseUpgrade.ImageAlign = ContentAlignment.MiddleRight;
-            buttonRestorePauseUpgrade.Location = new Point(50, 7);
+            buttonRestorePauseUpgrade.Location = new Point(250, 3);
             buttonRestorePauseUpgrade.Name = "buttonRestorePauseUpgrade";
             buttonRestorePauseUpgrade.Size = new Size(200, 60);
             buttonRestorePauseUpgrade.TabIndex = 23;
             buttonRestorePauseUpgrade.Text = "   Restore Pause \r\n   Windows Upgrades";
-            buttonRestorePauseUpgrade.TextAlign = ContentAlignment.MiddleLeft;
             buttonRestorePauseUpgrade.TextColor = Color.White;
             buttonRestorePauseUpgrade.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonRestorePauseUpgrade.UseVisualStyleBackColor = false;
@@ -576,7 +710,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.ControlLight;
-            label3.Location = new Point(195, 0);
+            label3.Location = new Point(395, -2);
             label3.Name = "label3";
             label3.Size = new Size(199, 15);
             label3.TabIndex = 34;
@@ -587,7 +721,7 @@
             // 
             pictureBoxResetTouchKeyboardPress.Anchor = AnchorStyles.Top;
             pictureBoxResetTouchKeyboardPress.Image = Properties.Resources.HandTouchKeyboard;
-            pictureBoxResetTouchKeyboardPress.Location = new Point(272, 17);
+            pictureBoxResetTouchKeyboardPress.Location = new Point(472, 15);
             pictureBoxResetTouchKeyboardPress.Name = "pictureBoxResetTouchKeyboardPress";
             pictureBoxResetTouchKeyboardPress.Size = new Size(44, 36);
             pictureBoxResetTouchKeyboardPress.SizeMode = PictureBoxSizeMode.Zoom;
@@ -601,7 +735,7 @@
             pictureBoxResetTouchKeyboard.Anchor = AnchorStyles.Top;
             pictureBoxResetTouchKeyboard.Cursor = Cursors.Hand;
             pictureBoxResetTouchKeyboard.Image = Properties.Resources.HandTouchKeyboard;
-            pictureBoxResetTouchKeyboard.Location = new Point(268, 14);
+            pictureBoxResetTouchKeyboard.Location = new Point(468, 12);
             pictureBoxResetTouchKeyboard.Name = "pictureBoxResetTouchKeyboard";
             pictureBoxResetTouchKeyboard.Size = new Size(52, 44);
             pictureBoxResetTouchKeyboard.SizeMode = PictureBoxSizeMode.Zoom;
@@ -620,11 +754,12 @@
             msStoreButton.ForeColor = Color.White;
             msStoreButton.HoverColor = Color.MediumSlateBlue;
             msStoreButton.Image = Properties.Resources.MS_Store42x42;
-            msStoreButton.Location = new Point(50, 337);
+            msStoreButton.ImageAlign = ContentAlignment.MiddleRight;
+            msStoreButton.Location = new Point(250, 333);
             msStoreButton.Name = "msStoreButton";
             msStoreButton.Size = new Size(200, 60);
             msStoreButton.TabIndex = 28;
-            msStoreButton.Text = "    Reinstall Official \r\n     MS Store\r\n     (press to reinstall it)";
+            msStoreButton.Text = "    Reinstall Official \r\n     MS Store \r\n    (press to reinstall it) ";
             msStoreButton.TextColor = Color.White;
             msStoreButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             msStoreButton.UseVisualStyleBackColor = false;
@@ -643,11 +778,12 @@
             buttonChangeConsoleSettings.HoverColor = Color.MediumSlateBlue;
             buttonChangeConsoleSettings.Image = Properties.Resources.Console2DeskSettings32;
             buttonChangeConsoleSettings.ImageAlign = ContentAlignment.MiddleRight;
-            buttonChangeConsoleSettings.Location = new Point(50, 271);
+            buttonChangeConsoleSettings.Location = new Point(250, 267);
             buttonChangeConsoleSettings.Name = "buttonChangeConsoleSettings";
             buttonChangeConsoleSettings.Size = new Size(200, 60);
             buttonChangeConsoleSettings.TabIndex = 27;
-            buttonChangeConsoleSettings.Text = "    Console Settings";
+            buttonChangeConsoleSettings.Text = "       Console Settings        ";
+            buttonChangeConsoleSettings.TextAlign = ContentAlignment.MiddleRight;
             buttonChangeConsoleSettings.TextColor = Color.White;
             buttonChangeConsoleSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonChangeConsoleSettings.UseVisualStyleBackColor = false;
@@ -666,11 +802,12 @@
             buttonXinputTest.ForeColor = Color.White;
             buttonXinputTest.HoverColor = Color.MediumSlateBlue;
             buttonXinputTest.Image = Properties.Resources.Handle_48;
-            buttonXinputTest.Location = new Point(50, 205);
+            buttonXinputTest.Location = new Point(250, 201);
             buttonXinputTest.Name = "buttonXinputTest";
             buttonXinputTest.Size = new Size(200, 60);
             buttonXinputTest.TabIndex = 26;
-            buttonXinputTest.Text = "       Xinput Test";
+            buttonXinputTest.Text = "          Xinput Test        ";
+            buttonXinputTest.TextAlign = ContentAlignment.MiddleRight;
             buttonXinputTest.TextColor = Color.White;
             buttonXinputTest.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonXinputTest.UseVisualStyleBackColor = false;
@@ -689,11 +826,12 @@
             touchScreenEnDbButton.ForeColor = Color.White;
             touchScreenEnDbButton.HoverColor = Color.MediumSlateBlue;
             touchScreenEnDbButton.Image = Properties.Resources.touchscreen_Enabled48;
-            touchScreenEnDbButton.Location = new Point(50, 139);
+            touchScreenEnDbButton.Location = new Point(250, 135);
             touchScreenEnDbButton.Name = "touchScreenEnDbButton";
             touchScreenEnDbButton.Size = new Size(200, 60);
             touchScreenEnDbButton.TabIndex = 25;
-            touchScreenEnDbButton.Text = "   Touch Screen\r\n   Enable / Disable";
+            touchScreenEnDbButton.Text = "        Touch Screen      \r\n   Enable / Disable   ";
+            touchScreenEnDbButton.TextAlign = ContentAlignment.MiddleRight;
             touchScreenEnDbButton.TextColor = Color.White;
             touchScreenEnDbButton.TextImageRelation = TextImageRelation.ImageBeforeText;
             touchScreenEnDbButton.UseVisualStyleBackColor = false;
@@ -711,11 +849,12 @@
             buttonOpenFileExplorer.ForeColor = Color.White;
             buttonOpenFileExplorer.HoverColor = Color.MediumSlateBlue;
             buttonOpenFileExplorer.Image = Properties.Resources.FileExplorer_48x48;
-            buttonOpenFileExplorer.Location = new Point(50, 73);
+            buttonOpenFileExplorer.Location = new Point(250, 69);
             buttonOpenFileExplorer.Name = "buttonOpenFileExplorer";
             buttonOpenFileExplorer.Size = new Size(200, 60);
             buttonOpenFileExplorer.TabIndex = 24;
-            buttonOpenFileExplorer.Text = "     File Explorer";
+            buttonOpenFileExplorer.Text = "         File Explorer       \r\n         As Admin         ";
+            buttonOpenFileExplorer.TextAlign = ContentAlignment.MiddleRight;
             buttonOpenFileExplorer.TextColor = Color.White;
             buttonOpenFileExplorer.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonOpenFileExplorer.UseVisualStyleBackColor = false;
@@ -726,7 +865,7 @@
             // 
             pictureBoxSettings.Cursor = Cursors.Hand;
             pictureBoxSettings.Image = Properties.Resources.Settings_icon;
-            pictureBoxSettings.Location = new Point(6, 2);
+            pictureBoxSettings.Location = new Point(206, 0);
             pictureBoxSettings.Name = "pictureBoxSettings";
             pictureBoxSettings.Size = new Size(38, 41);
             pictureBoxSettings.SizeMode = PictureBoxSizeMode.Zoom;
@@ -741,12 +880,26 @@
             labelOpenWDsettings.BackColor = Color.Transparent;
             labelOpenWDsettings.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             labelOpenWDsettings.ForeColor = SystemColors.ControlLight;
-            labelOpenWDsettings.Location = new Point(240, 424);
+            labelOpenWDsettings.Location = new Point(440, 422);
             labelOpenWDsettings.Name = "labelOpenWDsettings";
             labelOpenWDsettings.Size = new Size(110, 26);
             labelOpenWDsettings.TabIndex = 18;
             labelOpenWDsettings.Text = " Windows Defender\r\n Settings";
             labelOpenWDsettings.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // buttonInfo
+            // 
+            buttonInfo.BackColor = Color.FromArgb(50, 50, 50);
+            buttonInfo.FlatAppearance.BorderColor = Color.Black;
+            buttonInfo.FlatStyle = FlatStyle.Flat;
+            buttonInfo.ForeColor = SystemColors.ControlLightLight;
+            buttonInfo.Location = new Point(630, 5);
+            buttonInfo.Name = "buttonInfo";
+            buttonInfo.Size = new Size(57, 23);
+            buttonInfo.TabIndex = 41;
+            buttonInfo.Text = "Info";
+            buttonInfo.UseVisualStyleBackColor = false;
+            buttonInfo.Click += buttonInfo_Click;
             // 
             // pictureBox4
             // 
@@ -754,7 +907,7 @@
             pictureBox4.BackColor = Color.FromArgb(40, 40, 40);
             pictureBox4.Cursor = Cursors.Hand;
             pictureBox4.Image = Properties.Resources.Defenter_Settings_Icon;
-            pictureBox4.Location = new Point(269, 373);
+            pictureBox4.Location = new Point(469, 371);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(52, 59);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -764,11 +917,11 @@
             // 
             // pictureBoxRealTime_OFF
             // 
-            pictureBoxRealTime_OFF.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBoxRealTime_OFF.Anchor = AnchorStyles.Bottom;
             pictureBoxRealTime_OFF.BackColor = Color.FromArgb(40, 40, 40);
             pictureBoxRealTime_OFF.Cursor = Cursors.Hand;
             pictureBoxRealTime_OFF.Image = Properties.Resources.Real_Time_OFF;
-            pictureBoxRealTime_OFF.Location = new Point(356, 396);
+            pictureBoxRealTime_OFF.Location = new Point(554, 394);
             pictureBoxRealTime_OFF.Name = "pictureBoxRealTime_OFF";
             pictureBoxRealTime_OFF.Size = new Size(42, 49);
             pictureBoxRealTime_OFF.SizeMode = PictureBoxSizeMode.Zoom;
@@ -778,11 +931,11 @@
             // 
             // pictureBoxRealTime_ON
             // 
-            pictureBoxRealTime_ON.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBoxRealTime_ON.Anchor = AnchorStyles.Bottom;
             pictureBoxRealTime_ON.BackColor = Color.FromArgb(40, 40, 40);
             pictureBoxRealTime_ON.Cursor = Cursors.Hand;
             pictureBoxRealTime_ON.Image = Properties.Resources.Real_Time_ON;
-            pictureBoxRealTime_ON.Location = new Point(192, 396);
+            pictureBoxRealTime_ON.Location = new Point(395, 394);
             pictureBoxRealTime_ON.Name = "pictureBoxRealTime_ON";
             pictureBoxRealTime_ON.Size = new Size(42, 49);
             pictureBoxRealTime_ON.SizeMode = PictureBoxSizeMode.Zoom;
@@ -797,7 +950,7 @@
             buttonAbout.FlatAppearance.BorderColor = Color.Black;
             buttonAbout.FlatStyle = FlatStyle.Flat;
             buttonAbout.ForeColor = SystemColors.ControlLight;
-            buttonAbout.Location = new Point(498, 7);
+            buttonAbout.Location = new Point(698, 5);
             buttonAbout.Margin = new Padding(2);
             buttonAbout.Name = "buttonAbout";
             buttonAbout.Size = new Size(77, 23);
@@ -808,10 +961,10 @@
             // 
             // pictureBoxAMDadrenalinePress
             // 
-            pictureBoxAMDadrenalinePress.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBoxAMDadrenalinePress.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBoxAMDadrenalinePress.Cursor = Cursors.Hand;
             pictureBoxAMDadrenalinePress.Image = Properties.Resources.Amd_Adrenaline70x70;
-            pictureBoxAMDadrenalinePress.Location = new Point(40, 404);
+            pictureBoxAMDadrenalinePress.Location = new Point(627, 401);
             pictureBoxAMDadrenalinePress.Name = "pictureBoxAMDadrenalinePress";
             pictureBoxAMDadrenalinePress.Size = new Size(41, 44);
             pictureBoxAMDadrenalinePress.SizeMode = PictureBoxSizeMode.Zoom;
@@ -822,10 +975,10 @@
             // 
             // pictureBoxAMDadrenaline
             // 
-            pictureBoxAMDadrenaline.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBoxAMDadrenaline.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBoxAMDadrenaline.Cursor = Cursors.Hand;
             pictureBoxAMDadrenaline.Image = Properties.Resources.Amd_Adrenaline70x70;
-            pictureBoxAMDadrenaline.Location = new Point(35, 399);
+            pictureBoxAMDadrenaline.Location = new Point(622, 397);
             pictureBoxAMDadrenaline.Name = "pictureBoxAMDadrenaline";
             pictureBoxAMDadrenaline.Size = new Size(51, 54);
             pictureBoxAMDadrenaline.SizeMode = PictureBoxSizeMode.Zoom;
@@ -838,9 +991,9 @@
             pictureBoxWifi.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBoxWifi.Cursor = Cursors.Hand;
             pictureBoxWifi.Image = Properties.Resources.Wifi_icon;
-            pictureBoxWifi.Location = new Point(498, 399);
+            pictureBoxWifi.Location = new Point(698, 400);
             pictureBoxWifi.Name = "pictureBoxWifi";
-            pictureBoxWifi.Size = new Size(52, 55);
+            pictureBoxWifi.Size = new Size(50, 48);
             pictureBoxWifi.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxWifi.TabIndex = 12;
             pictureBoxWifi.TabStop = false;
@@ -859,7 +1012,7 @@
             consoleButton1.HoverColor = Color.MediumSlateBlue;
             consoleButton1.Image = Properties.Resources.Gaming_Icon64x64;
             consoleButton1.ImageAlign = ContentAlignment.BottomCenter;
-            consoleButton1.Location = new Point(312, 61);
+            consoleButton1.Location = new Point(512, 59);
             consoleButton1.Name = "consoleButton1";
             consoleButton1.Size = new Size(240, 300);
             consoleButton1.TabIndex = 8;
@@ -881,7 +1034,7 @@
             desktopButton1.ForeColor = Color.White;
             desktopButton1.HoverColor = Color.MediumSlateBlue;
             desktopButton1.Image = Properties.Resources.Computer_icon64x64;
-            desktopButton1.Location = new Point(33, 61);
+            desktopButton1.Location = new Point(233, 59);
             desktopButton1.Name = "desktopButton1";
             desktopButton1.Size = new Size(240, 300);
             desktopButton1.TabIndex = 7;
@@ -892,11 +1045,25 @@
             desktopButton1.UseVisualStyleBackColor = false;
             desktopButton1.Click += desktopButton1_Click;
             // 
+            // labelCountDown
+            // 
+            labelCountDown.Anchor = AnchorStyles.Top;
+            labelCountDown.AutoSize = true;
+            labelCountDown.Font = new Font("Roboto Medium", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            labelCountDown.ForeColor = SystemColors.ControlLight;
+            labelCountDown.Location = new Point(487, 62);
+            labelCountDown.Name = "labelCountDown";
+            labelCountDown.Size = new Size(14, 14);
+            labelCountDown.TabIndex = 37;
+            labelCountDown.Text = "0";
+            labelCountDown.Visible = false;
+            labelCountDown.Click += labelCountDown_Click;
+            // 
             // pictureBoxIS_Addon
             // 
             pictureBoxIS_Addon.BorderStyle = BorderStyle.Fixed3D;
             pictureBoxIS_Addon.Image = Properties.Resources.Addon_IS;
-            pictureBoxIS_Addon.Location = new Point(6, 304);
+            pictureBoxIS_Addon.Location = new Point(206, 302);
             pictureBoxIS_Addon.Name = "pictureBoxIS_Addon";
             pictureBoxIS_Addon.Size = new Size(360, 100);
             pictureBoxIS_Addon.SizeMode = PictureBoxSizeMode.Zoom;
@@ -908,7 +1075,7 @@
             // pictureBoxRes
             // 
             pictureBoxRes.Image = Properties.Resources.Windows_ResDisplay_Settings;
-            pictureBoxRes.Location = new Point(6, 3);
+            pictureBoxRes.Location = new Point(206, 1);
             pictureBoxRes.Name = "pictureBoxRes";
             pictureBoxRes.Size = new Size(156, 213);
             pictureBoxRes.SizeMode = PictureBoxSizeMode.Zoom;
@@ -920,7 +1087,7 @@
             // pictureBox1610Res
             // 
             pictureBox1610Res.Image = Properties.Resources.LegionGoRes;
-            pictureBox1610Res.Location = new Point(6, 3);
+            pictureBox1610Res.Location = new Point(206, 1);
             pictureBox1610Res.Name = "pictureBox1610Res";
             pictureBox1610Res.Size = new Size(156, 213);
             pictureBox1610Res.SizeMode = PictureBoxSizeMode.Zoom;
@@ -931,7 +1098,7 @@
             // pictureBoxStockRes
             // 
             pictureBoxStockRes.Image = Properties.Resources._3Res;
-            pictureBoxStockRes.Location = new Point(6, 89);
+            pictureBoxStockRes.Location = new Point(206, 87);
             pictureBoxStockRes.Name = "pictureBoxStockRes";
             pictureBoxStockRes.Size = new Size(156, 91);
             pictureBoxStockRes.SizeMode = PictureBoxSizeMode.Zoom;
@@ -943,7 +1110,7 @@
             // pictureBox1610StockRes
             // 
             pictureBox1610StockRes.Image = Properties.Resources._3ResLegion;
-            pictureBox1610StockRes.Location = new Point(6, 89);
+            pictureBox1610StockRes.Location = new Point(206, 87);
             pictureBox1610StockRes.Name = "pictureBox1610StockRes";
             pictureBox1610StockRes.Size = new Size(156, 91);
             pictureBox1610StockRes.SizeMode = PictureBoxSizeMode.Zoom;
@@ -951,6 +1118,18 @@
             pictureBox1610StockRes.TabStop = false;
             pictureBox1610StockRes.Visible = false;
             pictureBox1610StockRes.Click += pictureBox1610StockRes_Click;
+            // 
+            // pictureBoxControllers
+            // 
+            pictureBoxControllers.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBoxControllers.Image = Properties.Resources.controller0;
+            pictureBoxControllers.Location = new Point(7, 409);
+            pictureBoxControllers.Name = "pictureBoxControllers";
+            pictureBoxControllers.Size = new Size(58, 50);
+            pictureBoxControllers.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxControllers.TabIndex = 38;
+            pictureBoxControllers.TabStop = false;
+            pictureBoxControllers.Click += pictureBoxControllers_Click;
             // 
             // buttonAllyUltimateRes
             // 
@@ -1020,8 +1199,12 @@
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel1.BackColor = Color.FromArgb(31, 31, 31);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(customListBox1);
             panel1.Controls.Add(pictureBoxVramPlus);
+            panel1.Controls.Add(pictureBoxControllers);
             panel1.Controls.Add(pictureBoxStockRes1610);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(button1610_StockRes);
@@ -1034,18 +1217,54 @@
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button1610UltimateRes);
-            panel1.Controls.Add(buttonMiniConsoleWindow);
             panel1.Controls.Add(button_IncreaseRAM_System);
             panel1.Controls.Add(buttonIntegerScaling);
             panel1.Controls.Add(buttonAllyStockRes);
             panel1.Controls.Add(panelTitle);
             panel1.Controls.Add(buttonAllyUltimateRes);
-            panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 465);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ControlLight;
+            label4.Location = new Point(0, 309);
+            label4.Name = "label4";
+            label4.Size = new Size(102, 15);
+            label4.TabIndex = 40;
+            label4.Text = "HandleOS NEWS:";
+            label4.Click += label4_Click;
+            // 
+            // customListBox1
+            // 
+            customListBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            customListBox1.BackColor = Color.FromArgb(31, 31, 31);
+            customListBox1.BorderStyle = BorderStyle.FixedSingle;
+            customListBox1.ColumnWidth = 15;
+            customListBox1.DrawMode = DrawMode.OwnerDrawVariable;
+            customListBox1.ForeColor = SystemColors.ControlText;
+            customListBox1.FormattingEnabled = true;
+            customListBox1.HorizontalExtent = 30;
+            customListBox1.IconSize = 20;
+            customListBox1.ItemHeight = 15;
+            customListBox1.ItemSpacing = 90;
+            customListBox1.Location = new Point(0, 327);
+            customListBox1.Name = "customListBox1";
+            customListBox1.Size = new Size(200, 79);
+            customListBox1.StatusColor = Color.DarkGray;
+            customListBox1.TabIndex = 39;
+            customListBox1.TextColor = SystemColors.ControlLightLight;
+            customListBox1.TextFont = new Font("Roboto Light", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            customListBox1.TextIconSpacing = 6;
+            customListBox1.TextStatusSpacing = 2;
+            customListBox1.WordWrap = true;
+            customListBox1.SelectedIndexChanged += customListBox1_SelectedIndexChanged;
             // 
             // pictureBoxVramPlus
             // 
@@ -1144,10 +1363,10 @@
             pictureBoxDonation2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pictureBoxDonation2.Cursor = Cursors.Hand;
             pictureBoxDonation2.Image = Properties.Resources.paypal_donate_button;
-            pictureBoxDonation2.Location = new Point(45, 420);
+            pictureBoxDonation2.Location = new Point(79, 415);
             pictureBoxDonation2.Margin = new Padding(2);
             pictureBoxDonation2.Name = "pictureBoxDonation2";
-            pictureBoxDonation2.Size = new Size(110, 39);
+            pictureBoxDonation2.Size = new Size(106, 39);
             pictureBoxDonation2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxDonation2.TabIndex = 12;
             pictureBoxDonation2.TabStop = false;
@@ -1159,10 +1378,10 @@
             pictureBoxDonation1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pictureBoxDonation1.Cursor = Cursors.Hand;
             pictureBoxDonation1.Image = Properties.Resources.paypal_donate_button;
-            pictureBoxDonation1.Location = new Point(38, 417);
+            pictureBoxDonation1.Location = new Point(72, 412);
             pictureBoxDonation1.Margin = new Padding(2);
             pictureBoxDonation1.Name = "pictureBoxDonation1";
-            pictureBoxDonation1.Size = new Size(124, 45);
+            pictureBoxDonation1.Size = new Size(120, 45);
             pictureBoxDonation1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxDonation1.TabIndex = 11;
             pictureBoxDonation1.TabStop = false;
@@ -1177,6 +1396,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 10;
             pictureBox3.TabStop = false;
+            pictureBox3.Visible = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
             // pictureBox1
@@ -1204,23 +1424,6 @@
             button1610UltimateRes.UseVisualStyleBackColor = true;
             button1610UltimateRes.Click += button1610UltimateRes_Click;
             // 
-            // buttonMiniConsoleWindow
-            // 
-            buttonMiniConsoleWindow.FlatAppearance.BorderSize = 0;
-            buttonMiniConsoleWindow.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
-            buttonMiniConsoleWindow.FlatStyle = FlatStyle.Flat;
-            buttonMiniConsoleWindow.ForeColor = SystemColors.ControlLight;
-            buttonMiniConsoleWindow.Image = Properties.Resources.Resize_icon24x24;
-            buttonMiniConsoleWindow.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonMiniConsoleWindow.Location = new Point(0, 290);
-            buttonMiniConsoleWindow.Name = "buttonMiniConsoleWindow";
-            buttonMiniConsoleWindow.Padding = new Padding(12, 0, 0, 0);
-            buttonMiniConsoleWindow.Size = new Size(200, 60);
-            buttonMiniConsoleWindow.TabIndex = 7;
-            buttonMiniConsoleWindow.Text = "Minimize/Restore \r\nPlaynite Window";
-            buttonMiniConsoleWindow.UseVisualStyleBackColor = true;
-            buttonMiniConsoleWindow.Click += buttonMiniConsoleWindow_Click;
-            // 
             // button_IncreaseRAM_System
             // 
             button_IncreaseRAM_System.FlatAppearance.BorderSize = 0;
@@ -1245,9 +1448,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 465);
-            Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            IsMdiContainer = true;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Console2Desk";
@@ -1258,6 +1462,7 @@
             panel2.PerformLayout();
             panel4Toggle.ResumeLayout(false);
             panel4Toggle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxUAC).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxReduceNetworkLatency).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxReduceWindowsLatency).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBCDMemoryUsage).EndInit();
@@ -1279,9 +1484,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1610Res).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1610StockRes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxControllers).EndInit();
             panelTitle.ResumeLayout(false);
             panelTitle.PerformLayout();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxVramPlus).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes1610).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -1306,7 +1513,6 @@
         private Button buttonAllyStockRes;
         private Button buttonIntegerScaling;
         private Panel panel1;
-        private Button buttonMiniConsoleWindow;
         private Special_Niewbie_Button consoleButton1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
@@ -1367,5 +1573,16 @@
         private Label labelReduceNetworkLatency;
         private PictureBox pictureBoxReduceNetworkLatency;
         private ToggleSwitchDev.ControlToggles controlReduceNetworkLatency;
+        private Special_Niewbie_Button special_Niewbie_ButtonHOB;
+        private Label labelCountDown;
+        private PictureBox pictureBoxControllers;
+        private Special_Niewbie_Button buttonMiniConsoleWindowNew;
+        private CustomListBox customListBox1;
+        private Label label4;
+        private Label labelUAC;
+        private PictureBox pictureBoxUAC;
+        private ToggleSwitchDev.ControlToggles uacToggleSwitch;
+        private Special_Niewbie_Button special_Niewbie_ButtonRestoreBoost;
+        private Button buttonInfo;
     }
 }

@@ -48,8 +48,11 @@ namespace Console2Desk.BottomWindowButtons
 
         private const uint CREATE_NEW_CONSOLE = 0x00000010;
 
-        public static async Task ResetTouchKeyboardAsync()
+        public static async Task ResetTouchKeyboardAsync(PictureBox pictureBoxResetTouchKeyboard)
         {
+            ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+            Task.Delay(1500).Wait();
+
             await Task.Run(() =>
             {
                 // Chiudi TabTip.exe se è in esecuzione
@@ -58,14 +61,18 @@ namespace Console2Desk.BottomWindowButtons
                     process.Kill();
                 }
 
-                // Pausa di 1 secondo
-                Task.Delay(5000).Wait();
-
+                // Pausa di 2 secondo
+                Task.Delay(1500).Wait();
+               
                 // Riavvia TabTip.exe
                 STARTUPINFO si = new STARTUPINFO();
                 si.cb = Marshal.SizeOf(si);
                 PROCESS_INFORMATION pi;
                 CreateProcess(null, @"C:\Program Files\Common Files\microsoft shared\ink\TabTip.exe", IntPtr.Zero, IntPtr.Zero, false, CREATE_NEW_CONSOLE, IntPtr.Zero, null, ref si, out pi);
+                
+                // reactivate the Touch screen Panel
+                Task.Delay(1500).Wait();
+                ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
             });
         }
     }

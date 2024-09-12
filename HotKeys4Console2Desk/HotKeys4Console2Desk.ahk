@@ -58,6 +58,8 @@ Menu, Tray, Add, Change Computer Icon, ChangeComputerIcon  ; Change Computer Ico
 Menu, Tray, Icon, Change Computer Icon, Imageres.dll, 187
 ; Menu, Tray, Add, Pause, PAUSE
 Menu, Tray, Add, , Separator
+Menu, Tray, Add, Tablet Mode ON/OFF, ToggleTabletModeSvc  ; Opzione per attivare/disattivare il Tablet Mode
+Menu, Tray, Add, ClipBoard History ON/OFF, ToggleClipboardHistorySvc  
 Menu, Tray, Add, Microsoft using your Webcam ON/OFF, ToggleWebcamTelemetry
 Menu, Tray, Add, Print Service ON/OFF, ToggleSpoolerSvc  ; SpoolerSVC toggle option
 Menu, Tray, Add, Update Service ON/OFF, ToggleUpdateSvc  ; UpdateSVC toggle option
@@ -69,6 +71,11 @@ Menu, Tray, Add, Exit, QuitNow ; added exit script option
 ; Check for Updates
 CheckForUpdates()
 
+; Refresh menu when program starts
+UpdateTabletModeSvcMenu()
+; Update UpdateClipboardHistorySvcMenu menu item at startup
+UpdateClipboardHistorySvcMenu()
+; Update UpdateWebcamTelemetryMenu menu item at startup
 UpdateWebcamTelemetryMenu()
 ; Update SpoolerSVC menu item at startup
 UpdateSpoolerSvcMenu()
@@ -90,7 +97,7 @@ CheckAndCreateOnOffIni() {
 Run, %A_ScriptDir%\AudioCCMode.exe
 
 SetTimer, CheckControllers, 150
-; Timer che controlla l'inattività
+; Timer that monitors inactivity
 SetTimer, CheckInactivity, 1000
 
 ;Instance the Controller Manager
@@ -99,51 +106,62 @@ manager := new Xbox360LibControllerManager()
 ;Initialize Controller (0-3), you can use 4 controllers
 player1 := manager.InitializeController(0)
 
+; Initialize Controllers (0-3), up to 4 controllers
+controllers := []
+Loop 4 {
+    controllers[A_Index] := manager.InitializeController(A_Index - 1)
+}
+
 ; Function to check the status of the controllers.
 CheckControllers:
-	BatteryCheck()
-	player1.Update()
-	
-	if (player1.BACK && player1.START) {
-	Run, schtasks /end /tn "Console2Desk",, Hide
-	Sleep 250
-	Run, schtasks /run /tn "Console2Desk",, Hide
-	player1.BV := [65535, 65535]
-	Sleep 400
-	player1.BV := [0, 0]
-	}
-	if (CheckSwitchCombination(player1)) {
-        if (windowList.Length() == 0) {
-            UpdateWindowList()
+    BatteryCheck()
+    Loop 4 {
+        controller := controllers[A_Index]
+        controller.Update()
+
+        ; If the controller is active, check the specific buttons
+        if (controller.BACK && controller.START) {
+            Run, schtasks /end /tn "Console2Desk",, Hide
+            Sleep 250
+            Run, schtasks /run /tn "Console2Desk",, Hide
+            controller.BV := [65535, 65535]
+            Sleep 400
+            controller.BV := [0, 0]
         }
-        
-        SwitchToNextWindow()
-        
-        if (!isMenuVisible) {
-            isMenuVisible := true
-            ShowWindowMenu()            
-        } else {
-            UpdateWindowMenu()
-        }
-        
-        player1.BV := [65535, 65535]
-        Sleep 150
-        player1.BV := [0, 0]
-		; Update last active time when a key is pressed
-        lastActivity := A_TickCount
-    } else if (isMenuVisible) {
-        if (player1.A) {
-            ActivateCurrentWindow()
-			player1.BV := [65535, 65535]
-			Sleep 150
-			player1.BV := [0, 0]
-			lastActivity := A_TickCount
-        } else if (player1.LEFT) {
-            NavigateMenu(-1)
-			lastActivity := A_TickCount
-        } else if (player1.RIGHT) {
-            NavigateMenu(1)
-			lastActivity := A_TickCount
+
+        if (CheckSwitchCombination(controller)) {
+            if (windowList.Length() == 0) {
+                UpdateWindowList()
+            }
+
+            SwitchToNextWindow()
+
+            if (!isMenuVisible) {
+                isMenuVisible := true
+                ShowWindowMenu()            
+            } else {
+                UpdateWindowMenu()
+            }
+
+            controller.BV := [65535, 65535]
+            Sleep 150
+            controller.BV := [0, 0]
+            ; Update last active time when a key is pressed
+            lastActivity := A_TickCount
+        } else if (isMenuVisible) {
+            if (controller.A) {
+                ActivateCurrentWindow()
+                controller.BV := [65535, 65535]
+                Sleep 150
+                controller.BV := [0, 0]
+                lastActivity := A_TickCount
+            } else if (controller.LEFT) {
+                NavigateMenu(-1)
+                lastActivity := A_TickCount
+            } else if (controller.RIGHT) {
+                NavigateMenu(1)
+                lastActivity := A_TickCount
+            }
         }
     }
 return
@@ -413,6 +431,36 @@ IsWindow(hWnd){
     return true
 }
 
+; Function to update the status of the Tablet Mode menu
+UpdateTabletModeSvcMenu() {
+    ; Check the value of the ExpandableTaskbar key
+    RegRead, expandableTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar
+    ; Check the value of the TabletPostureTaskbar
+    RegRead, tabletPostureTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar
+
+    ; If either key does not exist or the value is 0, set Tablet Mode icon OFF
+    if (ErrorLevel or expandableTaskbarValue = 0 or tabletPostureTaskbarValue = 0) {
+        Menu, Tray, Icon, Tablet Mode ON/OFF, Imageres.dll, 231  ; Icon for Tablet Mode OFF
+    } else {
+        ; If both keys exist and have value 1, set Tablet Mode icon ON
+        Menu, Tray, Icon, Tablet Mode ON/OFF, DDORes.dll, 17  ; Icon for Tablet Mode ON
+    }
+}
+
+; Function to update the status of the Clipboard History menu
+UpdateClipboardHistorySvcMenu() {
+    ; Check the value of the Enable Clipboard History key
+    RegRead, clipboardHistoryValue, HKEY_CURRENT_USER\Software\Microsoft\Clipboard, EnableClipboardHistory
+
+    if (ErrorLevel or clipboardHistoryValue = 0) {
+        ; If the key does not exist or the value is 0, Clipboard History icon OFF
+        Menu, Tray, Icon, ClipBoard History ON/OFF, Imageres.dll, 231  ; Icon for Clipboard History OFF
+    } else {
+        ; If the key exists and is 1, Clipboard History icon ON
+        Menu, Tray, Icon, ClipBoard History ON/OFF, Imageres.dll, 113  ; Icon for Clipboard History ON
+    }
+}
+
 UpdateWebcamTelemetryMenu() {
     ; Check the current status of the webcam telemetry task
     RunWait, %ComSpec% /c schtasks /query /TN "Microsoft\Windows\Device Information\Device" | find "Disabled", , Hide
@@ -544,6 +592,45 @@ ShowVersionInfo:
     MsgBox, 64, Version Info, Script Version: %currentVersion% `n`nAuthor: Special-Niewbie Softwares `nCopyright(C) 2024 Special-Niewbie Softwares
 return
 
+; Function to enable/disable Clipboard History
+ToggleClipboardHistorySvc:
+    ; Check the current state of the Enable Clipboard History key
+    RegRead, clipboardHistoryValue, HKEY_CURRENT_USER\Software\Microsoft\Clipboard, EnableClipboardHistory
+    
+    if (ErrorLevel or clipboardHistoryValue = 0) {
+        ; If the key does not exist or the value is 0, enable clipboard history
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Clipboard, EnableClipboardHistory, 1
+    } else {
+        ; If the key exists and is 1, disable clipboard history
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Clipboard, EnableClipboardHistory, 0
+    }
+	
+	Sleep 250
+    ; Update menu state after changing value
+    UpdateClipboardHistorySvcMenu()
+return
+
+; Function to enable/disable Tablet Mode
+ToggleTabletModeSvc:
+    ; Check the current state of the ExpandableTaskbar key
+    RegRead, expandableTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar
+    RegRead, tabletPostureTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar
+    
+    if (ErrorLevel or expandableTaskbarValue = 0 or tabletPostureTaskbarValue = 0) {
+        ; If one of the keys does not exist or the value is 0, enable Tablet Mode
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar, 1
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar, 1
+    } else {
+        ; If both keys exist and the value is 1, disable Tablet Mode
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar, 0
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar, 0
+    }
+	
+	Sleep 250
+    ; Update menu state after changing value
+    UpdateTabletModeSvcMenu()
+return
+
 ToggleWebcamTelemetry:
     ; Check the current status of the webcam telemetry task
     RunWait, %ComSpec% /c schtasks /query /TN "Microsoft\Windows\Device Information\Device" | find "Disabled", , Hide
@@ -554,6 +641,8 @@ ToggleWebcamTelemetry:
         ; Task is disabled, so enable it
         RunWait, %ComSpec% /c schtasks /change /TN "Microsoft\Windows\Device Information\Device" /Enable, , Hide
     }
+	
+	Sleep 250
     ; Update the menu icon to reflect the new status
     UpdateWebcamTelemetryMenu()
 return
@@ -568,6 +657,8 @@ ToggleSpoolerSvc:
         ; Spooler service is not running, so start it
         Run, %ComSpec% /c sc config Spooler start= auto && net start Spooler && net start printnotify,, Hide
     }
+	
+	Sleep 250
 	; Update SpoolerSVC menu item at startup
 	UpdateSpoolerSvcMenu()
 return
@@ -582,6 +673,8 @@ ToggleUpdateSvc:
         ; Update service is not running, so start it
         Run, %ComSpec% /c sc config wuauserv start= demand && sc config bits start= demand && sc config UsoSvc start= delayed-auto && net start wuauserv && net start bits && net start UsoSvc,, Hide
     }
+	
+	Sleep 250
 	; Update UpdateSVC menu item at startup
 	UpdateUpdateSvcMenu()
 return
@@ -595,6 +688,8 @@ ToggleVideo:
     } else {
         IniWrite, 0, %IniFile%, Settings, VideoState
     }
+	
+	Sleep 150
 	; Update Video menu item at startup
 	UpdateVideoMenu()
 return

@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "inputs2desk/1.0.0": {
+        "dependencies": {
+          "XInputium": "1.2.0"
+        },
+        "runtime": {
+          "inputs2desk.dll": {}
+        }
+      },
+      "XInputium/1.2.0": {
+        "runtime": {
+          "lib/net6.0-windows7.0/XInputium.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "inputs2desk/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "XInputium/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XtpP/7VSQf1PTb31a8dYXhaRX12YlW4CDJYOC7vCqEeAR4+EgVpELmT/WSxTtYHimPQKA1WtfY0itav1Hhel+Q==",
+      "path": "xinputium/1.2.0",
+      "hashPath": "xinputium.1.2.0.nupkg.sha512"
+    }
+  }
+}

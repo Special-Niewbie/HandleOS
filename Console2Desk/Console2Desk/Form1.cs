@@ -25,6 +25,11 @@ using Console2Desk.FuturesButtons;
 using Console2Desk.BottomWindowButtons;
 using Console2Desk.SettingsButton;
 using Console2Desk.ToggleSwitchDev;
+using XInputium.XInput;
+using XInputium;
+using System.IO.Pipes;
+using System.Text;
+using System;
 
 
 namespace Console2Desk
@@ -40,16 +45,32 @@ namespace Console2Desk
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
 
+        // Importazione della funzione per simulare la pressione/rilascio di tasti
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int extraInfo);
+
+        // Codici virtuali per ALT
+        private const int VK_MENU = 0x12; // Codice virtuale per ALT
+        private const int VK_R = 0x52;    // Codice virtuale per R
+        private const int KEYEVENTF_KEYUP = 0x02; // Segnale per rilascio del tasto
+
         //###################################
         // For trak the Window and suspend the TopMost timer when is open by the buttonOpenFileExplorer
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", SetLastError = true)]
         private static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [DllImport("user32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool IsWindow(IntPtr hWnd);
 
-        private IntPtr _explorerWindowHandle = IntPtr.Zero;
+        [DllImport("user32.dll")]
+        private static extern bool EnumWindows(EnumWindowsProc lpEnumFunc, IntPtr lParam);
+
+        private delegate bool EnumWindowsProc(IntPtr hWnd, IntPtr lParam);
+
+        private Process _explorerProcess;
+        private bool _isExplorerOpen;
+        private IntPtr _explorerWindowHandle;
+
         //###################################
 
         private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
@@ -61,8 +82,6 @@ namespace Console2Desk
         private System.Windows.Forms.Timer _topMostTimer;
         private bool _isAboutBoxOpen = false;
         private bool _isConsoleSettingsOpen = false;
-        private Process _explorerProcess;
-        private bool _isExplorerOpen = false;
 
         private System.Windows.Forms.Timer _wifiDelayTimer;
         private bool _isWifiDelayActive = false;
@@ -82,6 +101,12 @@ namespace Console2Desk
         public string fullscreenAppPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Playnite", "Playnite.FullscreenApp.exe");
         public string desktopAppPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Playnite", "Playnite.DesktopApp.exe");
         private string defaultFullscreenSteamAppPath = @"C:\Program Files (x86)\Steam\steam.exe";
+
+        private System.Windows.Forms.Timer TimerLabelCountDown;
+        private int countDown = 6;
+
+        private System.Windows.Forms.Timer updateTimer;
+        private readonly object lockObject = new object();
 
         private WinTheme winTheme;
 
@@ -175,6 +200,37 @@ namespace Console2Desk
             buttonChangeConsoleSettings.MouseUp += buttonChangeConsoleSettings_MouseUp;
             msStoreButton.MouseUp += msStoreButton_MouseUp;
             #endregion
+
+            // Configura il TimerLabelCountDown
+            TimerLabelCountDown = new System.Windows.Forms.Timer();
+            TimerLabelCountDown.Interval = 1000; // 1 secondo
+            TimerLabelCountDown.Tick += TimerLabelCountDown_Tick; // Associa l'evento Tick
+
+            // Define the path of the program to launch
+            string exePath = @"C:\Program Files\Console2Desk\inputs2desk\inputs2desk.exe";
+
+            try
+            {
+                // Start the process
+                Process process = new Process();
+                process.StartInfo.FileName = exePath;
+                process.StartInfo.UseShellExecute = true;
+                process.StartInfo.CreateNoWindow = false;
+                process.Start();
+
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                // For Debug DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
+            }
+
+            // Inizializza il timer per verificare periodicamente la pipe
+            updateTimer = new System.Windows.Forms.Timer();
+            updateTimer.Interval = 1500; // 1.5 secondi
+            updateTimer.Tick += UpdateTimer_Tick;
+            updateTimer.Start();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -223,6 +279,8 @@ namespace Console2Desk
 
             RAMChecker ramChecker = new RAMChecker(pictureBoxCheckVRAM, pictureBoxVramPlus);
             ramChecker.CheckVirtualMemorySettingsAsync(DependencyContainer.MessagesBoxImplementation);
+            AddButtonIntegerScalingCheck.CodeForaddButtonIntegerScalingCheck(pictureBox3, DependencyContainer.MessagesBoxImplementation);
+            CodeForResetTouchKeyboardCheck.CheckTouchKeyboardState(pictureBoxResetTouchKeyboard, DependencyContainer.MessagesBoxImplementation);
 
             CodeForAMD_NoShutterCheck.CheckEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
             CodeForSystemDevicesCheck.CheckSystemDevices(controlSystemDevices, DependencyContainer.MessagesBoxImplementation);
@@ -231,53 +289,9 @@ namespace Console2Desk
             CodeForReduceWindowsLatencyCheck.CheckReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
             msStoreButtonStartupCheck.CheckMsStoreInstallation(msStoreButton, DependencyContainer.MessagesBoxImplementation);
             CodeForReduceNetworkLatencyCheck.CheckReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
+            CodeForUACCheck.CheckUACStatus(uacToggleSwitch, DependencyContainer.MessagesBoxImplementation);
 
-            try
-            {
-                bool keyFound = false; // Flag to indicate whether the key was found
-
-                // Array containing the registry key paths to search for
-                string[] registryKeys = {
-            @"SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000",
-            @"SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001",
-            @"SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000",
-            @"SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001"
-        };
-
-                // For each registry key path
-                foreach (string keyPath in registryKeys)
-                {
-                    // Attempt to open the registry key
-                    using (RegistryKey key = Registry.LocalMachine.OpenSubKey(keyPath))
-                    {
-                        if (key != null)
-                        {
-                            // Check if the "DalEmbeddedIntegerScalingSupport" entry exists in the key
-                            if (key.GetValue("DalEmbeddedIntegerScalingSupport") != null)
-                            {
-                                // If the entry was found, set the flag to true and stop the search
-                                keyFound = true;
-                                break;
-                            }
-                        }
-                    }
-                }
-
-                // If the key has been found, make the pictureBox3 visible
-                if (keyFound)
-                {
-                    pictureBox3.Visible = true;
-                }
-                else
-                {
-                    pictureBox3.Visible = false;
-                }
-            }
-            catch (Exception ex)
-            {
-                // If an error occurs, displays a generic error message
-                DependencyContainer.MessagesBoxImplementation.ShowMessage("Error checking registry keys: " + ex.Message, "Error", MessageBoxButtons.OK);
-            }
+            CustomListBoxUpdate();
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -337,6 +351,22 @@ namespace Console2Desk
             {
                 DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error editing registry: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
+        }
+
+        private async void CustomListBoxUpdate()
+        {
+            var checkForUpdates = new CheckForUpdatesJson();
+            await checkForUpdates.CheckForUpdatesAsync(DependencyContainer.MessagesBoxImplementation);
+
+            var newsItems = NewsLoader.LoadNews(@"C:\Program Files\Console2Desk\sources\local_news_file.json");
+            if (newsItems.Count == 0)
+            {
+                MessageBox.Show("Nessuna notizia trovata.");
+            }
+
+            customListBox1.NewsItems = newsItems;
+            customListBox1.Items.Clear(); // Pulisce gli elementi esistenti
+            customListBox1.Items.AddRange(newsItems.Select(n => n.Title).ToArray()); // Aggiungi i titoli per il binding
         }
 
         // Function to compare two byte arrays
@@ -492,7 +522,67 @@ namespace Console2Desk
             }
             #endregion
         }
+        #region Controllers Pictures
+        private void UpdateTimer_Tick(object sender, EventArgs e)
+        {
+            // Avvia la lettura del file in un task separato
+            Task.Run(() => ReadStatusFromFile());
+        }
 
+        private void ReadStatusFromFile()
+        {
+            try
+            {
+                string filePath = Path.Combine(Path.GetTempPath(), "controller_status.txt");
+
+                // Leggi lo stato dei controller dal file
+                if (File.Exists(filePath))
+                {
+                    string data = File.ReadAllText(filePath);
+                    int controllerCount;
+
+                    if (int.TryParse(data, out controllerCount))
+                    {
+                        // Chiama il metodo per aggiornare il PictureBox dal thread principale
+                        this.Invoke(new Action(() => UpdatePictureBox(controllerCount)));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Errore durante la lettura dello stato dal file: " + ex.Message);
+            }
+        }
+
+        private void UpdatePictureBox(int controllerCount)
+        {
+            lock (lockObject)
+            {
+                switch (controllerCount)
+                {
+                    case 0:
+                        pictureBoxControllers.Image = Properties.Resources.controller0;
+                        break;
+                    case 1:
+                        pictureBoxControllers.Image = Properties.Resources.controller1;
+                        break;
+                    case 2:
+                        pictureBoxControllers.Image = Properties.Resources.controller2;
+                        break;
+                    case 3:
+                        pictureBoxControllers.Image = Properties.Resources.controller3;
+                        break;
+                    case 4:
+                        pictureBoxControllers.Image = Properties.Resources.controller4;
+                        break;
+                    default:
+                        pictureBoxControllers.Image = null;
+                        break;
+                }
+            }
+        }
+
+        #endregion
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -509,10 +599,11 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
 
                 // Restore static icon
                 timerGifReverse.StartTimerReverseForPictureBoxSettings(pictureBoxSettings);
@@ -579,16 +670,53 @@ namespace Console2Desk
         //----------------Start - Touch Buttons
         private async void desktopButton1_Click(object sender, EventArgs e)
         {
+            // Minimize the form at the start
+            this.WindowState = FormWindowState.Minimized;
+
+            // Disabilitare Form1 per impedire l'interazione dell'utente
+            this.Enabled = false;
+
+            ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+
+            Task.Delay(500).Wait();
             // Call the method to handle desktop button click
             DesktopButton.CodeForTouchDesktopButton(DependencyContainer.MessagesBoxImplementation, desktopButton1, explorerPath);
 
+            Task.Delay(2500).Wait();
+            ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+
+            // Disabilitare Form1 per impedire l'interazione dell'utente
+            this.Enabled = true;
+
+            Task.Delay(500).Wait();
+            // Restore the form to its normal state
+            this.WindowState = FormWindowState.Normal;
         }
 
 
         private async void consoleButton1_Click(object sender, EventArgs e)
         {
+            // Minimize the form at the start
+            this.WindowState = FormWindowState.Minimized;
+
+            // Disabilitare Form1 per impedire l'interazione dell'utente
+            this.Enabled = false;
+
+            ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+
+            Task.Delay(500).Wait();
             // Call the method to handle console button click
             ConsoleTouchButton.CodeForTouchConsoleButton(DependencyContainer.MessagesBoxImplementation, consoleButton1, fullscreenAppPath, defaultFullscreenSteamAppPath, this, _topMostTimer);
+
+            Task.Delay(2500).Wait();
+            ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+
+            // Disabilitare Form1 per impedire l'interazione dell'utente
+            this.Enabled = true;
+
+            Task.Delay(1500).Wait();
+            // Restore the form to its normal state
+            this.WindowState = FormWindowState.Normal;
 
         }
         //----------------End - Touch-Buttons
@@ -771,7 +899,14 @@ namespace Console2Desk
             pictureBoxVramPlus.BackColor = Color.Transparent;
         }
 
+        /*
+        OLD IMPLEMENTATION BUTTON Keep temporary
         private void buttonMiniConsoleWindow_Click(object sender, EventArgs e)
+        {
+            ButtonMinimizeConsoleWindow.CodeForbuttonMiniConsoleWindow(this, DependencyContainer.MessagesBoxImplementation);
+        }*/
+
+        private void buttonMiniConsoleWindowNew_Click(object sender, EventArgs e)
         {
             ButtonMinimizeConsoleWindow.CodeForbuttonMiniConsoleWindow(this, DependencyContainer.MessagesBoxImplementation);
         }
@@ -780,7 +915,7 @@ namespace Console2Desk
 
 
         //############End - Futures Buttons
-
+        #region All unused Events Method for Futures Buttons
         private void labelSeparatoCustomRes_Click(object sender, EventArgs e)
         {
 
@@ -824,11 +959,6 @@ namespace Console2Desk
 
         }
 
-        private void PictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Transparent; // Restores the default background color when the mouse leaves the pictureBox1
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -839,33 +969,9 @@ namespace Console2Desk
 
         }
 
-        private void PictureBox2_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox2.BackColor = Color.Transparent; // Restores the default background color when the mouse leaves the pictureBox2
-        }
-
         private void pictureBoxStockRes1610_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void pictureBoxStockRes1610_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBoxStockRes1610.BackColor = Color.Transparent; // Restores the default background color when the mouse leaves the pictureBoxStockRes1610
-        }
-
-        public void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-        public void PictureBox3_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        public void PictureBox3_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox3.BackColor = Color.Transparent; // Ripristina il colore di sfondo predefinito quando il mouse esce dal pictureBox3
         }
 
         private void pictureBoxCheckVRAM_Click(object sender, EventArgs e)
@@ -902,6 +1008,47 @@ namespace Console2Desk
 
         }
 
+        public void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void PictureBox3_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCountDown_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxAMDadrenaline_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+
+        private void PictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox1.BackColor = Color.Transparent; // Restores the default background color when the mouse leaves the pictureBox1
+        }
+
+        private void PictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.BackColor = Color.Transparent; // Restores the default background color when the mouse leaves the pictureBox2
+        }
+
+        public void PictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox3.BackColor = Color.Transparent; // Ripristina il colore di sfondo predefinito quando il mouse esce dal pictureBox3
+        }
+
+        private void pictureBoxStockRes1610_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBoxStockRes1610.BackColor = Color.Transparent; // Restores the default background color when the mouse leaves the pictureBoxStockRes1610
+        }
+
         private void pictureBoxWifi_Click(object sender, EventArgs e)
         {
             // Stop the main timer
@@ -919,45 +1066,40 @@ namespace Console2Desk
 
         }
 
-        // Method to handle mouse click when pressed
-        private void pictureBoxAMDadrenaline_MouseDown(object sender, MouseEventArgs e)
+
+        private async void pictureBoxAMDadrenaline_MouseDown(object sender, MouseEventArgs e)
         {
-            // Changes the image when the mouse is pressed
+            // Cambia l'immagine quando il mouse è premuto
             pictureBoxAMDadrenaline.Visible = false;
             pictureBoxAMDadrenalinePress.Visible = true;
 
             try
             {
-                string appFolder = @"C:\Program Files\WindowsApps";
-                string[] subDirectories = Directory.GetDirectories(appFolder);
+                // Simula la pressione di ALT
+                keybd_event(VK_MENU, 0, 0, 0); // Premi ALT
 
-                foreach (string subDir in subDirectories)
-                {
-                    string[] subDirParts = subDir.Split('\\');
-                    string appName = subDirParts.LastOrDefault();
+                // Pausa per simulare il tempo che l'utente tiene premuto ALT
+                await Task.Delay(100);
 
-                    // Check if the directory name starts with "Advanced Micro Devices Inc"
-                    if (appName.StartsWith("AdvancedMicroDevicesInc"))
-                    {
-                        string exePath = Path.Combine(subDir, "radeonsoftware", "RadeonSoftware.exe");
-                        if (File.Exists(exePath))
-                        {
-                            ProcessStartInfo startInfo = new ProcessStartInfo();
-                            startInfo.FileName = exePath;
-                            startInfo.Verb = "runas"; // Requires elevation of privilege
-                            Process.Start(startInfo);
-                            return;
-                        }
-                    }
-                }
+                // Simula la pressione di R
+                keybd_event(VK_R, 0, 0, 0); // Premi R
 
-                DependencyContainer.MessagesBoxImplementation.ShowMessage("The Radeon Software program could not be found.", "Error", MessageBoxButtons.OK);
-                pictureBoxAMDadrenaline.Visible = true;
-                pictureBoxAMDadrenalinePress.Visible = false;
+                // Pausa per assicurarsi che ALT+R venga processato
+                await Task.Delay(100);
+
+                // Rilascia R
+                keybd_event(VK_R, 0, KEYEVENTF_KEYUP, 0); // Rilascia R
+
+                // Rilascia ALT
+                keybd_event(VK_MENU, 0, KEYEVENTF_KEYUP, 0); // Rilascia ALT
             }
             catch (Exception ex)
             {
-                DependencyContainer.MessagesBoxImplementation.ShowMessage("Error opening Radeon Software: " + ex.Message, "Error", MessageBoxButtons.OK);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage("Error simulating ALT+R: " + ex.Message, "Error", MessageBoxButtons.OK);
+            }
+            finally
+            {
+                // Ripristina l'immagine predefinita
                 pictureBoxAMDadrenaline.Visible = true;
                 pictureBoxAMDadrenalinePress.Visible = false;
             }
@@ -966,14 +1108,12 @@ namespace Console2Desk
         // Method to handle mouse click release
         private void pictureBoxAMDadrenaline_MouseUp(object sender, MouseEventArgs e)
         {
+
             // Restores the default image when the mouse is released
             pictureBoxAMDadrenaline.Visible = true;
             pictureBoxAMDadrenalinePress.Visible = false;
         }
-        private void pictureBoxAMDadrenaline_MouseHover(object sender, EventArgs e)
-        {
 
-        }
 
         private void pictureBoxAMDadrenaline_MouseLeave(object sender, EventArgs e)
         {
@@ -1059,6 +1199,7 @@ namespace Console2Desk
             CodeForControlBCDMemoryUsageCheck.CheckBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
             CodeForReduceWindowsLatencyCheck.CheckReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
             CodeForReduceNetworkLatencyCheck.CheckReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
+            CodeForUACCheck.CheckUACStatus(uacToggleSwitch, DependencyContainer.MessagesBoxImplementation);
 
             // Check if the button is visible
             if (buttonRestorePauseUpgrade.Visible)
@@ -1079,11 +1220,12 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
                 // Enable the desktop button
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
 
                 // Restore static icon
                 timerGifReverse.StartTimerReverseForPictureBoxSettings(pictureBoxSettings);
@@ -1121,6 +1263,11 @@ namespace Console2Desk
                 labelReduceNetworkLatency.Visible = true;
                 pictureBoxReduceNetworkLatency.Visible = true;
                 controlReduceNetworkLatency.Visible = true;
+                special_Niewbie_ButtonHOB.Visible = true;
+                pictureBoxUAC.Visible = true;
+                labelUAC.Visible = true;
+                uacToggleSwitch.Visible = true;
+                special_Niewbie_ButtonRestoreBoost.Visible = true;
 
 
                 desktopButton1.Enabled = false;
@@ -1138,6 +1285,7 @@ namespace Console2Desk
                 pictureBox4.Enabled = false;
                 pictureBoxRealTime_OFF.Enabled = false;
                 pictureBoxWifi.Enabled = false;
+                buttonMiniConsoleWindowNew.Enabled = false;
                 timerGif.StartTimerForPictureBoxSettings(pictureBoxSettings);
             }
 
@@ -1155,14 +1303,15 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
         }
-        private void MonitorExplorerProcess()
+        /*private void MonitorExplorerProcess()  // old implementation later to be deleted
         {
             try
             {
@@ -1178,9 +1327,46 @@ namespace Console2Desk
                 // Handle any exceptions related to the monitoring process
                 DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred while monitoring the process: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
+        }*/
+
+        private IntPtr GetFileExplorerWindowHandle()
+        {
+            IntPtr explorerWindowHandle = IntPtr.Zero;
+            EnumWindows((hWnd, lParam) =>
+            {
+                // Check if this is a File Explorer window
+                if (IsExplorerWindow(hWnd))
+                {
+                    explorerWindowHandle = hWnd;
+                    return false; // Stop enumerating
+                }
+                return true; // Continue enumerating
+            }, IntPtr.Zero);
+            return explorerWindowHandle;
         }
 
-        private void buttonOpenFileExplorer_Click(object sender, EventArgs e)
+        private bool IsExplorerWindow(IntPtr hWnd)
+        {
+            // Add additional checks if needed
+            string className = GetClassName(hWnd);
+            return className == "CabinetWClass" || className == "ExploreWClass";
+        }
+
+        private string GetClassName(IntPtr hWnd)
+        {
+            const int nChars = 256;
+            StringBuilder sb = new StringBuilder(nChars);
+            if (GetClassName(hWnd, sb, nChars) != 0)
+            {
+                return sb.ToString();
+            }
+            return null;
+        }
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern int GetClassName(IntPtr hWnd, StringBuilder lpClassName, int nMaxCount);
+
+        private async void buttonOpenFileExplorer_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1191,16 +1377,17 @@ namespace Console2Desk
                 _explorerProcess = Process.Start("explorer.exe", folderPath);
                 _isExplorerOpen = true;
                 _topMostTimer.Stop(); // Stop the timer when File Explorer is opened
-                                      // Send Form1 to the back
+
+                // Minimize Form1
                 this.WindowState = FormWindowState.Minimized;
 
-                // Wait for the process to have a window
-                Task.Delay(500).Wait(); // Wait for the window to open
+                // Wait for the File Explorer window to appear
+                await Task.Delay(500); // Wait asynchronously
 
-                // Find the window handle of the new Explorer window
-                _explorerWindowHandle = FindWindow(null, "This PC");
+                // Get the handle of the File Explorer window
+                _explorerWindowHandle = GetFileExplorerWindowHandle();
 
-                // Monitor the Explorer window in a separate thread or using a timer
+                // Monitor the Explorer window
                 System.Windows.Forms.Timer windowMonitorTimer = new System.Windows.Forms.Timer();
                 windowMonitorTimer.Interval = 1000; // Check every second
                 windowMonitorTimer.Tick += (s, args) =>
@@ -1223,7 +1410,7 @@ namespace Console2Desk
             catch (Exception ex)
             {
                 // Handle any exceptions
-                DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
 
@@ -1268,12 +1455,13 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
         }
         public void touchScreenEnDbButton_Click(object sender, EventArgs e)
         {
@@ -1289,12 +1477,13 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
         }
 
         public void buttonXinputTest_MouseUp(object sender, MouseEventArgs e)
@@ -1306,12 +1495,13 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
         }
 
         private void buttonChangeConsoleSettings_Click(object sender, EventArgs e)
@@ -1321,7 +1511,7 @@ namespace Console2Desk
             using (ConsoleSettingsButton settingsForm = new ConsoleSettingsButton(this, _topMostTimer))
             {
                 settingsForm.FormClosed += (s, args) => _isConsoleSettingsOpen = false;
-                settingsForm.ShowDialog();                
+                settingsForm.ShowDialog();
             }
         }
 
@@ -1334,12 +1524,13 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
         }
 
         private void msStoreButton_Click(object sender, EventArgs e)
@@ -1356,15 +1547,53 @@ namespace Console2Desk
                     controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
                     labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
                     pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency);
+                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
+                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
-                pictureBoxWifi);
+                pictureBoxWifi, buttonMiniConsoleWindowNew);
         }
 
         // Toggles Panel Settings
+
+
+        private void controlAMDnoShutter_Click(object sender, EventArgs e)
+        {
+            CodeForAMD_NoShutter.ToggleEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlMeltdownSpectreProtectionOnOff_Click(object sender, EventArgs e)
+        {
+            CodeForMeltdownSpectreProtection.ToggleMeltdownSpectreProtection(controlMeltdownSpectreProtectionOnOff, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlSystemDevices_Click(object sender, EventArgs e)
+        {
+            CodeForSystemDevices.ToggleSystemDevicesAsync(controlSystemDevices, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlCoreIsolation_Exploid_Click(object sender, EventArgs e)
+        {
+            CodeForControlCoreIsolation_Exploid.ToggleCoreIsolationAndExploitProtection(controlCoreIsolation_Exploid, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlBCDMemoryUsage_Click(object sender, EventArgs e)
+        {
+            CodeForControlBCDMemoryUsage.ToggleBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlReduceWindowsLatency_Click(object sender, EventArgs e)
+        {
+            CodeForReduceWindowsLatency.ToggleReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
+        }
+        #endregion
+
+
+        // Toggles Panel Settings
+
+        #region All unused Events Method for Toggles Panel Settings
         private void panel4Toggle_Paint(object sender, PaintEventArgs e)
         {
 
@@ -1380,11 +1609,6 @@ namespace Console2Desk
 
         }
 
-        private void controlAMDnoShutter_Click(object sender, EventArgs e)
-        {
-            CodeForAMD_NoShutter.ToggleEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
-        }
-
         private void pictureBoxMeltdown_Spectre_Click(object sender, EventArgs e)
         {
 
@@ -1394,52 +1618,27 @@ namespace Console2Desk
         {
 
         }
-
-        private void controlMeltdownSpectreProtectionOnOff_Click(object sender, EventArgs e)
-        {
-            CodeForMeltdownSpectreProtection.ToggleMeltdownSpectreProtection(controlMeltdownSpectreProtectionOnOff, DependencyContainer.MessagesBoxImplementation);
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void controlSystemDevices_Click(object sender, EventArgs e)
-        {
-            CodeForSystemDevices.ToggleSystemDevicesAsync(controlSystemDevices, DependencyContainer.MessagesBoxImplementation);
-        }
-
         private void labelSystemDevices_Click(object sender, EventArgs e)
         {
 
         }
-
         private void pictureBoxSystemDevices_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void controlCoreIsolation_Exploid_Click(object sender, EventArgs e)
-        {
-            CodeForControlCoreIsolation_Exploid.ToggleCoreIsolationAndExploitProtection(controlCoreIsolation_Exploid, DependencyContainer.MessagesBoxImplementation);
         }
 
         private void labelCoreIsolation_CFG_Click(object sender, EventArgs e)
         {
 
         }
-
         private void pictureBoxCoreIsolation_CFG_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void controlBCDMemoryUsage_Click(object sender, EventArgs e)
-        {
-            CodeForControlBCDMemoryUsage.ToggleBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
-        }
-
         private void labelBCDMemoryUsage_Click(object sender, EventArgs e)
         {
 
@@ -1449,12 +1648,6 @@ namespace Console2Desk
         {
 
         }
-
-        private void controlReduceWindowsLatency_Click(object sender, EventArgs e)
-        {
-            CodeForReduceWindowsLatency.ToggleReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
-        }
-
         private void pictureBoxReduceWindowsLatency_Click(object sender, EventArgs e)
         {
 
@@ -1464,63 +1657,105 @@ namespace Console2Desk
         {
 
         }
+        private void labelReduceNetworkLatency_Click(object sender, EventArgs e)
+        {
 
-        // Toggles Panel Settings
+        }
+
+        private void pictureBoxReduceNetworkLatency_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         //#########End - Settings
-
+        #region All unused Events Method for Bottom Window Buttons
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-
         private void pictureBoxResetTouchKeyboard_Click(object sender, EventArgs e)
         {
 
         }
-        private async void pictureBoxResetTouchKeyboard_MouseDown(object sender, EventArgs e)
-        {
-            Cursor = Cursors.WaitCursor;
-            // Cambia l'immagine quando il mouse viene premuto           
-            pictureBoxResetTouchKeyboard.Visible = false;
-            pictureBoxResetTouchKeyboardPress.Visible = true;
-
-            // Chiama il metodo asincrono per resettare la tastiera touch
-            await CodeForResetTouchKeyboard.ResetTouchKeyboardAsync();
-
-            // Mostra un messaggio di successo all'utente
-            MessageBox.Show("The Touch Keyboard has been reset successfully. If the keyboard reappears, please close it manually to avoid further issues. " +
-                "If the problem persists, try running this function again and then move the Controller D-Pad left and right and press some buttons. " +
-                "After that, you may need to close the keyboard manually once again, and the issue should not reoccur.",
-                "Success",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Cursor = Cursors.Default;
-        }
         private void pictureBoxResetTouchKeyboard_MouseUp(object sender, MouseEventArgs e)
         {
-            // Restores the default image when the mouse is released
-            pictureBoxResetTouchKeyboard.Visible = true;
-            pictureBoxResetTouchKeyboardPress.Visible = false;
+
         }
 
         private void pictureBoxResetTouchKeyboardPress_MouseDown(object sender, MouseEventArgs e)
         {
-            pictureBoxResetTouchKeyboardPress.Visible = true;
-            pictureBoxResetTouchKeyboard.Visible = false;
+
         }
 
         private void pictureBoxResetTouchKeyboardPress_Click(object sender, EventArgs e)
         {
-            pictureBoxResetTouchKeyboardPress.Visible = true;
-            pictureBoxResetTouchKeyboard.Visible = false;
+
         }
 
         private void pictureBoxResetTouchKeyboardPress_MouseUp(object sender, EventArgs e)
         {
-            pictureBoxResetTouchKeyboard.Visible = true;
-            pictureBoxResetTouchKeyboardPress.Visible = false;
+
         }
+        #endregion
+        private void TimerLabelCountDown_Tick(object sender, EventArgs e)
+        {
+            countDown--; // Decrementa il conto alla rovescia
+            labelCountDown.Text = countDown.ToString(); // Aggiorna il testo dell'etichetta
+
+            if (countDown == 0)
+            {
+                TimerLabelCountDown.Stop(); // Ferma il timer
+                labelCountDown.Visible = false; // Nascondi l'etichetta
+            }
+        }
+
+        private async void pictureBoxResetTouchKeyboard_MouseDown(object sender, EventArgs e)
+        {
+            pictureBoxResetTouchKeyboardPress.Visible = true;
+            pictureBoxResetTouchKeyboard.Visible = false;
+
+            var result = DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                "Do you want to reset the Touch Keyboard service?\n\n" +
+                "- Click YES to reset the service.\n" +
+                "- Click NO to Disable/Enable temporary the Touch Keyboard Panel.\n\n" +
+                "- CANCEL to do nothing.",
+                "Touch Keyboard Reset",
+                MessageBoxButtons.YesNoCancel);
+
+            if (result == DialogResult.Yes)
+            {
+                // Avvia il countdown
+                countDown = 5; // Resetta il conto alla rovescia
+                labelCountDown.Visible = true; // Mostra l'etichetta
+                labelCountDown.Text = countDown.ToString(); // Imposta il testo iniziale
+                TimerLabelCountDown.Start(); // Avvia il timer
+
+                // Avvia la logica per resettare la tastiera touch             
+                Cursor = Cursors.WaitCursor;
+                await CodeForResetTouchKeyboard.ResetTouchKeyboardAsync(pictureBoxResetTouchKeyboard);
+                Cursor = Cursors.Default;
+                DependencyContainer.MessagesBoxImplementation.ShowMessage("The Touch Keyboard has been reset successfully. " +
+                    "If the keyboard reappears, please close it manually and reapply" +
+                    " the fix or try to disable temporary it by selcting `NO`.", "Success",
+                    MessageBoxButtons.OK);
+
+                pictureBoxResetTouchKeyboardPress.Visible = false;
+                pictureBoxResetTouchKeyboard.Visible = true;
+            }
+            else if (result == DialogResult.No)
+            {
+                // Disattiva il touchscreen impostando la chiave di registro
+                ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+                pictureBoxResetTouchKeyboardPress.Visible = false;
+                pictureBoxResetTouchKeyboard.Visible = true;
+            }
+            // Se il risultato è Cancel, non fare nulla
+            pictureBoxResetTouchKeyboardPress.Visible = false;
+            pictureBoxResetTouchKeyboard.Visible = true;
+        }
+
+
         private void buttonAbout_Click(object sender, EventArgs e)
         {
             _isAboutBoxOpen = true;
@@ -1563,16 +1798,6 @@ namespace Console2Desk
             Cursor.Current = Cursors.Default;
         }
 
-        private void labelReduceNetworkLatency_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxReduceNetworkLatency_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void controlReduceNetworkLatency_Click(object sender, EventArgs e)
         {
             CodeForReduceNetworkLatency.ToggleReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
@@ -1591,6 +1816,117 @@ namespace Console2Desk
                 // Restart the system
                 Process.Start("shutdown.exe", "/r /t 0");
             }
+        }
+
+        private void special_Niewbie_ButtonHOB_Click(object sender, EventArgs e)
+        {
+            // Define the path of the program to launch
+            string exePath = @"C:\Program Files\Console2Desk\HOB\HandleOS_Benchmark.exe";
+
+            try
+            {
+                // Start the process
+                Process process = new Process();
+                process.StartInfo.FileName = exePath;
+                process.StartInfo.UseShellExecute = true;
+                process.StartInfo.CreateNoWindow = false;
+                process.Start();
+
+                // Hide the main window
+                this.Hide();
+
+                // Wait for the process to finish
+                process.WaitForExit();
+
+                // Show the main window again
+                this.Show();
+                this.BringToFront(); //Brings the main window to the front
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void pictureBoxControllers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void customListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxUAC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelUAC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uacToggleSwitch_Click(object sender, EventArgs e)
+        {
+            CodeForUAC.ToggleUAC(uacToggleSwitch, DependencyContainer.MessagesBoxImplementation);
+
+            // Notify the user that the system needs to restart
+            var result = DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                "Disabling User Account Control (UAC) will stop showing prompts for administrator privileges. Any software will run with administrative privileges without asking for confirmation. "
+                + "Changes will take effect after a system restart. Do you want to restart now?", "Information",
+                MessageBoxButtons.YesNo);
+
+
+            if (result == DialogResult.Yes)
+            {
+                // Restart the system
+                Process.Start("shutdown.exe", "/r /t 0");
+            }
+        }
+
+        private void special_Niewbie_ButtonRestoreBoost_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Environment.UserName == "HandleOS")
+                {
+                    _isAboutBoxOpen = true;
+                    FormMessageBox.FormMessageBox formMessageBox = new FormMessageBox.FormMessageBox(this, _topMostTimer);
+                    formMessageBox.FormClosed += (s, args) => _isAboutBoxOpen = false;
+                    formMessageBox.ShowDialog();
+                    this.BringToFront();
+                }
+                else
+                {
+                    DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                        "This section is exclusive to HandleOS users. This tool is specifically designed to maintain HandleOS optimized, and these changes are not recommended for a regular system!",
+                        "Exclusive Section",
+                        MessageBoxButtons.OK
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void buttonInfo_Click(object sender, EventArgs e)
+        {
+            _isAboutBoxOpen = true;
+            info.FormInfoControllers formInfoControllers = new info.FormInfoControllers(this, _topMostTimer);
+            formInfoControllers.FormClosed += (s, args) => _isAboutBoxOpen = false;
+            formInfoControllers.ShowDialog();
+            this.BringToFront();
         }
     }
 }

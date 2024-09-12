@@ -215,6 +215,7 @@
             labelCopyrightDescription.TabIndex = 7;
             labelCopyrightDescription.Text = "Copyright (C) 2023 Special-Niewbie Softwares (Under GNU GENERAL LICENSE).";
             labelCopyrightDescription.TextAlign = ContentAlignment.MiddleLeft;
+            labelCopyrightDescription.Click += labelCopyrightDescription_Click;
             // 
             // labelDevDescription
             // 
@@ -301,7 +302,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "AboutBox";
-            StartPosition = FormStartPosition.CenterParent;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "About Console2Desk ";
             TopMost = true;
             Load += AboutBox_Load;

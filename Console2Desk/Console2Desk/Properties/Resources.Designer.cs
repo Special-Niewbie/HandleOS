@@ -163,9 +163,79 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Console2DeskiconBenchmark40 {
+            get {
+                object obj = ResourceManager.GetObject("Console2DeskiconBenchmark40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Console2DeskSettings32 {
             get {
                 object obj = ResourceManager.GetObject("Console2DeskSettings32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Controller_List {
+            get {
+                object obj = ResourceManager.GetObject("Controller_List", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap controller0 {
+            get {
+                object obj = ResourceManager.GetObject("controller0", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap controller1 {
+            get {
+                object obj = ResourceManager.GetObject("controller1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap controller2 {
+            get {
+                object obj = ResourceManager.GetObject("controller2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap controller3 {
+            get {
+                object obj = ResourceManager.GetObject("controller3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap controller4 {
+            get {
+                object obj = ResourceManager.GetObject("controller4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +313,29 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HandleIconRestoreBoost {
+            get {
+                object obj = ResourceManager.GetObject("HandleIconRestoreBoost", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap HandTouchKeyboard {
             get {
                 object obj = ResourceManager.GetObject("HandTouchKeyboard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap HandTouchKeyboard_Disabled {
+            get {
+                object obj = ResourceManager.GetObject("HandTouchKeyboard_Disabled", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -466,6 +556,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap touchscreen_Enabled48 {
             get {
                 object obj = ResourceManager.GetObject("touchscreen_Enabled48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap UAC {
+            get {
+                object obj = ResourceManager.GetObject("UAC", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

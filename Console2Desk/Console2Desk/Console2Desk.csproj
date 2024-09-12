@@ -29,7 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Powershell" Version="3.0.0" />
+    <PackageReference Include="Cake.Powershell" Version="4.0.0" />
+    <PackageReference Include="XInputium" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -95,10 +96,10 @@
       <PackagePath>\</PackagePath>
     </None>
     <None Update="sources\Controller_List.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="sources\DPAD-HandleOS.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Update="version">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -109,7 +110,7 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /E /I /Y &quot;C:\Progetti_in_C\C#\Console2Desk\Console2Desk\Battery&quot; &quot;$(OutDir)Battery&quot;&#xD;&#xA;xcopy /E /I /Y &quot;C:\Progetti_in_C\C#\Console2Desk\Console2Desk\XinputTest&quot; &quot;$(OutDir)XinputTest&quot;" />
+    <Exec Command="xcopy /E /I /Y &quot;C:\Progetti_in_C\C#\Console2Desk\Console2Desk\Battery&quot; &quot;$(OutDir)Battery&quot;&#xD;&#xA;xcopy /E /I /Y &quot;C:\Progetti_in_C\C#\Console2Desk\Console2Desk\XinputTest&quot; &quot;$(OutDir)XinputTest&quot;&#xD;&#xA;xcopy /E /I /Y &quot;C:\Progetti_in_C\C#\Console2Desk\Console2Desk\HOB&quot; &quot;$(OutDir)HOB&quot;&#xD;&#xA;xcopy /E /I /Y &quot;C:\Progetti_in_C\C#\Console2Desk\Console2Desk\inputs2desk&quot; &quot;$(OutDir)inputs2desk&quot;&#xD;&#xA;xcopy /E /I /Y &quot;C:\Progetti_in_C\C#\Console2Desk\Console2Desk\sources&quot; &quot;$(OutDir)sources&quot;&#xD;&#xA;" />
   </Target>
 
 </Project>

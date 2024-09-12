@@ -18,6 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
 using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace Console2Desk.FuturesButtons
 {
@@ -27,48 +28,101 @@ namespace Console2Desk.FuturesButtons
         {
             try
             {
-                bool keysAdded = false; // Flag to indicate whether keys have been added
-
-                // Array containing the registry key paths to search for
-                string[] registryKeys = {
-            @"SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000",
-            @"SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001",
-            @"SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0000",
-            @"SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001"
-        };
-
-                // For each registry key path
-                foreach (string keyPath in registryKeys)
+                string[] subKeyNames;
+                // Ottieni tutti i nomi delle sottochiavi della chiave principale
+                using (RegistryKey mainKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}"))
                 {
-                    // Opens the registry key
-                    using (RegistryKey key = Registry.LocalMachine.OpenSubKey(keyPath, true))
+                    if (mainKey == null)
                     {
-                        if (key != null)
+                        //messagesBoxImplementation.ShowMessage("Unable to access the registry key.", "Error", MessageBoxButtons.OK);
+                        return;
+                    }
+                    subKeyNames = mainKey.GetSubKeyNames();
+                }
+
+                string subKeyName = null;
+                // Trova la sottochiave corretta relativa alla AMD Radeon Graphics
+                foreach (string name in subKeyNames)
+                {
+                    try
+                    {
+                        using (RegistryKey subKey = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Control\Class\{{4d36e968-e325-11ce-bfc1-08002be10318}}\{name}"))
                         {
-                            // Adds the DalEmbeddedIntegerScalingSupport entry with value dword:00000001
-                            key.SetValue("DalEmbeddedIntegerScalingSupport", 1, RegistryValueKind.DWord);
-                            keysAdded = true; // Set the flag to true if at least one key has been added
+                            if (subKey != null && subKey.GetValue("DriverDesc")?.ToString() == "AMD Radeon Graphics")
+                            {
+                                if (subKey.GetSubKeyNames().Length > 0)
+                                {
+                                    subKeyName = name;
+                                    break;
+                                }
+                            }
                         }
+                    }
+                    catch (UnauthorizedAccessException)
+                    {
+                        // Gestione dell'accesso non autorizzato
+                    }
+                    catch (Exception ex)
+                    {
+                        //messagesBoxImplementation.ShowMessage($"Error checking subkeys: {ex.Message}", "Error", MessageBoxButtons.OK);
                     }
                 }
 
-                if (keysAdded)
+                if (subKeyName == null)
                 {
-                    // If keys have been added, it shows an informational message
-                    messagesBoxImplementation.ShowMessage("Registry keys modified successfully. You may need to restart your computer to apply these changes. Please check AMD Adrenaline software for Integer Scaling support.", "Success", MessageBoxButtons.OK);
-                    pictureBox3.Visible = true;
+                    messagesBoxImplementation.ShowMessage("It looks like you don't have an AMD GPU in your system.", "Error", MessageBoxButtons.OK);
+                    return;
                 }
-                else
+
+                bool keyToggled = false;
+                string[] registryKeys = new string[] {
+                    $@"SYSTEM\CurrentControlSet\Control\Class\{{4d36e968-e325-11ce-bfc1-08002be10318}}\{subKeyName}"
+                };
+
+                // Per ciascun percorso della chiave di registro
+                foreach (string keyPath in registryKeys)
                 {
-                    // If no key was added, it shows an error message
-                    messagesBoxImplementation.ShowMessage("Integer Scaling was not added because the predefined registry paths do not exist. Please contact the developer on GitHub for further assistance.", "Error", MessageBoxButtons.OK);
-                    pictureBox3.Visible = false;
+                    try
+                    {
+                        // Apre la chiave di registro con accesso in scrittura
+                        using (RegistryKey key = Registry.LocalMachine.OpenSubKey(keyPath, true))
+                        {
+                            if (key != null)
+                            {
+                                object currentValue = key.GetValue("DalEmbeddedIntegerScalingSupport");
+                                int newValue = 1; // Valore predefinito se non esiste o è diverso da 1
+
+                                // Controlla il valore attuale e alterna tra 0 e 1
+                                if (currentValue != null && (int)currentValue == 1)
+                                {
+                                    newValue = 0;
+                                }
+
+                                // Imposta il nuovo valore
+                                key.SetValue("DalEmbeddedIntegerScalingSupport", newValue, RegistryValueKind.DWord);
+                                keyToggled = true;
+
+                                // Mostra un messaggio a seconda del nuovo valore impostato
+                                string message = (newValue == 1)
+                                    ? "Integer scaling enabled (value set to 1)."
+                                    : "Integer scaling disabled (value set to 0).";
+                                messagesBoxImplementation.ShowMessage(message, "Success", MessageBoxButtons.OK);
+                            }
+                        }
+                    }
+                    catch (UnauthorizedAccessException ex)
+                    {
+                        //messagesBoxImplementation.ShowMessage($"Access denied to registry key: {ex.Message}", "Error", MessageBoxButtons.OK);
+                    }
+                    catch (Exception ex)
+                    {
+                        //messagesBoxImplementation.ShowMessage($"Error accessing or modifying registry key: {ex.Message}", "Error", MessageBoxButtons.OK);
+                    }
                 }
             }
             catch (Exception ex)
             {
-                // If an error occurs, displays a generic error message
-                messagesBoxImplementation.ShowMessage("Error modifying registry keys: " + ex.Message, "Error", MessageBoxButtons.OK);
+                messagesBoxImplementation.ShowMessage($"An unexpected error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
     }

@@ -52,7 +52,11 @@
           "dependencies": {
             "Cake.Powershell": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[4.0.0, )"
+            },
+            "XInputium": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             }
           },
           "imports": [
@@ -92,7 +96,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }

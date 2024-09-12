@@ -39,10 +39,12 @@ namespace Console2Desk.SettingsButton
                         {
                             if (isInstalled)
                             {
+                                msStoreButton.TextAlign = ContentAlignment.MiddleCenter;
                                 msStoreButton.Text = "    Uninstall Official \n     MS Store\n     (press to uninstall it)";
                             }
                             else
                             {
+                                msStoreButton.TextAlign = ContentAlignment.MiddleCenter;
                                 msStoreButton.Text = "    Reinstall Official \n     MS Store\n     (press to reinstall it)";
                             }
                         });

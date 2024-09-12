@@ -30,8 +30,9 @@ namespace Console2Desk.SettingsButton
             ControlToggles controlSystemDevices, Label labelSystemDevices, PictureBox pictureBoxSystemDevices, ControlToggles controlCoreIsolation_Exploid,
             Label labelCoreIsolation_CFG, PictureBox pictureBoxCoreIsolation_CFG, ControlToggles controlBCDMemoryUsage,
             Label labelBCDMemoryUsage, PictureBox pictureBCDMemoryUsage, ControlToggles controlReduceWindowsLatency,
-            PictureBox pictureBoxReduceWindowsLatency, Label labelReduceWindowsLatency, Label labelReduceNetworkLatency, 
-            PictureBox pictureBoxReduceNetworkLatency, ControlToggles controlReduceNetworkLatency)
+            PictureBox pictureBoxReduceWindowsLatency, Label labelReduceWindowsLatency, Label labelReduceNetworkLatency, PictureBox pictureBoxReduceNetworkLatency,
+            ControlToggles controlReduceNetworkLatency, Special_Niewbie_Button special_Niewbie_ButtonHOB, PictureBox pictureBoxUAC, 
+            Label labelUAC, ControlToggles uacToggleSwitch, Special_Niewbie_Button special_Niewbie_ButtonRestoreBoost)
         {
             buttonOpenFileExplorer.Visible = false;
             buttonRestorePauseUpgrade.Visible = false;
@@ -62,13 +63,18 @@ namespace Console2Desk.SettingsButton
             labelReduceNetworkLatency.Visible = false;
             pictureBoxReduceNetworkLatency.Visible = false;
             controlReduceNetworkLatency.Visible = false;
+            special_Niewbie_ButtonHOB.Visible = false;
+            pictureBoxUAC.Visible = false;
+            labelUAC.Visible = false;
+            uacToggleSwitch.Visible = false;
+            special_Niewbie_ButtonRestoreBoost.Visible = false;
 
         }
         
 
         public static void EnableDesktopButton(Special_Niewbie_Button desktopButton1, Special_Niewbie_Button consoleButton1,
             PictureBox pictureBoxResetTouchKeyboard, PictureBox pictureBoxAMDadrenaline, PictureBox pictureBoxAMDadrenalinePress, PictureBox pictureBoxRealTime_ON,
-            PictureBox pictureBox4, PictureBox pictureBoxRealTime_OFF, PictureBox pictureBoxWifi)
+            PictureBox pictureBox4, PictureBox pictureBoxRealTime_OFF, PictureBox pictureBoxWifi, Special_Niewbie_Button buttonMiniConsoleWindowNew)
         {
             desktopButton1.Enabled = true;
             desktopButton1.BackColor = Color.FromArgb(50, 50, 50);
@@ -85,6 +91,7 @@ namespace Console2Desk.SettingsButton
             pictureBox4.Enabled = true;
             pictureBoxRealTime_OFF.Enabled = true;
             pictureBoxWifi.Enabled = true;
+            buttonMiniConsoleWindowNew.Enabled = true;
         }
     }
 }

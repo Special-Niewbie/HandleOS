@@ -1,0 +1,280 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\handleos_benchmark\\formsubscores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\formsubscores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\customprogressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\customprogressbar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\formbench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\formbench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\handleos_benchmark\\formbench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\formbench.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\formbench.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\formbench.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\handleos_benchmark.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\handleos_benchmark.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\custombuttonniewbie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\custombuttonniewbie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\themesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\themesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\handleos_benchmark\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|c:\\progetti_in_c\\c#\\handleos_benchmark\\handleos_benchmark\\customcomboboxniewbie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\customcomboboxniewbie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\handleos_benchmark\\customcomboboxniewbie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9B199FC5-A40B-4235-91EC-6352C0C74CFF}|HandleOS_Benchmark\\HandleOS_Benchmark.csproj|solutionrelative:handleos_benchmark\\customcomboboxniewbie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Form1.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\Form1.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Form1.cs [Design]*",
+              "RelativeToolTip": "HandleOS_Benchmark\\Form1.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T13:58:04.627Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormSubScores.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormSubScores.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\FormSubScores.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormSubScores.cs [Design]",
+              "RelativeToolTip": "HandleOS_Benchmark\\FormSubScores.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T08:39:45.985Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Form1.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\Form1.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Form1.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\Form1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-16T14:50:32.729Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CustomProgressBar.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomProgressBar.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\CustomProgressBar.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomProgressBar.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\CustomProgressBar.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAYwBAAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T04:49:50.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormBench.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormBench.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\FormBench.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormBench.cs [Design]",
+              "RelativeToolTip": "HandleOS_Benchmark\\FormBench.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:38:45.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormBench.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormBench.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\FormBench.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormBench.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\FormBench.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAADgv0YAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:44:03.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormBench.Designer.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormBench.Designer.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\FormBench.Designer.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\FormBench.Designer.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\FormBench.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T05:43:30.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CustomButtonNiewbie.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomButtonNiewbie.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\CustomButtonNiewbie.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomButtonNiewbie.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\CustomButtonNiewbie.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAMEAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-22T04:09:37.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HandleOS_Benchmark",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\HandleOS_Benchmark.csproj",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\HandleOS_Benchmark.csproj",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\HandleOS_Benchmark.csproj",
+              "RelativeToolTip": "HandleOS_Benchmark\\HandleOS_Benchmark.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-27T05:12:27.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ThemeSettings.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\ThemeSettings.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\ThemeSettings.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\ThemeSettings.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\ThemeSettings.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFwAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T00:10:45.466Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Program.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\Program.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Program.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T11:55:07.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Theme.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Theme.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\Theme.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Theme.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\Theme.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4BAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T00:11:00.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\Form1.Designer.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Form1.Designer.cs*",
+              "RelativeToolTip": "HandleOS_Benchmark\\Form1.Designer.cs*",
+              "ViewState": "AQIAABAAAAAAAAAAAIBZwBYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T04:50:58.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\Properties\\Resources.resx",
+              "RelativeToolTip": "HandleOS_Benchmark\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-08-27T05:12:31.449Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CustomComboBoxNiewbie.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomComboBoxNiewbie.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\CustomComboBoxNiewbie.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomComboBoxNiewbie.cs",
+              "RelativeToolTip": "HandleOS_Benchmark\\CustomComboBoxNiewbie.cs",
+              "ViewState": "AQIAAHkAAAAAAAAAAAAcwI8AAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T06:20:19.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CustomComboBoxNiewbie.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomComboBoxNiewbie.cs",
+              "RelativeDocumentMoniker": "HandleOS_Benchmark\\CustomComboBoxNiewbie.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\HandleOS_Benchmark\\HandleOS_Benchmark\\CustomComboBoxNiewbie.cs [Design]",
+              "RelativeToolTip": "HandleOS_Benchmark\\CustomComboBoxNiewbie.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-26T12:41:58.814Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

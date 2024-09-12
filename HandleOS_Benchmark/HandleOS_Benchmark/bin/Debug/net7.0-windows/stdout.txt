@@ -1,0 +1,84 @@
+Windows System Assessment Tool
+> Running the Formal Assessment
+> Running: Feature Enumeration ''
+> Run Time 00:00:00.00
+> Running: WinSAT Direct3D Assessment '-aname DWM -time 10 -fbc 10 -disp off -normalw 1 -alphaw 2 -width 1280 -height 1024 -winwidth C(1144) -winheight C(915) -rendertotex 6 -rtdelta 3 -nolock'
+> Assessing Desktop Graphics Performance
+> Run Time 00:00:10.47
+> Running: WinSAT Direct3D Assessment '-aname Batch -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 300 -batchcnt C(10) -objs C(26) -rendertotex 6 -rtdelta 3 -texpobj C(1)'
+> Assessing DirectX Batch Performance
+> Run Time 00:00:00.17
+> Running: WinSAT Direct3D Assessment '-aname Alpha -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 300 -batchcnt C(75) -objs C(26) -rendertotex 6 -rtdelta 3 -texpobj C(1)'
+> Assessing DirectX Alpha blend Performance
+> Run Time 00:00:00.19
+> Running: WinSAT Direct3D Assessment '-aname Tex -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 500 -batchcnt C(125) -objs C(20) -noalpha -texshader -totaltex 10 -texpobj C(4) -rendertotex 6 -rtdelta 3'
+> Assessing DirectX Texture load Performance
+> Run Time 00:00:00.20
+> Running: WinSAT Direct3D Assessment '-aname ALU -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 500 -batchcnt C(125) -objs C(20) -noalpha -alushader -totaltex 10 -texpobj C(1) -rendertotex 6 -rtdelta 3'
+> Assessing DirectX ALU Performance
+> Run Time 00:00:00.22
+> Running: WinSAT Direct3D Assessment '-dx10  -aname Batch -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 300 -batchcnt C(10) -objs C(26) -rendertotex 6 -rtdelta 3 -texpobj C(1)'
+> Run Time 00:00:00.00
+> Running: WinSAT Direct3D Assessment '-dx10  -aname Alpha -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 300 -batchcnt C(75) -objs C(26) -rendertotex 6 -rtdelta 3 -texpobj C(1)'
+> Run Time 00:00:00.00
+> Running: WinSAT Direct3D Assessment '-dx10  -aname Tex -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 500 -batchcnt C(125) -objs C(20) -noalpha -texshader -totaltex 10 -texpobj C(4) -rendertotex 6 -rtdelta 3'
+> Run Time 00:00:00.00
+> Running: WinSAT Direct3D Assessment '-dx10  -aname ALU -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 500 -batchcnt C(125) -objs C(20) -noalpha -alushader -totaltex 10 -texpobj C(1) -rendertotex 6 -rtdelta 3'
+> Run Time 00:00:00.00
+> Running: WinSAT Direct3D Assessment '-dx10  -aname GeomF4 -time 7 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 150;200;241 -batchcnt C(50);C(200);C(300) -objs C(12);C(26);C(45) -noalpha -geomf4shader -texpobj C(0) -rendertotex 6 -rtdelta 3 -tierframes 60 -tiertime 1'
+> Run Time 00:00:00.00
+> Running: WinSAT Direct3D Assessment '-dx10  -aname GeomV8 -time 7 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 75;100;120 -batchcnt C(25);C(100);C(150) -objs C(8);C(17);C(29) -noalpha -geomv8shader -texpobj C(0) -rendertotex 6 -rtdelta 3 -tierframes 60 -tiertime 1'
+> Run Time 00:00:00.00
+> Running: WinSAT Direct3D Assessment '-dx10  -aname CBuffer -time 5 -fbc 10 -disp off -animate 10 -width 1280 -height 1024 -totalobj 75 -batchcnt C(25) -objs C(8) -rendertotex 6 -rtdelta 3 -texpobj C(1) -cbuffershader -cbufa 2 -cbuff 5 -cbufp 6'
+> Run Time 00:00:00.00
+> MOOBE Run Time 00:00:12.28
+> Running: CPU Assessment '-encryption -up'
+> Run Time 00:00:10.08
+> Running: CPU Assessment '-compression -up'
+> Run Time 00:00:10.02
+> Running: CPU Assessment '-encryption2 -up'
+> Run Time 00:00:10.11
+> Running: CPU Assessment '-compression2 -up'
+> Run Time 00:00:10.03
+> Running: CPU Assessment '-encryption'
+> Run Time 00:00:10.17
+> Running: CPU Assessment '-compression'
+> Run Time 00:00:10.13
+> Running: CPU Assessment '-encryption2'
+> Run Time 00:00:10.16
+> Running: CPU Assessment '-compression2'
+> Run Time 00:00:10.20
+> Running: System memory performance assessment ''
+> Run Time 00:00:05.25
+> Running: Storage Assessment '-seq -read -n 0'
+> Run Time 00:00:03.20
+> Running: Storage Assessment '-ran -read -n 0'
+> Run Time 00:00:00.22
+> Run Time 00:00:00.00
+> CPU LZW Compression                          514.47 MB/s
+> CPU AES256 Encryption                        8938.79 MB/s
+> CPU Vista Compression                        1428.02 MB/s
+> CPU SHA1 Hash                                2820.08 MB/s
+> Uniproc CPU LZW Compression                  97.21 MB/s
+> Uniproc CPU AES256 Encryption                1209.19 MB/s
+> Uniproc CPU Vista Compression                239.68 MB/s
+> Uniproc CPU SHA1 Hash                        580.99 MB/s
+> Memory Performance                           46926.18 MB/s
+> Direct3D Batch Performance                   42.00 F/s
+> Direct3D Alpha Blend Performance             42.00 F/s
+> Direct3D ALU Performance                     42.00 F/s
+> Direct3D Texture Load Performance            42.00 F/s
+> Direct3D Batch Performance                   42.00 F/s
+> Direct3D Alpha Blend Performance             42.00 F/s
+> Direct3D ALU Performance                     42.00 F/s
+> Direct3D Texture Load Performance            42.00 F/s
+> Direct3D Geometry Performance                42.00 F/s
+> Direct3D Geometry Performance                42.00 F/s
+> Direct3D Constant Buffer Performance         42.00 F/s
+> Video Memory Throughput                      24936.80 MB/s
+> Dshow Video Encode Time                      0.00000 s
+> Dshow Video Decode Time                      0.00000 s
+> Media Foundation Decode Time                 0.00000 s
+> Disk  Sequential 64.0 Read                   3012.18 MB/s          9.2
+> Disk  Random 16.0 Read                       1035.25 MB/s          8.9
+> Total Run Time 00:01:41.97

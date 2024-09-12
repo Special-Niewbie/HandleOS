@@ -16,7 +16,7 @@ namespace Console2Desk
             InitializeComponent();
             _form = form;
             _timer = timer;
-            
+
 
             WinTheme winTheme = new WinTheme(this.Handle);
             winTheme.ApplyTheme();
@@ -133,6 +133,11 @@ namespace Console2Desk
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelCopyrightDescription_Click(object sender, EventArgs e)
         {
 
         }

@@ -53,6 +53,12 @@
 
 
 
+## Join Our Discord Community!
+
+We’ve launched a Discord channel where we can exchange ideas, provide support, and help each other out. Join us at [this link](https://discord.gg/f7n2fUXF)!
+
+[![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/f7n2fUXF)
+
 
 
 **HandleOS** is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original Windows 11 Home from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
@@ -107,7 +113,7 @@ Ko-fi:
 | <img width=36px src="Git_assets/controller.png">↺ <img width=32px src="Git_assets/monitor.ico">Console Mode / Desktop Mode |                             ✅                              |
 | <img width=32px src="Git_assets/computerchip.ico">  **TPM**  |          <img width=19px src="Git_assets/x.png">           |
 
-**NOTE**: The benchmark and RAM consumption of approximately 1 GB, is based on a system with limited hardware characteristics. This value is intended to reflect the OS's lightness. HandleOS, by nature of being based on Windows, may use slightly more RAM if you have a large amount available on your PC, especially if there are default drivers that Windows has founded in its local database. Conversely, if the system has very limited specifications, HandleOS will adjust and use less RAM accordingly.
+**NOTE**: *The benchmark and RAM consumption of approximately 1 GB, is based on a system with limited hardware characteristics. This value is intended to reflect the OS's lightness. HandleOS, by nature of being based on Windows, may use slightly more RAM if you have a large amount available on your PC, especially if there are default drivers that Windows has founded in its local database. Conversely, if the system has very limited specifications, HandleOS will adjust and use less RAM accordingly.*
 
 | Feature                                                      |   HandleOS 11   |
 | ------------------------------------------------------------ | :-------------: |
