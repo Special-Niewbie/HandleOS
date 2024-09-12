@@ -158,12 +158,17 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 1. Italian Language
 
     [![YouTube Video](https://img.youtube.com/vi/BSlDsv-Qafo/0.jpg)](https://www.youtube.com/watch?v=BSlDsv-Qafo)
+    
+    [![YouTube Video](https://img.youtube.com/vi/kAZcjfa4Gvs/0.jpg)](https://www.youtube.com/watch?v=kAZcjfa4Gvs)
+    
+    
 
 
 
 ## Credits
 
 - Special thanks to the Italian YouTuber <img height="38" src="Git_assets/Youtubers/prob.jpg">  [Prob]( https://www.youtube.com/@Prob-nest/featured) , for trusting and having been a dedicated beta tester on pre-release of *HandleOS*.
+- Special thanks to developer @AderitoSilva for his XInputium drivers <img height="38" src="Git_assets/XInputiumLogo_Light.svg"> and support—without him, it wouldn’t have been possible!
 
 
 
@@ -172,7 +177,7 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 
 <a href="https://github.com/Special-Niewbie/HandleOS/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Special-Niewbie/HandleOS" />
-</a>
+</a> @AderitoSilva
 
 
 
