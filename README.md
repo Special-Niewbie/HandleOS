@@ -151,6 +151,8 @@ From Version of 2.7.0, C2D has a new companion for our handhelds: the new **Hand
 ### Info for Developers
 Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamarin***, and ***AutoHotkey***.
 
+- If any of you have experience with getting the `Console Mode`  (without `explorer.exe`) to work smoothly with the `Windows Store`, I would really appreciate your help. I'm currently working on refining this feature, and your expertise could make a big difference!
+
 
 
 ## YouTubers Video ![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)
@@ -177,6 +179,7 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 
 <a href="https://github.com/Special-Niewbie/HandleOS/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Special-Niewbie/HandleOS" />
+</a> <a href="https://github.com/AderitoSilva"> <img src="https://github.com/AderitoSilva.png" width="70" />
 </a>
 
 
