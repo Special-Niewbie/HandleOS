@@ -48,9 +48,14 @@
 
 
 
+### 🚧 Page Under Maintenance 🚧
+**The page is currently being updated to explain the new C2D version 3.0.0 and improve several sections. Please check back in the next few hours for detailed information!**
 
 
-**HandleOS** is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original Windows 11 from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
+
+
+
+**HandleOS** is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original Windows 11 Home from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
 
 After months of rigorous testing, I have significantly improved HandleOS performance, increasing FPS, enhancing stability, and reducing power consumption. If you're concerned about safety, rest assured: there is no unusual software or content present, only my completely open-source tools (with an external Open-Source UI called `Playnite`) and optimizations aimed at optimizing resources for Handled gaming . This is the result of my passion!
 
