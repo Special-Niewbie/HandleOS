@@ -26,8 +26,9 @@
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
-    <img height="240" src="Git_assets/c2d_main_v.2.5.0.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/c2d_main_v.3.1.0.png" style="margin-left: auto;"/>
 </div>
+
 
 
 
@@ -61,7 +62,7 @@ We’ve launched a Discord channel where we can exchange ideas, provide support,
 
 
 
-**HandleOS** is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original Windows 11 Home from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
+**HandleOS** is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original <u>Windows 11 Home</u> from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
 
 After months of rigorous testing, I have significantly improved HandleOS performance, increasing FPS, enhancing stability, and reducing power consumption. If you're concerned about safety, rest assured: there is no unusual software or content present, only my completely open-source tools (with an external Open-Source UI called `Playnite`) and optimizations aimed at optimizing resources for Handled gaming . This is the result of my passion!
 
