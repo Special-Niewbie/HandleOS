@@ -21,7 +21,32 @@ Download my borrowed ISO, and the necessary tool from the following link: [Downl
 
 ## Post-Installation
 
-1. **Verify SHA256 Hash serial ISO Number**:
+1. **A big thanks to Leo-Tamioky from the HandleOS Discord group, for the unique guide on how to create a Dual Boot USB with HandleOS and Smokless.**
+   So, use this point `1`, if you have only one USB and you would like to consolidate the two below installations.
+   
+   The guide walks you through creating a dual-boot USB stick that consolidates all the data for HandleOS in one place.
+   
+   As the first step, use Rufus to create the USB with the ready image, following all the necessary steps. Once Rufus finishes creating the image, right-click the Start icon and go to Disk Management; there you will find your newly created USB named HandleOS_23H2v2_Special-Niewbie. Right-click on it and select Shrink Volume.
+   
+   In the third field (Specify the amount of space to shrink, in MB), you can enter an appropriate amount, with 100–200MB being sufficient, and then click Shrink.
+   
+   Afterward, a black partition will appear, which you will need to activate. Still in Disk Management, format this black partition in FAT32.
+   
+   By the end of the process, you will have your USB stick with an additional partition of 100/200MB that you just created. In this new partition, place the unzipped files from the Smokless ZIP package. Now, your single USB is ready with dual boot for HandleOS and Smokless.
+   
+   Thanks to Leo-Tamioky's testing, the two interfaces are seen separately, as if they were being launched from two different USB sticks.
+   
+   <div style="display: flex; justify-content: center; align-items: center;">
+       <img height="100" src="Git_assets/InstallationGuide/Shrink.png" style="margin-left: auto;"/>
+       <img height="80" src="Git_assets/InstallationGuide/Shrinked.png" style="margin-left: auto;"/>
+   </div>
+   
+   <div style="display: flex; justify-content: center; align-items: center;">
+       <img height="180" src="Git_assets/InstallationGuide/CreateVolumeFAT32.png" style="margin-left: auto;"/>
+       <img height="100" src="Git_assets/InstallationGuide/CreatedNewVolumeFAT32.png" style="margin-left: auto;"/>
+   </div>
+   
+1. **Download ISO and Verify SHA256 Hash serial ISO Number**:
 
    - After downloading the ISO, check the SHA256 hash to ensure it matches the provided hash. This step is crucial for verifying the integrity of the downloaded HandleOS ISO file. You can find the file named `README_HandleOS_23H2_Genuine_Check_ISO.txt`. 
      If you don't have the .txt file, execute this command by your Windows Termina:  
@@ -29,11 +54,10 @@ Download my borrowed ISO, and the necessary tool from the following link: [Downl
 
    - Here it's the serial SHA256 Hash ISO number:
 
-     1. ~~(Old Version- deprecated) HandleOS 23H2 genuine SHA256 = `1be41e42f21e899ba17f26685aee6e1f24a5afbcc00611685a6841588fb97de0`~~
-   
      1. HandleOS 23H2v2 genuine SHA256 = `634a06f5ad10e38c937f332f04ee371049f60be0b25139e0f52c15f2e06b5710`
+   
      
-        
+     
 
 ## Preparation for Smokless-UMAF (disable C-STATE for HandleOS)
 
