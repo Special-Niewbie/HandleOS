@@ -55,9 +55,9 @@
 
 ## Join Our Discord Community!
 
-We’ve launched a Discord channel where we can exchange ideas, provide support, and help each other out. Join us at [this link](https://discord.gg/f7n2fUXF)!
+We’ve launched a Discord channel where we can exchange ideas, provide support, and help each other out. Join us at:
 
-[![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/f7n2fUXF)
+[![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/dC7TKNkN8z)
 
 
 
