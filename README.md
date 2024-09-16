@@ -49,11 +49,6 @@
 
 
 
-### 🚧 Page Under Maintenance 🚧
-**The page is currently being updated to explain the new C2D version 3.0.0 and improve several sections. Please check back in the next few hours for detailed information!**
-
-
-
 ## Join Our Discord Community!
 
 We’ve launched a Discord channel where we can exchange ideas, provide support, and help each other out. Join us at:
