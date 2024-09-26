@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Osklib" Version="1.6.0" />
     <PackageReference Include="XInputium" Version="1.2.0" />
   </ItemGroup>
 

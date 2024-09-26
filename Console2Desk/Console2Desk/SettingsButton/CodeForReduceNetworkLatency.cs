@@ -35,14 +35,13 @@ namespace Console2Desk.SettingsButton
                     {
                         networkLatencyToggleSwitch.IsOn = !isOn;
                     });
-                    
                 }
                 catch (Exception ex)
                 {
                     // Show error message on the main thread
                     networkLatencyToggleSwitch.Invoke((MethodInvoker)delegate
                     {
-                        //messagesBoxImplementation.ShowMessage($"An error occurred while toggling network latency settings: {ex.Message}", "Error", MessageBoxButtons.OK);
+                        messagesBoxImplementation.ShowMessage($"An error occurred while toggling network latency settings: {ex.Message}", "Error", MessageBoxButtons.OK);
                     });
                 }
             });
@@ -65,7 +64,7 @@ namespace Console2Desk.SettingsButton
             }
             catch (Exception ex)
             {
-                //DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error setting registry key {keyName}: {ex.Message}", "Error", MessageBoxButtons.OK);
+                //Console.WriteLine($"Error setting registry key {keyName}: {ex.Message}");
             }
         }
 
@@ -83,7 +82,7 @@ namespace Console2Desk.SettingsButton
             }
             catch (Exception ex)
             {
-                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error removing registry key {keyName}: {ex.Message}", "Error", MessageBoxButtons.OK);
+                //Console.WriteLine($"Error removing registry key {keyName}: {ex.Message}");
             }
         }
 
@@ -91,38 +90,41 @@ namespace Console2Desk.SettingsButton
         {
             try
             {
-                string ipAddress = GetLocalIPAddress();
-                if (string.IsNullOrEmpty(ipAddress))
+                List<string> ipAddresses = GetLocalIPAddresses();
+                if (ipAddresses.Count == 0)
                 {
-                    Console.WriteLine("No IP address found.");
+                    //Console.WriteLine("No IP addresses found.");
                     return;
                 }
 
-                string interfaceKeyPath = FindInterfaceKeyPath(ipAddress);
-                if (interfaceKeyPath != null)
+                foreach (string ipAddress in ipAddresses)
                 {
-                    using (RegistryKey interfaceKey = Registry.LocalMachine.OpenSubKey(interfaceKeyPath, writable: true))
+                    string interfaceKeyPath = FindInterfaceKeyPath(ipAddress);
+                    if (interfaceKeyPath != null)
                     {
-                        if (interfaceKey != null)
+                        using (RegistryKey interfaceKey = Registry.LocalMachine.OpenSubKey(interfaceKeyPath, writable: true))
                         {
-                            interfaceKey.SetValue("TCPNoDelay", 1, RegistryValueKind.DWord);
-                            interfaceKey.SetValue("TcpAckFrequency", 1, RegistryValueKind.DWord);
-                            interfaceKey.SetValue("TcpDelAckTicks", 0, RegistryValueKind.DWord);
-                        }
-                        else
-                        {
-                            //DependencyContainer.MessagesBoxImplementation.ShowMessage($"Registry key not found: {interfaceKeyPath}", "Error", MessageBoxButtons.OK);
+                            if (interfaceKey != null)
+                            {
+                                interfaceKey.SetValue("TCPNoDelay", 1, RegistryValueKind.DWord);
+                                interfaceKey.SetValue("TcpAckFrequency", 1, RegistryValueKind.DWord);
+                                interfaceKey.SetValue("TcpDelAckTicks", 0, RegistryValueKind.DWord);
+                            }
+                            else
+                            {
+                                //Console.WriteLine($"Registry key not found: {interfaceKeyPath}");
+                            }
                         }
                     }
-                }
-                else
-                {
-                    //DependencyContainer.MessagesBoxImplementation.ShowMessage("Interface key path not found for IP address.", "Error", MessageBoxButtons.OK);
+                    else
+                    {
+                        //Console.WriteLine($"Interface key path not found for IP address: {ipAddress}");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                //DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error adding TCP/IP registry keys: {ex.Message}", "Error", MessageBoxButtons.OK);
+                //Console.WriteLine($"Error adding TCP/IP registry keys: {ex.Message}");
             }
         }
 
@@ -130,81 +132,100 @@ namespace Console2Desk.SettingsButton
         {
             try
             {
-                string ipAddress = GetLocalIPAddress();
-                if (string.IsNullOrEmpty(ipAddress))
+                List<string> ipAddresses = GetLocalIPAddresses();
+                if (ipAddresses.Count == 0)
                 {
-                    DependencyContainer.MessagesBoxImplementation.ShowMessage("No IP address found.", "Error", MessageBoxButtons.OK);
+                    Console.WriteLine("No IP addresses found.");
                     return;
                 }
 
-                string interfaceKeyPath = FindInterfaceKeyPath(ipAddress);
-                if (interfaceKeyPath != null)
+                foreach (string ipAddress in ipAddresses)
                 {
-                    using (RegistryKey interfaceKey = Registry.LocalMachine.OpenSubKey(interfaceKeyPath, writable: true))
+                    string interfaceKeyPath = FindInterfaceKeyPath(ipAddress);
+                    if (interfaceKeyPath != null)
                     {
-                        if (interfaceKey != null)
+                        using (RegistryKey interfaceKey = Registry.LocalMachine.OpenSubKey(interfaceKeyPath, writable: true))
                         {
-                            interfaceKey.DeleteValue("TCPNoDelay", throwOnMissingValue: false);
-                            interfaceKey.DeleteValue("TcpAckFrequency", throwOnMissingValue: false);
-                            interfaceKey.DeleteValue("TcpDelAckTicks", throwOnMissingValue: false);
-                        }
-                        else
-                        {
-                            //DependencyContainer.MessagesBoxImplementation.ShowMessage($"Registry key not found: {interfaceKeyPath}", "Error", MessageBoxButtons.OK);
+                            if (interfaceKey != null)
+                            {
+                                interfaceKey.DeleteValue("TCPNoDelay", throwOnMissingValue: false);
+                                interfaceKey.DeleteValue("TcpAckFrequency", throwOnMissingValue: false);
+                                interfaceKey.DeleteValue("TcpDelAckTicks", throwOnMissingValue: false);
+                            }
+                            else
+                            {
+                                //Console.WriteLine($"Registry key not found: {interfaceKeyPath}");
+                            }
                         }
                     }
-                }
-                else
-                {
-                    //DependencyContainer.MessagesBoxImplementation.ShowMessage("Interface key path not found for IP address.", "Error", MessageBoxButtons.OK);
+                    else
+                    {
+                        //Console.WriteLine($"Interface key path not found for IP address: {ipAddress}");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                 //DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error removing TCP/IP registry keys: {ex.Message}", "Error", MessageBoxButtons.OK);
+                //Console.WriteLine($"Error removing TCP/IP registry keys: {ex.Message}");
             }
         }
 
-        private static string GetLocalIPAddress()
+        private static List<string> GetLocalIPAddresses()
         {
+            List<string> ipAddresses = new List<string>();
             try
             {
                 foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
                 {
-                    foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
+                    if (ni.OperationalStatus == OperationalStatus.Up)
                     {
-                        if (ip.Address.AddressFamily == AddressFamily.InterNetwork) // IPv4
+                        foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
                         {
-                            return ip.Address.ToString();
+                            if (ip.Address.AddressFamily == AddressFamily.InterNetwork) // IPv4
+                            {
+                                ipAddresses.Add(ip.Address.ToString());
+                                //Console.WriteLine($"Interface: {ni.Name}, IP: {ip.Address}");
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error getting local IP address: {ex.Message}", "Error", MessageBoxButtons.OK);
+                //Console.WriteLine($"Error getting local IP addresses: {ex.Message}");
             }
-            return null;
+            return ipAddresses;
         }
 
         private static string FindInterfaceKeyPath(string ipAddress)
         {
             try
             {
-                using (RegistryKey parametersKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces"))
+                // Lista dei percorsi del registry
+                string[] registryPaths =
                 {
-                    if (parametersKey != null)
+                    @"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces",
+                    @"SYSTEM\ControlSet001\Services\Tcpip\Parameters\Interfaces",
+                    @"SYSTEM\ControlSet002\Services\Tcpip\Parameters\Interfaces"
+                };
+
+                foreach (string basePath in registryPaths)
+                {
+                    using (RegistryKey parametersKey = Registry.LocalMachine.OpenSubKey(basePath))
                     {
-                        foreach (string subKeyName in parametersKey.GetSubKeyNames())
+                        if (parametersKey != null)
                         {
-                            using (RegistryKey interfaceKey = parametersKey.OpenSubKey(subKeyName))
+                            foreach (string subKeyName in parametersKey.GetSubKeyNames())
                             {
-                                if (interfaceKey != null)
+                                using (RegistryKey interfaceKey = parametersKey.OpenSubKey(subKeyName))
                                 {
-                                    string dhcpIPAddress = interfaceKey.GetValue("DhcpIPAddress") as string;
-                                    if (dhcpIPAddress == ipAddress)
+                                    if (interfaceKey != null)
                                     {
-                                        return @"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\" + subKeyName;
+                                        string dhcpIPAddress = interfaceKey.GetValue("DhcpIPAddress") as string;
+                                        if (dhcpIPAddress == ipAddress)
+                                        {
+                                            return basePath + "\\" + subKeyName;
+                                        }
                                     }
                                 }
                             }
@@ -214,9 +235,11 @@ namespace Console2Desk.SettingsButton
             }
             catch (Exception ex)
             {
-                //DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error finding interface key path: {ex.Message}", "Error", MessageBoxButtons.OK);
+                //Console.WriteLine($"Error finding interface key path: {ex.Message}");
             }
+
             return null;
         }
     }
 }
+

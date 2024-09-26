@@ -33,12 +33,16 @@ namespace Console2Desk.FuturesButtons
                     {
                         using (RegistryKey subKey = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Control\Class\{{4d36e968-e325-11ce-bfc1-08002be10318}}\{name}"))
                         {
-                            if (subKey != null && subKey.GetValue("DriverDesc")?.ToString() == "AMD Radeon Graphics")
+                            if (subKey != null)
                             {
-                                if (subKey.GetSubKeyNames().Length > 0)
+                                string driverDesc = subKey.GetValue("DriverDesc")?.ToString();
+                                if (driverDesc == "AMD Radeon Graphics" || driverDesc == "AMD Radeon 780M Graphics")
                                 {
-                                    subKeyName = name;
-                                    break;
+                                    if (subKey.GetSubKeyNames().Length > 0)
+                                    {
+                                        subKeyName = name;
+                                        break;
+                                    }
                                 }
                             }
                         }

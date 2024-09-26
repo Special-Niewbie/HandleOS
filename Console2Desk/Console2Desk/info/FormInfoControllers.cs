@@ -27,8 +27,8 @@ namespace Console2Desk.info
             labelTitleInfoControllers.MouseUp += labelTitleInfoControllers_MouseUp;
         }
 
-        
-               
+
+
 
         private void buttonCloseWindowInfoControllers_Click(object sender, EventArgs e)
         {
@@ -42,7 +42,7 @@ namespace Console2Desk.info
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
@@ -108,6 +108,11 @@ namespace Console2Desk.info
         {
             // Stop dragging Window
             _isDragging = false;
+        }
+
+        private void labelYButtonTitle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

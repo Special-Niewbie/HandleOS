@@ -4,6 +4,7 @@ using System.IO.Pipes;
 using XInputium;
 using XInputium.ModifierFunctions;
 using XInputium.XInput;
+using Osklib;
 
 namespace inputs2desk
 {
@@ -183,7 +184,32 @@ namespace inputs2desk
             };
             gamepad.Buttons.Y.Pressed += (_, _) =>
             {
-                
+                // Verifica se la tastiera su schermo è visibile
+                if (OnScreenKeyboard.IsOpened())
+                {
+                    // Nascondi la tastiera se è visibile
+                    OnScreenKeyboard.Close();
+                }
+                else
+                {
+                    // Mostra la tastiera se non è visibile
+                    OnScreenKeyboard.Show();
+                }
+
+                // Durata della vibrazione
+                gamepad.LeftMotorSpeed = 0.2f;
+                gamepad.RightMotorSpeed = 0.8f;
+                // Usa actionRunner per fermare entrambi i motori dopo 200 ms
+                actionRunner.Wait(() =>
+                {
+                    gamepad.LeftMotorSpeed = 0;
+                    gamepad.RightMotorSpeed = 0;
+                }, TimeSpan.FromMilliseconds(200));
+
+            };
+            gamepad.Buttons.X.Pressed += (_, _) =>
+            {
+
                 // Simula la pressione dei tasti Control, Windows e O
                 Keyboard.PressKey(KeyboardVirtualKey.Control);          // Premere Control
                 Keyboard.PressKey(KeyboardVirtualKey.RightWindows);     // Premere il tasto Windows destro

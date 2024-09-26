@@ -1,6 +1,7 @@
 ﻿using System.Management;
 using System.ServiceProcess;
 using System.Diagnostics;
+using Microsoft.Win32;
 
 namespace Console2Desk.FormMessageBox
 {
@@ -98,12 +99,12 @@ namespace Console2Desk.FormMessageBox
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Errore durante il controllo del servizio {serviceName}: {ex.Message}");
+                // MessageBox.Show($"Errore durante il controllo del servizio {serviceName}: {ex.Message}");
             }
             return string.Empty; // If there is an error or the service does not exist
         }
 
-        
+
 
         private void checkBoxFormMessage_CheckedChanged(object sender, EventArgs e)
         {
@@ -134,7 +135,7 @@ namespace Console2Desk.FormMessageBox
                 // Ignore the absence of services or folders and start the scripts anyway
                 try
                 {
-                    
+
                     ScriptExecutor.RunEdgeRemoveScript();
 
                     ScriptExecutor.RunOneDriveRemoveScript();
@@ -294,6 +295,48 @@ namespace Console2Desk.FormMessageBox
         {
             // Stop dragging Window
             _isDragging = false;
+        }
+
+        private void special_Niewbie_ButtonFixWifi_Click(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    // Cambia il "Startup Type" del servizio "WlanSvc" in Automatic
+                    RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\WlanSvc", true);
+                    if (key != null)
+                    {
+                        key.SetValue("Start", 2); // 2 = Automatic, 3 = Manual, 4 = Disabled
+                        key.Close();
+                        //Console.WriteLine("Il tipo di avvio del servizio WlanSvc è stato impostato su Automatico.");
+                    }
+                    else
+                    {
+                        // Console.WriteLine("Impossibile trovare il servizio WlanSvc nel registro di sistema.");
+                        return;
+                    }
+
+                    // Avvia il servizio "WlanSvc" se non è già in esecuzione
+                    ServiceController wlanService = new ServiceController("WlanSvc");
+
+                    if (wlanService.Status != ServiceControllerStatus.Running)
+                    {
+                        wlanService.Start();
+                        wlanService.WaitForStatus(ServiceControllerStatus.Running);
+                        // Console.WriteLine("Servizio WlanSvc avviato con successo.");
+                    }
+                    else
+                    {
+                        // Console.WriteLine("Il servizio WlanSvc è già in esecuzione.");
+                    }
+                    MessageBox.Show("WiFi Services have been restored.");
+                    CheckServicesStartupType();
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine("Errore durante l'operazione: " + ex.Message);
+                }
+            }
         }
     }
 }

@@ -50,6 +50,10 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows7.0",
           "dependencies": {
+            "Osklib": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "XInputium": {
               "target": "Package",
               "version": "[1.2.0, )"
@@ -92,7 +96,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

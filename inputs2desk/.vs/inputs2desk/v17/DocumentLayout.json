@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|solutionrelative:inputs2desk\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|c:\\progetti_in_c\\c#\\inputs2desk\\inputs2desk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|solutionrelative:inputs2desk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|c:\\progetti_in_c\\c#\\inputs2desk\\inputs2desk\\inputtimedaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|solutionrelative:inputs2desk\\inputtimedaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|c:\\progetti_in_c\\c#\\inputs2desk\\inputs2desk\\inputtimedactionrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|solutionrelative:inputs2desk\\inputtimedactionrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|c:\\progetti_in_c\\c#\\inputs2desk\\inputs2desk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|solutionrelative:inputs2desk\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{66934538-9B94-4131-94C3-C8EB27AFC7E2}|inputs2desk\\inputs2desk.csproj|c:\\progetti_in_c\\c#\\inputs2desk\\inputs2desk\\system\\input\\inputloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,13 +62,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\Program.cs",
               "RelativeDocumentMoniker": "inputs2desk\\Program.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\Program.cs",
               "RelativeToolTip": "inputs2desk\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAFAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-06T03:30:45.43Z",
               "IsPinned": true
@@ -81,7 +81,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\Form1.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\Form1.cs",
               "RelativeToolTip": "inputs2desk\\Form1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAALcAAAAcAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-06T03:36:45.062Z",
               "IsPinned": true,
@@ -93,25 +93,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "InputTimedActionRunner.cs",
               "DocumentMoniker": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\InputTimedActionRunner.cs",
               "RelativeDocumentMoniker": "inputs2desk\\InputTimedActionRunner.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\InputTimedActionRunner.cs",
               "RelativeToolTip": "inputs2desk\\InputTimedActionRunner.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBYAAAAvAAAA",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBYAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T04:10:01.777Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "InputTimedAction.cs",
               "DocumentMoniker": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\InputTimedAction.cs",
               "RelativeDocumentMoniker": "inputs2desk\\InputTimedAction.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\InputTimedAction.cs",
               "RelativeToolTip": "inputs2desk\\InputTimedAction.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAuwCAAAAAiAAAA",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA8wCAAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-10T04:09:17.523Z"
             },
@@ -123,7 +123,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\system\\Input\\MouseButton.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\system\\Input\\MouseButton.cs",
               "RelativeToolTip": "inputs2desk\\system\\Input\\MouseButton.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T14:21:34.753Z"
             },
@@ -135,7 +135,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\system\\Input\\PreciseTimer.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\system\\Input\\PreciseTimer.cs",
               "RelativeToolTip": "inputs2desk\\system\\Input\\PreciseTimer.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowCQAAAAFAAAA",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T14:21:24.988Z"
             },
@@ -147,7 +147,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\system\\Input\\Keyboard.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\system\\Input\\Keyboard.cs",
               "RelativeToolTip": "inputs2desk\\system\\Input\\Keyboard.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAowAAAAAAAAAAA",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T14:18:30.223Z"
             },
@@ -159,7 +159,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\system\\Input\\InputLoop.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\system\\Input\\InputLoop.cs",
               "RelativeToolTip": "inputs2desk\\system\\Input\\InputLoop.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAASwDUAAAAJAAAA",
+              "ViewState": "AgIAAB4AAAAAAAAAAAASwDUAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T14:17:39.742Z"
             },
@@ -171,7 +171,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\inputs2desk.csproj",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\inputs2desk.csproj",
               "RelativeToolTip": "inputs2desk\\inputs2desk.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-09-09T14:32:24.493Z"
             },
@@ -183,7 +183,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\system\\Input\\Mouse.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\system\\Input\\Mouse.cs",
               "RelativeToolTip": "inputs2desk\\system\\Input\\Mouse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAdAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T14:15:41.656Z"
             },
@@ -195,7 +195,7 @@
               "RelativeDocumentMoniker": "inputs2desk\\system\\Input\\KeyboardVirtualKey.cs",
               "ToolTip": "C:\\Progetti_in_C\\C#\\inputs2desk\\inputs2desk\\system\\Input\\KeyboardVirtualKey.cs",
               "RelativeToolTip": "inputs2desk\\system\\Input\\KeyboardVirtualKey.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-09T14:18:33.162Z"
             },

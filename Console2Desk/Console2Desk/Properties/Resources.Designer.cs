@@ -93,6 +93,16 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AMD {
+            get {
+                object obj = ResourceManager.GetObject("AMD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Amd_Adrenaline64x64 {
             get {
                 object obj = ResourceManager.GetObject("Amd_Adrenaline64x64", resourceCulture);
@@ -273,6 +283,16 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap gamebarMessage {
+            get {
+                object obj = ResourceManager.GetObject("gamebarMessage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gaming_Icon64x64 {
             get {
                 object obj = ResourceManager.GetObject("Gaming_Icon64x64", resourceCulture);
@@ -353,6 +373,16 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap INTEL {
+            get {
+                object obj = ResourceManager.GetObject("INTEL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap LegionGoRes {
             get {
                 object obj = ResourceManager.GetObject("LegionGoRes", resourceCulture);
@@ -393,6 +423,16 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Microsoft {
+            get {
+                object obj = ResourceManager.GetObject("Microsoft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap MS_Store42x42 {
             get {
                 object obj = ResourceManager.GetObject("MS_Store42x42", resourceCulture);
@@ -406,6 +446,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap NetworkLowLatency {
             get {
                 object obj = ResourceManager.GetObject("NetworkLowLatency", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NVIDIA {
+            get {
+                object obj = ResourceManager.GetObject("NVIDIA", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -476,6 +526,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap Resize_icon24x24 {
             get {
                 object obj = ResourceManager.GetObject("Resize_icon24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SDI {
+            get {
+                object obj = ResourceManager.GetObject("SDI", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,6 +623,46 @@ namespace Console2Desk.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TweakParadiseIconClosed {
+            get {
+                object obj = ResourceManager.GetObject("TweakParadiseIconClosed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TweakParadiseIconOpened {
+            get {
+                object obj = ResourceManager.GetObject("TweakParadiseIconOpened", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TweakParadiseToClose {
+            get {
+                object obj = ResourceManager.GetObject("TweakParadiseToClose", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TweakParadiseToOpen {
+            get {
+                object obj = ResourceManager.GetObject("TweakParadiseToOpen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap UAC {
             get {
                 object obj = ResourceManager.GetObject("UAC", resourceCulture);
@@ -596,6 +696,16 @@ namespace Console2Desk.Properties {
         internal static System.Drawing.Bitmap WarningInfo {
             get {
                 object obj = ResourceManager.GetObject("WarningInfo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WASD_Icon {
+            get {
+                object obj = ResourceManager.GetObject("WASD_Icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

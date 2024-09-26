@@ -16,6 +16,9 @@
     <Compile Update="FormMessageBox\FormMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormTP\FormTweakParadise.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="info\FormInfoControllers.cs">
       <SubType>Form</SubType>
     </Compile>

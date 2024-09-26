@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net7.0-windows7.0": {
+      "Osklib/1.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Osklib.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Osklib.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "XInputium/1.2.0": {
         "type": "package",
         "compile": {
@@ -18,6 +31,27 @@
     }
   },
   "libraries": {
+    "Osklib/1.6.0": {
+      "sha512": "SHCCq0s1PrIqSxVsmFl2KNmCok+gt0MFeE/SGG2Hq2W8JDaRRyHchzocBnqMR25ajBt1rq3uo00UiygIhmeJfA==",
+      "type": "package",
+      "path": "osklib/1.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/Osklib.dll",
+        "lib/net40/Osklib.xml",
+        "lib/net45/Osklib.dll",
+        "lib/net45/Osklib.xml",
+        "lib/net47/Osklib.dll",
+        "lib/net47/Osklib.xml",
+        "lib/net471/Osklib.dll",
+        "lib/net471/Osklib.xml",
+        "lib/netcoreapp3.0/Osklib.dll",
+        "lib/netcoreapp3.0/Osklib.xml",
+        "osklib.1.6.0.nupkg.sha512",
+        "osklib.nuspec"
+      ]
+    },
     "XInputium/1.2.0": {
       "sha512": "XtpP/7VSQf1PTb31a8dYXhaRX12YlW4CDJYOC7vCqEeAR4+EgVpELmT/WSxTtYHimPQKA1WtfY0itav1Hhel+Q==",
       "type": "package",
@@ -36,6 +70,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "Osklib >= 1.6.0",
       "XInputium >= 1.2.0"
     ]
   },
@@ -89,6 +124,10 @@
       "net7.0-windows7.0": {
         "targetAlias": "net7.0-windows7.0",
         "dependencies": {
+          "Osklib": {
+            "target": "Package",
+            "version": "[1.6.0, )"
+          },
           "XInputium": {
             "target": "Package",
             "version": "[1.2.0, )"
@@ -131,7 +170,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

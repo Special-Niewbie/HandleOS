@@ -43,21 +43,30 @@ namespace Console2Desk.SettingsButton
                 // Verifica la chiave per MSMQ
                 bool msmqEnabled = CheckRegistryKey(@"SOFTWARE\Microsoft\MSMQ\Parameters", "TCPNoDelay", 1);
 
-                // Recupera l'indirizzo IP locale
-                string ipAddress = GetLocalIPAddress();
-                if (string.IsNullOrEmpty(ipAddress))
+                // Recupera gli indirizzi IP locali
+                List<string> ipAddresses = GetLocalIPAddresses();
+                if (ipAddresses.Count == 0)
                 {
+                    //Console.WriteLine("No IP addresses found.");
                     return false;
                 }
 
-                // Verifica le chiavi TCP/IP per l'interfaccia di rete corrispondente all'indirizzo IP
-                string interfaceKeyPath = FindInterfaceKeyPath(ipAddress);
+                // Verifica le chiavi TCP/IP per tutte le interfacce di rete corrispondenti agli indirizzi IP
                 bool tcpipEnabled = false;
-                if (interfaceKeyPath != null)
+                foreach (string ipAddress in ipAddresses)
                 {
-                    tcpipEnabled = CheckRegistryKey(interfaceKeyPath, "TCPNoDelay", 1) &&
-                                   CheckRegistryKey(interfaceKeyPath, "TcpAckFrequency", 1) &&
-                                   CheckRegistryKey(interfaceKeyPath, "TcpDelAckTicks", 0);
+                    string interfaceKeyPath = FindInterfaceKeyPath(ipAddress);
+                    if (interfaceKeyPath != null)
+                    {
+                        tcpipEnabled = CheckRegistryKey(interfaceKeyPath, "TCPNoDelay", 1) &&
+                                       CheckRegistryKey(interfaceKeyPath, "TcpAckFrequency", 1) &&
+                                       CheckRegistryKey(interfaceKeyPath, "TcpDelAckTicks", 0);
+
+                        if (tcpipEnabled)
+                        {
+                            break; // Se troviamo un'interfaccia abilitata, possiamo interrompere il ciclo
+                        }
+                    }
                 }
 
                 return msmqEnabled && tcpipEnabled;
@@ -89,46 +98,62 @@ namespace Console2Desk.SettingsButton
             return false;
         }
 
-        private static string GetLocalIPAddress()
+        private static List<string> GetLocalIPAddresses()
         {
+            List<string> ipAddresses = new List<string>();
             try
             {
                 foreach (NetworkInterface ni in NetworkInterface.GetAllNetworkInterfaces())
                 {
-                    foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
+                    if (ni.OperationalStatus == OperationalStatus.Up)
                     {
-                        if (ip.Address.AddressFamily == AddressFamily.InterNetwork) // IPv4
+                        foreach (UnicastIPAddressInformation ip in ni.GetIPProperties().UnicastAddresses)
                         {
-                            return ip.Address.ToString();
+                            if (ip.Address.AddressFamily == AddressFamily.InterNetwork) // IPv4
+                            {
+                                ipAddresses.Add(ip.Address.ToString());
+                                //Console.WriteLine($"Interface: {ni.Name}, IP: {ip.Address}");
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                //Console.WriteLine($"Error getting local IP address: {ex.Message}");
+                //Console.WriteLine($"Error getting local IP addresses: {ex.Message}");
             }
-            return null;
+            return ipAddresses;
         }
 
         private static string FindInterfaceKeyPath(string ipAddress)
         {
             try
             {
-                using (RegistryKey parametersKey = Registry.LocalMachine.OpenSubKey(@"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces"))
+                // Lista dei percorsi del registry
+                string[] registryPaths =
                 {
-                    if (parametersKey != null)
+                    @"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces",
+                    @"SYSTEM\ControlSet001\Services\Tcpip\Parameters\Interfaces",
+                    @"SYSTEM\ControlSet002\Services\Tcpip\Parameters\Interfaces"
+                };
+
+                foreach (string basePath in registryPaths)
+                {
+                    using (RegistryKey parametersKey = Registry.LocalMachine.OpenSubKey(basePath))
                     {
-                        foreach (string subKeyName in parametersKey.GetSubKeyNames())
+                        if (parametersKey != null)
                         {
-                            using (RegistryKey interfaceKey = parametersKey.OpenSubKey(subKeyName))
+                            foreach (string subKeyName in parametersKey.GetSubKeyNames())
                             {
-                                if (interfaceKey != null)
+                                using (RegistryKey interfaceKey = parametersKey.OpenSubKey(subKeyName))
                                 {
-                                    string dhcpIPAddress = interfaceKey.GetValue("DhcpIPAddress") as string;
-                                    if (dhcpIPAddress == ipAddress)
+                                    if (interfaceKey != null)
                                     {
-                                        return @"SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\Interfaces\" + subKeyName;
+                                        string dhcpIPAddress = interfaceKey.GetValue("DhcpIPAddress") as string;
+                                        if (dhcpIPAddress == ipAddress)
+                                        {
+                                            return basePath + "\\" + subKeyName;
+                                        }
                                     }
                                 }
                             }
@@ -140,7 +165,9 @@ namespace Console2Desk.SettingsButton
             {
                 //Console.WriteLine($"Error finding interface key path: {ex.Message}");
             }
+
             return null;
         }
     }
 }
+

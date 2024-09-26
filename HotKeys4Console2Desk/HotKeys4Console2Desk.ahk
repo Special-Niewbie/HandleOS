@@ -153,14 +153,11 @@ CheckControllers:
                 ActivateCurrentWindow()
                 controller.BV := [65535, 65535]
                 Sleep 150
-                controller.BV := [0, 0]
-                lastActivity := A_TickCount
+                controller.BV := [0, 0]               
             } else if (controller.LEFT) {
-                NavigateMenu(-1)
-                lastActivity := A_TickCount
+                NavigateMenu(-1)               
             } else if (controller.RIGHT) {
-                NavigateMenu(1)
-                lastActivity := A_TickCount
+                NavigateMenu(1)                
             }
         }
     }
@@ -370,17 +367,6 @@ GetWindowIcon(exePath) {
     return hIcon
 }
 
-; Function to hide the window menu
-HideWindowMenu() {
-    if (menuGui) {
-        Gui, %menuGui%:Destroy
-        menuGui := 0
-        isMenuVisible := false
-    } else {
-        MsgBox, The GUI is not created or invalid.
-    }
-}
-
 ; Function to activate the current window and hide the menu
 ActivateCurrentWindow() {
     if (windowList.Length() > 0) {
@@ -429,6 +415,17 @@ IsWindow(hWnd){
         return false
     }
     return true
+}
+
+; Function to hide the window menu
+HideWindowMenu() {
+    if (menuGui) {
+        Gui, %menuGui%:Destroy
+        menuGui := 0
+        isMenuVisible := false
+    } else {
+        MsgBox, The GUI is not created or invalid.
+    }
 }
 
 ; Function to update the status of the Tablet Mode menu
@@ -556,7 +553,7 @@ CheckPlaynite() {
 
 CheckInactivity:
     ; Check if more than 5000 milliseconds (5 seconds) have passed since the last input
-    if (A_TickCount - lastActivity > 5000) {
+    if (A_TickCount - lastActivity > 2500) {
         ; Only call Activate Current Window if the GUI is visible
         if (isMenuVisible) {
             NoActivityCurrentWindow()
@@ -600,14 +597,22 @@ ToggleClipboardHistorySvc:
     if (ErrorLevel or clipboardHistoryValue = 0) {
         ; If the key does not exist or the value is 0, enable clipboard history
         RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Clipboard, EnableClipboardHistory, 1
+		RegWrite, REG_DWORD, HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System, AllowClipboardHistory, 1
     } else {
         ; If the key exists and is 1, disable clipboard history
         RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Clipboard, EnableClipboardHistory, 0
+		RegWrite, REG_DWORD, HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System, AllowClipboardHistory, 0
     }
 	
 	Sleep 250
     ; Update menu state after changing value
     UpdateClipboardHistorySvcMenu()
+	
+	; Ask the user if they want to reboot the system
+    MsgBox, 262180, IR4, Would you like to restart your PC now to apply the changes?
+    IfMsgBox, Yes
+        ShutDown, 2
+	
 return
 
 ; Function to enable/disable Tablet Mode

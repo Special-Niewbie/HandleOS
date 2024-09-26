@@ -281,15 +281,8 @@ namespace Console2Desk
             ramChecker.CheckVirtualMemorySettingsAsync(DependencyContainer.MessagesBoxImplementation);
             AddButtonIntegerScalingCheck.CodeForaddButtonIntegerScalingCheck(pictureBox3, DependencyContainer.MessagesBoxImplementation);
             CodeForResetTouchKeyboardCheck.CheckTouchKeyboardState(pictureBoxResetTouchKeyboard, DependencyContainer.MessagesBoxImplementation);
-
-            CodeForAMD_NoShutterCheck.CheckEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
-            CodeForSystemDevicesCheck.CheckSystemDevices(controlSystemDevices, DependencyContainer.MessagesBoxImplementation);
-            CodeForControlCoreIsolation_ExploidCheck.CheckCoreIsolationAndExploitProtection(controlCoreIsolation_Exploid, DependencyContainer.MessagesBoxImplementation);
-            CodeForControlBCDMemoryUsageCheck.CheckBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
-            CodeForReduceWindowsLatencyCheck.CheckReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
             msStoreButtonStartupCheck.CheckMsStoreInstallation(msStoreButton, DependencyContainer.MessagesBoxImplementation);
-            CodeForReduceNetworkLatencyCheck.CheckReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
-            CodeForUACCheck.CheckUACStatus(uacToggleSwitch, DependencyContainer.MessagesBoxImplementation);
+            
 
             CustomListBoxUpdate();
         }
@@ -361,7 +354,7 @@ namespace Console2Desk
             var newsItems = NewsLoader.LoadNews(@"C:\Program Files\Console2Desk\sources\local_news_file.json");
             if (newsItems.Count == 0)
             {
-                MessageBox.Show("Nessuna notizia trovata.");
+                MessageBox.Show("NO News found.");
             }
 
             customListBox1.NewsItems = newsItems;
@@ -594,13 +587,8 @@ namespace Console2Desk
             {
                 // If it is visible, it makes it invisible
                 UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi, buttonMiniConsoleWindowNew);
@@ -729,7 +717,7 @@ namespace Console2Desk
 
         private void labelTitle_Click(object sender, EventArgs e)
         {
-
+            
         }
         private void buttonAllyUltimateRes_MouseEnter(object sender, EventArgs e)
         {
@@ -1192,15 +1180,6 @@ namespace Console2Desk
             // Check your MS Store installation and update the button text accordingly
             msStoreButtonStartupCheck.CheckMsStoreInstallation(msStoreButton, DependencyContainer.MessagesBoxImplementation);
 
-            CodeForAMD_NoShutterCheck.CheckEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
-            CodeForMeltdownSpectreProtectionCheck.CheckMeltdownSpectreProtection(controlMeltdownSpectreProtectionOnOff, DependencyContainer.MessagesBoxImplementation);
-            CodeForControlCoreIsolation_ExploidCheck.CheckCoreIsolationAndExploitProtection(controlCoreIsolation_Exploid, DependencyContainer.MessagesBoxImplementation);
-            CodeForSystemDevicesCheck.CheckSystemDevices(controlSystemDevices, DependencyContainer.MessagesBoxImplementation);
-            CodeForControlBCDMemoryUsageCheck.CheckBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
-            CodeForReduceWindowsLatencyCheck.CheckReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
-            CodeForReduceNetworkLatencyCheck.CheckReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
-            CodeForUACCheck.CheckUACStatus(uacToggleSwitch, DependencyContainer.MessagesBoxImplementation);
-
             // Check if the button is visible
             if (buttonRestorePauseUpgrade.Visible)
             {
@@ -1210,18 +1189,11 @@ namespace Console2Desk
                 // Check your MS Store installation and update the button text accordingly
                 msStoreButtonStartupCheck.CheckMsStoreInstallation(msStoreButton, DependencyContainer.MessagesBoxImplementation);
 
-                CodeForAMD_NoShutterCheck.CheckEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
-
                 // If it is visible, it makes it invisible
                 // Hides the buttons
                 UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton,special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
                 // Enable the desktop button
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
@@ -1240,33 +1212,7 @@ namespace Console2Desk
                 buttonXinputTest.Visible = true;
                 buttonChangeConsoleSettings.Visible = true;
                 msStoreButton.Visible = true;
-                controlAMDnoShutter.Visible = true;
-                controlMeltdownSpectreProtectionOnOff.Visible = true;
-                labelAMDnoShutter.Visible = true;
-                labelMeltdown_Spectre.Visible = true;
-                label2.Visible = true;
-                pictureBoxAMDnoShutter.Visible = true;
-                pictureBoxMeltdown_Spectre.Visible = true;
-                panel4Toggle.Visible = true;
-                controlSystemDevices.Visible = true;
-                labelSystemDevices.Visible = true;
-                pictureBoxSystemDevices.Visible = true;
-                controlCoreIsolation_Exploid.Visible = true;
-                labelCoreIsolation_CFG.Visible = true;
-                pictureBoxCoreIsolation_CFG.Visible = true;
-                controlBCDMemoryUsage.Visible = true;
-                labelBCDMemoryUsage.Visible = true;
-                pictureBCDMemoryUsage.Visible = true;
-                controlReduceWindowsLatency.Visible = true;
-                pictureBoxReduceWindowsLatency.Visible = true;
-                labelReduceWindowsLatency.Visible = true;
-                labelReduceNetworkLatency.Visible = true;
-                pictureBoxReduceNetworkLatency.Visible = true;
-                controlReduceNetworkLatency.Visible = true;
                 special_Niewbie_ButtonHOB.Visible = true;
-                pictureBoxUAC.Visible = true;
-                labelUAC.Visible = true;
-                uacToggleSwitch.Visible = true;
                 special_Niewbie_ButtonRestoreBoost.Visible = true;
 
 
@@ -1298,13 +1244,8 @@ namespace Console2Desk
         {
             // Hides the buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1450,13 +1391,8 @@ namespace Console2Desk
         {
             // Hidesbuttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1472,13 +1408,8 @@ namespace Console2Desk
         {
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1490,13 +1421,8 @@ namespace Console2Desk
         {
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1519,13 +1445,8 @@ namespace Console2Desk
         {
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1542,13 +1463,8 @@ namespace Console2Desk
         {
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, controlAMDnoShutter, controlMeltdownSpectreProtectionOnOff,
-                    labelAMDnoShutter, labelMeltdown_Spectre, label2, pictureBoxAMDnoShutter, pictureBoxMeltdown_Spectre, panel4Toggle,
-                    controlSystemDevices, labelSystemDevices, pictureBoxSystemDevices, controlCoreIsolation_Exploid,
-                    labelCoreIsolation_CFG, pictureBoxCoreIsolation_CFG, controlBCDMemoryUsage, labelBCDMemoryUsage,
-                    pictureBCDMemoryUsage, controlReduceWindowsLatency, pictureBoxReduceWindowsLatency, labelReduceWindowsLatency,
-                    labelReduceNetworkLatency, pictureBoxReduceNetworkLatency, controlReduceNetworkLatency, special_Niewbie_ButtonHOB,
-                    pictureBoxUAC, labelUAC, uacToggleSwitch, special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1556,116 +1472,6 @@ namespace Console2Desk
                 pictureBoxWifi, buttonMiniConsoleWindowNew);
         }
 
-        // Toggles Panel Settings
-
-
-        private void controlAMDnoShutter_Click(object sender, EventArgs e)
-        {
-            CodeForAMD_NoShutter.ToggleEnableUlps(controlAMDnoShutter, DependencyContainer.MessagesBoxImplementation);
-        }
-
-        private void controlMeltdownSpectreProtectionOnOff_Click(object sender, EventArgs e)
-        {
-            CodeForMeltdownSpectreProtection.ToggleMeltdownSpectreProtection(controlMeltdownSpectreProtectionOnOff, DependencyContainer.MessagesBoxImplementation);
-        }
-
-        private void controlSystemDevices_Click(object sender, EventArgs e)
-        {
-            CodeForSystemDevices.ToggleSystemDevicesAsync(controlSystemDevices, DependencyContainer.MessagesBoxImplementation);
-        }
-
-        private void controlCoreIsolation_Exploid_Click(object sender, EventArgs e)
-        {
-            CodeForControlCoreIsolation_Exploid.ToggleCoreIsolationAndExploitProtection(controlCoreIsolation_Exploid, DependencyContainer.MessagesBoxImplementation);
-        }
-
-        private void controlBCDMemoryUsage_Click(object sender, EventArgs e)
-        {
-            CodeForControlBCDMemoryUsage.ToggleBCDMemoryUsage(controlBCDMemoryUsage, DependencyContainer.MessagesBoxImplementation);
-        }
-
-        private void controlReduceWindowsLatency_Click(object sender, EventArgs e)
-        {
-            CodeForReduceWindowsLatency.ToggleReduceWindowsLatency(controlReduceWindowsLatency, DependencyContainer.MessagesBoxImplementation);
-        }
-        #endregion
-
-
-        // Toggles Panel Settings
-
-        #region All unused Events Method for Toggles Panel Settings
-        private void panel4Toggle_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBoxAMDnoShutter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelAMDnoShutter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxMeltdown_Spectre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelMeltdown_Spectre_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void labelSystemDevices_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBoxSystemDevices_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelCoreIsolation_CFG_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBoxCoreIsolation_CFG_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void labelBCDMemoryUsage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBCDMemoryUsage_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void pictureBoxReduceWindowsLatency_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelReduceWindowsLatency_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void labelReduceNetworkLatency_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxReduceNetworkLatency_Click(object sender, EventArgs e)
-        {
-
-        }
         #endregion
 
         //#########End - Settings
@@ -1720,7 +1526,7 @@ namespace Console2Desk
                 "- Click YES to reset the service.\n" +
                 "- Click NO to Disable/Enable temporary the Touch Keyboard Panel.\n\n" +
                 "- CANCEL to do nothing.",
-                "Touch Keyboard Reset",
+                "Touch Keyboard fix keep popping-up",
                 MessageBoxButtons.YesNoCancel);
 
             if (result == DialogResult.Yes)
@@ -1747,8 +1553,7 @@ namespace Console2Desk
             {
                 // Disattiva il touchscreen impostando la chiave di registro
                 ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
-                pictureBoxResetTouchKeyboardPress.Visible = false;
-                pictureBoxResetTouchKeyboard.Visible = true;
+                
             }
             // Se il risultato è Cancel, non fare nulla
             pictureBoxResetTouchKeyboardPress.Visible = false;
@@ -1798,26 +1603,6 @@ namespace Console2Desk
             Cursor.Current = Cursors.Default;
         }
 
-        private void controlReduceNetworkLatency_Click(object sender, EventArgs e)
-        {
-            CodeForReduceNetworkLatency.ToggleReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
-
-            // Show a message to restart the system
-            var result = DependencyContainer.MessagesBoxImplementation.ShowMessage(
-                "Changes will take effect after a system restart.\n\n" +
-                "Please note that this procedure improves latency in online competitive games. However, the improvements apply only to the current network you are connected to. If you connect to a different network, you will need to enable this switch again for each new network. To disable the improvement for a previously activated network, you need to reconnect to that network (keeping the same IP) and then switch it off.\n\n" +
-                "Do you want to restart now?",
-                "Information",
-                MessageBoxButtons.YesNo);
-
-
-            if (result == DialogResult.Yes)
-            {
-                // Restart the system
-                Process.Start("shutdown.exe", "/r /t 0");
-            }
-        }
-
         private void special_Niewbie_ButtonHOB_Click(object sender, EventArgs e)
         {
             // Define the path of the program to launch
@@ -1864,34 +1649,6 @@ namespace Console2Desk
 
         }
 
-        private void pictureBoxUAC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelUAC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void uacToggleSwitch_Click(object sender, EventArgs e)
-        {
-            CodeForUAC.ToggleUAC(uacToggleSwitch, DependencyContainer.MessagesBoxImplementation);
-
-            // Notify the user that the system needs to restart
-            var result = DependencyContainer.MessagesBoxImplementation.ShowMessage(
-                "Disabling User Account Control (UAC) will stop showing prompts for administrator privileges. Any software will run with administrative privileges without asking for confirmation. "
-                + "Changes will take effect after a system restart. Do you want to restart now?", "Information",
-                MessageBoxButtons.YesNo);
-
-
-            if (result == DialogResult.Yes)
-            {
-                // Restart the system
-                Process.Start("shutdown.exe", "/r /t 0");
-            }
-        }
-
         private void special_Niewbie_ButtonRestoreBoost_Click(object sender, EventArgs e)
         {
             try
@@ -1927,6 +1684,43 @@ namespace Console2Desk
             formInfoControllers.FormClosed += (s, args) => _isAboutBoxOpen = false;
             formInfoControllers.ShowDialog();
             this.BringToFront();
+        }
+
+        private void pictureBoxTweakParadise_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (Environment.UserName == "HandleOS")
+                {
+                    // Avvia l'apertura
+                    timerGifTweakParadise.StartTimerForPictureTweakParadise(pictureBoxTweakParadise);
+                    _isAboutBoxOpen = true;
+                    FormTP.FormTweakParadise formTweakParadise = new FormTP.FormTweakParadise(this, _topMostTimer);
+                    formTweakParadise.FormClosed += (s, args) =>
+                    {
+                        _isAboutBoxOpen = false;
+
+                        // Avvia la chiusura (Reverse)
+                        timerGifTweakParadise.StartTimerReverseForPictureTweakParadise(pictureBoxTweakParadise);
+                    };
+                    formTweakParadise.ShowDialog();
+                    this.BringToFront();
+                }
+                else
+                {
+                    DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                        "This section is exclusive to HandleOS users. This tool is specifically designed to maintain HandleOS optimized, and these changes are not recommended for a regular system!",
+                        "Exclusive Section",
+                        MessageBoxButtons.OK
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
+            }
         }
     }
 }

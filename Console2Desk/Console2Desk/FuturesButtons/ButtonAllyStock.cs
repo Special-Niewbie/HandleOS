@@ -47,13 +47,16 @@ namespace Console2Desk.FuturesButtons
                     {
                         using (RegistryKey subKey = Registry.LocalMachine.OpenSubKey($@"SYSTEM\CurrentControlSet\Control\Class\{{4d36e968-e325-11ce-bfc1-08002be10318}}\{name}"))
                         {
-                            if (subKey != null && subKey.GetValue("DriverDesc")?.ToString() == "AMD Radeon Graphics")
+                            if (subKey != null)
                             {
-                                // Check if the key has any subkeys (indicates it is the main display key)
-                                if (subKey.GetSubKeyNames().Length > 0)
+                                string driverDesc = subKey.GetValue("DriverDesc")?.ToString();
+                                if (driverDesc == "AMD Radeon Graphics" || driverDesc == "AMD Radeon 780M Graphics")
                                 {
-                                    subKeyName = name;
-                                    break;
+                                    if (subKey.GetSubKeyNames().Length > 0)
+                                    {
+                                        subKeyName = name;
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -72,7 +75,7 @@ namespace Console2Desk.FuturesButtons
 
                 if (subKeyName == null)
                 {
-                    messagesBoxImplementation.ShowMessage("Unable to find the appropriate subkey.", "Error", MessageBoxButtons.OK);
+                    messagesBoxImplementation.ShowMessage("Your AMD GPU drivers are missing. Please contact the developer to include support for your GPU/driver model.", "Error", MessageBoxButtons.OK);
                     return;
                 }
 
@@ -125,12 +128,12 @@ namespace Console2Desk.FuturesButtons
                             key.SetValue("DALRestrictedModesBCD4", new byte[0], RegistryValueKind.Binary);
                             key.SetValue("DALRestrictedModesBCD5", new byte[0], RegistryValueKind.Binary);
 
-                            messagesBoxImplementation.ShowMessage("Registry keys reset successfully. You may need to restart your computer to apply these changes.", "Success", MessageBoxButtons.OK);
+                            messagesBoxImplementation.ShowMessage("GPU Drivers modified successfully. You may need to restart your computer to apply these changes.", "Success", MessageBoxButtons.OK);
                             form.CheckRegistrySettings();
                         }
                         else
                         {
-                            messagesBoxImplementation.ShowMessage("Unable to create or access the registry key.", "Error", MessageBoxButtons.OK);
+                            messagesBoxImplementation.ShowMessage("Your AMD GPU drivers are missing. Please contact the developer to include support for your GPU/driver model.", "Error", MessageBoxButtons.OK);
                         }
                     }
                 }
@@ -140,7 +143,7 @@ namespace Console2Desk.FuturesButtons
                 }
                 catch (Exception ex)
                 {
-                    messagesBoxImplementation.ShowMessage($"Error accessing or creating registry key. Error: {ex.Message}", "Error", MessageBoxButtons.OK);
+                    //messagesBoxImplementation.ShowMessage($"Error accessing or creating registry key. Error: {ex.Message}", "Error", MessageBoxButtons.OK);
                 }
             }
             catch (Exception ex)

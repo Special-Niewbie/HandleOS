@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v7.0": {
       "inputs2desk/1.0.0": {
         "dependencies": {
+          "Osklib": "1.6.0",
           "XInputium": "1.2.0"
         },
         "runtime": {
           "inputs2desk.dll": {}
+        }
+      },
+      "Osklib/1.6.0": {
+        "runtime": {
+          "lib/netcoreapp3.0/Osklib.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "XInputium/1.2.0": {
@@ -29,6 +38,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Osklib/1.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SHCCq0s1PrIqSxVsmFl2KNmCok+gt0MFeE/SGG2Hq2W8JDaRRyHchzocBnqMR25ajBt1rq3uo00UiygIhmeJfA==",
+      "path": "osklib/1.6.0",
+      "hashPath": "osklib.1.6.0.nupkg.sha512"
     },
     "XInputium/1.2.0": {
       "type": "package",

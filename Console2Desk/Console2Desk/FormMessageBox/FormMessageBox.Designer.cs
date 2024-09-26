@@ -37,6 +37,9 @@
             special_Niewbie_ButtonStartRestore = new Special_Niewbie_Button();
             labelFormMessageInfo = new Label();
             labelListOfServices = new Label();
+            special_Niewbie_ButtonFixWifi = new Special_Niewbie_Button();
+            labelRestoreWiFi = new Label();
+            panelBase = new Panel();
             panelTitleFormMessage.SuspendLayout();
             SuspendLayout();
             // 
@@ -82,7 +85,7 @@
             // 
             // listBoxFormMessage
             // 
-            listBoxFormMessage.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            listBoxFormMessage.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             listBoxFormMessage.BackColor = Color.FromArgb(60, 60, 60);
             listBoxFormMessage.BorderStyle = BorderStyle.FixedSingle;
             listBoxFormMessage.ForeColor = SystemColors.ControlLightLight;
@@ -90,7 +93,7 @@
             listBoxFormMessage.ItemHeight = 15;
             listBoxFormMessage.Location = new Point(12, 132);
             listBoxFormMessage.Name = "listBoxFormMessage";
-            listBoxFormMessage.Size = new Size(632, 197);
+            listBoxFormMessage.Size = new Size(632, 182);
             listBoxFormMessage.TabIndex = 1;
             listBoxFormMessage.SelectedIndexChanged += listBoxFormMessage_SelectedIndexChanged;
             // 
@@ -101,7 +104,7 @@
             checkBoxFormMessage.CheckState = CheckState.Checked;
             checkBoxFormMessage.Font = new Font("Roboto Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             checkBoxFormMessage.ForeColor = SystemColors.ControlLightLight;
-            checkBoxFormMessage.Location = new Point(12, 337);
+            checkBoxFormMessage.Location = new Point(12, 320);
             checkBoxFormMessage.Name = "checkBoxFormMessage";
             checkBoxFormMessage.Size = new Size(260, 25);
             checkBoxFormMessage.TabIndex = 2;
@@ -120,7 +123,7 @@
             special_Niewbie_ButtonStartRestore.FlatStyle = FlatStyle.Flat;
             special_Niewbie_ButtonStartRestore.ForeColor = Color.White;
             special_Niewbie_ButtonStartRestore.HoverColor = Color.MediumSlateBlue;
-            special_Niewbie_ButtonStartRestore.Location = new Point(546, 339);
+            special_Niewbie_ButtonStartRestore.Location = new Point(546, 369);
             special_Niewbie_ButtonStartRestore.Name = "special_Niewbie_ButtonStartRestore";
             special_Niewbie_ButtonStartRestore.Size = new Size(98, 47);
             special_Niewbie_ButtonStartRestore.TabIndex = 3;
@@ -150,18 +153,61 @@
             labelListOfServices.TabIndex = 5;
             labelListOfServices.Text = "List of Services to Restore Boost:";
             // 
+            // special_Niewbie_ButtonFixWifi
+            // 
+            special_Niewbie_ButtonFixWifi.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            special_Niewbie_ButtonFixWifi.BackColor = Color.FromArgb(50, 50, 50);
+            special_Niewbie_ButtonFixWifi.BorderColor = Color.FromArgb(227, 227, 227);
+            special_Niewbie_ButtonFixWifi.BorderRadius = 20;
+            special_Niewbie_ButtonFixWifi.BorderSize = 1;
+            special_Niewbie_ButtonFixWifi.FlatAppearance.BorderSize = 0;
+            special_Niewbie_ButtonFixWifi.FlatStyle = FlatStyle.Flat;
+            special_Niewbie_ButtonFixWifi.ForeColor = Color.White;
+            special_Niewbie_ButtonFixWifi.HoverColor = Color.MediumSlateBlue;
+            special_Niewbie_ButtonFixWifi.Location = new Point(12, 375);
+            special_Niewbie_ButtonFixWifi.Name = "special_Niewbie_ButtonFixWifi";
+            special_Niewbie_ButtonFixWifi.Size = new Size(87, 39);
+            special_Niewbie_ButtonFixWifi.TabIndex = 6;
+            special_Niewbie_ButtonFixWifi.Text = "Fix WIFI";
+            special_Niewbie_ButtonFixWifi.TextColor = Color.White;
+            special_Niewbie_ButtonFixWifi.UseVisualStyleBackColor = false;
+            special_Niewbie_ButtonFixWifi.Click += special_Niewbie_ButtonFixWifi_Click;
+            // 
+            // labelRestoreWiFi
+            // 
+            labelRestoreWiFi.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            labelRestoreWiFi.AutoSize = true;
+            labelRestoreWiFi.ForeColor = SystemColors.Control;
+            labelRestoreWiFi.Location = new Point(105, 379);
+            labelRestoreWiFi.Name = "labelRestoreWiFi";
+            labelRestoreWiFi.Size = new Size(240, 30);
+            labelRestoreWiFi.TabIndex = 7;
+            labelRestoreWiFi.Text = "After apply the Restore Boost If the WIFI will \r\nnot work or disappear press this button.";
+            // 
+            // panelBase
+            // 
+            panelBase.BorderStyle = BorderStyle.FixedSingle;
+            panelBase.Dock = DockStyle.Fill;
+            panelBase.Location = new Point(0, 0);
+            panelBase.Name = "panelBase";
+            panelBase.Size = new Size(656, 428);
+            panelBase.TabIndex = 8;
+            // 
             // FormMessageBox
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
-            ClientSize = new Size(656, 396);
+            ClientSize = new Size(656, 428);
+            Controls.Add(labelRestoreWiFi);
+            Controls.Add(special_Niewbie_ButtonFixWifi);
             Controls.Add(labelListOfServices);
             Controls.Add(labelFormMessageInfo);
             Controls.Add(special_Niewbie_ButtonStartRestore);
             Controls.Add(checkBoxFormMessage);
             Controls.Add(listBoxFormMessage);
             Controls.Add(panelTitleFormMessage);
+            Controls.Add(panelBase);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormMessageBox";
@@ -185,5 +231,8 @@
         private Special_Niewbie_Button special_Niewbie_ButtonStartRestore;
         private Label labelFormMessageInfo;
         private Label labelListOfServices;
+        private Special_Niewbie_Button special_Niewbie_ButtonFixWifi;
+        private Label labelRestoreWiFi;
+        private Panel panelBase;
     }
 }

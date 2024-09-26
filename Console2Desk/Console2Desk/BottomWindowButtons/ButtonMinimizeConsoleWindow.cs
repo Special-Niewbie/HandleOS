@@ -85,36 +85,74 @@ namespace Console2Desk.BottomWindowButtons
                     object shellValue = key.GetValue("Shell");
                     if (shellValue != null)
                     {
-                        string shellPath = shellValue.ToString().Split(new[] { ' ' }, 2)[0]; // Usa solo la parte prima del primo spazio
-                        string extractedPath = Path.GetFullPath(shellPath);
+                        string shellCommand = shellValue.ToString();
+                        //messagesBoxImplementation.ShowMessage($"Shell command from registry: {shellCommand}", "Debug", MessageBoxButtons.OK);
 
-                        //For Debug   messagesBoxImplementation.ShowMessage($"Percorso dell'app personalizzata estratto: {extractedPath}", "Info", MessageBoxButtons.OK);
+                        // Logica per estrarre il percorso eseguibile e gli argomenti
+                        string executablePath;
+                        string arguments;
 
-                        // Check if the application is already running
-                        Process[] runningProcesses = Process.GetProcessesByName(Path.GetFileNameWithoutExtension(extractedPath));
-                        if (runningProcesses.Length == 0)
+                        if (shellCommand.StartsWith("\""))
                         {
-                            // Start the custom application if it is not running
-                            try
+                            int endQuote = shellCommand.IndexOf("\"", 1);
+                            if (endQuote != -1)
                             {
-                                ProcessStartInfo startInfo = new ProcessStartInfo
-                                {
-                                    FileName = extractedPath,
-                                    Arguments = "",
-                                    UseShellExecute = false, // Prevents the use of the shell to avoid elevated privileges
-                                    Verb = "" // Ensures that 'runas' is not used (administrator mode)
-                                };
-                                Process.Start(startInfo);
-                                messagesBoxImplementation.ShowMessage($"L'applicazione {extractedPath} è stata avviata.", "Info", MessageBoxButtons.OK);
+                                executablePath = shellCommand.Substring(1, endQuote - 1);
+                                arguments = shellCommand.Substring(endQuote + 1).Trim();
                             }
-                            catch (Exception ex)
+                            else
                             {
-                                messagesBoxImplementation.ShowMessage($"Errore nell'avvio dell'applicazione: {ex.Message}", "Error", MessageBoxButtons.OK);
+                                executablePath = shellCommand;
+                                arguments = "";
                             }
                         }
                         else
                         {
-                           //For Debug messagesBoxImplementation.ShowMessage("L'applicazione è già in esecuzione.", "Info", MessageBoxButtons.OK);
+                            // Se non ci sono virgolette, assumiamo che tutto sia il percorso dell'eseguibile
+                            executablePath = shellCommand;
+                            arguments = "";
+                        }
+
+                        // messagesBoxImplementation.ShowMessage($"Executable path: {executablePath}\nArguments: {arguments}", "Debug", MessageBoxButtons.OK);
+
+                        // Verifica se l'applicazione è già in esecuzione
+                        string processName = Path.GetFileNameWithoutExtension(executablePath);
+                        Process[] runningProcesses = Process.GetProcessesByName(processName);
+
+                        if (runningProcesses.Length == 0)
+                        {
+                            // Avvia l'applicazione personalizzata se non è in esecuzione
+                            try
+                            {
+                                if (!File.Exists(executablePath))
+                                {
+                                    messagesBoxImplementation.ShowMessage($"Executable file not found: {executablePath}", "Error", MessageBoxButtons.OK);
+                                    return;
+                                }
+
+                                ProcessStartInfo startInfo = new ProcessStartInfo
+                                {
+                                    FileName = executablePath,
+                                    Arguments = arguments,
+                                    UseShellExecute = true,
+                                    WorkingDirectory = Path.GetDirectoryName(executablePath),
+                                    Verb = "runas"  // Prova ad eseguire con privilegi elevati
+                                };
+
+                                //messagesBoxImplementation.ShowMessage($"Attempting to start process:\nFileName: {startInfo.FileName}\nArguments: {startInfo.Arguments}\nWorking Directory: {startInfo.WorkingDirectory}", "Debug", MessageBoxButtons.OK);
+
+                                Process.Start(startInfo);
+                                //messagesBoxImplementation.ShowMessage($"The application {executablePath} has been started.", "Info", MessageBoxButtons.OK);
+                            }
+                            catch (Exception ex)
+                            {
+                                messagesBoxImplementation.ShowMessage($"Error starting application: {ex.Message}\nStack Trace: {ex.StackTrace}", "Error", MessageBoxButtons.OK);
+                            }
+                        }
+                        else
+                        {
+                            //For Debug messagesBoxImplementation.ShowMessage("L'applicazione è già in esecuzione.", "Info", MessageBoxButtons.OK);
+                            // L'applicazione è già in esecuzione, gestisci la minimizzazione/massimizzazione
                         }
                     }
                     else

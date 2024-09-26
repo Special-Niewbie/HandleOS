@@ -172,7 +172,6 @@ namespace Console2Desk
             }
         }
 
-
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);

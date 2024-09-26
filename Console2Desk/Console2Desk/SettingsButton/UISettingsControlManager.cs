@@ -25,14 +25,7 @@ namespace Console2Desk.SettingsButton
     {
         public static void HideButtons(Special_Niewbie_Button buttonOpenFileExplorer, Special_Niewbie_Button buttonRestorePauseUpgrade,
             Special_Niewbie_Button touchScreenEnDbButton, Special_Niewbie_Button buttonXinputTest, Special_Niewbie_Button buttonChangeConsoleSettings,
-            Special_Niewbie_Button msStoreButton, ControlToggles controlAMDnoShutter, ControlToggles controlMeltdownSpectreProtectionOnOff, Label labelAMDnoShutter,
-            Label labelMeltdown_Spectre, Label label2, PictureBox pictureBoxAMDnoShutter, PictureBox pictureBoxMeltdown_Spectre, Panel panel4Toggle,
-            ControlToggles controlSystemDevices, Label labelSystemDevices, PictureBox pictureBoxSystemDevices, ControlToggles controlCoreIsolation_Exploid,
-            Label labelCoreIsolation_CFG, PictureBox pictureBoxCoreIsolation_CFG, ControlToggles controlBCDMemoryUsage,
-            Label labelBCDMemoryUsage, PictureBox pictureBCDMemoryUsage, ControlToggles controlReduceWindowsLatency,
-            PictureBox pictureBoxReduceWindowsLatency, Label labelReduceWindowsLatency, Label labelReduceNetworkLatency, PictureBox pictureBoxReduceNetworkLatency,
-            ControlToggles controlReduceNetworkLatency, Special_Niewbie_Button special_Niewbie_ButtonHOB, PictureBox pictureBoxUAC, 
-            Label labelUAC, ControlToggles uacToggleSwitch, Special_Niewbie_Button special_Niewbie_ButtonRestoreBoost)
+            Special_Niewbie_Button msStoreButton, Special_Niewbie_Button special_Niewbie_ButtonHOB,Special_Niewbie_Button special_Niewbie_ButtonRestoreBoost)
         {
             buttonOpenFileExplorer.Visible = false;
             buttonRestorePauseUpgrade.Visible = false;
@@ -40,33 +33,7 @@ namespace Console2Desk.SettingsButton
             buttonXinputTest.Visible = false;
             buttonChangeConsoleSettings.Visible = false;
             msStoreButton.Visible = false;
-            controlAMDnoShutter.Visible = false;
-            controlMeltdownSpectreProtectionOnOff.Visible = false;
-            labelAMDnoShutter.Visible = false;
-            labelMeltdown_Spectre.Visible = false;
-            label2.Visible = false;
-            pictureBoxAMDnoShutter.Visible = false;
-            pictureBoxMeltdown_Spectre.Visible = false;
-            panel4Toggle.Visible = false;
-            controlSystemDevices.Visible = false;
-            labelSystemDevices.Visible = false;
-            pictureBoxSystemDevices.Visible = false;
-            controlCoreIsolation_Exploid.Visible = false;
-            labelCoreIsolation_CFG.Visible = false;
-            pictureBoxCoreIsolation_CFG.Visible = false;
-            controlBCDMemoryUsage.Visible = false;
-            labelBCDMemoryUsage.Visible = false;
-            pictureBCDMemoryUsage.Visible = false;
-            controlReduceWindowsLatency.Visible = false;
-            pictureBoxReduceWindowsLatency.Visible = false;
-            labelReduceWindowsLatency.Visible = false;
-            labelReduceNetworkLatency.Visible = false;
-            pictureBoxReduceNetworkLatency.Visible = false;
-            controlReduceNetworkLatency.Visible = false;
             special_Niewbie_ButtonHOB.Visible = false;
-            pictureBoxUAC.Visible = false;
-            labelUAC.Visible = false;
-            uacToggleSwitch.Visible = false;
             special_Niewbie_ButtonRestoreBoost.Visible = false;
 
         }

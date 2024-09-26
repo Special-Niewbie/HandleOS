@@ -1,0 +1,839 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Progetti_in_C\\C#\\Console2Desk\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\msstorebuttoncoding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\msstorebuttoncoding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\gpuamdsdilowlatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\gpuamdsdilowlatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeformsgamebarmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeformsgamebarmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\msstorebuttonstartupcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\msstorebuttonstartupcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|C:\\Progetti_in_C\\C#\\Console2Desk\\console2desk\\formtp\\formtweakparadise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\formtp\\formtweakparadise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\gpunvidiasdilowlatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\gpunvidiasdilowlatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\formtp\\formtweakparadise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\formtp\\formtweakparadise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|C:\\Progetti_in_C\\C#\\Console2Desk\\console2desk\\info\\forminfocontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\info\\forminfocontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\info\\forminfocontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\info\\forminfocontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\formmessagebox\\formmessagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\formmessagebox\\formmessagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\button1610ultimate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\button1610ultimate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\button1610stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\button1610stock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\buttonallyultimate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\buttonallyultimate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\buttonallystock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\buttonallystock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\addbuttonintegerscalingcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\addbuttonintegerscalingcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\addbuttonintegerscaling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\addbuttonintegerscaling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\bottomwindowbuttons\\sharedisabletouchscreenclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\bottomwindowbuttons\\sharedisabletouchscreenclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\touchbuttons\\consoletouchbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\touchbuttons\\consoletouchbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\touchbuttons\\desktopbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\touchbuttons\\desktopbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\gpuamdsdilowlatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\gpuamdsdilowlatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\gpuintelsdilowlatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\gpuintelsdilowlatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\gpuintelsdilowlatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\gpuintelsdilowlatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforamd_noshuttercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforamd_noshuttercheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\gpunvidiasdilowlatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\gpunvidiasdilowlatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforamd_noshutter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforamd_noshutter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeformeltdownspectreprotectioncheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeformeltdownspectreprotectioncheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeformeltdownspectreprotection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeformeltdownspectreprotection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforreducewindowslatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforreducewindowslatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforcontrolcoreisolation_exploid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforcontrolcoreisolation_exploid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforreducewindowslatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforreducewindowslatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforcontrolbcdmemoryusage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforcontrolbcdmemoryusage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforreducenetworklatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforreducenetworklatencycheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforcontrolcoreisolation_exploidcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforcontrolcoreisolation_exploidcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforsystemdevices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforsystemdevices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforreducenetworklatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforreducenetworklatency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\code_for_increaseram_system.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\code_for_increaseram_system.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\futuresbuttons\\ramchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\futuresbuttons\\ramchecker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\bottomwindowbuttons\\buttonminimizeconsolewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\bottomwindowbuttons\\buttonminimizeconsolewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\bottomwindowbuttons\\codeforresettouchkeyboardcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\bottomwindowbuttons\\codeforresettouchkeyboardcheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\uisettingscontrolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\uisettingscontrolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|C:\\Progetti_in_C\\C#\\Console2Desk\\console2desk\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\timergiftweakparadise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\timergiftweakparadise.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\special_niewbie_button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\special_niewbie_button.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\formmessagebox\\scriptexecutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\formmessagebox\\scriptexecutor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\newsitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\newsitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|C:\\Progetti_in_C\\C#\\Console2Desk\\console2desk\\aboutbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\aboutbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\aboutbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\aboutbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforuac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforuac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|c:\\progetti_in_c\\c#\\console2desk\\console2desk\\settingsbutton\\codeforuaccheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{658F0BC6-BC6A-474C-A00A-8FBA56EF19D1}|Console2Desk\\Console2Desk.csproj|solutionrelative:console2desk\\settingsbutton\\codeforuaccheck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Form1.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\Form1.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Form1.cs [Design]",
+              "RelativeToolTip": "Console2Desk\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T13:08:43.026Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "msStoreButtonCoding.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\msStoreButtonCoding.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\msStoreButtonCoding.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\msStoreButtonCoding.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\msStoreButtonCoding.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T14:23:41.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "msStoreButtonStartupCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\msStoreButtonStartupCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\msStoreButtonStartupCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\msStoreButtonStartupCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\msStoreButtonStartupCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T07:09:10.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CodeForMSGamebarMessages.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForMSGamebarMessages.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForMSGamebarMessages.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForMSGamebarMessages.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForMSGamebarMessages.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T05:54:38.056Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GPUAMDSDILowLatency.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUAMDSDILowLatency.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\GPUAMDSDILowLatency.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUAMDSDILowLatency.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\GPUAMDSDILowLatency.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwFkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T15:05:04.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormTweakParadise.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormTP\\FormTweakParadise.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FormTP\\FormTweakParadise.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormTP\\FormTweakParadise.cs [Design]",
+              "RelativeToolTip": "Console2Desk\\FormTP\\FormTweakParadise.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T15:05:47.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GPUNVIDIASDILowLatency.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatency.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatency.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatency.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatency.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAC8AAAB0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T15:58:46.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormTweakParadise.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormTP\\FormTweakParadise.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FormTP\\FormTweakParadise.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormTP\\FormTweakParadise.cs",
+              "RelativeToolTip": "Console2Desk\\FormTP\\FormTweakParadise.cs",
+              "ViewState": "AgIAAM4AAAAAAAAAAIAxwOAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T07:30:53.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormMessageBox.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormMessageBox\\FormMessageBox.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FormMessageBox\\FormMessageBox.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormMessageBox\\FormMessageBox.cs",
+              "RelativeToolTip": "Console2Desk\\FormMessageBox\\FormMessageBox.cs",
+              "ViewState": "AgIAADYBAAAAAAAAAAAIwHgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T05:01:24.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormInfoControllers.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\info\\FormInfoControllers.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\info\\FormInfoControllers.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\info\\FormInfoControllers.cs",
+              "RelativeToolTip": "Console2Desk\\info\\FormInfoControllers.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAIAwwHIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:24:26.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormInfoControllers.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\info\\FormInfoControllers.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\info\\FormInfoControllers.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\info\\FormInfoControllers.cs [Design]",
+              "RelativeToolTip": "Console2Desk\\info\\FormInfoControllers.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T04:52:03.903Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Button1610Ultimate.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\Button1610Ultimate.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\Button1610Ultimate.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\Button1610Ultimate.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\Button1610Ultimate.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwK0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T13:31:59.276Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Button1610Stock.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\Button1610Stock.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\Button1610Stock.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\Button1610Stock.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\Button1610Stock.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAgwD0AAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T13:31:57.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ButtonAllyUltimate.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\ButtonAllyUltimate.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\ButtonAllyUltimate.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\ButtonAllyUltimate.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\ButtonAllyUltimate.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAqwL8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T23:49:01.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Form1.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\Form1.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Form1.cs",
+              "RelativeToolTip": "Console2Desk\\Form1.cs",
+              "ViewState": "AgIAAPYCAAAAAAAAAAApwAoDAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-21T07:38:25.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ButtonAllyStock.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\ButtonAllyStock.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\ButtonAllyStock.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\ButtonAllyStock.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\ButtonAllyStock.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAAAE0AAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T14:07:31.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AddButtonIntegerScalingCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\AddButtonIntegerScalingCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\AddButtonIntegerScalingCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\AddButtonIntegerScalingCheck.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\AddButtonIntegerScalingCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T23:29:30.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AddButtonIntegerScaling.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\AddButtonIntegerScaling.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\AddButtonIntegerScaling.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\AddButtonIntegerScaling.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\AddButtonIntegerScaling.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwEwAAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T23:30:38.564Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ConsoleTouchButton.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\TouchButtons\\ConsoleTouchButton.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\TouchButtons\\ConsoleTouchButton.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\TouchButtons\\ConsoleTouchButton.cs",
+              "RelativeToolTip": "Console2Desk\\TouchButtons\\ConsoleTouchButton.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T11:18:15.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ShareDisableTouchscreenClass.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\BottomWindowButtons\\ShareDisableTouchscreenClass.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\BottomWindowButtons\\ShareDisableTouchscreenClass.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\BottomWindowButtons\\ShareDisableTouchscreenClass.cs",
+              "RelativeToolTip": "Console2Desk\\BottomWindowButtons\\ShareDisableTouchscreenClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T04:01:26.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DesktopButton.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\TouchButtons\\DesktopButton.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\TouchButtons\\DesktopButton.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\TouchButtons\\DesktopButton.cs",
+              "RelativeToolTip": "Console2Desk\\TouchButtons\\DesktopButton.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwDgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T09:07:57.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GPUAMDSDILowLatencyCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUAMDSDILowLatencyCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\GPUAMDSDILowLatencyCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUAMDSDILowLatencyCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\GPUAMDSDILowLatencyCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T16:47:29.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "GPUINTELSDILowLatencyCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUINTELSDILowLatencyCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\GPUINTELSDILowLatencyCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUINTELSDILowLatencyCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\GPUINTELSDILowLatencyCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T16:44:31.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GPUINTELSDILowLatency.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUINTELSDILowLatency.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\GPUINTELSDILowLatency.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUINTELSDILowLatency.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\GPUINTELSDILowLatency.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwHgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T16:42:04.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "CodeForAMD_NoShutterCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForAMD_NoShutterCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForAMD_NoShutterCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForAMD_NoShutterCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForAMD_NoShutterCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T06:01:09.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GPUNVIDIASDILowLatencyCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatencyCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatencyCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatencyCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\GPUNVIDIASDILowLatencyCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T15:59:07.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CodeForAMD_NoShutter.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForAMD_NoShutter.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForAMD_NoShutter.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForAMD_NoShutter.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForAMD_NoShutter.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T06:02:43.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CodeForMeltdownSpectreProtectionCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtectionCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtectionCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtectionCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtectionCheck.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T14:10:31.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CodeForMeltdownSpectreProtection.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtection.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtection.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtection.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForMeltdownSpectreProtection.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAgwFcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T06:01:25.812Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "CodeForControlCoreIsolation_Exploid.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_Exploid.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_Exploid.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_Exploid.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_Exploid.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T05:55:24.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CodeForReduceWindowsLatencyCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceWindowsLatencyCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForReduceWindowsLatencyCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceWindowsLatencyCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForReduceWindowsLatencyCheck.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T06:00:49.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CodeForReduceWindowsLatency.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceWindowsLatency.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForReduceWindowsLatency.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceWindowsLatency.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForReduceWindowsLatency.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAowJ4AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T05:57:24.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "CodeForControlBCDMemoryUsage.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForControlBCDMemoryUsage.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForControlBCDMemoryUsage.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForControlBCDMemoryUsage.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForControlBCDMemoryUsage.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAgwBsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T02:09:05.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "CodeForReduceNetworkLatencyCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceNetworkLatencyCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForReduceNetworkLatencyCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceNetworkLatencyCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForReduceNetworkLatencyCheck.cs",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAcwKUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T14:07:59.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CodeForControlCoreIsolation_ExploidCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_ExploidCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_ExploidCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_ExploidCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForControlCoreIsolation_ExploidCheck.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T06:01:24.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "CodeForReduceNetworkLatency.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceNetworkLatency.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForReduceNetworkLatency.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForReduceNetworkLatency.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForReduceNetworkLatency.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T14:07:36.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CodeForSystemDevices.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForSystemDevices.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForSystemDevices.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForSystemDevices.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForSystemDevices.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAcwBwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T14:12:18.284Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Code_for_IncreaseRAM_System.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\Code_for_IncreaseRAM_System.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\Code_for_IncreaseRAM_System.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\Code_for_IncreaseRAM_System.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\Code_for_IncreaseRAM_System.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwCQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T02:17:10.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "RAMChecker.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\RAMChecker.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FuturesButtons\\RAMChecker.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FuturesButtons\\RAMChecker.cs",
+              "RelativeToolTip": "Console2Desk\\FuturesButtons\\RAMChecker.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwIcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T02:19:40.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ButtonMinimizeConsoleWindow.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\BottomWindowButtons\\ButtonMinimizeConsoleWindow.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\BottomWindowButtons\\ButtonMinimizeConsoleWindow.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\BottomWindowButtons\\ButtonMinimizeConsoleWindow.cs",
+              "RelativeToolTip": "Console2Desk\\BottomWindowButtons\\ButtonMinimizeConsoleWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T01:57:20.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "CodeForResetTouchKeyboardCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\BottomWindowButtons\\CodeForResetTouchKeyboardCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\BottomWindowButtons\\CodeForResetTouchKeyboardCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\BottomWindowButtons\\CodeForResetTouchKeyboardCheck.cs",
+              "RelativeToolTip": "Console2Desk\\BottomWindowButtons\\CodeForResetTouchKeyboardCheck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-22T05:15:15.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "UISettingsControlManager.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\UISettingsControlManager.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\UISettingsControlManager.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\UISettingsControlManager.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\UISettingsControlManager.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwCMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T14:15:49.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "timerGifTweakParadise.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\timerGifTweakParadise.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\timerGifTweakParadise.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\timerGifTweakParadise.cs",
+              "RelativeToolTip": "Console2Desk\\timerGifTweakParadise.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-19T02:49:55.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Resources.resx",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Properties\\Resources.resx",
+              "RelativeDocumentMoniker": "Console2Desk\\Properties\\Resources.resx",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Properties\\Resources.resx",
+              "RelativeToolTip": "Console2Desk\\Properties\\Resources.resx",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2024-09-10T14:28:33.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Special_Niewbie_Button.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Special_Niewbie_Button.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\Special_Niewbie_Button.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\Special_Niewbie_Button.cs",
+              "RelativeToolTip": "Console2Desk\\Special_Niewbie_Button.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAADwv60AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-14T01:49:14.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "ScriptExecutor.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormMessageBox\\ScriptExecutor.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\FormMessageBox\\ScriptExecutor.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\FormMessageBox\\ScriptExecutor.cs",
+              "RelativeToolTip": "Console2Desk\\FormMessageBox\\ScriptExecutor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAM0AAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T13:59:41.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "NewsItem.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\NewsItem.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\NewsItem.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\NewsItem.cs",
+              "RelativeToolTip": "Console2Desk\\NewsItem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T02:55:33.705Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "AboutBox.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\AboutBox.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\AboutBox.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\AboutBox.cs",
+              "RelativeToolTip": "Console2Desk\\AboutBox.cs",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAUwB8AAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T03:18:56.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "CodeForUAC.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForUAC.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForUAC.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForUAC.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForUAC.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T13:58:14.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "CodeForUACCheck.cs",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForUACCheck.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\SettingsButton\\CodeForUACCheck.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\SettingsButton\\CodeForUACCheck.cs",
+              "RelativeToolTip": "Console2Desk\\SettingsButton\\CodeForUACCheck.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-10T13:59:09.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "AboutBox.cs [Design]",
+              "DocumentMoniker": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\AboutBox.cs",
+              "RelativeDocumentMoniker": "Console2Desk\\AboutBox.cs",
+              "ToolTip": "C:\\Progetti_in_C\\C#\\Console2Desk\\Console2Desk\\AboutBox.cs [Design]",
+              "RelativeToolTip": "Console2Desk\\AboutBox.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T03:18:49.355Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
