@@ -10,9 +10,7 @@
     </td>
   </tr>
 </table>
-
-
-
+🚧 Page Under Maintenance to update all the info of version 3.8...🚧
 
 
 
@@ -182,6 +180,7 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 <a href="https://github.com/Special-Niewbie/HandleOS/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Special-Niewbie/HandleOS" />
 </a> <a href="https://github.com/AderitoSilva"> <img src="https://github.com/AderitoSilva.png" width="70" />
+</a> <a href="https://github.com/AllevatoreAnonimo"> <img src="https://github.com/AllevatoreAnonimo.png" width="70" />
 </a>
 
 
