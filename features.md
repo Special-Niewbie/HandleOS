@@ -87,6 +87,7 @@ The Fix Touch Keyboard button helps resolve this issue by resetting the `Touch K
 The Info button will display a window, as shown in the image below, indicating the Mouse/Keyboard commands that your game controller takes over while Console2Desk is active. From version 3.0.0 C2D it supports up to 4 Controllers simultaneously to get mouse and Keyboard behaviour .This feature helps users navigate seamlessly without needing to use a mouse or keyboard, making it easier to control the system purely with a game controller. 
 
 **If you need to browse through folders or perform various operations in system menus, it's recommended to keep C2D minimized during these tasks, as leaving the window normal may interfere with smooth navigation in the system.**
+
 <img height="220" src="Git_assets/features/InfoC2D.png"/>
 
 
@@ -148,7 +149,7 @@ Starting from ***C2D ver 3.8.0***:
 Starting from ***C2D ver 3.8.0***, a new button and rebuilt the Windows menu for Shutting Down, Restarting, and Turning Off the monitor of your device, directly from C2D.
 
 
-<img height="160" src="Git_assets/features/PowerOFF_menu.png"/>
+<img height="160" src="Git_assets/features/PowerOFF_Menu.png"/>
 
 
 
