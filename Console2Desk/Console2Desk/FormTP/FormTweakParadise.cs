@@ -1,8 +1,4 @@
 ﻿using Console2Desk.SettingsButton;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -28,6 +24,9 @@ namespace Console2Desk.FormTP
             labelTitleFormTP.MouseDown += labelTitleFormTP_MouseDown;
             labelTitleFormTP.MouseMove += labelTitleFormTP_MouseMove;
             labelTitleFormTP.MouseUp += labelTitleFormTP_MouseUp;
+            panelBase.MouseDown += labelTitleFormTP_MouseDown;
+            panelBase.MouseMove += labelTitleFormTP_MouseMove;
+            panelBase.MouseUp += labelTitleFormTP_MouseUp;
 
         }
 
@@ -37,7 +36,7 @@ namespace Console2Desk.FormTP
             GPUAMDSDILowLatencyCheck.CheckLowLatency(controlAMDgpuSDI, DependencyContainer.MessagesBoxImplementation);
             GPUINTELSDILowLatencyCheck.CheckLowLatency(controliNTELgpuSDI, DependencyContainer.MessagesBoxImplementation);
             GPUNVIDIASDILowLatencyCheck.CheckLowLatency(controlNVIDIAgpuSDI, DependencyContainer.MessagesBoxImplementation);
-            
+
 
             CodeForMeltdownSpectreProtectionCheck.CheckMeltdownSpectreProtection(controlMeltdownSpectreProtectionOnOff, DependencyContainer.MessagesBoxImplementation);
             CodeForControlCoreIsolation_ExploidCheck.CheckCoreIsolationAndExploitProtection(controlCoreIsolation_Exploid, DependencyContainer.MessagesBoxImplementation);
@@ -47,7 +46,11 @@ namespace Console2Desk.FormTP
             CodeForReduceNetworkLatencyCheck.CheckReduceNetworkLatency(controlReduceNetworkLatency, DependencyContainer.MessagesBoxImplementation);
             CodeForUACCheck.CheckUACStatus(uacToggleSwitch, DependencyContainer.MessagesBoxImplementation);
             CodeForMSGamebarMessagesCheck.CheckGamebarMessagesState(controlGameBarMessages, DependencyContainer.MessagesBoxImplementation);
-
+            HdwAcceleratedGPUSchedulingCheck.CheckHdwAcceleratedGPUSchedulingStatus(controlHWAccelleration, DependencyContainer.MessagesBoxImplementation);
+            VRRO_OptWindowedGames_Check.CheckVRRO_OptWindowedGamesStatus(controlVRRO_OptWindowedGames, DependencyContainer.MessagesBoxImplementation);
+            RDPOptimization_Check.CheckRDPOptimizationStatus(controlRDPOptimization, DependencyContainer.MessagesBoxImplementation);
+            WDDMdriverAMD_Check.CheckWDDMdriverAMDStatus(controlWDDMamd, DependencyContainer.MessagesBoxImplementation);
+            WDDMdriverNVIDIA_Check.CheckWDDMdriverNVIDIAStatus(controlWDDMnvidia, DependencyContainer.MessagesBoxImplementation);
 
         }
 
@@ -106,7 +109,7 @@ namespace Console2Desk.FormTP
 
         private void labelTitleFormTP_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void labelTitleFormTP_MouseDown(object sender, MouseEventArgs e)
         {
@@ -131,6 +134,38 @@ namespace Console2Desk.FormTP
         }
 
         private void labelTitleFormTP_MouseUp(object sender, MouseEventArgs e)
+        {
+            // Stop dragging Window
+            _isDragging = false;
+        }
+
+        private void panelBase_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void panelBase_MouseDown(object sender, MouseEventArgs e)
+        {
+            // Start dragging Window
+            if (e.Button == MouseButtons.Left)
+            {
+                _isDragging = true;
+                _dragStartPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void panelBase_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_isDragging)
+            {
+                // Calculate the new position of the window
+                var deltaX = e.X - _dragStartPoint.X;
+                var deltaY = e.Y - _dragStartPoint.Y;
+                var newLocation = new Point(this.Left + deltaX, this.Top + deltaY);
+                this.Location = newLocation;
+            }
+        }
+
+        private void panelBase_MouseUp(object sender, MouseEventArgs e)
         {
             // Stop dragging Window
             _isDragging = false;
@@ -203,12 +238,6 @@ namespace Console2Desk.FormTP
                 Process.Start("shutdown.exe", "/r /t 0");
             }
         }
-
-        private void panelBase_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void controlGameBarMessages_Click(object sender, EventArgs e)
         {
             CodeForMSGamebarMessages.ToggleGamebarMessages(controlGameBarMessages, DependencyContainer.MessagesBoxImplementation);
@@ -228,6 +257,31 @@ namespace Console2Desk.FormTP
         private void controliNTELgpuSDI_Click(object sender, EventArgs e)
         {
             GPUINTELSDILowLatency.ToggleLowLatency(controliNTELgpuSDI, DependencyContainer.MessagesBoxImplementation);
-        }        
+        }
+
+        private void controlHWAccelleration_Click(object sender, EventArgs e)
+        {
+            HdwAcceleratedGPUScheduling.ToggleHwAcceleratedGPUScheduling(controlHWAccelleration, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlVRRO_OptWindowedGames_Click(object sender, EventArgs e)
+        {
+            VRRO_OptWindowedGames.ApplyVRRO_OptWindowedGamesToggle(controlVRRO_OptWindowedGames, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlRDPOptimization_Click(object sender, EventArgs e)
+        {
+            RDPOptimization.ApplyRDPOptimizationToggle(controlRDPOptimization, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlWDDMamd_Click(object sender, EventArgs e)
+        {
+            WDDMdriverAMD.ToggleWDDMdriverAMD(controlWDDMamd, DependencyContainer.MessagesBoxImplementation);
+        }
+
+        private void controlWDDMnvidia_Click(object sender, EventArgs e)
+        {
+            WDDMdriverNVIDIA.ToggleWDDMdriverNVIDIA(controlWDDMnvidia, DependencyContainer.MessagesBoxImplementation);
+        }
     }
 }

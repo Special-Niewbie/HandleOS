@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0-windows"
+          "net7.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -31,7 +31,7 @@
         },
         "frameworks": {
           "net7.0-windows7.0": {
-            "targetAlias": "net7.0-windows",
+            "targetAlias": "net7.0-windows7.0",
             "projectReferences": {}
           }
         },
@@ -48,11 +48,15 @@
       },
       "frameworks": {
         "net7.0-windows7.0": {
-          "targetAlias": "net7.0-windows",
+          "targetAlias": "net7.0-windows7.0",
           "dependencies": {
             "Cake.Powershell": {
               "target": "Package",
               "version": "[4.0.0, )"
+            },
+            "ManagedNativeWifi": {
+              "target": "Package",
+              "version": "[2.6.0, )"
             },
             "XInputium": {
               "target": "Package",
@@ -96,7 +100,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

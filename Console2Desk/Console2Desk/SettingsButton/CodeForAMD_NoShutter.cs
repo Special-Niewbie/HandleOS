@@ -16,11 +16,18 @@ namespace Console2Desk.SettingsButton
 
                     if (subKeyName == null)
                     {
-                        throw new Exception("Unable to find a subkey containing 'EnableUlps'.");
+                        throw new Exception("Model of GPU not supported, please contact the Developer to add your GPU model.");
                     }
 
                     // Get the current value of the "EnableUlps" registry key
                     int currentValue = GetEnableUlpsValue(subKeyName);
+
+                    if (currentValue == -1)
+                    {
+                        //throw new Exception("Unable to read the current EnableUlps value.");
+                        throw new Exception("Unable to read the current AMD NoShutter value.");
+                        
+                    }
 
                     // Determine the new value based on the toggle switch state
                     // Inverted logic: On (true) sets to 0, Off (false) sets to 1
@@ -32,18 +39,23 @@ namespace Console2Desk.SettingsButton
                         SetEnableUlpsValue(subKeyName, newValue);
                     }
 
-                    // Update the toggle switch state on the main thread
+                    // Update the UI on the main thread
                     ulpsToggleSwitch.Invoke((MethodInvoker)delegate
                     {
                         ulpsToggleSwitch.IsOn = (newValue == 0);
+                        string message = newValue == 0
+                            ? "AMD NoShutter has been disabled successfully."
+                            : "AMD NoShutter has been enabled successfully.";
+                        messagesBoxImplementation.ShowMessage(message, "Information", MessageBoxButtons.OK);
                     });
                 }
                 catch (Exception ex)
                 {
-                    // Show error message on the main thread
+                    // Show error message and update toggle switch on the main thread
                     ulpsToggleSwitch.Invoke((MethodInvoker)delegate
                     {
-                        messagesBoxImplementation.ShowMessage($"An error occurred while toggling 'EnableUlps': {ex.Message}", "Error", MessageBoxButtons.OK);
+                        ulpsToggleSwitch.IsOn = false;
+                        messagesBoxImplementation.ShowMessage(ex.Message, "Error", MessageBoxButtons.OK);
                     });
                 }
             });
@@ -77,10 +89,10 @@ namespace Console2Desk.SettingsButton
             }
             catch (Exception ex)
             {
-                // Handle exceptions if needed
-                //Console.WriteLine($"Error searching for registry key: {ex.Message}");
+                //throw new Exception($"Error searching for registry key: {ex.Message}");
+                throw new Exception($"Model of GPU not supported, please contact the Developer to add your GPU model.");
+                
             }
-
             return null;
         }
 
@@ -102,8 +114,7 @@ namespace Console2Desk.SettingsButton
             }
             catch (Exception ex)
             {
-                // Handle exceptions if needed
-                //Console.WriteLine($"Error reading registry key value: {ex.Message}");
+                throw new Exception($"Error reading registry key value: {ex.Message}");
             }
 
             return -1; // Return a default value indicating an error
@@ -119,12 +130,15 @@ namespace Console2Desk.SettingsButton
                     {
                         key.SetValue("EnableUlps", value, RegistryValueKind.DWord);
                     }
+                    else
+                    {
+                        throw new Exception("Unable to open registry key for writing.");
+                    }
                 }
             }
             catch (Exception ex)
             {
-                // Handle exceptions if needed
-                //Console.WriteLine($"Error setting registry key value: {ex.Message}");
+                throw new Exception($"Error setting registry key value: {ex.Message}");
             }
         }
     }

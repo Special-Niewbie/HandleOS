@@ -30,6 +30,9 @@ using XInputium;
 using System.IO.Pipes;
 using System.Text;
 using System;
+using Console2Desk.FormWifi;
+using Console2Desk.PowerM;
+using Console2Desk.HiberSleep;
 
 
 namespace Console2Desk
@@ -85,7 +88,7 @@ namespace Console2Desk
 
         private System.Windows.Forms.Timer _wifiDelayTimer;
         private bool _isWifiDelayActive = false;
-        private const int WifiDelay = 50000; // 50 seconds in milliseconds
+        private const int WifiDelay = 120000; // 50 seconds in milliseconds
 
         private bool _isWindowMinimized = false;
 
@@ -109,6 +112,8 @@ namespace Console2Desk
         private readonly object lockObject = new object();
 
         private WinTheme winTheme;
+
+        private readonly WifiOrchestrator _wifiOrchestrator;
 
         public Form1()
         {
@@ -231,6 +236,8 @@ namespace Console2Desk
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
 
+            _wifiOrchestrator = new WifiOrchestrator(this, pictureBoxWifi, _topMostTimer, DependencyContainer.MessagesBoxImplementation);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -282,7 +289,7 @@ namespace Console2Desk
             AddButtonIntegerScalingCheck.CodeForaddButtonIntegerScalingCheck(pictureBox3, DependencyContainer.MessagesBoxImplementation);
             CodeForResetTouchKeyboardCheck.CheckTouchKeyboardState(pictureBoxResetTouchKeyboard, DependencyContainer.MessagesBoxImplementation);
             msStoreButtonStartupCheck.CheckMsStoreInstallation(msStoreButton, DependencyContainer.MessagesBoxImplementation);
-            
+            RealTimeProtectionEnabled_Check.CheckAndSetRealTimeProtectionAsync(pictureBoxRealTime_ON, pictureBoxRealTime_OFF);
 
             CustomListBoxUpdate();
         }
@@ -588,7 +595,7 @@ namespace Console2Desk
                 // If it is visible, it makes it invisible
                 UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
                     buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi, buttonMiniConsoleWindowNew);
@@ -717,7 +724,7 @@ namespace Console2Desk
 
         private void labelTitle_Click(object sender, EventArgs e)
         {
-            
+
         }
         private void buttonAllyUltimateRes_MouseEnter(object sender, EventArgs e)
         {
@@ -1046,7 +1053,7 @@ namespace Console2Desk
             _isWifiDelayActive = true;
             _wifiDelayTimer.Start();
 
-            pictureBoxWifiFunction.CodeForpictureBoxWifi(this, pictureBoxWifi, DependencyContainer.MessagesBoxImplementation);
+            _wifiOrchestrator.HandleWifiButtonClick();
         }
 
         private void pictureBoxAMDadrenaline_Click(object sender, EventArgs e)
@@ -1192,8 +1199,8 @@ namespace Console2Desk
                 // If it is visible, it makes it invisible
                 // Hides the buttons
                 UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
-                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton,special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
                 // Enable the desktop button
                 UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
@@ -1214,7 +1221,8 @@ namespace Console2Desk
                 msStoreButton.Visible = true;
                 special_Niewbie_ButtonHOB.Visible = true;
                 special_Niewbie_ButtonRestoreBoost.Visible = true;
-
+                buttonTempDM.Visible = true;
+                buttonHiberSleep.Visible = true;
 
                 desktopButton1.Enabled = false;
                 desktopButton1.BackColor = Color.FromArgb(40, 40, 40);
@@ -1245,7 +1253,7 @@ namespace Console2Desk
             // Hides the buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
                     buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1351,7 +1359,7 @@ namespace Console2Desk
             catch (Exception ex)
             {
                 // Handle any exceptions
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
         }
 
@@ -1392,7 +1400,7 @@ namespace Console2Desk
             // Hidesbuttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
                     buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1409,7 +1417,7 @@ namespace Console2Desk
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
                     buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1422,7 +1430,7 @@ namespace Console2Desk
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
                     buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1446,7 +1454,7 @@ namespace Console2Desk
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
                     buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
@@ -1464,12 +1472,68 @@ namespace Console2Desk
             // Hides buttons
             UISettingsControlManager.HideButtons(buttonOpenFileExplorer, buttonRestorePauseUpgrade, touchScreenEnDbButton,
                     buttonXinputTest, buttonChangeConsoleSettings, msStoreButton, special_Niewbie_ButtonHOB,
-                    special_Niewbie_ButtonRestoreBoost);
+                    special_Niewbie_ButtonRestoreBoost, buttonTempDM, buttonHiberSleep);
 
             // Enable the desktop button
             UISettingsControlManager.EnableDesktopButton(desktopButton1, consoleButton1, pictureBoxAMDadrenaline,
                 pictureBoxResetTouchKeyboard, pictureBoxAMDadrenalinePress, pictureBoxRealTime_ON, pictureBox4, pictureBoxRealTime_OFF,
                 pictureBoxWifi, buttonMiniConsoleWindowNew);
+        }
+
+        private void special_Niewbie_ButtonHOB_Click(object sender, EventArgs e)
+        {
+            // Define the path of the program to launch
+            string exePath = @"C:\Program Files\Console2Desk\HOB\HandleOS_Benchmark.exe";
+
+            try
+            {
+                // Start the process
+                Process process = new Process();
+                process.StartInfo.FileName = exePath;
+                process.StartInfo.UseShellExecute = true;
+                process.StartInfo.CreateNoWindow = false;
+                process.Start();
+
+                // Hide the main window
+                this.Hide();
+
+                // Wait for the process to finish
+                process.WaitForExit();
+
+                // Show the main window again
+                this.Show();
+                this.BringToFront(); //Brings the main window to the front
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void buttonTempDM_Click(object sender, EventArgs e)
+        {
+            // Minimize the form at the start
+            this.WindowState = FormWindowState.Minimized;
+
+            // Disabilitare Form1 per impedire l'interazione dell'utente
+            this.Enabled = false;
+
+            ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+
+            Task.Delay(500).Wait();
+            // Call the method to handle desktop button click
+            TempDM.CodeForTouchTempDM(DependencyContainer.MessagesBoxImplementation, buttonTempDM, explorerPath);
+
+            Task.Delay(1000).Wait();
+            ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+
+            // Disabilitare Form1 per impedire l'interazione dell'utente
+            this.Enabled = true;
+
+            Task.Delay(500).Wait();
+            // Restore the form to its normal state
+            this.WindowState = FormWindowState.Normal;
         }
 
         #endregion
@@ -1553,7 +1617,7 @@ namespace Console2Desk
             {
                 // Disattiva il touchscreen impostando la chiave di registro
                 ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
-                
+
             }
             // Se il risultato è Cancel, non fare nulla
             pictureBoxResetTouchKeyboardPress.Visible = false;
@@ -1575,62 +1639,69 @@ namespace Console2Desk
             WindowsDefender.OpenWindowsDefender(DependencyContainer.MessagesBoxImplementation);
         }
 
-        private void pictureBoxRealTime_ON_Click(object sender, EventArgs e)
+        private async void pictureBoxRealTime_ON_Click(object sender, EventArgs e)
         {
-            DependencyContainer.MessagesBoxImplementation.ShowMessage("This Windows Defender Real-Time Protection Auto-Enable button only works if Temper-Protection is manually disabled. " +
-                "Please make sure Temper-Protection is disabled before using these auto buttons." +
-                "\nOtherwise, enabling Real-Time Protection will not succeed.", "Attention", MessageBoxButtons.OK);
+            // Controlla lo stato di 'IsTamperProtected' prima di eseguire qualsiasi azione
+            bool isTamperProtected = IsTamperProtected_Check.CheckIsTamperProtected();
 
-            Cursor.Current = Cursors.WaitCursor;
-
-            WindowsDefender.EnableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
-            DependencyContainer.MessagesBoxImplementation.ShowMessage("Windows Defender Real-Time Protection enabled successfully.", "Information", MessageBoxButtons.OK);
-
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void pictureBoxRealTime_OFF_Click(object sender, EventArgs e)
-        {
-            DependencyContainer.MessagesBoxImplementation.ShowMessage("This Windows Defender Real-Time Protection Auto-Disable button only works if Temper-Protection is manually disabled. " +
-                "Please make sure Temper-Protection is disabled before using these auto buttons." +
-                "\nOtherwise, disabling Real-Time Protection will not succeed.", "Attention", MessageBoxButtons.OK);
-
-            Cursor.Current = Cursors.WaitCursor;
-
-            WindowsDefender.DisableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
-            DependencyContainer.MessagesBoxImplementation.ShowMessage("Windows Defender Real-Time Protection disabled successfully.", "Information", MessageBoxButtons.OK);
-
-            Cursor.Current = Cursors.Default;
-        }
-
-        private void special_Niewbie_ButtonHOB_Click(object sender, EventArgs e)
-        {
-            // Define the path of the program to launch
-            string exePath = @"C:\Program Files\Console2Desk\HOB\HandleOS_Benchmark.exe";
-
-            try
+            if (isTamperProtected)
             {
-                // Start the process
-                Process process = new Process();
-                process.StartInfo.FileName = exePath;
-                process.StartInfo.UseShellExecute = true;
-                process.StartInfo.CreateNoWindow = false;
-                process.Start();
-
-                // Hide the main window
-                this.Hide();
-
-                // Wait for the process to finish
-                process.WaitForExit();
-
-                // Show the main window again
-                this.Show();
-                this.BringToFront(); //Brings the main window to the front
+                // Mostra il messaggio e non proseguire se Tamper Protection è attivo
+                DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                    "This Windows Defender Real-Time Protection Auto-Disable button only works if Tamper Protection is manually disabled. " +
+                    "Please make sure Tamper Protection is disabled before using these auto buttons." +
+                    "\nOtherwise, disabling Real-Time Protection will not succeed.",
+                    "Attention",
+                    MessageBoxButtons.OK);
             }
-            catch (Exception ex)
+            else
             {
-                // Handle any exceptions
-                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
+                // Tamper Protection è disabilitato, procedi con la disabilitazione della protezione in tempo reale
+                Cursor.Current = Cursors.WaitCursor;
+                WindowsDefender.DisableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                    "Windows Defender Real-Time Protection disabled successfully.",
+                    "Information",
+                    MessageBoxButtons.OK);
+
+                // Nascondi il pulsante ON e mostra il pulsante OFF
+                pictureBoxRealTime_ON.Visible = false;
+                pictureBoxRealTime_OFF.Visible = true;
+
+                Cursor.Current = Cursors.Default;
+            }
+        }
+
+        private async void pictureBoxRealTime_OFF_Click(object sender, EventArgs e)
+        {
+            // Controlla lo stato di 'IsTamperProtected' prima di eseguire qualsiasi azione
+            bool isTamperProtected = IsTamperProtected_Check.CheckIsTamperProtected();
+
+            if (isTamperProtected)
+            {
+                // Mostra il messaggio e non proseguire se Tamper Protection è attivo
+                DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                    "This Windows Defender Real-Time Protection Auto-Disable button only works if Tamper Protection is manually disabled. " +
+                    "Please make sure Tamper Protection is disabled before using these auto buttons." +
+                    "\nOtherwise, disabling Real-Time Protection will not succeed.",
+                    "Attention",
+                    MessageBoxButtons.OK);
+            }
+            else
+            {
+                // Tamper Protection è disabilitato, procedi con l'abilitazione della protezione in tempo reale
+                Cursor.Current = Cursors.WaitCursor;
+                WindowsDefender.EnableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
+                DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                    "Windows Defender Real-Time Protection enabled successfully.",
+                    "Information",
+                    MessageBoxButtons.OK);
+
+                // Nascondi il pulsante OFF e mostra il pulsante ON
+                pictureBoxRealTime_OFF.Visible = false;
+                pictureBoxRealTime_ON.Visible = true;
+
+                Cursor.Current = Cursors.Default;
             }
         }
 
@@ -1705,6 +1776,84 @@ namespace Console2Desk
                         timerGifTweakParadise.StartTimerReverseForPictureTweakParadise(pictureBoxTweakParadise);
                     };
                     formTweakParadise.ShowDialog();
+                    this.BringToFront();
+                }
+                else
+                {
+                    DependencyContainer.MessagesBoxImplementation.ShowMessage(
+                        "This section is exclusive to HandleOS users. This tool is specifically designed to maintain HandleOS optimized, and these changes are not recommended for a regular system!",
+                        "Exclusive Section",
+                        MessageBoxButtons.OK
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+
+                DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
+            }
+        }
+
+        private void dropDownMenu_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+        private void specialButtonDropDownMenu_Click(object sender, EventArgs e)
+        {
+            dropDownMenu.Show(specialButtonDropDownMenu, specialButtonDropDownMenu.Width + 2, -186); //-276 with Sleep Mode temporary not included
+        }
+
+        private void turnOffScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PowerManagement.TurnOffScreen();
+            /*if (MessageBox.Show("Vuoi spegnere lo schermo?", "Conferma", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                
+            }*/
+        }
+
+        private void sleepModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //PowerManagement.SetSleepMode();
+            /*if (MessageBox.Show("Vuoi mettere il computer in modalità sleep?", "Conferma", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                
+            }
+            */
+
+
+        }
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PowerManagement.RestartComputer();
+            /*if (MessageBox.Show("Vuoi riavviare il computer?", "Conferma", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                
+            }
+            */
+        }
+
+        private void powerOffToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PowerManagement.ShutdownComputer();
+            /*if (MessageBox.Show("Vuoi spegnere il computer?", "Conferma", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                
+            }
+            */
+        }
+
+        private void buttonHiberSleep_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Environment.UserName == "HandleOS")
+                {
+                    _isAboutBoxOpen = true;
+                    FormHiberSleep formHiberSleep = new FormHiberSleep(this, _topMostTimer);
+                    formHiberSleep.FormClosed += (s, args) => _isAboutBoxOpen = false;
+                    formHiberSleep.ShowDialog();
                     this.BringToFront();
                 }
                 else

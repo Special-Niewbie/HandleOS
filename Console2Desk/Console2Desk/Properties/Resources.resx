@@ -124,8 +124,14 @@
   <data name="controller1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\controller1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BackArrowWiFi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackArrowWiFi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HiberSleepStand48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HiberSleepStand48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HandleIconRestoreBoost" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HandleIconRestoreBoost.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,6 +142,9 @@
   <data name="Addon_IS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Addon_IS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HiberSleepStand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HiberSleepStand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FileExplorer_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileExplorer 48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,6 +153,9 @@
   </data>
   <data name="console2desk_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\console2desk_icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TweakParadiseIconClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TweakParadiseIconClosed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="NetworkLowLatency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NetworkLowLatency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,8 +166,8 @@
   <data name="green-check-mark-icon-56x56" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green-check-mark-icon-56x56.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MS_Store42x42" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MS_Store42x42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SignalGood" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalGood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Amd_Adrenaline70x70" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Amd_Adrenaline70x70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,8 +175,8 @@
   <data name="Handle_Icon_trans" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Handle_Icon_trans.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TweakParadiseIconOpened" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TweakParadiseIconOpened.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="IntegerScaling_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IntegerScaling_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vramPlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vramPlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +199,12 @@
   <data name="CoreIsolation_CFG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CoreIsolation_CFG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SleepScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SleepScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Hibernate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hibernate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Windows_ResDisplay_Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Windows_ResDisplay_Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,8 +220,11 @@
   <data name="PauseUpgrades48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PauseUpgrades48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="IntegerScaling_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IntegerScaling_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SignalVeryWeak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalVeryWeak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="show_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\show_password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="HandTouchKeyboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HandTouchKeyboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,11 +235,14 @@
   <data name="Gaming_Icon64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gaming_Icon64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="WASD_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WASD_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="steam48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\steam48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Defenter_Settings_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Defenter_Settings_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="HardwareAccelleration" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HardwareAccelleration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Settings_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,8 +250,8 @@
   <data name="Controller_List" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\sources\Controller_List.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Real_Time_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Real-Time_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ShutdownMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShutdownMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="controller3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\controller3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,6 +274,9 @@
   <data name="AMD" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AMD.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SignalWeak" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalWeak.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Low_Latency" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Low_Latency.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -259,17 +286,23 @@
   <data name="steam64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\steam64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="System_Devices" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\System_Devices.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="SignalStrong" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalStrong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignalStrongLock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalStrongLock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Microsoft" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Microsoft.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TweakParadiseIconClosed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TweakParadiseIconClosed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MS_Store42x42" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MS_Store42x42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paypal-donate-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paypal-donate-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VRR_OPTW" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VRR_OPTW.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Amd_Adrenaline64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Amd_Adrenaline64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,11 +316,14 @@
   <data name="LegionGoRes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LegionGoRes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SignalWeakLock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalWeakLock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TweakParadiseToOpen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TweakParadiseToOpen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="controller2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\controller2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Defenter_Settings_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Defenter_Settings_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_3ResLegion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3ResLegion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,11 +331,26 @@
   <data name="Console2Desk_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Console2Desk_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="touchscreen_Enabled48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\touchscreen_Enabled48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RDP64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RDP64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="System_Devices" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\System_Devices.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="INTEL" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\INTEL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="touchscreen_Enabled48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\touchscreen_Enabled48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Restart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Restart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Real_Time_ON" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Real-Time_ON.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="controller2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\controller2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Playnite48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Playnite48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -310,16 +361,28 @@
   <data name="AMDgpu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AMDgpu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TweakParadiseIconOpened" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TweakParadiseIconOpened.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SignalGoodLock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalGoodLock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="HandTouchKeyboard_Disabled" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HandTouchKeyboard_Disabled.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TweakParadiseToClose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TweakParadiseToClose.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SignalVeryWeakLock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SignalVeryWeakLock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="touchscreen_Disable48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\touchscreen_Disable48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WASD_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WASD_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ArrowCircleC2D2C" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrowCircleC2D2C.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PowerOff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PowerOff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

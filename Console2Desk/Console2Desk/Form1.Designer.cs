@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBoxIntegerScaling = new PictureBox();
             panel2 = new Panel();
+            buttonHiberSleep = new Special_Niewbie_Button();
+            buttonTempDM = new Special_Niewbie_Button();
+            specialButtonDropDownMenu = new Special_Niewbie_Button();
+            dropDownMenu = new DropdownMenu.Special_Niewbie_DropdownMenu(components);
+            turnOffScreenToolStripMenuItem = new ToolStripMenuItem();
+            restartToolStripMenuItem = new ToolStripMenuItem();
+            powerOffToolStripMenuItem = new ToolStripMenuItem();
             special_Niewbie_ButtonRestoreBoost = new Special_Niewbie_Button();
             special_Niewbie_ButtonHOB = new Special_Niewbie_Button();
             buttonMiniConsoleWindowNew = new Special_Niewbie_Button();
@@ -47,7 +55,6 @@
             labelOpenWDsettings = new Label();
             buttonInfo = new Button();
             pictureBox4 = new PictureBox();
-            pictureBoxRealTime_OFF = new PictureBox();
             pictureBoxRealTime_ON = new PictureBox();
             buttonAbout = new Button();
             pictureBoxAMDadrenalinePress = new PictureBox();
@@ -63,6 +70,7 @@
             pictureBox1610StockRes = new PictureBox();
             pictureBoxTweakParadise = new PictureBox();
             labelTweakParadise = new Label();
+            pictureBoxRealTime_OFF = new PictureBox();
             pictureBoxControllers = new PictureBox();
             buttonAllyUltimateRes = new Button();
             panelTitle = new Panel();
@@ -88,11 +96,11 @@
             button_IncreaseRAM_System = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxIntegerScaling).BeginInit();
             panel2.SuspendLayout();
+            dropDownMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboardPress).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboard).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_OFF).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_ON).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDadrenalinePress).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDadrenaline).BeginInit();
@@ -103,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1610StockRes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTweakParadise).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_OFF).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxControllers).BeginInit();
             panelTitle.SuspendLayout();
             panel1.SuspendLayout();
@@ -132,6 +141,9 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(40, 40, 40);
+            panel2.Controls.Add(buttonHiberSleep);
+            panel2.Controls.Add(buttonTempDM);
+            panel2.Controls.Add(specialButtonDropDownMenu);
             panel2.Controls.Add(special_Niewbie_ButtonRestoreBoost);
             panel2.Controls.Add(special_Niewbie_ButtonHOB);
             panel2.Controls.Add(buttonMiniConsoleWindowNew);
@@ -148,7 +160,6 @@
             panel2.Controls.Add(labelOpenWDsettings);
             panel2.Controls.Add(buttonInfo);
             panel2.Controls.Add(pictureBox4);
-            panel2.Controls.Add(pictureBoxRealTime_OFF);
             panel2.Controls.Add(pictureBoxRealTime_ON);
             panel2.Controls.Add(buttonAbout);
             panel2.Controls.Add(pictureBoxAMDadrenalinePress);
@@ -165,6 +176,7 @@
             panel2.Controls.Add(pictureBox1610StockRes);
             panel2.Controls.Add(pictureBoxTweakParadise);
             panel2.Controls.Add(labelTweakParadise);
+            panel2.Controls.Add(pictureBoxRealTime_OFF);
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 3, 3, 10);
@@ -172,6 +184,116 @@
             panel2.Size = new Size(784, 465);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // buttonHiberSleep
+            // 
+            buttonHiberSleep.BackColor = Color.FromArgb(50, 50, 50);
+            buttonHiberSleep.BorderColor = Color.FromArgb(227, 227, 227);
+            buttonHiberSleep.BorderRadius = 20;
+            buttonHiberSleep.BorderSize = 1;
+            buttonHiberSleep.FlatAppearance.BorderSize = 0;
+            buttonHiberSleep.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonHiberSleep.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
+            buttonHiberSleep.FlatStyle = FlatStyle.Flat;
+            buttonHiberSleep.ForeColor = Color.White;
+            buttonHiberSleep.HoverColor = Color.MediumSlateBlue;
+            buttonHiberSleep.Image = Properties.Resources.HiberSleepStand48;
+            buttonHiberSleep.Location = new Point(462, 135);
+            buttonHiberSleep.Name = "buttonHiberSleep";
+            buttonHiberSleep.RightToLeft = RightToLeft.No;
+            buttonHiberSleep.Size = new Size(200, 60);
+            buttonHiberSleep.TabIndex = 47;
+            buttonHiberSleep.Text = "   HandleOS\r\n   Hibernation / Sleep\r\n   / Standby";
+            buttonHiberSleep.TextColor = Color.White;
+            buttonHiberSleep.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonHiberSleep.UseVisualStyleBackColor = false;
+            buttonHiberSleep.Visible = false;
+            buttonHiberSleep.Click += buttonHiberSleep_Click;
+            // 
+            // buttonTempDM
+            // 
+            buttonTempDM.BackColor = Color.FromArgb(50, 50, 50);
+            buttonTempDM.BorderColor = Color.FromArgb(227, 227, 227);
+            buttonTempDM.BorderRadius = 20;
+            buttonTempDM.BorderSize = 1;
+            buttonTempDM.FlatAppearance.BorderSize = 0;
+            buttonTempDM.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonTempDM.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
+            buttonTempDM.FlatStyle = FlatStyle.Flat;
+            buttonTempDM.ForeColor = Color.White;
+            buttonTempDM.HoverColor = Color.MediumSlateBlue;
+            buttonTempDM.Image = Properties.Resources.ArrowCircleC2D2C;
+            buttonTempDM.Location = new Point(462, 69);
+            buttonTempDM.Name = "buttonTempDM";
+            buttonTempDM.RightToLeft = RightToLeft.No;
+            buttonTempDM.Size = new Size(200, 60);
+            buttonTempDM.TabIndex = 46;
+            buttonTempDM.Text = "      Temporary         \r\n        Desktop Mode      ";
+            buttonTempDM.TextAlign = ContentAlignment.MiddleRight;
+            buttonTempDM.TextColor = Color.White;
+            buttonTempDM.TextImageRelation = TextImageRelation.ImageBeforeText;
+            buttonTempDM.UseVisualStyleBackColor = false;
+            buttonTempDM.Visible = false;
+            buttonTempDM.Click += buttonTempDM_Click;
+            // 
+            // specialButtonDropDownMenu
+            // 
+            specialButtonDropDownMenu.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            specialButtonDropDownMenu.BackColor = Color.FromArgb(50, 50, 50);
+            specialButtonDropDownMenu.BorderColor = Color.FromArgb(227, 227, 227);
+            specialButtonDropDownMenu.BorderRadius = 18;
+            specialButtonDropDownMenu.BorderSize = 1;
+            specialButtonDropDownMenu.ContextMenuStrip = dropDownMenu;
+            specialButtonDropDownMenu.FlatAppearance.BorderSize = 0;
+            specialButtonDropDownMenu.FlatStyle = FlatStyle.Flat;
+            specialButtonDropDownMenu.ForeColor = Color.White;
+            specialButtonDropDownMenu.HoverColor = Color.MediumSlateBlue;
+            specialButtonDropDownMenu.Image = Properties.Resources.ShutdownMenu;
+            specialButtonDropDownMenu.Location = new Point(698, 401);
+            specialButtonDropDownMenu.Name = "specialButtonDropDownMenu";
+            specialButtonDropDownMenu.Size = new Size(54, 46);
+            specialButtonDropDownMenu.TabIndex = 45;
+            specialButtonDropDownMenu.TextColor = Color.White;
+            specialButtonDropDownMenu.UseVisualStyleBackColor = false;
+            specialButtonDropDownMenu.Click += specialButtonDropDownMenu_Click;
+            // 
+            // dropDownMenu
+            // 
+            dropDownMenu.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dropDownMenu.ImageScalingSize = new Size(32, 32);
+            dropDownMenu.IsMainMenu = true;
+            dropDownMenu.Items.AddRange(new ToolStripItem[] { turnOffScreenToolStripMenuItem, restartToolStripMenuItem, powerOffToolStripMenuItem });
+            dropDownMenu.MenuItemHeight = 80;
+            dropDownMenu.MenuItemTextColor = SystemColors.ControlLightLight;
+            dropDownMenu.Name = "dropDownMenu";
+            dropDownMenu.PrimaryColor = Color.MediumSlateBlue;
+            dropDownMenu.Size = new Size(197, 140);
+            dropDownMenu.Opening += dropDownMenu_Opening;
+            // 
+            // turnOffScreenToolStripMenuItem
+            // 
+            turnOffScreenToolStripMenuItem.BackColor = SystemColors.Control;
+            turnOffScreenToolStripMenuItem.Image = Properties.Resources.SleepScreen;
+            turnOffScreenToolStripMenuItem.Name = "turnOffScreenToolStripMenuItem";
+            turnOffScreenToolStripMenuItem.Size = new Size(196, 38);
+            turnOffScreenToolStripMenuItem.Text = "Turn Off Screen";
+            turnOffScreenToolStripMenuItem.Click += turnOffScreenToolStripMenuItem_Click;
+            // 
+            // restartToolStripMenuItem
+            // 
+            restartToolStripMenuItem.Image = Properties.Resources.Restart;
+            restartToolStripMenuItem.Name = "restartToolStripMenuItem";
+            restartToolStripMenuItem.Size = new Size(196, 38);
+            restartToolStripMenuItem.Text = "Restart";
+            restartToolStripMenuItem.Click += restartToolStripMenuItem_Click;
+            // 
+            // powerOffToolStripMenuItem
+            // 
+            powerOffToolStripMenuItem.Image = Properties.Resources.PowerOff;
+            powerOffToolStripMenuItem.Name = "powerOffToolStripMenuItem";
+            powerOffToolStripMenuItem.Size = new Size(196, 38);
+            powerOffToolStripMenuItem.Text = "Power Off";
+            powerOffToolStripMenuItem.Click += powerOffToolStripMenuItem_Click;
             // 
             // special_Niewbie_ButtonRestoreBoost
             // 
@@ -239,7 +361,7 @@
             buttonMiniConsoleWindowNew.ForeColor = Color.White;
             buttonMiniConsoleWindowNew.HoverColor = Color.MediumSlateBlue;
             buttonMiniConsoleWindowNew.Image = Properties.Resources.Resize_icon24x24;
-            buttonMiniConsoleWindowNew.Location = new Point(233, 398);
+            buttonMiniConsoleWindowNew.Location = new Point(233, 400);
             buttonMiniConsoleWindowNew.Name = "buttonMiniConsoleWindowNew";
             buttonMiniConsoleWindowNew.RightToLeft = RightToLeft.No;
             buttonMiniConsoleWindowNew.Size = new Size(135, 45);
@@ -497,29 +619,15 @@
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click;
             // 
-            // pictureBoxRealTime_OFF
-            // 
-            pictureBoxRealTime_OFF.Anchor = AnchorStyles.Bottom;
-            pictureBoxRealTime_OFF.BackColor = Color.FromArgb(40, 40, 40);
-            pictureBoxRealTime_OFF.Cursor = Cursors.Hand;
-            pictureBoxRealTime_OFF.Image = Properties.Resources.Real_Time_OFF;
-            pictureBoxRealTime_OFF.Location = new Point(554, 394);
-            pictureBoxRealTime_OFF.Name = "pictureBoxRealTime_OFF";
-            pictureBoxRealTime_OFF.Size = new Size(42, 49);
-            pictureBoxRealTime_OFF.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxRealTime_OFF.TabIndex = 20;
-            pictureBoxRealTime_OFF.TabStop = false;
-            pictureBoxRealTime_OFF.Click += pictureBoxRealTime_OFF_Click;
-            // 
             // pictureBoxRealTime_ON
             // 
             pictureBoxRealTime_ON.Anchor = AnchorStyles.Bottom;
             pictureBoxRealTime_ON.BackColor = Color.FromArgb(40, 40, 40);
             pictureBoxRealTime_ON.Cursor = Cursors.Hand;
             pictureBoxRealTime_ON.Image = Properties.Resources.Real_Time_ON;
-            pictureBoxRealTime_ON.Location = new Point(395, 394);
+            pictureBoxRealTime_ON.Location = new Point(381, 399);
             pictureBoxRealTime_ON.Name = "pictureBoxRealTime_ON";
-            pictureBoxRealTime_ON.Size = new Size(42, 49);
+            pictureBoxRealTime_ON.Size = new Size(50, 50);
             pictureBoxRealTime_ON.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxRealTime_ON.TabIndex = 19;
             pictureBoxRealTime_ON.TabStop = false;
@@ -546,7 +654,7 @@
             pictureBoxAMDadrenalinePress.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBoxAMDadrenalinePress.Cursor = Cursors.Hand;
             pictureBoxAMDadrenalinePress.Image = Properties.Resources.Amd_Adrenaline70x70;
-            pictureBoxAMDadrenalinePress.Location = new Point(627, 401);
+            pictureBoxAMDadrenalinePress.Location = new Point(571, 401);
             pictureBoxAMDadrenalinePress.Name = "pictureBoxAMDadrenalinePress";
             pictureBoxAMDadrenalinePress.Size = new Size(41, 44);
             pictureBoxAMDadrenalinePress.SizeMode = PictureBoxSizeMode.Zoom;
@@ -560,7 +668,7 @@
             pictureBoxAMDadrenaline.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBoxAMDadrenaline.Cursor = Cursors.Hand;
             pictureBoxAMDadrenaline.Image = Properties.Resources.Amd_Adrenaline70x70;
-            pictureBoxAMDadrenaline.Location = new Point(622, 397);
+            pictureBoxAMDadrenaline.Location = new Point(566, 397);
             pictureBoxAMDadrenaline.Name = "pictureBoxAMDadrenaline";
             pictureBoxAMDadrenaline.Size = new Size(51, 54);
             pictureBoxAMDadrenaline.SizeMode = PictureBoxSizeMode.Zoom;
@@ -573,7 +681,7 @@
             pictureBoxWifi.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             pictureBoxWifi.Cursor = Cursors.Hand;
             pictureBoxWifi.Image = Properties.Resources.Wifi_icon;
-            pictureBoxWifi.Location = new Point(698, 400);
+            pictureBoxWifi.Location = new Point(628, 400);
             pictureBoxWifi.Name = "pictureBoxWifi";
             pictureBoxWifi.Size = new Size(50, 48);
             pictureBoxWifi.SizeMode = PictureBoxSizeMode.Zoom;
@@ -708,9 +816,9 @@
             // 
             pictureBoxTweakParadise.Cursor = Cursors.Hand;
             pictureBoxTweakParadise.Image = Properties.Resources.TweakParadiseIconClosed;
-            pictureBoxTweakParadise.Location = new Point(304, 19);
+            pictureBoxTweakParadise.Location = new Point(304, 18);
             pictureBoxTweakParadise.Name = "pictureBoxTweakParadise";
-            pictureBoxTweakParadise.Size = new Size(50, 34);
+            pictureBoxTweakParadise.Size = new Size(54, 38);
             pictureBoxTweakParadise.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxTweakParadise.TabIndex = 42;
             pictureBoxTweakParadise.TabStop = false;
@@ -720,11 +828,25 @@
             // 
             labelTweakParadise.AutoSize = true;
             labelTweakParadise.ForeColor = SystemColors.ControlLight;
-            labelTweakParadise.Location = new Point(284, 0);
+            labelTweakParadise.Location = new Point(286, 0);
             labelTweakParadise.Name = "labelTweakParadise";
             labelTweakParadise.Size = new Size(86, 15);
             labelTweakParadise.TabIndex = 43;
             labelTweakParadise.Text = "Tweak Paradise";
+            // 
+            // pictureBoxRealTime_OFF
+            // 
+            pictureBoxRealTime_OFF.Anchor = AnchorStyles.Bottom;
+            pictureBoxRealTime_OFF.BackColor = Color.FromArgb(40, 40, 40);
+            pictureBoxRealTime_OFF.Cursor = Cursors.Hand;
+            pictureBoxRealTime_OFF.Image = Properties.Resources.Real_Time_OFF;
+            pictureBoxRealTime_OFF.Location = new Point(381, 399);
+            pictureBoxRealTime_OFF.Name = "pictureBoxRealTime_OFF";
+            pictureBoxRealTime_OFF.Size = new Size(50, 50);
+            pictureBoxRealTime_OFF.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxRealTime_OFF.TabIndex = 20;
+            pictureBoxRealTime_OFF.TabStop = false;
+            pictureBoxRealTime_OFF.Click += pictureBoxRealTime_OFF_Click;
             // 
             // pictureBoxControllers
             // 
@@ -1067,11 +1189,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxIntegerScaling).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            dropDownMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboardPress).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboard).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSettings).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_OFF).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_ON).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDadrenalinePress).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDadrenaline).EndInit();
@@ -1082,6 +1204,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxStockRes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1610StockRes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTweakParadise).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRealTime_OFF).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxControllers).EndInit();
             panelTitle.ResumeLayout(false);
             panelTitle.PerformLayout();
@@ -1157,5 +1280,12 @@
         private Button buttonInfo;
         private PictureBox pictureBoxTweakParadise;
         private Label labelTweakParadise;
+        private DropdownMenu.Special_Niewbie_DropdownMenu dropDownMenu;
+        private ToolStripMenuItem turnOffScreenToolStripMenuItem;
+        private ToolStripMenuItem powerOffToolStripMenuItem;
+        private Special_Niewbie_Button specialButtonDropDownMenu;
+        private ToolStripMenuItem restartToolStripMenuItem;
+        private Special_Niewbie_Button buttonTempDM;
+        private Special_Niewbie_Button buttonHiberSleep;
     }
 }

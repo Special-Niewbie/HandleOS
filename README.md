@@ -10,11 +10,9 @@
     </td>
   </tr>
 </table>
-🚧 Page Under Maintenance to update all the info of version 3.8...🚧
 
 
-
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TB.md" style="color: #2079C8;">Tweak Paradise</a>
 
 
 
@@ -24,8 +22,9 @@
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
-    <img height="240" src="Git_assets/c2d_main_v.3.1.0.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/c2d_main_v.3.8.0.png" style="margin-left: auto;"/>
 </div>
+
 
 
 
@@ -69,9 +68,13 @@ My goal is to create a community of enthusiasts eager to get the most out of the
 
 You can find instructions and the ISO here, or by selecting the tab above:
 
-<a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> 
+<img width=32px src="Git_assets/disc.ico"><a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> 
 
 
+
+
+
+⚠️***Only for Steam Deck Users follow this:*** please, take a look at this <a href="steam_deck_guide.md" style="color: #2079C8;">Steam Deck Guide</a> created (and thanks) by @AllevatoreAnonimo. Valve hasn't optimized the Steam Deck drivers for Windows (seems to be on purpose!), which cause some challenges for users trying to make the switch From SteamOS to Windows. This guide, can help you navigate the process / troubleshooting and avoid some of the frustration that comes with using Windows on Steam Deck.
 
 ## Donation
 

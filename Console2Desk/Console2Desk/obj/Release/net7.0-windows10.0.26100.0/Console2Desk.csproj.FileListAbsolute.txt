@@ -1,0 +1,1 @@
+C:\Progetti_in_C\C#\Console2Desk\Console2Desk\obj\Release\net7.0-windows10.0.26100.0\Console2Desk.csproj.AssemblyReference.cache

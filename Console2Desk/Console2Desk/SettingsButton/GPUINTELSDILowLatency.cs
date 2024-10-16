@@ -1,10 +1,5 @@
 ﻿using Console2Desk.ToggleSwitchDev;
 using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Console2Desk.SettingsButton
 {
@@ -19,6 +14,7 @@ namespace Console2Desk.SettingsButton
                 {
                     // Controlla lo stato attuale del toggle switch
                     bool isOn = controliNTELgpuSDI.IsOn;
+                    bool foundIntelGPU = false;
 
                     // Percorso della chiave di registro per il PCI
                     string pciPath = @"SYSTEM\ControlSet001\Enum\PCI";
@@ -26,7 +22,7 @@ namespace Console2Desk.SettingsButton
                     {
                         if (pciKey == null)
                         {
-                            throw new Exception("Model of GPU not supporte, please contact the Developper to add your GPU model.");
+                            throw new Exception("Unable to access PCI registry key.");
                         }
 
                         // Itera su ogni sottocartella del dispositivo PCI
@@ -47,53 +43,16 @@ namespace Console2Desk.SettingsButton
 
                                         if (!string.IsNullOrEmpty(deviceDesc) && deviceDesc.Contains("Intel(R) Iris(R) Xe"))
                                         {
-                                            // Se si tratta di una GPU AMD Radeon
+                                            foundIntelGPU = true;
+
+                                            // Se si tratta di una GPU Intel Iris Xe
                                             if (isOn)
                                             {
-                                                // Abilita la bassa latenza
-                                                using (RegistryKey messageSignaledInterruptPropertiesKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\MessageSignaledInterruptProperties", true))
-                                                {
-                                                    if (messageSignaledInterruptPropertiesKey != null)
-                                                    {
-                                                        messageSignaledInterruptPropertiesKey.SetValue("MSISupported", 1, RegistryValueKind.DWord);
-                                                        //Console.WriteLine($"Applied MSISupported=1 for {deviceDesc}");
-                                                    }
-                                                }
-
-                                                using (RegistryKey affinityPolicyKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\Affinity Policy", true))
-                                                {
-                                                    if (affinityPolicyKey != null)
-                                                    {
-                                                        affinityPolicyKey.SetValue("DevicePriority", 2, RegistryValueKind.DWord);
-                                                        //Console.WriteLine($"Applied DevicePriority=2 for {deviceDesc}");
-                                                    }
-                                                }
+                                                EnableLowLatency(subKey);
                                             }
                                             else
                                             {
-                                                // Disabilita la bassa latenza
-                                                using (RegistryKey messageSignaledInterruptPropertiesKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\MessageSignaledInterruptProperties", true))
-                                                {
-                                                    if (messageSignaledInterruptPropertiesKey != null)
-                                                    {
-                                                        messageSignaledInterruptPropertiesKey.SetValue("MSISupported", 0, RegistryValueKind.DWord);
-                                                        //Console.WriteLine($"Set MSISupported=0 for {deviceDesc}");
-                                                    }
-                                                }
-
-                                                using (RegistryKey affinityPolicyKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\Affinity Policy", true))
-                                                {
-                                                    if (affinityPolicyKey != null)
-                                                    {
-                                                        affinityPolicyKey.DeleteValue("DevicePriority", false);
-                                                        //Console.WriteLine($"Deleted DevicePriority for {deviceDesc}");
-                                                    }
-                                                }
-                                                // Imposta il toggle su OFF dopo aver disabilitato la modalità bassa latenza
-                                                controliNTELgpuSDI.Invoke((MethodInvoker)delegate
-                                                {
-                                                    controliNTELgpuSDI.IsOn = false;
-                                                });
+                                                DisableLowLatency(subKey);
                                             }
                                         }
                                     }
@@ -102,24 +61,33 @@ namespace Console2Desk.SettingsButton
                         }
                     }
 
-                    // Mostra un messaggio di conferma se il toggle è su OFF
-                    if (!isOn)
+                    // Aggiorna l'UI nel thread principale
+                    controliNTELgpuSDI.Invoke((MethodInvoker)delegate
                     {
-                        controliNTELgpuSDI.Invoke((MethodInvoker)delegate
+                        if (!foundIntelGPU)
                         {
+                            controliNTELgpuSDI.IsOn = false;
                             messagesBoxImplementation.ShowMessage(
-                                "GPU low latency mode has been disabled successfully.",
+                                "Model of GPU not supported, please contact the Developer to add your GPU model.",
                                 "Information",
                                 MessageBoxButtons.OK);
-                        });
-                    }
-
+                        }
+                        else
+                        {
+                            controliNTELgpuSDI.IsOn = isOn;
+                            string message = isOn
+                                ? "GPU low latency mode has been enabled successfully."
+                                : "GPU low latency mode has been disabled successfully.";
+                            messagesBoxImplementation.ShowMessage(message, "Information", MessageBoxButtons.OK);
+                        }
+                    });
                 }
                 catch (Exception ex)
                 {
                     // Mostra un messaggio di errore nel thread principale
                     controliNTELgpuSDI.Invoke((MethodInvoker)delegate
                     {
+                        controliNTELgpuSDI.IsOn = false;
                         messagesBoxImplementation.ShowMessage($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK);
                     });
                 }
@@ -127,6 +95,44 @@ namespace Console2Desk.SettingsButton
 
             // Avvia il thread
             toggleThread.Start();
+        }
+
+        private static void EnableLowLatency(RegistryKey subKey)
+        {
+            using (RegistryKey messageSignaledInterruptPropertiesKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\MessageSignaledInterruptProperties", true))
+            {
+                if (messageSignaledInterruptPropertiesKey != null)
+                {
+                    messageSignaledInterruptPropertiesKey.SetValue("MSISupported", 1, RegistryValueKind.DWord);
+                }
+            }
+
+            using (RegistryKey affinityPolicyKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\Affinity Policy", true))
+            {
+                if (affinityPolicyKey != null)
+                {
+                    affinityPolicyKey.SetValue("DevicePriority", 2, RegistryValueKind.DWord);
+                }
+            }
+        }
+
+        private static void DisableLowLatency(RegistryKey subKey)
+        {
+            using (RegistryKey messageSignaledInterruptPropertiesKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\MessageSignaledInterruptProperties", true))
+            {
+                if (messageSignaledInterruptPropertiesKey != null)
+                {
+                    messageSignaledInterruptPropertiesKey.SetValue("MSISupported", 0, RegistryValueKind.DWord);
+                }
+            }
+
+            using (RegistryKey affinityPolicyKey = subKey.OpenSubKey(@"Device Parameters\Interrupt Management\Affinity Policy", true))
+            {
+                if (affinityPolicyKey != null)
+                {
+                    affinityPolicyKey.DeleteValue("DevicePriority", false);
+                }
+            }
         }
     }
 }

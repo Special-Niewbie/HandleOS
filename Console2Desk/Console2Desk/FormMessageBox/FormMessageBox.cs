@@ -154,7 +154,7 @@ namespace Console2Desk.FormMessageBox
                 }
             }
 
-            MessageBox.Show("Services have been restored.");
+            DependencyContainer.MessagesBoxImplementation.ShowMessage("Services have been restored.", "Information", MessageBoxButtons.OK);
             listBoxFormMessage.Items.Clear();
             CheckServicesStartupType(); // Reload the list of services
         }
@@ -329,7 +329,7 @@ namespace Console2Desk.FormMessageBox
                     {
                         // Console.WriteLine("Il servizio WlanSvc è già in esecuzione.");
                     }
-                    MessageBox.Show("WiFi Services have been restored.");
+                    DependencyContainer.MessagesBoxImplementation.ShowMessage("WiFi Services have been restored.", "Information", MessageBoxButtons.OK);
                     CheckServicesStartupType();
                 }
                 catch (Exception ex)

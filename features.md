@@ -1,4 +1,4 @@
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TB.md" style="color: #2079C8;">Tweak Paradise</a>
 
 
 
@@ -13,11 +13,12 @@ This is where `Console2Desk` and its companion `HotKeys4Console2Desk` come into 
 
 
 <div style="text-align: center;">
-  <h3><strong>Console2Desk v3.1.0</strong></h3>
+  <h3><strong>Console2Desk v3.8.0</strong></h3>
 </div>
 <div align="center">  
-    <img height="420" src="Git_assets/features/c2d_main_v3.1.0.png"/>
+    <img height="420" src="Git_assets/features/c2d_main_v3.8.0.png"/>
 </div>
+
 
 
 
@@ -55,7 +56,16 @@ This is where `Console2Desk` and its companion `HotKeys4Console2Desk` come into 
 ### 2. Settings Menu
 Button to open the Settings Menu, which will be discussed later below.
 
-### 3. **Fix Touch Keyboard**:
+### 3. **Tweak Paradise**:
+Starting from ***C2D ver 3.8.0***, a new button has been introduced with a dedicated section for HandleOS users called `Tweak Paradise`. This is where we'll push the hardware to its limits, offering an array of switches and options to optimize performance (more switches will be added in future updates).
+
+For more details on the available switches, please visit below page:
+
+<a href="TP.md" style="color: #2079C8;">Tweak Paradise</a>.
+
+
+
+### 4. **Fix Touch Keyboard**:
 
 If you turn on your Handled/PC and for some reason frequently switch few times between `Desktop Mode` and `Console Mode` - this happens in quick succession - Windows may sometimes encounter a bug that causes the Touch Keyboard to pop up every time you interact with the system.
 
@@ -72,55 +82,86 @@ The Fix Touch Keyboard button helps resolve this issue by resetting the `Touch K
 
 
 
-### 4. Info Button
+### 5. Info Button
 
 The Info button will display a window, as shown in the image below, indicating the Mouse/Keyboard commands that your game controller takes over while Console2Desk is active. From version 3.0.0 C2D it supports up to 4 Controllers simultaneously to get mouse and Keyboard behaviour .This feature helps users navigate seamlessly without needing to use a mouse or keyboard, making it easier to control the system purely with a game controller. 
 
 **If you need to browse through folders or perform various operations in system menus, it's recommended to keep C2D minimized during these tasks, as leaving the window normal may interfere with smooth navigation in the system.**
-
-
 <img height="220" src="Git_assets/features/InfoC2D.png"/>
 
 
 
-### 5. About
+### 6. About
 
 <img height="220" src="Git_assets/features/c2desk_about.png"/> 
 Button `About` to check the software version or click the icon to visit my account with some general info about C2D.
 
 
 
-### 6. Desktop Mode
+### 7. Desktop Mode
 
 Touch button `Desktop Mode` to switch from `Console Mode` to `Desktop Mode` in case you need to do something temporary or use your handheld or PC in the classic Windows Environment.
 
-### 7. Console Mode
+### 8. Console Mode
 Touch button `Console Mode` to switch from the classic Windows Environment to `Console Mode` for a complete console experience.
 
-### 8. Minimize/Restore/Open - Playnite/Steam Window
+### 9. Minimize/Restore/Open - Steam/Playnite
 
 From 3.1.0 version, now it maximizes, minimizes, and re-opens (if mistakenly closed) the pre-configured program for Console Mode.
 
+### 10. Dynamic ON/OFF Icon for Windows Defender
 
+Starting from ***C2D ver 3.8.0***, the Windows Defender dynamic icon can now be disabled in `Console Mode`, so there's no need to switch to `Desktop Mode`to turn it off anymore (as the previous C2D versions) .
 
-### 9. Windows Security Settings
+:information_source:*This working only if you have `Tamper Protection` - **disabled**:*
 
-The central icon opens `Windows Security Settings` only if you are in `Desktop Mode` in case you need Windows Defender settings. The other two icons, regardless of whether you are in `Desktop Mode` or `Console Mode`, temporarily activate or deactivate Windows Defender if you need the full potential of the console without antivirus background services in-game (temporary). These work only if you have `Tamper Protection` - **disabled**; Tamper Protection security it is the service that prevents software from turning off the antivirus. I intentionally made in this light way to disable only if you turn off manually the Tamper Protection, because I didn't want the C2D software to be too invasive in this regard.
+- *Tamper Protection security it is the service that prevents software from turning off the antivirus. I intentionally made in this light way to disable only if you turn off manually the Tamper Protection, because I didn't want the C2D software to be too invasive in this regard.*
 
-### 10. AMD Adrenalin
+### 11. Windows Security Settings
+
+The central icon opens `Windows Security Settings` only if you are in `Desktop Mode` in case you need Windows Defender settings. 
+
+### 12. AMD Adrenalin
 The `AMD Adrenalin` icon opens the `AMD Adrenalin Center` if you want to check or modify various settings for the current game while in `Console Mode`.
 
-### 11. Wifi Settings
+### 13. Wifi Settings
 
-Icon to facilitate touchscreen use, by opening the settings for available Wifi networks (only if you are in `Desktop Mode` for now).
+Starting from ***C2D ver 3.8.0***:
+
+1. **Desktop Mode**: As shown in the image below, this mode open the classic Windows Menu for managing WiFi networks.
+
+
+   <img height="220" src="Git_assets/features/WiFi_DesktopMode.png"/>
+
+   
+
+
+2. **Console Mode**: Redesigned from the ground up to work seamlessly within C2D, this mode offers a closely mirroring the Windows experience, and can be accessed directly from C2D. A preview is shown in the mage below.
+
+
+   <img height="220" src="Git_assets/features/WiFi_MenuConsoleMode.png"/>
+
+
+
+### 14. Power OFF Menu
+
+Starting from ***C2D ver 3.8.0***, a new button and rebuilt the Windows menu for Shutting Down, Restarting, and Turning Off the monitor of your device, directly from C2D.
+
+
+<img height="160" src="Git_assets/features/PowerOFF_menu.png"/>
 
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
-### Menu Settings 
+<div style="text-align: center;">
+  <h3><strong>Menu Settings </strong></h3>
+</div>
+<div align="center">  
+    <img height="420" src="Git_assets/features/C2D_settings_v3.8.0.png"/>
+</div>
 
-<img height="320" src="Git_assets/features/C2D_settings_v3.1.0.png"/>
+
 
 1. **Restore the Pause Windows Upgrades**  
 As the name suggests, if you want to pause updates again (after reactivated by Windows Settings) to limit background services, this button will pause the updates, until the year 3000.
@@ -146,103 +187,27 @@ As shown in the picture below, this opens the Background settings for what to ma
 
 6. **HandleOS Benchmark**
    `Windows Experience Index` resurrected from <u>Windows 7</u>, called `HandleOS Benchmark`, a new companion for the flagship C2D to measure the performance of your Handled.
-   
-     
 
-### Let's Boost the FPS (Menu)
+6. **HandleOS Restore Boost**:
+   Exclusively for HandleOS users, to maintain system boost and performance after Windows updates. `Fix Wifi` his a button to restores the WiFi service in cases where it disappears from the Windows Taskbar, an issue affecting some devices. 
 
 
-8. **AMD GPU No-Shutter** (set to ON):
+   <img height="320" src="Git_assets/features/HOSRB3.1.0.png"/>
 
-     By default, this option is set to OFF and should only be enabled after you have installed all your drivers. The AMD GPU No-Shutter function is compatible exclusively with AMD GPUs and APUs. When activated, it  eliminates in-game stuttering by improving the responsiveness of your GPU.
+6. **Temporary Desktop Mode:** 
+   This button helps you switch to **Desktop Mode temporarily** (*without making it permanent*). It is especially useful when you need to perform temporary tasks in `Desktop Mode`. Upon reboot, the device will return to `Console Mode`.
 
-     This feature disables the Ultra Low Power State (ULPS) on AMD GPUs, which typically puts the GPU to sleep when not in use (or in meantime you are using it but not in full power). Frequent switching between active and sleep states can cause stuttering during gaming or streaming. Disabling ULPS keeps the GPU consistently active (work normally), reducing stuttering and improving performance, especially when the GPU isn't fully utilized. This is particularly beneficial for gaming and streaming with low demanding GPU, where a consistent GPU performance and low consumptions are crucial.
+6. **HandleOS Hibernation / Sleep / Standby**:
+   Starting from ***C2D ver 3.8.0***, this button opens a menu to fully reactivate the functionalities of `Sleep Mode` and `Hibernate Mode`. In the opened window, it explains the `Pros` and `Cons` of enabling these features, as HandleOS has them disabled by default.
 
-10. **Meltdown / Spectre Protection** (set by default to OFF):
-     In early 2018, the PC industry was significantly impacted by the discovery that certain processor design features, used to enhance the performance of modern PCs, could be exploited to create severe security vulnerabilities known as Meltdown and Spectre. The industry has been actively addressing these threats through updates to operating systems, motherboard BIOSes, and CPU firmware. 
-     **Meltdown and Spectre Protection:** 
 
-     - **Meltdown**: This vulnerability affects the ability of processors to protect kernel memory. Many modern processors, particularly those from Intel, have received patches that mitigate this issue.
-     -  **Spectre**: This vulnerability involves speculative execution and affects both Intel and AMD processors. Protection from Spectre may result in a reduction in system performance. When the protection is enabled, it can lead to a decrease in performance due to the additional overhead of these security measures.  
-     - **For Intel CPUs:** 
-       If you are using an older Intel CPU and do not install potentially unsafe software, keeping this protection turned OFF can result in a significant boost in FPS, particularly noticeable in older Intel architectures. If you have a modern Intel CPU, and install software whose safety you cannot guarantee, it is advisable to turn this protection ON to safeguard your PC and data. 
-     - **For AMD CPUs:**  
-       AMD CPUs are inherently immune to Meltdown attacks but may be vulnerable to some variants of Spectre. This means you can generally leave this protection OFF with less risk compared to Intel CPUs. However, if you frequently install unknown or suspicious software, it is safer to keep this protection ON. - It is recommended to run benchmarks to evaluate the impact of enabling or disabling this protection on FPS and system responsiveness. 
-     - **Additional Tips:** 
-       You can toggle this function ON or OFF temporarily if you notice performance differences in specific games or applications, especially AAA titles. - To ensure that changes take effect, it is best to restart your PC after making modifications to this setting.
-
-11. **Some System Devices for Virtual Machine** (set to OFF): 
-       This switch should be turned OFF only after you have completed the initial installation of all drivers on your PC, and on each ON/ OFF must to restart the Computer . 
-       Here’s how to use this setting: 
-
-       - **After Initial Driver Installation**: Once you have installed all necessary drivers for your hardware, you can consider turning this switch OFF. This setting is intended to improve system performance by disabling certain system devices that are used primarily for virtual machines. 
-       - **Virtual Machines and Custom Drivers**: If you are not using virtual machines on your Handheld/PC and do not install custom drivers for any connected hardware, or if you are not installing drivers from unknown or untrusted sources, it is generally safe to disable this switch. Disabling it can lead to improved system performance, including more stable FPS and better responsiveness, especially on systems with limited power like Handhelds.
-       - **When to Keep ON**: If you are using virtual machines, or if you are installing custom or unknown drivers, it is advisable to keep this switch ON to ensure system stability and compatibility. By turning this switch OFF, you may experience performance improvements such as more stable FPS and increased responsiveness, particularly beneficial for systems with limited resources. However, ensure that you have completed all necessary driver installations and are not using virtual machines before making this change.
-
-12. **Core Isolation + CFG** (set to OFF):
-
-      - **What is Core Isolation Memory Integrity?**    
-             Core isolation provides enhanced protection against malware and other attacks by isolating critical system processes from the operating system and device. Memory integrity, a feature of core isolation, helps prevent malicious code from interfering with high-security processes. By enabling Memory Integrity, you add an additional layer of defense to protect your system from potential attacks. 
-      - **What is Control Flow Guard (CFG)?**    
-             Control Flow Guard (CFG) is a security feature designed to protect against memory corruption vulnerabilities. It achieves this by enforcing strict restrictions on where an application can execute code from, making it much harder for exploits to execute arbitrary code through vulnerabilities like buffer overflows. CFG builds on previous exploit mitigation technologies such as /GS (Buffer Security Check), DEP (Data Execution Prevention), and ASLR (Address Space Layout Randomization).
-      - **Benefits of Core Isolation and CFG:**  
-             - Prevent memory corruption and ransomware attacks by isolating critical system processes.
-             - Restrict server capabilities to minimize the attack surface and reduce the risk of exploitation.  
-             - Make it more difficult for attackers to exploit vulnerabilities and execute arbitrary code. 
-      - **Explanation**   
-             By default, Core Isolation and CFG are set to OFF to optimize performance, especially on systems with limited resources. Enabling these features provides additional security but may impact system performance. So for majority of the situation it's safe to keep turning OFF, consider enabling them if you require enhanced protection against potential threats and are willing to trade off some performance for increased security.
-
-13. **Reduce Network Latency:**
-        The `Reduce Network Latency` option is designed to optimize your network performance by adjusting the handling of network packets for online competitive Games. Here’s a brief overview of how it works and when to use it:
-
-- **Understanding Nagle's Algorithm** - Nagle's Algorithm is a technique used to improve network efficiency by reducing the number of small packets sent over the network. It works by buffering small packets until a full-sized packet can be sent. This can be beneficial for high-bandwidth connections with large data transfers but may introduce delays in latency-sensitive applications.
-        
-    *Recommendations*
-        
-    - **For Low Latency Connections:** If you prioritize low latency and need immediate responsiveness (e.g., for online gaming or real-time applications), it is advisable to turn off Nagle's Algorithm. This allows the sender to send packets of any size immediately, reducing delays caused by buffering.
-      
-        - **For High Bandwidth Large Transfers:** If your primary use involves high-bandwidth connections with large data transfers (e.g., file downloads or streaming), enabling Nagle's Algorithm can be beneficial. It helps optimize the use of network bandwidth by minimizing the number of packets sent, which can improve overall transfer efficiency.
-
-    
-    ​    
-    
-    ***Important Note***:
-    This switch applies the `Reduce Network Latency` setting, only to the currently connected network and IP address. If you change your IP address or switch to a different network, you will need to re-enable the switch to apply the setting to the new network or IP.
-        
-    By adjusting this setting, you can better tailor your network performance to match your specific needs, whether you require low latency for interactive applications or optimized bandwidth for large data transfers.
-    
-13. **UAC** (set to OFF): 
-    *User Account Control* , it open programs in administrator mode without pop-up warnings—use cautiously.
-    You can use when you are offline, as some game can performs better with full access to memory RAM or when you need to navigate/ open different Windows apps by an external controller; to don't let the UAC to stop the mouse function when it pops-up the warning, as when the UAC it's ON. 
-14. **Optimize Memory and Reduce Stutter by BCD** (set to ON):
-        This setting is designed to optimize memory performance and reduce stuttering by modifying the Boot Configuration Data (BCD). To use this feature effectively, `Secure Boot` must be completely disabled in the BIOS. If Secure Boot is enabled, this optimization will not function as intended.  
-      - **How It Works:** 
-        - ***i.*** The optimization avoids the use of non-contiguous portions of low-memory from the operating system. This boosts memory performance and can improve micro-stuttering in about 80% of cases.
-          - ***ii.*** It also addresses command buffer stutter, particularly after disabling 5-level paging on 10th generation Intel processors. 
-            Note: that this optimization can cause system instability or freezes if the memory sticks are unstable.
-          -  ***Reverting to Standard Settings:***   
-            If you encounter issues with USB devices that are functional but corrupted, or if you wish to return to default system settings, you can turn the switch to OFF and re-enable `Secure Boot` in the BIOS. This will revert the system to its standard configuration and should resolve any related issues.
-15. **Reduce High DPC/ISR Latencies in Windows** (set to ON):
-        This setting activates a Windows tweak package that is not included by default in the operating system. It helps to mitigate issues related to high DPC (Deferred Procedure Call) and ISR (Interrupt Service Routine) latencies. It's safe to keep **ON**.  
-       - **What It Does:**
-         - **Tell Windows to stop tolerating high DPC/ISR latencies:**  
-           By enabling this tweak, Windows is instructed to handle high latency events more aggressively, which can lead to improved system responsiveness and performance.
-    - **Understanding DPC and ISR:**
-      - ***i.*** **DPC (Deferred Procedure Call):**  
-        DPCs are used to defer the execution of a task that must be handled at a later time. High DPC latency can cause system delays and affect real-time performance.
-      - ***ii.*** **ISR (Interrupt Service Routine):**  
-        ISRs are routines that handle hardware interrupts. High ISR latency can lead to delays in processing these interrupts, which can affect the system's responsiveness. By reducing high DPC and ISR latencies, this setting aims to enhance overall system performance and responsiveness.
-
-16. **HandleOS Restore Boost**:
-    Exclusively for HandleOS users, to maintain system boost and performance after Windows updates. `Fix Wifi` his a button to restores the WiFi service in cases where it disappears from the Windows Taskbar, an issue affecting some devices. 
-
-    <img height="320" src="Git_assets/features/HOSRB3.1.0.png"/>
+   <img height="340" src="Git_assets/features/HibernationSleep.png"/>
 
 
 
 ### New Pointer Design in `HandleOS 23H2v2`:
 
-<img height="220" src="Git_assets/features/Material_light.png"/> <img height="220" src="Git_assets/features/Material_dark.png"/>
+<img height="180" src="Git_assets/features/Material_light.png"/> <img height="180" src="Git_assets/features/Material_dark.png"/>
 
 *(The work on the pointer design is thanks to by_rosea92)*
 
@@ -265,9 +230,9 @@ As shown in the picture below, this opens the Background settings for what to ma
 
 ### HotKeys4Console2Desk
 
-<img height="120" src="Git_assets/features/c2d_trayIcon.png"/>                 <img height="220" src="Git_assets/features/c2d_trayIconMenu_v3.1.0.png"/>
+<img height="120" src="Git_assets/features/c2d_trayIcon.png"/>                <img height="240" src="Git_assets/features/c2d_trayIconMenu_v3.8.0.png"/>
 
-- *Above looking from Version 3.0.0* 
+- *Above looking from Version 3.8.0* 
 
   
 
@@ -288,15 +253,17 @@ As we can see in the image, there are 9 options in this first version:
   
   
   
+- **Cursor Theme Dark/Light**
+  Switch Mouse Pointer theme between `Light Mode` and `Dark Mode` when using Desktop Mode.
+
 - **Tablet Mode ON/OFF**
-  button to transform the Windows messages and Taskbar into `Tablet Mode`, perfect feature for handheld devices. (Thanks to [@alcopsy](https://github.com/alcopsy))
+  Button to transform the Windows messages and Taskbar into `Tablet Mode`, perfect feature for handheld devices. (Thanks to [@alcopsy](https://github.com/alcopsy))
 
   <img height="400" src="Git_assets/features/TabletMode.png"/>
   
 - **Clipboard history ON/OFF**
   
   Since HandleOS disables it by default, to minimize background services, users who need this feature can now reactivate it via the HotKeys4Console2Desk menu. (Thanks to [@alcopsy](https://github.com/alcopsy))
-  
   
 - **Microsoft using your Webcam ON/OFF** 
   No one knows exactly what this service does, but it is called `Device Census` or `devicecensus.exe`. It is a legitimate Microsoft application that helps determine which build of Windows 10/11 you can upgrade to without encountering issues. Device Census is believed to have appeared during the Windows 10 2004 May Update, which was delayed for months due to hardware incompatibility. This service is also related to your webcam and its functionality. Since there is no clear documentation available on its exact role, I have included this switch in HandleOS. This allows you to enable or disable it in case you experience problems with your camera after installation. After ON or OFF better to restart the system to apply the changes.
@@ -364,7 +331,7 @@ Starting from version 2.2.0, `HandleOS Tab View` is an enhanced window switching
 
 You can use `HandleOS Tab View` in two ways:
 
-1. **Informational View**: This mode displays a preview of the windows you're switching between. The view will automatically close after approximately 6 seconds if no selection is made.
+1. **Informational View**: This mode displays a preview of the windows you're switching between. The view will automatically close after approximately 5 seconds if no selection is made.
 2. **Interactive View**: Use the D-Pad on your controller to navigate through the available windows. Press the `A` button to select a window for immediate switching.
 
 This dual functionality makes it easier to manage your switch between windows more efficiently.

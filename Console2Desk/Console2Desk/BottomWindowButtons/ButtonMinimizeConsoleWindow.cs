@@ -190,7 +190,7 @@ namespace Console2Desk.BottomWindowButtons
 
             if (!foundProcess)
             {
-                messagesBoxImplementation.ShowMessage($"No {selectedApp} application is currently running.", "Error", MessageBoxButtons.OK);
+                messagesBoxImplementation.ShowMessage($"No Steam or {selectedApp} application is currently running.", "Error", MessageBoxButtons.OK);
             }
         }
     }

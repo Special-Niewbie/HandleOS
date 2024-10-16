@@ -39,6 +39,21 @@
             labelAMD_INTEL = new Label();
             label2 = new Label();
             panelBase = new Panel();
+            controlWDDMnvidia = new ToggleSwitchDev.ControlToggles();
+            labelWDDMnvidia = new Label();
+            pictureBoxWDDMnvidia = new PictureBox();
+            controlWDDMamd = new ToggleSwitchDev.ControlToggles();
+            labelWDDMamd = new Label();
+            pictureBoxWDDMamd = new PictureBox();
+            controlRDPOptimization = new ToggleSwitchDev.ControlToggles();
+            labelRDP = new Label();
+            pictureBoxRDP = new PictureBox();
+            controlVRRO_OptWindowedGames = new ToggleSwitchDev.ControlToggles();
+            labelVRRO_OptWindowedGames = new Label();
+            pictureBoxVRRO_OptWindowedGames = new PictureBox();
+            controlHWAccelleration = new ToggleSwitchDev.ControlToggles();
+            labelcontrolHWAccelleration = new Label();
+            pictureBoxHWAccelleration = new PictureBox();
             controliNTELgpuSDI = new ToggleSwitchDev.ControlToggles();
             labeliNTELgpuSDI = new Label();
             pictureBoxINTELgpuSDI = new PictureBox();
@@ -83,6 +98,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxNVIDIAtp).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMICROSOFTtp).BeginInit();
             panelBase.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWDDMnvidia).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWDDMamd).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRDP).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxVRRO_OptWindowedGames).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHWAccelleration).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxINTELgpuSDI).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxNVIDIAgpuSDI).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDgpuSDI).BeginInit();
@@ -105,7 +125,7 @@
             buttonCloseFormTP.FlatStyle = FlatStyle.Flat;
             buttonCloseFormTP.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCloseFormTP.ForeColor = Color.Red;
-            buttonCloseFormTP.Location = new Point(1041, 0);
+            buttonCloseFormTP.Location = new Point(1051, 0);
             buttonCloseFormTP.Name = "buttonCloseFormTP";
             buttonCloseFormTP.Size = new Size(61, 45);
             buttonCloseFormTP.TabIndex = 0;
@@ -122,7 +142,7 @@
             panelTitleFormTP1.Dock = DockStyle.Top;
             panelTitleFormTP1.Location = new Point(0, 0);
             panelTitleFormTP1.Name = "panelTitleFormTP1";
-            panelTitleFormTP1.Size = new Size(1105, 46);
+            panelTitleFormTP1.Size = new Size(1115, 46);
             panelTitleFormTP1.TabIndex = 1;
             panelTitleFormTP1.Paint += panelTitleFormTP1_Paint;
             // 
@@ -142,7 +162,7 @@
             labelTitleFormTP.AutoSize = true;
             labelTitleFormTP.Font = new Font("Roboto Medium", 12F, FontStyle.Bold, GraphicsUnit.Point);
             labelTitleFormTP.ForeColor = SystemColors.ControlLight;
-            labelTitleFormTP.Location = new Point(433, 3);
+            labelTitleFormTP.Location = new Point(438, 3);
             labelTitleFormTP.Name = "labelTitleFormTP";
             labelTitleFormTP.Size = new Size(239, 38);
             labelTitleFormTP.TabIndex = 1;
@@ -161,7 +181,7 @@
             // 
             // pictureBoxINTELtp
             // 
-            pictureBoxINTELtp.Anchor = AnchorStyles.Top;
+            pictureBoxINTELtp.Anchor = AnchorStyles.Left;
             pictureBoxINTELtp.Image = Properties.Resources.INTEL;
             pictureBoxINTELtp.Location = new Point(378, 55);
             pictureBoxINTELtp.Name = "pictureBoxINTELtp";
@@ -172,7 +192,7 @@
             // 
             // pictureBoxNVIDIAtp
             // 
-            pictureBoxNVIDIAtp.Anchor = AnchorStyles.Top;
+            pictureBoxNVIDIAtp.Anchor = AnchorStyles.Left;
             pictureBoxNVIDIAtp.Image = Properties.Resources.NVIDIA;
             pictureBoxNVIDIAtp.Location = new Point(662, 55);
             pictureBoxNVIDIAtp.Name = "pictureBoxNVIDIAtp";
@@ -185,7 +205,7 @@
             // 
             pictureBoxMICROSOFTtp.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pictureBoxMICROSOFTtp.Image = Properties.Resources.Microsoft;
-            pictureBoxMICROSOFTtp.Location = new Point(940, 55);
+            pictureBoxMICROSOFTtp.Location = new Point(947, 55);
             pictureBoxMICROSOFTtp.Name = "pictureBoxMICROSOFTtp";
             pictureBoxMICROSOFTtp.Size = new Size(60, 50);
             pictureBoxMICROSOFTtp.SizeMode = PictureBoxSizeMode.Zoom;
@@ -203,7 +223,7 @@
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label2.Anchor = AnchorStyles.Left;
             label2.BorderStyle = BorderStyle.Fixed3D;
             label2.Location = new Point(827, 69);
             label2.Name = "label2";
@@ -212,7 +232,23 @@
             // 
             // panelBase
             // 
+            panelBase.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelBase.BorderStyle = BorderStyle.FixedSingle;
+            panelBase.Controls.Add(controlWDDMnvidia);
+            panelBase.Controls.Add(labelWDDMnvidia);
+            panelBase.Controls.Add(pictureBoxWDDMnvidia);
+            panelBase.Controls.Add(controlWDDMamd);
+            panelBase.Controls.Add(labelWDDMamd);
+            panelBase.Controls.Add(pictureBoxWDDMamd);
+            panelBase.Controls.Add(controlRDPOptimization);
+            panelBase.Controls.Add(labelRDP);
+            panelBase.Controls.Add(pictureBoxRDP);
+            panelBase.Controls.Add(controlVRRO_OptWindowedGames);
+            panelBase.Controls.Add(labelVRRO_OptWindowedGames);
+            panelBase.Controls.Add(pictureBoxVRRO_OptWindowedGames);
+            panelBase.Controls.Add(controlHWAccelleration);
+            panelBase.Controls.Add(labelcontrolHWAccelleration);
+            panelBase.Controls.Add(pictureBoxHWAccelleration);
             panelBase.Controls.Add(controliNTELgpuSDI);
             panelBase.Controls.Add(labeliNTELgpuSDI);
             panelBase.Controls.Add(pictureBoxINTELgpuSDI);
@@ -250,16 +286,215 @@
             panelBase.Controls.Add(controlAMDnoShutter);
             panelBase.Controls.Add(labelAMDnoShutter);
             panelBase.Controls.Add(pictureBoxAMDnoShutter);
-            panelBase.Dock = DockStyle.Fill;
             panelBase.Location = new Point(0, 0);
             panelBase.Name = "panelBase";
-            panelBase.Size = new Size(1105, 600);
+            panelBase.Size = new Size(1115, 600);
             panelBase.TabIndex = 12;
             panelBase.Paint += panelBase_Paint;
             // 
+            // controlWDDMnvidia
+            // 
+            controlWDDMnvidia.Anchor = AnchorStyles.Left;
+            controlWDDMnvidia.BorderColor = Color.LightGray;
+            controlWDDMnvidia.ForeColor = Color.White;
+            controlWDDMnvidia.IsOn = false;
+            controlWDDMnvidia.Location = new Point(773, 168);
+            controlWDDMnvidia.Name = "controlWDDMnvidia";
+            controlWDDMnvidia.OffColor = Color.DarkGray;
+            controlWDDMnvidia.OffText = "OFF";
+            controlWDDMnvidia.OnColor = Color.MediumSlateBlue;
+            controlWDDMnvidia.OnText = "ON";
+            controlWDDMnvidia.Size = new Size(34, 19);
+            controlWDDMnvidia.TabIndex = 96;
+            controlWDDMnvidia.TextEnabled = true;
+            controlWDDMnvidia.Click += controlWDDMnvidia_Click;
+            // 
+            // labelWDDMnvidia
+            // 
+            labelWDDMnvidia.Anchor = AnchorStyles.Left;
+            labelWDDMnvidia.AutoSize = true;
+            labelWDDMnvidia.ForeColor = SystemColors.ControlLightLight;
+            labelWDDMnvidia.Location = new Point(611, 162);
+            labelWDDMnvidia.Name = "labelWDDMnvidia";
+            labelWDDMnvidia.Size = new Size(135, 30);
+            labelWDDMnvidia.TabIndex = 95;
+            labelWDDMnvidia.Text = "WDDM driver - feature \r\npart for RDP (set to ON):";
+            // 
+            // pictureBoxWDDMnvidia
+            // 
+            pictureBoxWDDMnvidia.Anchor = AnchorStyles.Left;
+            pictureBoxWDDMnvidia.BackColor = Color.Transparent;
+            pictureBoxWDDMnvidia.Image = Properties.Resources.RDP64;
+            pictureBoxWDDMnvidia.Location = new Point(565, 162);
+            pictureBoxWDDMnvidia.Name = "pictureBoxWDDMnvidia";
+            pictureBoxWDDMnvidia.Size = new Size(33, 30);
+            pictureBoxWDDMnvidia.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxWDDMnvidia.TabIndex = 94;
+            pictureBoxWDDMnvidia.TabStop = false;
+            // 
+            // controlWDDMamd
+            // 
+            controlWDDMamd.Anchor = AnchorStyles.Left;
+            controlWDDMamd.BorderColor = Color.LightGray;
+            controlWDDMamd.ForeColor = Color.White;
+            controlWDDMamd.IsOn = false;
+            controlWDDMamd.Location = new Point(213, 204);
+            controlWDDMamd.Name = "controlWDDMamd";
+            controlWDDMamd.OffColor = Color.DarkGray;
+            controlWDDMamd.OffText = "OFF";
+            controlWDDMamd.OnColor = Color.MediumSlateBlue;
+            controlWDDMamd.OnText = "ON";
+            controlWDDMamd.Size = new Size(34, 19);
+            controlWDDMamd.TabIndex = 93;
+            controlWDDMamd.TextEnabled = true;
+            controlWDDMamd.Click += controlWDDMamd_Click;
+            // 
+            // labelWDDMamd
+            // 
+            labelWDDMamd.Anchor = AnchorStyles.Left;
+            labelWDDMamd.AutoSize = true;
+            labelWDDMamd.ForeColor = SystemColors.ControlLightLight;
+            labelWDDMamd.Location = new Point(56, 198);
+            labelWDDMamd.Name = "labelWDDMamd";
+            labelWDDMamd.Size = new Size(135, 30);
+            labelWDDMamd.TabIndex = 92;
+            labelWDDMamd.Text = "WDDM driver - feature \r\npart for RDP (set to ON):";
+            // 
+            // pictureBoxWDDMamd
+            // 
+            pictureBoxWDDMamd.Anchor = AnchorStyles.Left;
+            pictureBoxWDDMamd.BackColor = Color.Transparent;
+            pictureBoxWDDMamd.Image = Properties.Resources.RDP64;
+            pictureBoxWDDMamd.Location = new Point(10, 198);
+            pictureBoxWDDMamd.Name = "pictureBoxWDDMamd";
+            pictureBoxWDDMamd.Size = new Size(33, 30);
+            pictureBoxWDDMamd.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxWDDMamd.TabIndex = 91;
+            pictureBoxWDDMamd.TabStop = false;
+            // 
+            // controlRDPOptimization
+            // 
+            controlRDPOptimization.Anchor = AnchorStyles.Right;
+            controlRDPOptimization.BorderColor = Color.LightGray;
+            controlRDPOptimization.ForeColor = Color.White;
+            controlRDPOptimization.IsOn = false;
+            controlRDPOptimization.Location = new Point(1060, 456);
+            controlRDPOptimization.Name = "controlRDPOptimization";
+            controlRDPOptimization.OffColor = Color.DarkGray;
+            controlRDPOptimization.OffText = "OFF";
+            controlRDPOptimization.OnColor = Color.MediumSlateBlue;
+            controlRDPOptimization.OnText = "ON";
+            controlRDPOptimization.Size = new Size(34, 19);
+            controlRDPOptimization.TabIndex = 90;
+            controlRDPOptimization.TextEnabled = true;
+            controlRDPOptimization.Click += controlRDPOptimization_Click;
+            // 
+            // labelRDP
+            // 
+            labelRDP.Anchor = AnchorStyles.Left;
+            labelRDP.AutoSize = true;
+            labelRDP.ForeColor = SystemColors.ControlLightLight;
+            labelRDP.Location = new Point(886, 450);
+            labelRDP.Name = "labelRDP";
+            labelRDP.Size = new Size(160, 30);
+            labelRDP.TabIndex = 89;
+            labelRDP.Text = "RDP (Remote Desk Protocol) \r\nOptimization (set to ON):";
+            // 
+            // pictureBoxRDP
+            // 
+            pictureBoxRDP.Anchor = AnchorStyles.Left;
+            pictureBoxRDP.BackColor = Color.Transparent;
+            pictureBoxRDP.Image = Properties.Resources.RDP64;
+            pictureBoxRDP.Location = new Point(844, 450);
+            pictureBoxRDP.Name = "pictureBoxRDP";
+            pictureBoxRDP.Size = new Size(33, 30);
+            pictureBoxRDP.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxRDP.TabIndex = 88;
+            pictureBoxRDP.TabStop = false;
+            // 
+            // controlVRRO_OptWindowedGames
+            // 
+            controlVRRO_OptWindowedGames.Anchor = AnchorStyles.Right;
+            controlVRRO_OptWindowedGames.BorderColor = Color.LightGray;
+            controlVRRO_OptWindowedGames.ForeColor = Color.White;
+            controlVRRO_OptWindowedGames.IsOn = false;
+            controlVRRO_OptWindowedGames.Location = new Point(1060, 420);
+            controlVRRO_OptWindowedGames.Name = "controlVRRO_OptWindowedGames";
+            controlVRRO_OptWindowedGames.OffColor = Color.DarkGray;
+            controlVRRO_OptWindowedGames.OffText = "OFF";
+            controlVRRO_OptWindowedGames.OnColor = Color.MediumSlateBlue;
+            controlVRRO_OptWindowedGames.OnText = "ON";
+            controlVRRO_OptWindowedGames.Size = new Size(34, 19);
+            controlVRRO_OptWindowedGames.TabIndex = 87;
+            controlVRRO_OptWindowedGames.TextEnabled = true;
+            controlVRRO_OptWindowedGames.Click += controlVRRO_OptWindowedGames_Click;
+            // 
+            // labelVRRO_OptWindowedGames
+            // 
+            labelVRRO_OptWindowedGames.Anchor = AnchorStyles.Left;
+            labelVRRO_OptWindowedGames.AutoSize = true;
+            labelVRRO_OptWindowedGames.ForeColor = SystemColors.ControlLightLight;
+            labelVRRO_OptWindowedGames.Location = new Point(886, 414);
+            labelVRRO_OptWindowedGames.Name = "labelVRRO_OptWindowedGames";
+            labelVRRO_OptWindowedGames.Size = new Size(140, 30);
+            labelVRRO_OptWindowedGames.TabIndex = 86;
+            labelVRRO_OptWindowedGames.Text = "VRR and Opt. Windowed \r\nGames (set to ON):";
+            // 
+            // pictureBoxVRRO_OptWindowedGames
+            // 
+            pictureBoxVRRO_OptWindowedGames.Anchor = AnchorStyles.Left;
+            pictureBoxVRRO_OptWindowedGames.BackColor = Color.Transparent;
+            pictureBoxVRRO_OptWindowedGames.Image = Properties.Resources.VRR_OPTW;
+            pictureBoxVRRO_OptWindowedGames.Location = new Point(844, 414);
+            pictureBoxVRRO_OptWindowedGames.Name = "pictureBoxVRRO_OptWindowedGames";
+            pictureBoxVRRO_OptWindowedGames.Size = new Size(33, 30);
+            pictureBoxVRRO_OptWindowedGames.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxVRRO_OptWindowedGames.TabIndex = 85;
+            pictureBoxVRRO_OptWindowedGames.TabStop = false;
+            // 
+            // controlHWAccelleration
+            // 
+            controlHWAccelleration.Anchor = AnchorStyles.Right;
+            controlHWAccelleration.BorderColor = Color.LightGray;
+            controlHWAccelleration.ForeColor = Color.White;
+            controlHWAccelleration.IsOn = false;
+            controlHWAccelleration.Location = new Point(1060, 384);
+            controlHWAccelleration.Name = "controlHWAccelleration";
+            controlHWAccelleration.OffColor = Color.DarkGray;
+            controlHWAccelleration.OffText = "OFF";
+            controlHWAccelleration.OnColor = Color.MediumSlateBlue;
+            controlHWAccelleration.OnText = "ON";
+            controlHWAccelleration.Size = new Size(34, 19);
+            controlHWAccelleration.TabIndex = 84;
+            controlHWAccelleration.TextEnabled = true;
+            controlHWAccelleration.Click += controlHWAccelleration_Click;
+            // 
+            // labelcontrolHWAccelleration
+            // 
+            labelcontrolHWAccelleration.Anchor = AnchorStyles.Left;
+            labelcontrolHWAccelleration.AutoSize = true;
+            labelcontrolHWAccelleration.ForeColor = SystemColors.ControlLightLight;
+            labelcontrolHWAccelleration.Location = new Point(886, 378);
+            labelcontrolHWAccelleration.Name = "labelcontrolHWAccelleration";
+            labelcontrolHWAccelleration.Size = new Size(133, 30);
+            labelcontrolHWAccelleration.TabIndex = 83;
+            labelcontrolHWAccelleration.Text = "Hardware Accelleration \r\n(set to ON):";
+            // 
+            // pictureBoxHWAccelleration
+            // 
+            pictureBoxHWAccelleration.Anchor = AnchorStyles.Left;
+            pictureBoxHWAccelleration.BackColor = Color.Transparent;
+            pictureBoxHWAccelleration.Image = Properties.Resources.HardwareAccelleration;
+            pictureBoxHWAccelleration.Location = new Point(844, 378);
+            pictureBoxHWAccelleration.Name = "pictureBoxHWAccelleration";
+            pictureBoxHWAccelleration.Size = new Size(33, 30);
+            pictureBoxHWAccelleration.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxHWAccelleration.TabIndex = 82;
+            pictureBoxHWAccelleration.TabStop = false;
+            // 
             // controliNTELgpuSDI
             // 
-            controliNTELgpuSDI.Anchor = AnchorStyles.Top;
+            controliNTELgpuSDI.Anchor = AnchorStyles.Left;
             controliNTELgpuSDI.BorderColor = Color.LightGray;
             controliNTELgpuSDI.ForeColor = Color.White;
             controliNTELgpuSDI.IsOn = false;
@@ -276,7 +511,7 @@
             // 
             // labeliNTELgpuSDI
             // 
-            labeliNTELgpuSDI.Anchor = AnchorStyles.Top;
+            labeliNTELgpuSDI.Anchor = AnchorStyles.Left;
             labeliNTELgpuSDI.AutoSize = true;
             labeliNTELgpuSDI.ForeColor = SystemColors.ControlLightLight;
             labeliNTELgpuSDI.Location = new Point(329, 126);
@@ -287,7 +522,7 @@
             // 
             // pictureBoxINTELgpuSDI
             // 
-            pictureBoxINTELgpuSDI.Anchor = AnchorStyles.Top;
+            pictureBoxINTELgpuSDI.Anchor = AnchorStyles.Left;
             pictureBoxINTELgpuSDI.BackColor = Color.Transparent;
             pictureBoxINTELgpuSDI.Image = Properties.Resources.SDI;
             pictureBoxINTELgpuSDI.Location = new Point(284, 126);
@@ -308,7 +543,7 @@
             // 
             // controlNVIDIAgpuSDI
             // 
-            controlNVIDIAgpuSDI.Anchor = AnchorStyles.Top;
+            controlNVIDIAgpuSDI.Anchor = AnchorStyles.Left;
             controlNVIDIAgpuSDI.BorderColor = Color.LightGray;
             controlNVIDIAgpuSDI.ForeColor = Color.White;
             controlNVIDIAgpuSDI.IsOn = false;
@@ -325,7 +560,7 @@
             // 
             // labelNVIDIAgpuSDI
             // 
-            labelNVIDIAgpuSDI.Anchor = AnchorStyles.Top;
+            labelNVIDIAgpuSDI.Anchor = AnchorStyles.Left;
             labelNVIDIAgpuSDI.AutoSize = true;
             labelNVIDIAgpuSDI.ForeColor = SystemColors.ControlLightLight;
             labelNVIDIAgpuSDI.Location = new Point(611, 126);
@@ -336,7 +571,7 @@
             // 
             // pictureBoxNVIDIAgpuSDI
             // 
-            pictureBoxNVIDIAgpuSDI.Anchor = AnchorStyles.Top;
+            pictureBoxNVIDIAgpuSDI.Anchor = AnchorStyles.Left;
             pictureBoxNVIDIAgpuSDI.BackColor = Color.Transparent;
             pictureBoxNVIDIAgpuSDI.Image = Properties.Resources.SDI;
             pictureBoxNVIDIAgpuSDI.Location = new Point(565, 126);
@@ -385,11 +620,11 @@
             // 
             // controlGameBarMessages
             // 
-            controlGameBarMessages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlGameBarMessages.Anchor = AnchorStyles.Right;
             controlGameBarMessages.BorderColor = Color.LightGray;
             controlGameBarMessages.ForeColor = Color.White;
             controlGameBarMessages.IsOn = false;
-            controlGameBarMessages.Location = new Point(1047, 312);
+            controlGameBarMessages.Location = new Point(1060, 312);
             controlGameBarMessages.Name = "controlGameBarMessages";
             controlGameBarMessages.OffColor = Color.DarkGray;
             controlGameBarMessages.OffText = "OFF";
@@ -402,7 +637,7 @@
             // 
             // labelGameBarMessages
             // 
-            labelGameBarMessages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelGameBarMessages.Anchor = AnchorStyles.Left;
             labelGameBarMessages.AutoSize = true;
             labelGameBarMessages.ForeColor = SystemColors.ControlLightLight;
             labelGameBarMessages.Location = new Point(886, 306);
@@ -413,7 +648,7 @@
             // 
             // pictureBoxGameBarMessages
             // 
-            pictureBoxGameBarMessages.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxGameBarMessages.Anchor = AnchorStyles.Left;
             pictureBoxGameBarMessages.BackColor = Color.Transparent;
             pictureBoxGameBarMessages.Image = Properties.Resources.gamebarMessage;
             pictureBoxGameBarMessages.Location = new Point(844, 306);
@@ -425,11 +660,11 @@
             // 
             // uacToggleSwitch
             // 
-            uacToggleSwitch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            uacToggleSwitch.Anchor = AnchorStyles.Right;
             uacToggleSwitch.BorderColor = Color.LightGray;
             uacToggleSwitch.ForeColor = Color.White;
             uacToggleSwitch.IsOn = false;
-            uacToggleSwitch.Location = new Point(1048, 348);
+            uacToggleSwitch.Location = new Point(1060, 348);
             uacToggleSwitch.Name = "uacToggleSwitch";
             uacToggleSwitch.OffColor = Color.DarkGray;
             uacToggleSwitch.OffText = "OFF";
@@ -442,7 +677,7 @@
             // 
             // labelUAC
             // 
-            labelUAC.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelUAC.Anchor = AnchorStyles.Left;
             labelUAC.AutoSize = true;
             labelUAC.ForeColor = SystemColors.ControlLightLight;
             labelUAC.Location = new Point(886, 342);
@@ -453,7 +688,7 @@
             // 
             // pictureBoxUAC
             // 
-            pictureBoxUAC.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxUAC.Anchor = AnchorStyles.Left;
             pictureBoxUAC.BackColor = Color.Transparent;
             pictureBoxUAC.Image = Properties.Resources.UAC;
             pictureBoxUAC.Location = new Point(844, 342);
@@ -465,7 +700,7 @@
             // 
             // labelReduceNetworkLatency
             // 
-            labelReduceNetworkLatency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelReduceNetworkLatency.Anchor = AnchorStyles.Left;
             labelReduceNetworkLatency.AutoSize = true;
             labelReduceNetworkLatency.ForeColor = SystemColors.ControlLightLight;
             labelReduceNetworkLatency.Location = new Point(886, 234);
@@ -476,7 +711,7 @@
             // 
             // pictureBoxReduceNetworkLatency
             // 
-            pictureBoxReduceNetworkLatency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxReduceNetworkLatency.Anchor = AnchorStyles.Left;
             pictureBoxReduceNetworkLatency.BackColor = Color.Transparent;
             pictureBoxReduceNetworkLatency.Image = Properties.Resources.NetworkLowLatency;
             pictureBoxReduceNetworkLatency.Location = new Point(844, 234);
@@ -488,11 +723,11 @@
             // 
             // controlReduceNetworkLatency
             // 
-            controlReduceNetworkLatency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlReduceNetworkLatency.Anchor = AnchorStyles.Right;
             controlReduceNetworkLatency.BorderColor = Color.LightGray;
             controlReduceNetworkLatency.ForeColor = Color.White;
             controlReduceNetworkLatency.IsOn = false;
-            controlReduceNetworkLatency.Location = new Point(1048, 240);
+            controlReduceNetworkLatency.Location = new Point(1060, 240);
             controlReduceNetworkLatency.Name = "controlReduceNetworkLatency";
             controlReduceNetworkLatency.OffColor = Color.DarkGray;
             controlReduceNetworkLatency.OffText = "OFF";
@@ -505,11 +740,11 @@
             // 
             // controlReduceWindowsLatency
             // 
-            controlReduceWindowsLatency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlReduceWindowsLatency.Anchor = AnchorStyles.Right;
             controlReduceWindowsLatency.BorderColor = Color.LightGray;
             controlReduceWindowsLatency.ForeColor = Color.White;
             controlReduceWindowsLatency.IsOn = false;
-            controlReduceWindowsLatency.Location = new Point(1048, 276);
+            controlReduceWindowsLatency.Location = new Point(1060, 276);
             controlReduceWindowsLatency.Name = "controlReduceWindowsLatency";
             controlReduceWindowsLatency.OffColor = Color.DarkGray;
             controlReduceWindowsLatency.OffText = "OFF";
@@ -522,7 +757,7 @@
             // 
             // pictureBoxReduceWindowsLatency
             // 
-            pictureBoxReduceWindowsLatency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxReduceWindowsLatency.Anchor = AnchorStyles.Left;
             pictureBoxReduceWindowsLatency.BackColor = Color.Transparent;
             pictureBoxReduceWindowsLatency.Image = Properties.Resources.Low_Latency;
             pictureBoxReduceWindowsLatency.Location = new Point(844, 270);
@@ -534,7 +769,7 @@
             // 
             // labelReduceWindowsLatency
             // 
-            labelReduceWindowsLatency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelReduceWindowsLatency.Anchor = AnchorStyles.Left;
             labelReduceWindowsLatency.AutoSize = true;
             labelReduceWindowsLatency.ForeColor = SystemColors.ControlLightLight;
             labelReduceWindowsLatency.Location = new Point(886, 270);
@@ -545,11 +780,11 @@
             // 
             // controlBCDMemoryUsage
             // 
-            controlBCDMemoryUsage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlBCDMemoryUsage.Anchor = AnchorStyles.Right;
             controlBCDMemoryUsage.BorderColor = Color.LightGray;
             controlBCDMemoryUsage.ForeColor = Color.White;
             controlBCDMemoryUsage.IsOn = false;
-            controlBCDMemoryUsage.Location = new Point(1048, 492);
+            controlBCDMemoryUsage.Location = new Point(1060, 492);
             controlBCDMemoryUsage.Name = "controlBCDMemoryUsage";
             controlBCDMemoryUsage.OffColor = Color.DarkGray;
             controlBCDMemoryUsage.OffText = "OFF";
@@ -562,7 +797,7 @@
             // 
             // labelBCDMemoryUsage
             // 
-            labelBCDMemoryUsage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelBCDMemoryUsage.Anchor = AnchorStyles.Left;
             labelBCDMemoryUsage.AutoSize = true;
             labelBCDMemoryUsage.ForeColor = SystemColors.ControlLightLight;
             labelBCDMemoryUsage.Location = new Point(886, 486);
@@ -573,7 +808,7 @@
             // 
             // pictureBCDMemoryUsage
             // 
-            pictureBCDMemoryUsage.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBCDMemoryUsage.Anchor = AnchorStyles.Left;
             pictureBCDMemoryUsage.BackColor = Color.Transparent;
             pictureBCDMemoryUsage.Image = Properties.Resources.Bcd;
             pictureBCDMemoryUsage.Location = new Point(844, 486);
@@ -585,7 +820,7 @@
             // 
             // labelCoreIsolation_CFG
             // 
-            labelCoreIsolation_CFG.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelCoreIsolation_CFG.Anchor = AnchorStyles.Left;
             labelCoreIsolation_CFG.AutoSize = true;
             labelCoreIsolation_CFG.ForeColor = SystemColors.ControlLightLight;
             labelCoreIsolation_CFG.Location = new Point(886, 198);
@@ -596,7 +831,7 @@
             // 
             // pictureBoxCoreIsolation_CFG
             // 
-            pictureBoxCoreIsolation_CFG.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxCoreIsolation_CFG.Anchor = AnchorStyles.Left;
             pictureBoxCoreIsolation_CFG.BackColor = Color.Transparent;
             pictureBoxCoreIsolation_CFG.Image = Properties.Resources.CoreIsolation_CFG;
             pictureBoxCoreIsolation_CFG.Location = new Point(844, 198);
@@ -608,11 +843,11 @@
             // 
             // controlCoreIsolation_Exploid
             // 
-            controlCoreIsolation_Exploid.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlCoreIsolation_Exploid.Anchor = AnchorStyles.Right;
             controlCoreIsolation_Exploid.BorderColor = Color.LightGray;
             controlCoreIsolation_Exploid.ForeColor = Color.White;
             controlCoreIsolation_Exploid.IsOn = false;
-            controlCoreIsolation_Exploid.Location = new Point(1048, 204);
+            controlCoreIsolation_Exploid.Location = new Point(1060, 204);
             controlCoreIsolation_Exploid.Name = "controlCoreIsolation_Exploid";
             controlCoreIsolation_Exploid.OffColor = Color.DarkGray;
             controlCoreIsolation_Exploid.OffText = "OFF";
@@ -625,11 +860,11 @@
             // 
             // controlSystemDevices
             // 
-            controlSystemDevices.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlSystemDevices.Anchor = AnchorStyles.Right;
             controlSystemDevices.BorderColor = Color.LightGray;
             controlSystemDevices.ForeColor = Color.White;
             controlSystemDevices.IsOn = false;
-            controlSystemDevices.Location = new Point(1048, 168);
+            controlSystemDevices.Location = new Point(1060, 168);
             controlSystemDevices.Name = "controlSystemDevices";
             controlSystemDevices.OffColor = Color.DarkGray;
             controlSystemDevices.OffText = "OFF";
@@ -642,11 +877,11 @@
             // 
             // controlMeltdownSpectreProtectionOnOff
             // 
-            controlMeltdownSpectreProtectionOnOff.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            controlMeltdownSpectreProtectionOnOff.Anchor = AnchorStyles.Right;
             controlMeltdownSpectreProtectionOnOff.BorderColor = Color.LightGray;
             controlMeltdownSpectreProtectionOnOff.ForeColor = Color.White;
             controlMeltdownSpectreProtectionOnOff.IsOn = false;
-            controlMeltdownSpectreProtectionOnOff.Location = new Point(1048, 132);
+            controlMeltdownSpectreProtectionOnOff.Location = new Point(1060, 132);
             controlMeltdownSpectreProtectionOnOff.Name = "controlMeltdownSpectreProtectionOnOff";
             controlMeltdownSpectreProtectionOnOff.OffColor = Color.DarkGray;
             controlMeltdownSpectreProtectionOnOff.OffText = "OFF";
@@ -659,7 +894,7 @@
             // 
             // labelSystemDevices
             // 
-            labelSystemDevices.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelSystemDevices.Anchor = AnchorStyles.Left;
             labelSystemDevices.AutoSize = true;
             labelSystemDevices.ForeColor = SystemColors.ControlLightLight;
             labelSystemDevices.Location = new Point(886, 162);
@@ -670,7 +905,7 @@
             // 
             // pictureBoxSystemDevices
             // 
-            pictureBoxSystemDevices.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxSystemDevices.Anchor = AnchorStyles.Left;
             pictureBoxSystemDevices.BackColor = Color.Transparent;
             pictureBoxSystemDevices.Image = Properties.Resources.System_Devices;
             pictureBoxSystemDevices.Location = new Point(844, 162);
@@ -682,7 +917,7 @@
             // 
             // labelMeltdown_Spectre
             // 
-            labelMeltdown_Spectre.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            labelMeltdown_Spectre.Anchor = AnchorStyles.Left;
             labelMeltdown_Spectre.AutoSize = true;
             labelMeltdown_Spectre.ForeColor = SystemColors.ControlLightLight;
             labelMeltdown_Spectre.Location = new Point(886, 126);
@@ -693,7 +928,7 @@
             // 
             // pictureBoxMeltdown_Spectre
             // 
-            pictureBoxMeltdown_Spectre.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            pictureBoxMeltdown_Spectre.Anchor = AnchorStyles.Left;
             pictureBoxMeltdown_Spectre.BackColor = Color.Transparent;
             pictureBoxMeltdown_Spectre.Image = Properties.Resources.Meltdown_Spectre256;
             pictureBoxMeltdown_Spectre.Location = new Point(844, 126);
@@ -745,7 +980,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
-            ClientSize = new Size(1105, 600);
+            ClientSize = new Size(1115, 600);
             Controls.Add(label2);
             Controls.Add(labelAMD_INTEL);
             Controls.Add(pictureBoxMICROSOFTtp);
@@ -770,6 +1005,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxMICROSOFTtp).EndInit();
             panelBase.ResumeLayout(false);
             panelBase.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWDDMnvidia).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWDDMamd).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxRDP).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxVRRO_OptWindowedGames).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxHWAccelleration).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxINTELgpuSDI).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxNVIDIAgpuSDI).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxAMDgpuSDI).EndInit();
@@ -835,5 +1075,20 @@
         private ToggleSwitchDev.ControlToggles controliNTELgpuSDI;
         private Label labeliNTELgpuSDI;
         private PictureBox pictureBoxINTELgpuSDI;
+        private ToggleSwitchDev.ControlToggles controlHWAccelleration;
+        private Label labelcontrolHWAccelleration;
+        private PictureBox pictureBoxHWAccelleration;
+        private ToggleSwitchDev.ControlToggles controlVRRO_OptWindowedGames;
+        private Label labelVRRO_OptWindowedGames;
+        private PictureBox pictureBoxVRRO_OptWindowedGames;
+        private ToggleSwitchDev.ControlToggles controlRDPOptimization;
+        private Label labelRDP;
+        private PictureBox pictureBoxRDP;
+        private ToggleSwitchDev.ControlToggles controlWDDMnvidia;
+        private Label labelWDDMnvidia;
+        private PictureBox pictureBoxWDDMnvidia;
+        private ToggleSwitchDev.ControlToggles controlWDDMamd;
+        private Label labelWDDMamd;
+        private PictureBox pictureBoxWDDMamd;
     }
 }

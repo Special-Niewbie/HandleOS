@@ -17,15 +17,14 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-using Console2Desk.ToggleSwitchDev;
-
 namespace Console2Desk.SettingsButton
 {
     internal class UISettingsControlManager
     {
         public static void HideButtons(Special_Niewbie_Button buttonOpenFileExplorer, Special_Niewbie_Button buttonRestorePauseUpgrade,
             Special_Niewbie_Button touchScreenEnDbButton, Special_Niewbie_Button buttonXinputTest, Special_Niewbie_Button buttonChangeConsoleSettings,
-            Special_Niewbie_Button msStoreButton, Special_Niewbie_Button special_Niewbie_ButtonHOB,Special_Niewbie_Button special_Niewbie_ButtonRestoreBoost)
+            Special_Niewbie_Button msStoreButton, Special_Niewbie_Button special_Niewbie_ButtonHOB,Special_Niewbie_Button special_Niewbie_ButtonRestoreBoost,
+            Special_Niewbie_Button buttonTempDM, Special_Niewbie_Button buttonHiberSleep)
         {
             buttonOpenFileExplorer.Visible = false;
             buttonRestorePauseUpgrade.Visible = false;
@@ -35,6 +34,8 @@ namespace Console2Desk.SettingsButton
             msStoreButton.Visible = false;
             special_Niewbie_ButtonHOB.Visible = false;
             special_Niewbie_ButtonRestoreBoost.Visible = false;
+            buttonTempDM.Visible = false;
+            buttonHiberSleep.Visible = false;
 
         }
         

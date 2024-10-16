@@ -16,6 +16,14 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
+
+;@Ahk2Exe-SetName HotKeys4Console2Desk
+;@Ahk2Exe-SetDescription HotKeys4Console2Desk companion tool for Console2Desk
+;@Ahk2Exe-SetVersion 3.8.0
+;@Ahk2Exe-SetOrigFilename HotKeys4Console2Desk.ahk
+;@Ahk2Exe-SetCompanyName Special-Niewbie Softwares
+;@Ahk2Exe-SetCopyright ©2024 Special-Niewbie Softwares. All rights reserved.
+
 #Include libs\XBOX360.ahk
 #Include libs\SwitchControls.ahk
 #Include libs\BatteryEffect.ahk
@@ -58,6 +66,7 @@ Menu, Tray, Add, Change Computer Icon, ChangeComputerIcon  ; Change Computer Ico
 Menu, Tray, Icon, Change Computer Icon, Imageres.dll, 187
 ; Menu, Tray, Add, Pause, PAUSE
 Menu, Tray, Add, , Separator
+Menu, Tray, Add, Cursor Theme Dark/Light, ToggleCursorTheme
 Menu, Tray, Add, Tablet Mode ON/OFF, ToggleTabletModeSvc  ; Opzione per attivare/disattivare il Tablet Mode
 Menu, Tray, Add, ClipBoard History ON/OFF, ToggleClipboardHistorySvc  
 Menu, Tray, Add, Microsoft using your Webcam ON/OFF, ToggleWebcamTelemetry
@@ -72,6 +81,9 @@ Menu, Tray, Add, Exit, QuitNow ; added exit script option
 CheckForUpdates()
 
 ; Refresh menu when program starts
+; Update ToggleCursorTheme menu item at startup
+UpdateCursorThemeMenu()
+; Update ToggleTabletModeSvc menu item at startup
 UpdateTabletModeSvcMenu()
 ; Update UpdateClipboardHistorySvcMenu menu item at startup
 UpdateClipboardHistorySvcMenu()
@@ -428,6 +440,50 @@ HideWindowMenu() {
     }
 }
 
+; Function to update status of Cursor Theme Dark/Light
+UpdateCursorThemeMenu() {
+    ; Reads the current cursor value from the register
+    RegRead, currentCursorTheme, HKEY_CURRENT_USER\Control Panel\Cursors, Arrow
+    
+    ; Resolve full path with environment variable
+    EnvGet, systemRoot, SystemRoot
+
+    ; Solve the actual path for comparison
+    darkPath := systemRoot "\Cursors\Cursors\HandleOS_Dark\pointer.cur"
+    lightPath := systemRoot "\Cursors\HandleOS_Light\pointer.cur"
+
+    ; Check if the current cursor is set to Light or Dark theme
+    if (currentCursorTheme = darkPath) {
+        Menu, Tray, Icon, Cursor Theme Dark/Light, HandleOS_icons.dll, 13  ; Icon Dark
+    } else if (currentCursorTheme = lightPath) {
+        Menu, Tray, Icon, Cursor Theme Dark/Light, HandleOS_icons.dll, 12  ; Icon Light
+    } else {
+        ; If it is not recognized, set a default icon
+        Menu, Tray, Icon, Cursor Theme Dark/Light, Imageres.dll, 232 ; Icon Alert
+    }
+}
+
+; Function to change Cursor Theme Dark/Light
+ApplyCursorScheme(schemeName, cursorDirectory) {
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Scheme Source, %schemeName%
+
+    ; Imposta tutti i cursori associati al tema
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Arrow, %SystemRoot%\%cursorDirectory%\pointer.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, AppStarting, %SystemRoot%\%cursorDirectory%\help.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Wait, %SystemRoot%\%cursorDirectory%\busy.ani
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Crosshair, %SystemRoot%\%cursorDirectory%\cross.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, IBeam, %SystemRoot%\%cursorDirectory%\text.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, NWPen, %SystemRoot%\%cursorDirectory%\handwriting.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, No, %SystemRoot%\%cursorDirectory%\unavailiable.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNS, %SystemRoot%\%cursorDirectory%\vert.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeWE, %SystemRoot%\%cursorDirectory%\horz.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNWSE, %SystemRoot%\%cursorDirectory%\dgn1.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNESW, %SystemRoot%\%cursorDirectory%\dgn2.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeAll, %SystemRoot%\%cursorDirectory%\move.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, UpArrow, %SystemRoot%\%cursorDirectory%\alternate.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Hand, %SystemRoot%\%cursorDirectory%\link.cur
+}
+
 ; Function to update the status of the Tablet Mode menu
 UpdateTabletModeSvcMenu() {
     ; Check the value of the ExpandableTaskbar key
@@ -589,6 +645,61 @@ ShowVersionInfo:
     MsgBox, 64, Version Info, Script Version: %currentVersion% `n`nAuthor: Special-Niewbie Softwares `nCopyright(C) 2024 Special-Niewbie Softwares
 return
 
+; Function to activate/deactivate the Dark or Light theme
+ToggleCursorTheme:
+    ; Resolve full path with environment variable
+    EnvGet, systemRoot, SystemRoot
+    RegRead, currentCursorTheme, HKEY_CURRENT_USER\Control Panel\Cursors, Arrow
+    
+    ; Solve the actual path for comparison
+    darkPath := systemRoot "\Cursors\Cursors\HandleOS_Dark\pointer.cur"
+    lightPath := systemRoot "\Cursors\HandleOS_Light\pointer.cur"
+    
+    if (A_Username != "HandleOS") {
+        MsgBox, This function is exclusive to HandleOS users.
+        return
+    }
+	; MsgBox, Tema corrente: %currentCursorTheme%`nPercorso Dark: %darkPath%`nPercorso Light: %lightPath% ///FOR DEBUG
+
+    if (currentCursorTheme = darkPath) {
+        ; If the current theme is Dark, change to Light theme
+        ApplyCursorScheme("HandleOS_Light", "Cursors\HandleOS_Light")
+        ; MsgBox, Cambiato a Light! ///FOR DEBUG
+    } else {
+        ; If the current theme is Light or other, change to Dark theme
+        ApplyCursorScheme("HandleOS_Dark", "Cursors\Cursors\HandleOS_Dark")
+        ; MsgBox, Cambiato a Dark! ///FOR DEBUG
+    }
+
+    ; Call the SystemParametersInfo function to update the cursor theme
+    DllCall("SystemParametersInfo", UInt, 0x57, UInt, 0, UInt, 0)
+
+    Sleep 250
+    ; Update menu status after changing cursor theme
+    UpdateCursorThemeMenu()
+return
+
+; Function to enable/disable Tablet Mode
+ToggleTabletModeSvc:
+    ; Check the current state of the ExpandableTaskbar key
+    RegRead, expandableTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar
+    RegRead, tabletPostureTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar
+    
+    if (ErrorLevel or expandableTaskbarValue = 0 or tabletPostureTaskbarValue = 0) {
+        ; If one of the keys does not exist or the value is 0, enable Tablet Mode
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar, 1
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar, 1
+    } else {
+        ; If both keys exist and the value is 1, disable Tablet Mode
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar, 0
+        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar, 0
+    }
+	
+	Sleep 250
+    ; Update menu state after changing value
+    UpdateTabletModeSvcMenu()
+return
+
 ; Function to enable/disable Clipboard History
 ToggleClipboardHistorySvc:
     ; Check the current state of the Enable Clipboard History key
@@ -611,29 +722,7 @@ ToggleClipboardHistorySvc:
 	; Ask the user if they want to reboot the system
     MsgBox, 262180, IR4, Would you like to restart your PC now to apply the changes?
     IfMsgBox, Yes
-        ShutDown, 2
-	
-return
-
-; Function to enable/disable Tablet Mode
-ToggleTabletModeSvc:
-    ; Check the current state of the ExpandableTaskbar key
-    RegRead, expandableTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar
-    RegRead, tabletPostureTaskbarValue, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar
-    
-    if (ErrorLevel or expandableTaskbarValue = 0 or tabletPostureTaskbarValue = 0) {
-        ; If one of the keys does not exist or the value is 0, enable Tablet Mode
-        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar, 1
-        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar, 1
-    } else {
-        ; If both keys exist and the value is 1, disable Tablet Mode
-        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced, ExpandableTaskbar, 0
-        RegWrite, REG_DWORD, HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer, TabletPostureTaskbar, 0
-    }
-	
-	Sleep 250
-    ; Update menu state after changing value
-    UpdateTabletModeSvcMenu()
+        ShutDown, 2	
 return
 
 ToggleWebcamTelemetry:

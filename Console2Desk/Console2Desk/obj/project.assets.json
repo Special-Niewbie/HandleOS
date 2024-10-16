@@ -18,6 +18,19 @@
           }
         }
       },
+      "ManagedNativeWifi/2.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/ManagedNativeWifi.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/ManagedNativeWifi.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Markdig.Signed/0.31.0": {
         "type": "package",
         "compile": {
@@ -2169,6 +2182,21 @@
         "lib/net8.0/Cake.Powershell.dll",
         "lib/net8.0/Cake.Powershell.pdb",
         "lib/net8.0/Cake.Powershell.xml"
+      ]
+    },
+    "ManagedNativeWifi/2.6.0": {
+      "sha512": "/T7OIS+G7qg+YeZVu8MhFky+zS1p9Q+/6UOb0M0nNF5GXfGRgCmReiYrYlq2BFFFehkQwhKkjWA7KuDm9aAmFg==",
+      "type": "package",
+      "path": "managednativewifi/2.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/ManagedNativeWifi.dll",
+        "lib/net6.0/ManagedNativeWifi.xml",
+        "lib/netstandard2.0/ManagedNativeWifi.dll",
+        "lib/netstandard2.0/ManagedNativeWifi.xml",
+        "managednativewifi.2.6.0.nupkg.sha512",
+        "managednativewifi.nuspec"
       ]
     },
     "Markdig.Signed/0.31.0": {
@@ -5263,6 +5291,7 @@
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
       "Cake.Powershell >= 4.0.0",
+      "ManagedNativeWifi >= 2.6.0",
       "XInputium >= 1.2.0"
     ]
   },
@@ -5288,7 +5317,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0-windows"
+        "net7.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -5297,7 +5326,7 @@
       },
       "frameworks": {
         "net7.0-windows7.0": {
-          "targetAlias": "net7.0-windows",
+          "targetAlias": "net7.0-windows7.0",
           "projectReferences": {}
         }
       },
@@ -5314,11 +5343,15 @@
     },
     "frameworks": {
       "net7.0-windows7.0": {
-        "targetAlias": "net7.0-windows",
+        "targetAlias": "net7.0-windows7.0",
         "dependencies": {
           "Cake.Powershell": {
             "target": "Package",
             "version": "[4.0.0, )"
+          },
+          "ManagedNativeWifi": {
+            "target": "Package",
+            "version": "[2.6.0, )"
           },
           "XInputium": {
             "target": "Package",
@@ -5362,7 +5395,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

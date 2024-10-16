@@ -36,7 +36,7 @@ namespace Console2Desk.FuturesButtons
                             if (subKey != null)
                             {
                                 string driverDesc = subKey.GetValue("DriverDesc")?.ToString();
-                                if (driverDesc == "AMD Radeon Graphics" || driverDesc == "AMD Radeon 780M Graphics")
+                                if (driverDesc == "AMD Radeon Graphics" || driverDesc == "AMD Radeon 780M Graphics" || driverDesc == "AMD Radeon(TM) Graphics" || driverDesc == "AMD Radeon RX 670 Graphics")
                                 {
                                     if (subKey.GetSubKeyNames().Length > 0)
                                     {
