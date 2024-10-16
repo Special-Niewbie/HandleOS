@@ -70,13 +70,7 @@ You can find instructions and the ISO here, or by selecting the tab above:
 
 <img width=32px src="Git_assets/disc.ico"><a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> 
 
-
-
-
-
-
-
-
+<br><br><br>
 
 ⚠️***Only for Steam Deck Users follow this:*** please, take a look at this <a href="steam_deck_guide.md" style="color: #2079C8;">Steam Deck Guide</a> created (and thanks) by @AllevatoreAnonimo. Valve hasn't optimized the Steam Deck drivers for Windows (seems to be on purpose!), which cause some challenges for users trying to make the switch From SteamOS to Windows. This guide, can help you navigate the process / troubleshooting and avoid some of the frustration that comes with using Windows on Steam Deck.
 
