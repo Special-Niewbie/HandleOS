@@ -204,7 +204,30 @@ As shown in the picture below, this opens the Background settings for what to ma
 
    <img height="340" src="Git_assets/features/HibernationSleep.png"/>
 
+* **Pros to Re-enable**
 
+1. *Energy Efficiency:* 
+     *Re-enabling hibernation or hybrid sleep allows you to put your Handled/PC in a Low-Power State, reducing energy consumption.*
+2. *Fast Resume:* 
+     *Hybrid sleep combines the benefits of sleep and hibernation, allowing faster resume times compared to a full shutdown.*
+3. *Data Safety:* 
+     *Preventing data loss if it's in Sleep Mode, avoid system corruption on resume stage.*
+4. *Convenience:* 
+     *It provides the ability to quickly resume work without rebooting.*
+
+* **Cons to Re-enable**
+
+1. *Increased Disk Writes:* 
+     *Enabling these features increases continuous disk writes, typically consuming around 75% of your system's RAM in disk space.*
+2. *Performance Degradation:* 
+     *Continuous background operations like disk writes increase the workload on the CPU and other components.* 
+     *Potentially causing a slight degradation in performance and keep stressing the SSD.*
+3. *SSD Lifespan:* 
+     *With frequent disk writes, SSDs experience reduced lifespan compared to systems with hibernation and hybrid sleep disabled.*
+4. *BIOS Configuration:* 
+    *If C-States (power-saving states) were previously disabled in the BIOS, they need to be re-enabled for proper energy savings.*
+    
+    
 
 ### New Pointer Design in `HandleOS 23H2v2`:
 
@@ -333,6 +356,7 @@ Starting from version 2.2.0, `HandleOS Tab View` is an enhanced window switching
 You can use `HandleOS Tab View` in two ways:
 
 1. **Informational View**: This mode displays a preview of the windows you're switching between. The view will automatically close after approximately 5 seconds if no selection is made.
-2. **Interactive View**: Use the D-Pad on your controller to navigate through the available windows. Press the `A` button to select a window for immediate switching.
+2. **Interactive View**: Use ***BACK***+***LB*** and then press ***RB*** to move between apps.
+   * **OR** as second option, use the  D-Pad on your controller to navigate/jump through the available apps. And then press `A` button, to select the app and close the Tab View .
 
 This dual functionality makes it easier to manage your switch between windows more efficiently.
