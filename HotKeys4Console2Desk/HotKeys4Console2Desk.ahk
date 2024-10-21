@@ -19,7 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 ;@Ahk2Exe-SetName HotKeys4Console2Desk
 ;@Ahk2Exe-SetDescription HotKeys4Console2Desk companion tool for Console2Desk
-;@Ahk2Exe-SetVersion 3.8.0
+;@Ahk2Exe-SetVersion 3.8.5
 ;@Ahk2Exe-SetOrigFilename HotKeys4Console2Desk.ahk
 ;@Ahk2Exe-SetCompanyName Special-Niewbie Softwares
 ;@Ahk2Exe-SetCopyright ©2024 Special-Niewbie Softwares. All rights reserved.
@@ -221,7 +221,7 @@ CheckForUpdates() {
             MsgBox, 4,, A new version is available: %latestVersion%`n`nYou are currently using version: %localVersion%`n`nWould you like to visit the project page on GitHub to Download it?
             IfMsgBox, Yes
             {
-                Run, https://github.com/Special-Niewbie/HandleOS
+                Run, https://github.com/Special-Niewbie/HandleOS/releases
             }
         }
         else {
@@ -469,19 +469,21 @@ ApplyCursorScheme(schemeName, cursorDirectory) {
 
     ; Imposta tutti i cursori associati al tema
     RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Arrow, %SystemRoot%\%cursorDirectory%\pointer.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, AppStarting, %SystemRoot%\%cursorDirectory%\help.cur
+    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, AppStarting, %SystemRoot%\%cursorDirectory%\work.ani
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Crosshair, %SystemRoot%\%cursorDirectory%\cross.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Hand, %SystemRoot%\%cursorDirectory%\link.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Help, %SystemRoot%\%cursorDirectory%\help.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, IBeam, %SystemRoot%\%cursorDirectory%\text.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, No, %SystemRoot%\%cursorDirectory%\unavailiable.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, NWPen, %SystemRoot%\%cursorDirectory%\handwriting.cur
     RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Wait, %SystemRoot%\%cursorDirectory%\busy.ani
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Crosshair, %SystemRoot%\%cursorDirectory%\cross.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, IBeam, %SystemRoot%\%cursorDirectory%\text.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, NWPen, %SystemRoot%\%cursorDirectory%\handwriting.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, No, %SystemRoot%\%cursorDirectory%\unavailiable.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNS, %SystemRoot%\%cursorDirectory%\vert.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeWE, %SystemRoot%\%cursorDirectory%\horz.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNWSE, %SystemRoot%\%cursorDirectory%\dgn1.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNESW, %SystemRoot%\%cursorDirectory%\dgn2.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeAll, %SystemRoot%\%cursorDirectory%\move.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeAll, %SystemRoot%\%cursorDirectory%\move.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNESW, %SystemRoot%\%cursorDirectory%\dgn2.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNS, %SystemRoot%\%cursorDirectory%\vert.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeNWSE, %SystemRoot%\%cursorDirectory%\dgn1.cur
+	RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, SizeWE, %SystemRoot%\%cursorDirectory%\horz.cur    
     RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, UpArrow, %SystemRoot%\%cursorDirectory%\alternate.cur
-    RegWrite, REG_SZ, HKEY_CURRENT_USER\Control Panel\Cursors, Hand, %SystemRoot%\%cursorDirectory%\link.cur
+    
 }
 
 ; Function to update the status of the Tablet Mode menu
