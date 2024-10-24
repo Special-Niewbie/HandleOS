@@ -34,7 +34,7 @@ namespace Console2Desk.TouchButtons
         private const uint WM_CLOSE = 0x0010;
         private const string ExplorerClassName = "CabinetWClass"; // Classe della finestra di File Explorer
 
-        public static async Task CodeForTouchDesktopButton(MessagesBoxImplementation messagesBoxImplementation, Special_Niewbie_Button Button, string explorerPath)
+        public static void CodeForTouchDesktopButton(MessagesBoxImplementation messagesBoxImplementation, Special_Niewbie_Button Button, string explorerPath)
         {
             try
             {

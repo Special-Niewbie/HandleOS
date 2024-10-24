@@ -33,6 +33,7 @@ using System;
 using Console2Desk.FormWifi;
 using Console2Desk.PowerM;
 using Console2Desk.HiberSleep;
+using System.Reflection;
 
 
 namespace Console2Desk
@@ -665,54 +666,53 @@ namespace Console2Desk
         //----------------Start - Touch Buttons
         private async void desktopButton1_Click(object sender, EventArgs e)
         {
-            // Minimize the form at the start
-            this.WindowState = FormWindowState.Minimized;
-
             // Disabilitare Form1 per impedire l'interazione dell'utente
             this.Enabled = false;
-
+            // Minimize the form at the start
+            this.WindowState = FormWindowState.Minimized;
             ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
 
-            Task.Delay(500).Wait();
+            Task.Delay(2500).Wait();
+
             // Call the method to handle desktop button click
             DesktopButton.CodeForTouchDesktopButton(DependencyContainer.MessagesBoxImplementation, desktopButton1, explorerPath);
 
-            Task.Delay(2500).Wait();
+            Task.Delay(1500).Wait();
             ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+            Task.Delay(1500).Wait();
 
             // Disabilitare Form1 per impedire l'interazione dell'utente
             this.Enabled = true;
-
-            Task.Delay(500).Wait();
             // Restore the form to its normal state
             this.WindowState = FormWindowState.Normal;
+            //await Task.Delay(800);
+            //this.Close();
         }
 
 
         private async void consoleButton1_Click(object sender, EventArgs e)
         {
-            // Minimize the form at the start
-            this.WindowState = FormWindowState.Minimized;
-
             // Disabilitare Form1 per impedire l'interazione dell'utente
             this.Enabled = false;
-
+            // Minimize the form at the start
+            this.WindowState = FormWindowState.Minimized;
             ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
 
-            Task.Delay(500).Wait();
+            Task.Delay(1500).Wait();
+
             // Call the method to handle console button click
             ConsoleTouchButton.CodeForTouchConsoleButton(DependencyContainer.MessagesBoxImplementation, consoleButton1, fullscreenAppPath, defaultFullscreenSteamAppPath, this, _topMostTimer);
 
-            Task.Delay(2500).Wait();
+            Task.Delay(1500).Wait();
             ShareDisableTouchscreenClass.DisableTouchscreen(pictureBoxResetTouchKeyboard);
+            Task.Delay(500).Wait();
 
             // Disabilitare Form1 per impedire l'interazione dell'utente
             this.Enabled = true;
-
-            Task.Delay(1500).Wait();
             // Restore the form to its normal state
             this.WindowState = FormWindowState.Normal;
-
+            //await Task.Delay(800);
+            //this.Close();
         }
         //----------------End - Touch-Buttons
 
@@ -1580,7 +1580,7 @@ namespace Console2Desk
             }
         }
 
-        private async void pictureBoxResetTouchKeyboard_MouseDown(object sender, EventArgs e)
+        private void pictureBoxResetTouchKeyboard_MouseDown(object sender, EventArgs e)
         {
             pictureBoxResetTouchKeyboardPress.Visible = true;
             pictureBoxResetTouchKeyboard.Visible = false;
@@ -1603,7 +1603,7 @@ namespace Console2Desk
 
                 // Avvia la logica per resettare la tastiera touch             
                 Cursor = Cursors.WaitCursor;
-                await CodeForResetTouchKeyboard.ResetTouchKeyboardAsync(pictureBoxResetTouchKeyboard);
+                CodeForResetTouchKeyboard.ResetTouchKeyboardAsync(pictureBoxResetTouchKeyboard);
                 Cursor = Cursors.Default;
                 DependencyContainer.MessagesBoxImplementation.ShowMessage("The Touch Keyboard has been reset successfully. " +
                     "If the keyboard reappears, please close it manually and reapply" +
@@ -1641,6 +1641,7 @@ namespace Console2Desk
 
         private async void pictureBoxRealTime_ON_Click(object sender, EventArgs e)
         {
+            pictureBoxWaitingDefender.Visible = true;
             // Controlla lo stato di 'IsTamperProtected' prima di eseguire qualsiasi azione
             bool isTamperProtected = IsTamperProtected_Check.CheckIsTamperProtected();
 
@@ -1656,9 +1657,10 @@ namespace Console2Desk
             }
             else
             {
+                
                 // Tamper Protection è disabilitato, procedi con la disabilitazione della protezione in tempo reale
-                Cursor.Current = Cursors.WaitCursor;
-                WindowsDefender.DisableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
+                //Cursor.Current = Cursors.WaitCursor;
+                await WindowsDefender.DisableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
                 DependencyContainer.MessagesBoxImplementation.ShowMessage(
                     "Windows Defender Real-Time Protection disabled successfully.",
                     "Information",
@@ -1668,12 +1670,15 @@ namespace Console2Desk
                 pictureBoxRealTime_ON.Visible = false;
                 pictureBoxRealTime_OFF.Visible = true;
 
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
+                
             }
+            pictureBoxWaitingDefender.Visible = false;
         }
 
         private async void pictureBoxRealTime_OFF_Click(object sender, EventArgs e)
         {
+            pictureBoxWaitingDefender.Visible = true;
             // Controlla lo stato di 'IsTamperProtected' prima di eseguire qualsiasi azione
             bool isTamperProtected = IsTamperProtected_Check.CheckIsTamperProtected();
 
@@ -1689,9 +1694,10 @@ namespace Console2Desk
             }
             else
             {
+                
                 // Tamper Protection è disabilitato, procedi con l'abilitazione della protezione in tempo reale
-                Cursor.Current = Cursors.WaitCursor;
-                WindowsDefender.EnableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
+                //Cursor.Current = Cursors.WaitCursor;
+                await WindowsDefender.EnableRealTimeProtection(DependencyContainer.MessagesBoxImplementation);
                 DependencyContainer.MessagesBoxImplementation.ShowMessage(
                     "Windows Defender Real-Time Protection enabled successfully.",
                     "Information",
@@ -1701,8 +1707,10 @@ namespace Console2Desk
                 pictureBoxRealTime_OFF.Visible = false;
                 pictureBoxRealTime_ON.Visible = true;
 
-                Cursor.Current = Cursors.Default;
+                //Cursor.Current = Cursors.Default;
+                
             }
+            pictureBoxWaitingDefender.Visible = false;
         }
 
         private void pictureBoxControllers_Click(object sender, EventArgs e)
@@ -1870,6 +1878,11 @@ namespace Console2Desk
 
                 DependencyContainer.MessagesBoxImplementation.ShowMessage($"Error starting the program: {ex.Message}", "Error", MessageBoxButtons.OK);
             }
+        }
+
+        private void pictureBoxWaitingDefender_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

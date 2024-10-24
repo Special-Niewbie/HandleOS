@@ -27,56 +27,58 @@ namespace Console2Desk.BottomWindowButtons
             const string valueName = "TipbandDesiredVisibility";
             const string valueName2 = "TouchKeyboardTapInvoke";
             const string valueNameAutoInvoke = "EnableDesktopModeAutoInvoke";
+
             try
             {
-                // Apri la chiave di registro o creala se non esiste
                 using (var key = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(registryPath))
                 {
                     if (key != null)
                     {
-                        object value = key.GetValue(valueName);
-                        object value2 = key.GetValue(valueName2);
-                        int intValue = 0;
-                        int intValue2 = 0;
-                        if (value != null && int.TryParse(value.ToString(), out intValue) &&
-                    value2 != null && int.TryParse(value2.ToString(), out intValue2))
+                        // Read values ​​from the register, using 0 as the default value if they do not exist
+                        int intValue = (int)(key.GetValue(valueName, 0) ?? 0);
+                        int intValue2 = (int)(key.GetValue(valueName2, 0) ?? 0);
+
+                        /*MessageBox.Show($"Values ​​read from register (with default):\n" +
+                                      $"{valueName}: {intValue}\n" +
+                                      $"{valueName2}: {intValue2}",
+                                      "Debug Info");*/
+
+                        if (intValue == 2 || intValue == 1 || intValue2 == 2 || intValue2 == 1)
                         {
-                            if (intValue == 2 || intValue == 1 || intValue2 == 2 || intValue2 == 1)
+                            // Disabilita
+                            key.SetValue(valueName, 0, Microsoft.Win32.RegistryValueKind.DWord);
+                            key.SetValue(valueName2, 0, Microsoft.Win32.RegistryValueKind.DWord);
+                            key.SetValue(valueNameAutoInvoke, 0, Microsoft.Win32.RegistryValueKind.DWord);
+
+                            System.Threading.Thread.Sleep(1000);
+
+                            if ((int)key.GetValue(valueName, 0) == 0 && (int)key.GetValue(valueName2, 0) == 0)
                             {
-                                key.SetValue(valueName, 0, Microsoft.Win32.RegistryValueKind.DWord);
-                                key.SetValue(valueName2, 0, Microsoft.Win32.RegistryValueKind.DWord);
-                                // Set EnableDesktopModeAutoInvoke to 0 (Off)
-                                key.SetValue(valueNameAutoInvoke, 0, Microsoft.Win32.RegistryValueKind.DWord);
-                                System.Threading.Thread.Sleep(1000);
-                                if ((int)key.GetValue(valueName, 0) == 0 && (int)key.GetValue(valueName2, 0) == 0)
-                                {
-                                    pictureBoxResetTouchKeyboard.Image = Properties.Resources.HandTouchKeyboard_Disabled;
-                                }
-                            }
-                            else if (intValue == 0 && intValue2 == 0)
-                            {
-                                key.SetValue(valueName, 2, Microsoft.Win32.RegistryValueKind.DWord);
-                                key.SetValue(valueName2, 2, Microsoft.Win32.RegistryValueKind.DWord);
-                                // Delete EnableDesktopModeAutoInvoke key
-                                key.DeleteValue(valueNameAutoInvoke, false);
-                                System.Threading.Thread.Sleep(1000);
-                                if ((int)key.GetValue(valueName, 2) == 2 && (int)key.GetValue(valueName2, 2) == 2)
-                                {
-                                    pictureBoxResetTouchKeyboard.Image = Properties.Resources.HandTouchKeyboard;
-                                }
+                                pictureBoxResetTouchKeyboard.Image = Properties.Resources.HandTouchKeyboard_Disabled;
+                                //MessageBox.Show("Touchscreen successfully disabled", "Info");
                             }
                         }
-                        else
+                        else if (intValue == 0 && intValue2 == 0)
                         {
-                            // Handle the case where the values are not integers
-                            DependencyContainer.MessagesBoxImplementation.ShowMessage("Invalid registry value type.", "Error", MessageBoxButtons.OK);
+                            // Abilita
+                            key.SetValue(valueName, 2, Microsoft.Win32.RegistryValueKind.DWord);
+                            key.SetValue(valueName2, 2, Microsoft.Win32.RegistryValueKind.DWord);
+                            key.DeleteValue(valueNameAutoInvoke, false);
+
+                            System.Threading.Thread.Sleep(1000);
+
+                            if ((int)key.GetValue(valueName, 2) == 2 && (int)key.GetValue(valueName2, 2) == 2)
+                            {
+                                pictureBoxResetTouchKeyboard.Image = Properties.Resources.HandTouchKeyboard;
+                                //MessageBox.Show("Touchscreen enabled successfully", "Info");
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                //DependencyContainer.MessagesBoxImplementation.ShowMessage($"An error occurred while modifying the registry: {ex.Message}", "Error", MessageBoxButtons.OK);
+                //MessageBox.Show($"Error while editing registration:\n{ex.Message}", "Errore");
             }
         }
     }

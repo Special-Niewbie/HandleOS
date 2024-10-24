@@ -14,6 +14,43 @@ namespace Console2Desk.SettingsButton
             {
                 try
                 {
+                    // Check for Steam Deck CPU first
+                    string cpuInfo = string.Empty;
+                    using (var process = new Process())
+                    {
+                        process.StartInfo.FileName = "cmd.exe";
+                        process.StartInfo.Arguments = "/C wmic cpu get name";
+                        process.StartInfo.RedirectStandardOutput = true;
+                        process.StartInfo.UseShellExecute = false;
+                        process.StartInfo.CreateNoWindow = true;
+                        process.Start();
+
+                        cpuInfo = process.StandardOutput.ReadToEnd();
+                        process.WaitForExit();
+                    }
+
+                    // Extract the CPU name (second line after "Name")
+                    string[] lines = cpuInfo.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+                    if (lines.Length >= 2)
+                    {
+                        string cpuName = lines[1].Trim();
+                        if (cpuName.StartsWith("AMD Custom APU 0405"))
+                        {
+                            memoryToggleSwitch.Invoke((MethodInvoker)delegate
+                            {
+                                var result = messagesBoxImplementation.ShowMessage(
+                                    "It appears you are trying to run this function on a Steam Deck.\n\n" +
+                                    "Please be aware that Valve has released unstable and incomplete Windows drivers for the Steam Deck. " +
+                                    "This function is highly discouraged on Steam Deck as it can definitely cause system stability issues.\n\n" +
+                                    "This function should only be experimented with on PCs where you are certain of what you're doing and system stability is assured. " +
+                                    "Otherwise, please ignore this function.",
+                                    "Steam Deck Detection Warning",
+                                    MessageBoxButtons.OK);
+                            });
+                            return; // Exit the function if Steam Deck is detected
+                        }
+                    }
+
                     bool isOn = memoryToggleSwitch.IsOn;
 
                     // Check if Paging File is enabled

@@ -14,6 +14,8 @@ Follow these steps to install HandleOS correctly, on your device. Please make su
 
 Download my borrowed ISO, and the necessary tool from the following link: [Download HandleOS ISO](https://drive.google.com/drive/folders/17-bPnBSjUiEPouGeiwU6VQjYxb9h5uiE?usp=drive_link).
 
+And, download latest `Console2Desk` release here: [Console2Desk.exe Latest Release](https://github.com/Special-Niewbie/HandleOS/releases).
+
 ***Note:***  `HandleOS 23H2v2`, does not include any `23H2` updates you need to update after installation. Also you can download the tool called `Smokless_UMAF_Settings_HandleOS` to disable the *C-STATE* on some AMD architectures (*C-STATE procedure for some unsupported AMD devices like Rog ALLY, you can find in the end of this page. Otherwise, disable it from your BIOS*)  . 
 
 
