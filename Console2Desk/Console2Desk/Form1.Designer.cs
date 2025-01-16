@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBoxIntegerScaling = new PictureBox();
             panel2 = new Panel();
+            special_Niewbie_ButtonHOB = new Special_Niewbie_Button();
+            pictureBoxWaitingDefender = new PictureBox();
             buttonHiberSleep = new Special_Niewbie_Button();
             buttonTempDM = new Special_Niewbie_Button();
             specialButtonDropDownMenu = new Special_Niewbie_Button();
@@ -40,7 +42,6 @@
             restartToolStripMenuItem = new ToolStripMenuItem();
             powerOffToolStripMenuItem = new ToolStripMenuItem();
             special_Niewbie_ButtonRestoreBoost = new Special_Niewbie_Button();
-            special_Niewbie_ButtonHOB = new Special_Niewbie_Button();
             buttonMiniConsoleWindowNew = new Special_Niewbie_Button();
             buttonRestorePauseUpgrade = new Special_Niewbie_Button();
             label3 = new Label();
@@ -96,6 +97,7 @@
             button_IncreaseRAM_System = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxIntegerScaling).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWaitingDefender).BeginInit();
             dropDownMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboardPress).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboard).BeginInit();
@@ -141,11 +143,12 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(40, 40, 40);
+            panel2.Controls.Add(special_Niewbie_ButtonHOB);
+            panel2.Controls.Add(pictureBoxWaitingDefender);
             panel2.Controls.Add(buttonHiberSleep);
             panel2.Controls.Add(buttonTempDM);
             panel2.Controls.Add(specialButtonDropDownMenu);
             panel2.Controls.Add(special_Niewbie_ButtonRestoreBoost);
-            panel2.Controls.Add(special_Niewbie_ButtonHOB);
             panel2.Controls.Add(buttonMiniConsoleWindowNew);
             panel2.Controls.Add(buttonRestorePauseUpgrade);
             panel2.Controls.Add(label3);
@@ -184,6 +187,44 @@
             panel2.Size = new Size(784, 465);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // special_Niewbie_ButtonHOB
+            // 
+            special_Niewbie_ButtonHOB.BackColor = Color.FromArgb(50, 50, 50);
+            special_Niewbie_ButtonHOB.BorderColor = Color.FromArgb(227, 227, 227);
+            special_Niewbie_ButtonHOB.BorderRadius = 20;
+            special_Niewbie_ButtonHOB.BorderSize = 1;
+            special_Niewbie_ButtonHOB.FlatAppearance.BorderSize = 0;
+            special_Niewbie_ButtonHOB.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            special_Niewbie_ButtonHOB.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
+            special_Niewbie_ButtonHOB.FlatStyle = FlatStyle.Flat;
+            special_Niewbie_ButtonHOB.ForeColor = Color.White;
+            special_Niewbie_ButtonHOB.HoverColor = Color.MediumSlateBlue;
+            special_Niewbie_ButtonHOB.Image = Properties.Resources.Console2DeskiconBenchmark40;
+            special_Niewbie_ButtonHOB.Location = new Point(250, 399);
+            special_Niewbie_ButtonHOB.Name = "special_Niewbie_ButtonHOB";
+            special_Niewbie_ButtonHOB.RightToLeft = RightToLeft.No;
+            special_Niewbie_ButtonHOB.Size = new Size(200, 60);
+            special_Niewbie_ButtonHOB.TabIndex = 36;
+            special_Niewbie_ButtonHOB.Text = "           HandleOS\r\n           Benchmark";
+            special_Niewbie_ButtonHOB.TextColor = Color.White;
+            special_Niewbie_ButtonHOB.TextImageRelation = TextImageRelation.ImageBeforeText;
+            special_Niewbie_ButtonHOB.UseVisualStyleBackColor = false;
+            special_Niewbie_ButtonHOB.Visible = false;
+            special_Niewbie_ButtonHOB.Click += special_Niewbie_ButtonHOB_Click;
+            // 
+            // pictureBoxWaitingDefender
+            // 
+            pictureBoxWaitingDefender.BackColor = Color.Transparent;
+            pictureBoxWaitingDefender.Image = Properties.Resources.Waiting_Defender;
+            pictureBoxWaitingDefender.Location = new Point(428, 397);
+            pictureBoxWaitingDefender.Name = "pictureBoxWaitingDefender";
+            pictureBoxWaitingDefender.Size = new Size(20, 20);
+            pictureBoxWaitingDefender.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxWaitingDefender.TabIndex = 48;
+            pictureBoxWaitingDefender.TabStop = false;
+            pictureBoxWaitingDefender.Visible = false;
+            pictureBoxWaitingDefender.Click += pictureBoxWaitingDefender_Click;
             // 
             // buttonHiberSleep
             // 
@@ -267,7 +308,7 @@
             dropDownMenu.MenuItemTextColor = SystemColors.ControlLightLight;
             dropDownMenu.Name = "dropDownMenu";
             dropDownMenu.PrimaryColor = Color.MediumSlateBlue;
-            dropDownMenu.Size = new Size(197, 140);
+            dropDownMenu.Size = new Size(197, 118);
             dropDownMenu.Opening += dropDownMenu_Opening;
             // 
             // turnOffScreenToolStripMenuItem
@@ -320,31 +361,6 @@
             special_Niewbie_ButtonRestoreBoost.UseVisualStyleBackColor = false;
             special_Niewbie_ButtonRestoreBoost.Visible = false;
             special_Niewbie_ButtonRestoreBoost.Click += special_Niewbie_ButtonRestoreBoost_Click;
-            // 
-            // special_Niewbie_ButtonHOB
-            // 
-            special_Niewbie_ButtonHOB.BackColor = Color.FromArgb(50, 50, 50);
-            special_Niewbie_ButtonHOB.BorderColor = Color.FromArgb(227, 227, 227);
-            special_Niewbie_ButtonHOB.BorderRadius = 20;
-            special_Niewbie_ButtonHOB.BorderSize = 1;
-            special_Niewbie_ButtonHOB.FlatAppearance.BorderSize = 0;
-            special_Niewbie_ButtonHOB.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            special_Niewbie_ButtonHOB.FlatAppearance.MouseOverBackColor = Color.MediumSlateBlue;
-            special_Niewbie_ButtonHOB.FlatStyle = FlatStyle.Flat;
-            special_Niewbie_ButtonHOB.ForeColor = Color.White;
-            special_Niewbie_ButtonHOB.HoverColor = Color.MediumSlateBlue;
-            special_Niewbie_ButtonHOB.Image = Properties.Resources.Console2DeskiconBenchmark40;
-            special_Niewbie_ButtonHOB.Location = new Point(250, 399);
-            special_Niewbie_ButtonHOB.Name = "special_Niewbie_ButtonHOB";
-            special_Niewbie_ButtonHOB.RightToLeft = RightToLeft.No;
-            special_Niewbie_ButtonHOB.Size = new Size(200, 60);
-            special_Niewbie_ButtonHOB.TabIndex = 36;
-            special_Niewbie_ButtonHOB.Text = "           HandleOS\r\n           Benchmark";
-            special_Niewbie_ButtonHOB.TextColor = Color.White;
-            special_Niewbie_ButtonHOB.TextImageRelation = TextImageRelation.ImageBeforeText;
-            special_Niewbie_ButtonHOB.UseVisualStyleBackColor = false;
-            special_Niewbie_ButtonHOB.Visible = false;
-            special_Niewbie_ButtonHOB.Click += special_Niewbie_ButtonHOB_Click;
             // 
             // buttonMiniConsoleWindowNew
             // 
@@ -1189,6 +1205,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxIntegerScaling).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxWaitingDefender).EndInit();
             dropDownMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboardPress).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxResetTouchKeyboard).EndInit();
@@ -1287,5 +1304,6 @@
         private ToolStripMenuItem restartToolStripMenuItem;
         private Special_Niewbie_Button buttonTempDM;
         private Special_Niewbie_Button buttonHiberSleep;
+        private PictureBox pictureBoxWaitingDefender;
     }
 }

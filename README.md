@@ -44,6 +44,10 @@
 
 
 
+# 🚧 Page Under Maintenance 🚧
+
+**The page is currently being updating to explain the new C2D version 4.1.0 and improve several sections. Please check back in the next few hours/Days for detailed information!**
+
 ## Join Our Discord Community!
 
 We’ve launched a Discord channel where we can exchange ideas, provide support, and help each other out. Join us at:
@@ -147,10 +151,12 @@ From Version of 2.7.0, C2D has a new companion for our handhelds: the new **Hand
 
 
 
-### Info for Developers
-Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamarin***, and ***AutoHotkey***.
+## License
 
-- If any of you have experience with getting the `Console Mode`  (without `explorer.exe`) to work smoothly with the `Windows Store`, I would really appreciate your help. I'm currently working on refining this feature, and your expertise could make a big difference!
+This project includes both open source and proprietary components:
+
+- The open source components are licensed under the MIT License (see `LICENSE`).
+- The proprietary components are subject to copyright and are licensed separately (see `COPYRIGHT`).
 
 
 
@@ -188,28 +194,6 @@ Currently, 2 languages and 3 frameworks are used: ***C# / WinForms*** , ***Xamar
 ### Others
 
 - A special thanks to my trusty test subject, the Rog Ally and one of my very old pc Samsung NF210, and all the SSDs that bravely endured my endless experiments.
-
-
-
-
-
-
-
-## Sources of Study
-
-A special acknowledgment to the resources that have been instrumental in the development of this project: 
-
-- [Seven Forum](https://www.sevenforums.com/) 
-- [Ten Forum](https://www.tenforums.com/) 
-- [Eleven Forum](https://www.elevenforum.com) 
-- [Microsoft Development Site](https://developer.microsoft.com)
-- [CodeProject](https://www.codeproject.com) 
-- [AutoHotkey](https://www.autohotkey.com) 
-- [GitHub Repository](https://github.com) 
-- [Playnite](https://github.com/JosefNemec/Playnite/) 
-- [Nintendo Switch-ish](https://github.com/davidkgriggs/Nintendo-Switch-ish) 
-- [Smokeless UMAF](https://github.com/DavidS95/Smokeless_UMAF)
-- and more...
 
 
 

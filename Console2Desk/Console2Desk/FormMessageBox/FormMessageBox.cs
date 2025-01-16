@@ -338,5 +338,10 @@ namespace Console2Desk.FormMessageBox
                 }
             }
         }
+
+        private void panelBase_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

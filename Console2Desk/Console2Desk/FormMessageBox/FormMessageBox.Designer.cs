@@ -51,8 +51,9 @@
             panelTitleFormMessage.Dock = DockStyle.Top;
             panelTitleFormMessage.ForeColor = SystemColors.ControlLightLight;
             panelTitleFormMessage.Location = new Point(0, 0);
+            panelTitleFormMessage.Margin = new Padding(3, 4, 3, 4);
             panelTitleFormMessage.Name = "panelTitleFormMessage";
-            panelTitleFormMessage.Size = new Size(656, 56);
+            panelTitleFormMessage.Size = new Size(750, 75);
             panelTitleFormMessage.TabIndex = 0;
             panelTitleFormMessage.Paint += panelTitleFormMessage_Paint;
             // 
@@ -64,9 +65,10 @@
             buttonCloseWindowFormMessage.FlatStyle = FlatStyle.Flat;
             buttonCloseWindowFormMessage.Font = new Font("Roboto Light", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             buttonCloseWindowFormMessage.ForeColor = Color.Red;
-            buttonCloseWindowFormMessage.Location = new Point(581, 0);
+            buttonCloseWindowFormMessage.Location = new Point(664, 0);
+            buttonCloseWindowFormMessage.Margin = new Padding(3, 4, 3, 4);
             buttonCloseWindowFormMessage.Name = "buttonCloseWindowFormMessage";
-            buttonCloseWindowFormMessage.Size = new Size(75, 56);
+            buttonCloseWindowFormMessage.Size = new Size(86, 75);
             buttonCloseWindowFormMessage.TabIndex = 1;
             buttonCloseWindowFormMessage.Text = "X";
             buttonCloseWindowFormMessage.UseVisualStyleBackColor = false;
@@ -76,7 +78,7 @@
             // 
             labelTitleFormMessage.AutoSize = true;
             labelTitleFormMessage.Font = new Font("Roboto Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            labelTitleFormMessage.Location = new Point(161, 12);
+            labelTitleFormMessage.Location = new Point(184, 16);
             labelTitleFormMessage.Name = "labelTitleFormMessage";
             labelTitleFormMessage.Size = new Size(334, 33);
             labelTitleFormMessage.TabIndex = 0;
@@ -90,10 +92,11 @@
             listBoxFormMessage.BorderStyle = BorderStyle.FixedSingle;
             listBoxFormMessage.ForeColor = SystemColors.ControlLightLight;
             listBoxFormMessage.FormattingEnabled = true;
-            listBoxFormMessage.ItemHeight = 15;
-            listBoxFormMessage.Location = new Point(12, 132);
+            listBoxFormMessage.ItemHeight = 20;
+            listBoxFormMessage.Location = new Point(14, 176);
+            listBoxFormMessage.Margin = new Padding(3, 4, 3, 4);
             listBoxFormMessage.Name = "listBoxFormMessage";
-            listBoxFormMessage.Size = new Size(632, 182);
+            listBoxFormMessage.Size = new Size(722, 242);
             listBoxFormMessage.TabIndex = 1;
             listBoxFormMessage.SelectedIndexChanged += listBoxFormMessage_SelectedIndexChanged;
             // 
@@ -104,7 +107,8 @@
             checkBoxFormMessage.CheckState = CheckState.Checked;
             checkBoxFormMessage.Font = new Font("Roboto Light", 12F, FontStyle.Regular, GraphicsUnit.Point);
             checkBoxFormMessage.ForeColor = SystemColors.ControlLightLight;
-            checkBoxFormMessage.Location = new Point(12, 320);
+            checkBoxFormMessage.Location = new Point(14, 427);
+            checkBoxFormMessage.Margin = new Padding(3, 4, 3, 4);
             checkBoxFormMessage.Name = "checkBoxFormMessage";
             checkBoxFormMessage.Size = new Size(260, 25);
             checkBoxFormMessage.TabIndex = 2;
@@ -123,9 +127,10 @@
             special_Niewbie_ButtonStartRestore.FlatStyle = FlatStyle.Flat;
             special_Niewbie_ButtonStartRestore.ForeColor = Color.White;
             special_Niewbie_ButtonStartRestore.HoverColor = Color.MediumSlateBlue;
-            special_Niewbie_ButtonStartRestore.Location = new Point(546, 369);
+            special_Niewbie_ButtonStartRestore.Location = new Point(624, 492);
+            special_Niewbie_ButtonStartRestore.Margin = new Padding(3, 4, 3, 4);
             special_Niewbie_ButtonStartRestore.Name = "special_Niewbie_ButtonStartRestore";
-            special_Niewbie_ButtonStartRestore.Size = new Size(98, 47);
+            special_Niewbie_ButtonStartRestore.Size = new Size(112, 63);
             special_Niewbie_ButtonStartRestore.TabIndex = 3;
             special_Niewbie_ButtonStartRestore.Text = "Start\r\nRestore";
             special_Niewbie_ButtonStartRestore.TextColor = Color.White;
@@ -137,7 +142,7 @@
             labelFormMessageInfo.AutoSize = true;
             labelFormMessageInfo.Font = new Font("Roboto Light", 8F, FontStyle.Regular, GraphicsUnit.Point);
             labelFormMessageInfo.ForeColor = SystemColors.Control;
-            labelFormMessageInfo.Location = new Point(12, 59);
+            labelFormMessageInfo.Location = new Point(14, 79);
             labelFormMessageInfo.Name = "labelFormMessageInfo";
             labelFormMessageInfo.Size = new Size(571, 45);
             labelFormMessageInfo.TabIndex = 4;
@@ -147,9 +152,9 @@
             // 
             labelListOfServices.AutoSize = true;
             labelListOfServices.ForeColor = SystemColors.ButtonShadow;
-            labelListOfServices.Location = new Point(12, 114);
+            labelListOfServices.Location = new Point(14, 152);
             labelListOfServices.Name = "labelListOfServices";
-            labelListOfServices.Size = new Size(176, 15);
+            labelListOfServices.Size = new Size(223, 20);
             labelListOfServices.TabIndex = 5;
             labelListOfServices.Text = "List of Services to Restore Boost:";
             // 
@@ -164,9 +169,10 @@
             special_Niewbie_ButtonFixWifi.FlatStyle = FlatStyle.Flat;
             special_Niewbie_ButtonFixWifi.ForeColor = Color.White;
             special_Niewbie_ButtonFixWifi.HoverColor = Color.MediumSlateBlue;
-            special_Niewbie_ButtonFixWifi.Location = new Point(12, 375);
+            special_Niewbie_ButtonFixWifi.Location = new Point(14, 500);
+            special_Niewbie_ButtonFixWifi.Margin = new Padding(3, 4, 3, 4);
             special_Niewbie_ButtonFixWifi.Name = "special_Niewbie_ButtonFixWifi";
-            special_Niewbie_ButtonFixWifi.Size = new Size(87, 39);
+            special_Niewbie_ButtonFixWifi.Size = new Size(99, 52);
             special_Niewbie_ButtonFixWifi.TabIndex = 6;
             special_Niewbie_ButtonFixWifi.Text = "Fix WIFI";
             special_Niewbie_ButtonFixWifi.TextColor = Color.White;
@@ -178,9 +184,9 @@
             labelRestoreWiFi.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             labelRestoreWiFi.AutoSize = true;
             labelRestoreWiFi.ForeColor = SystemColors.Control;
-            labelRestoreWiFi.Location = new Point(105, 379);
+            labelRestoreWiFi.Location = new Point(120, 505);
             labelRestoreWiFi.Name = "labelRestoreWiFi";
-            labelRestoreWiFi.Size = new Size(240, 30);
+            labelRestoreWiFi.Size = new Size(306, 40);
             labelRestoreWiFi.TabIndex = 7;
             labelRestoreWiFi.Text = "After apply the Restore Boost If the WIFI will \r\nnot work or disappear press this button.";
             // 
@@ -189,16 +195,18 @@
             panelBase.BorderStyle = BorderStyle.FixedSingle;
             panelBase.Dock = DockStyle.Fill;
             panelBase.Location = new Point(0, 0);
+            panelBase.Margin = new Padding(3, 4, 3, 4);
             panelBase.Name = "panelBase";
-            panelBase.Size = new Size(656, 428);
+            panelBase.Size = new Size(750, 571);
             panelBase.TabIndex = 8;
+            panelBase.Paint += panelBase_Paint;
             // 
             // FormMessageBox
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(40, 40, 40);
-            ClientSize = new Size(656, 428);
+            ClientSize = new Size(750, 571);
             Controls.Add(labelRestoreWiFi);
             Controls.Add(special_Niewbie_ButtonFixWifi);
             Controls.Add(labelListOfServices);
@@ -210,6 +218,7 @@
             Controls.Add(panelBase);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FormMessageBox";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormMessageBox";
