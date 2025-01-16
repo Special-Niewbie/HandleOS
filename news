@@ -1,5 +1,10 @@
 [
   {
+    "title": "After months of waiting, Console2Desk 4.1.0 is coming soon. Stay tuned!",
+    "icon": "C:/Program Files/Console2Desk/sources/alert.png",
+    "status": "Upcoming"
+  },
+  {
     "title": "All 24H2 Windows Update, hold on within further confirmation!",
     "icon": "C:/Program Files/Console2Desk/sources/alert.png",
     "status": "Pending"
