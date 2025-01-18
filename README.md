@@ -20,8 +20,9 @@
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
-    <img height="240" src="Git_assets/c2d_main_v.3.8.0.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/c2d_main_v.4.1.0.png" style="margin-left: auto;"/>
 </div>
+
 
 
 
@@ -50,43 +51,76 @@
 
 ## Join Our Discord Community!
 
-We’ve launched a Discord channel where we can exchange ideas, provide support, and help each other out. Join us at:
+In Discord channel where we can exchange ideas, provide support, and help each other out at:
 
 [![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/dC7TKNkN8z)
 
 
 
-**HandleOS** is a fan-made project dedicated to those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future Handled PCs. Based on the original <u>Windows 11 Home</u> from Microsoft site (a valid license must be from your Microsoft device), HandleOS has been optimized by removing telemetry, default software, and unnecessary services while retaining almost all Windows Defender security features. This reduces RAM consumption to around 1 GB in "IDLE Benchmark" on a virtual machine, which is particularly advantageous for allocating more RAM to the APU GPU and increasing responsiveness.
+HandleOS is a fan-made project tailored for those seeking a lightweight, secure, privacy-focused, and stable operating system, ideal for future handheld PCs. Based on Windows 11 from Microsoft's official site (a valid license is required from your Microsoft device), HandleOS is optimized by removing telemetry, unnecessary software, and services, while retaining all Windows Defender security features. This reduces RAM consumption to approximately 1 GB in "IDLE Benchmark" (on a virtual machine), allowing more RAM to be allocated to the APU GPU and improving responsiveness.
 
-After months of rigorous testing, I have significantly improved HandleOS performance, increasing FPS, enhancing stability, and reducing power consumption. If you're concerned about safety, rest assured: there is no unusual software or content present, only my completely open-source tools (with an external Open-Source UI called `Playnite`) and optimizations aimed at optimizing resources for Handled gaming . This is the result of my passion!
+After months of rigorous development, HandleOS now introduces a major milestone: the official Console2Desk 4.1.0 tool. This version represents a complete overhaul of my previous work, featuring numerous improvements and exclusive new functionalities, including the groundbreaking Hybrid Mode.
 
-HandleOS aspires to become a benchmark in the world of gaming performance. I actively invite the community to participate by sharing ideas and improvements by clicking on the Discussions & Tips tab above. One of the unique features of HandleOS is the ability to easily switch between Handheld/Console Mode and Desktop Mode.
+**What’s New in Console2Desk 4.1.0?**
+*Hybrid Mode:*
+Hybrid Mode is an evolution of the simpler "Console Mode." It bridges the gap between desktop apps and UWP apps, enabling seamless integration of both environments. Previously, this level of compatibility was impossible in Console Mode. With Hybrid Mode, you can fully customize your handheld or PC, offering unprecedented flexibility and control.
 
-No matter your expertise - whether you're a developer, an icon designer, a PC enthusiast, or just someone with a knack for tweaking registry keys or features - your contributions are valuable. Please help us improve this project and make it a true community effort.
+*Custom Context Menu:*
+A brand-new, custom-designed Context Menu has been implemented specifically for handheld devices. In Hybrid Mode, this menu replaces the default Windows Context Menu, offering an optimized experience. Achieving this required advanced coding techniques to ensure smooth functionality.
+
+**Enhanced UI and Performance:**
+
+*Revamped User Interface (UI):* The Console2Desk UI has been reimagined, now featuring animated effects that improve user interaction.
+Faster Mode Switching: Performance has been doubled when transitioning between modes, ensuring a seamless and responsive experience.
+*Customizable Program Shortcuts:* Added three new customizable "icon boxes" where you can easily pin your favorite applications.
+
+*Improved TabView and More:*
+The TabView has been rewrite with low level language, alongside various under-the-hood enhancements that lay the foundation for even more ambitious features in the future.
+
+*A Licensing Model*
+Given the extensive work behind this major update, starting with version 4.0, Console2Desk is available to those who invest in or donate to the project. Here’s how the licensing works:
+
+## Licensing and Donations  
+
+To support the development of HandleOS, you can obtain a license by donating:  
+- **Standard License**: Donate a minimum of **€4.99**.  
+- **Premium License**: Donate **€19.99 or more** to become a Premium Donor.  
+
+Both licenses currently offer the same features, but in future updates, they will differ in terms of themes and multi-language support. By donating, you are supporting the project, not purchasing a license.  
+
+If you prefer, you can also donate any amount of your choice to support the ongoing development.<small> 
+Please note: Any donation amount below €4.99 will be considered a simple donation to support the project and will not include any license as a gift. </small>  
+
+### How to Donate  
+You can make your donation using the buttons below, either directly on this page or through the HandleOS app installed:  
+
+***PayPal***
+
+<div style="text-align: left;">
+  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="Donate with PayPal">
+</div>
+
+- **Donate minimum €4.99**: [Click here](https://www.paypal.com/ncp/payment/L9G5UEVC6CRTU)  
+
+- **Donate minimum €19.99**: [Click here](https://www.paypal.com/ncp/payment/NBCZWN8AA54FA)  
+
+- **Donate Any Amount**: [Click here](https://www.paypal.com/paypalme/CrisDonate/)  
+
+The license will be processed and then sent to your email as a gift within **3 to 48 hours**, depending on the system’s processing time.  
 
 My goal is to create a community of enthusiasts eager to get the most out of these products, considering that both Linux and Windows have their Pros and Cons. If you appreciate my work and have the means, I would be grateful if you could contribute to this project or make a small donation to support me in continuing to develop.
 
 
 
-You can find instructions and the ISO here, or by selecting the tab above:
+You can find instructions and the ISO (for now) here below, or by selecting the tab above:
 
 <img width=32px src="Git_assets/disc.ico"><a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> 
 
 <br><br><br>
 
-⚠️***Only for Steam Deck Users follow this:*** please, take a look at this <a href="steam_deck_guide.md" style="color: #2079C8;">Steam Deck Guide</a> created (and thanks) by @AllevatoreAnonimo. Valve hasn't optimized the Steam Deck drivers for Windows (seems to be on purpose!), which cause some challenges for users trying to make the switch From SteamOS to Windows. This guide, can help you navigate the process / troubleshooting and avoid some of the frustration that comes with using Windows on Steam Deck.
+⚠️***Only for Steam Deck Users follow this:*** please, take a look at this <a href="steam_deck_guide.md" style="color: #2079C8;">Steam Deck Guide</a> created (and thanks) by @AllevatoreAnonimo. <u>Valve hasn't optimized the Steam Deck drivers for Windows</u> (***seems to be on purpose!***), which cause some challenges for users trying to make the switch from SteamOS to Windows. This guide, can help you navigate the process / troubleshooting and avoid some of the frustration that comes with using Windows on Steam Deck. But I hope you are not discouraged because you have a Steam Deck that does not perform to its full potential without the right drivers, so you are aware of this.
 
-## Donation
 
-If you enjoy using HandleOS and find it valuable, a small donation would be greatly appreciated! Your support will help me maintain the project and acquire additional handheld devices for further testing and improvement. Every contribution, no matter the size, makes a big difference in continuing to develop and enhance HandleOS.
-
-PayPal:
-
-[![Donate with PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/CrisDonate)
-
-Ko-fi:
-
-[![Donate with Ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/special_niewbie)
 
 
 
@@ -155,7 +189,7 @@ From Version of 2.7.0, C2D has a new companion for our handhelds: the new **Hand
 
 This project includes both open source and proprietary components:
 
-- The open source components are licensed under the MIT License (see `LICENSE`).
+- The Open and Close source components are licensed under the MIT License (see `LICENSE`).
 - The proprietary components are subject to copyright and are licensed separately (see `COPYRIGHT`).
 
 

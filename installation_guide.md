@@ -161,4 +161,32 @@ If your device already has this voice option according to your BIOS vendor's gui
        <img height="100" src="Git_assets/InstallationGuide/CreatedNewVolumeFAT32.png" style="margin-left: auto;"/>
    </div>
 
-1. 
+# *Disclaimer*  
+
+*The ISO provided here is for **educational purposes only** and is shared to help you understand how to configure the operating system in future steps. It is **not to be redistributed**, as the operating system belongs to Microsoft.*  
+
+*To provide better support for this project and standardize the mods/ISOs of HandleOS, the next steps will involve creating a tool that allows you to prepare your own HandleOS ISO while adhering to Microsoft's guidelines.*  
+
+## In near future we will have two Options for ISO Creation:  
+
+### 1. ISO Created by You : 
+
+You will download the ISO from Microsoft's official website and follow the few guidelines provided in the tool.  
+
+- **Note:** Stability and performance will depend entirely on your configuration, so I cannot provide support for this option.  
+
+### 2. In near future, my Tool:  
+
+My tool will process the ISO you download from Official Microsoft site to create an **official HandleOS ISO**, which will be tested and optimized by me.  
+
+### Why Use My Tool?  
+
+- **Unified Version:** It ensures a unified HandleOS version, making support easier since everyone will have the same configuration.  
+- **Error Prevention:** It avoids issues caused by user errors, unofficial scripts, or manual modifications that may lead to problems not present in the officially tested version by me.  
+- **It avoid these inconsistencies made by users:** of how they set them OS with different level of experiences can cause errors and I cannot support or reproduce, creating confusion for the project's development that we no need.   
+
+## *Important Security Reminder*  
+
+All my software is digitally signed by me. Please download only from my official channels.  
+Avoid external sites that may tamper with the software.  
+**Please, stay safe, and help me spread this message!!!**  
