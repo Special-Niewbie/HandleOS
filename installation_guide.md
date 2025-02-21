@@ -16,22 +16,25 @@ Download my borrowed ISO, and the necessary tool from the following link: [Downl
 
 And, download latest `Console2Desk` release here: [Console2Desk.exe Latest Release](https://github.com/Special-Niewbie/HandleOS/releases).
 
-***Note:***  `HandleOS 23H2v2`, does not include any `23H2` updates you need to update after installation. Also you can download the tool called `Smokless_UMAF_Settings_HandleOS` to disable the *C-STATE* on some AMD architectures (*C-STATE procedure for some unsupported AMD devices like Rog ALLY, you can find in the end of this page. Otherwise, disable it from your BIOS*)  . 
+***Note:***  `HandleOS 23H2v3.1`, does not include any `23H2` updates—you need to update after installation—and does not include any browser. Please download your preferred browser beforehand. My recommendation is to use ***Firefox***, as it offers the best balance between performance and privacy. I advise avoiding ***Edge*** due to its high background resource consumption.  Also you can download the tool called `Smokless_UMAF_Settings_HandleOS` to disable the *C-STATE* on some AMD architectures (*C-STATE procedure for some unsupported AMD devices like Rog ALLY, you can find in the end of this page. Otherwise, disable it from your BIOS*)  . 
 
 
 ## Post-Installation
 
 1. **Download ISO and Verify SHA256 Hash serial ISO Number**:
    
-   - After downloading the ISO, check the SHA256 hash to ensure it matches the provided hash. This step is crucial for verifying the integrity of the downloaded HandleOS ISO file. You can find the file named `README_HandleOS_23H2_Genuine_Check_ISO.txt`. 
+   - After downloading the ISO, check the SHA256 hash to ensure it matches the provided hash. This step is crucial for verifying the integrity of the downloaded HandleOS ISO file. You can find the file named `README_HandleOS_23H2v3.1_Genuine_Check_ISO.txt`. 
      If you don't have the .txt file, execute this command by your Windows Termina:  
-     `certutil -hashfile "HandleOS_23H2v3_Home.iso" SHA256`
+     `certutil -hashfile "HandleOS_23H2v3.1.iso" SHA256`
    
    - Here it's the serial SHA256 Hash ISO number:
    
-     1. **HandleOS_23H2v3_Home** genuine SHA256 = `c8734a698d82b635625690921d37cafbac37bc2aa7d8b5b88f71d77dfcf180f6`
+     1. **HandleOS_23H2v3.1** genuine SHA256 = `e46e1cc3cac8267d336806f74e0a573d9a2cb0564b85bfb36db4b25bcf4a35f4`
 
 ###### Deprecated OLD Version:
+
+`HandleOS_23H2v3_Home genuine SHA256 = c8734a698d82b635625690921d37cafbac37bc2aa7d8b5b88f71d77dfcf180f6`
+*Above, **HandleOS_23H2v3_Home** is deprecated due to some stability issues and the Xbox app not working as expected.*
 
 `HandleOS 23H2v2 genuine SHA256 = 634a06f5ad10e38c937f332f04ee371049f60be0b25139e0f52c15f2e06b5710`
 
