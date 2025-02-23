@@ -187,7 +187,12 @@ As shown in the picture below, this opens the Background settings for what to ma
      This button installs and uninstalls the MS Store. Unlike other projects out there, an external downloaded package is not used; instead, we use a restore technique for the original MS Store from the Windows ISO to increase data security. The words and function, are dynamically animated on base if you have installed or uninstalled the MS Store in your system.
 
 6. **HandleOS Benchmark**
-   `Windows Experience Index` resurrected from <u>Windows 7</u>, called `HandleOS Benchmark`, a new companion for the flagship C2D to measure the performance of your Handled.
+   From Version of 2.7.0, C2D has a new companion for our handhelds: the new **HandleOS Benchmark**. This tool, revived from the past and completely redesigned and rebuilt from the ground up, offers more consistent scores based on averages directly from Windows 7.
+
+   <div style="display: flex; justify-content: center; align-items: center;">
+       <img height="350" src="Git_assets/HandleOS_BanchMain.png" style="margin-left: auto;"/>
+       <img height="350" src="Git_assets/HandleOS_BanchScores.png" style="margin-left: auto;"/>
+   </div>
 
 6. **HandleOS Restore Boost**:
    Exclusively for HandleOS users, to maintain system boost and performance after Windows updates. `Fix Wifi` his a button to restores the WiFi service in cases where it disappears from the Windows Taskbar, an issue affecting some devices. 
@@ -229,7 +234,7 @@ As shown in the picture below, this opens the Background settings for what to ma
     
     
 
-### New Pointer Design in `HandleOS 23H2v2`:
+### New Pointer Design from `HandleOS 23H2v2`:
 
 <img height="180" src="Git_assets/features/Material_light.png"/> <img height="180" src="Git_assets/features/Material_dark.png"/>
 
@@ -301,7 +306,7 @@ As we can see in the image, there are 9 options in this first version:
 - **Splash Video ON/OFF**  
   This option disables the HandleOS splash video that plays at every first launch of Playnite in `Desktop Mode`. Alternatively, you can keep it active or change the boot/waiting video that plays while Playnite loads.
 
-- **Configure Switch Buttons**  
+- **Configure Switch Buttons to open HandleOS TabView **  
   This option it's  to customize controller/handled buttons for switching between active system windows. 
   
   <img height="320" src="Git_assets/features/ConfigureSwitchButtons.png"/>
@@ -310,13 +315,8 @@ As we can see in the image, there are 9 options in this first version:
   
   About `Configure Switch Buttons`, the key combinations are as follows:
   
-  - **Keyboard**
-    - `CTRL+SHIFT+F7` = Opens Console2Desk
-  
-  - **Controller/Gamepad**
-    - `SELECT+START` = Opens Console2Desk (with a small vibration)
-    - `SELECT+LB+RB` = As Default, switch between applications (with a small vibration).
-    - `Configure Switch Buttons` = Customize your own buttons to switch between applications (with a small vibration).
+  - `SELECT+LB+RB` = As Default, switch between applications (with a small vibration).
+  - `Configure Switch Buttons` = Customize your own buttons to open **HandleOS TabView** (with a small vibration).
   
   > ***NOTE***: `SELECT` button which means *BACK* button on XBOX controller - and the switch function has two methods. We learned that *`Lenovo Legion Go`* uses combinations with `SELECT+LB or RB`, which can cause conflicts with switch application buttons. Therefore, if you have this problem with default configurations `SELECT+LB+RB` , now you can `Configure Switch Buttons`.
   
@@ -335,7 +335,7 @@ As we can see in the image, there are 9 options in this first version:
 
 
 
-### AudioCCMode Volume Control (Version 2.2.0 and later)
+### AudioCCMode Volume Control for Console Mode (Version 2.2.0 and later)
 
 <img height="120" src="Git_assets/features/HandleOS_Volume.png"/>
 
@@ -343,18 +343,46 @@ With version 2.2.0, HandleOS introduces a new feature for managing physical volu
 
 Now, thanks to the new `AudioCCMode` service, HandleOS can handle all physical volume buttons while in `Console Mode`. This enhancement allows you to adjust the volume directly using the hardware buttons on your device, providing greater convenience and control over your audio settings without needing to navigate through on-screen menus.
 
-## HandleOS Tab View (Version 2.2.0 and later)
 
-<img height="220" src="Git_assets/features/HandleOSTabView.png"/>
 
-You can also use the multitasking function to switch between apps if you're running a scaling app in parallel with your game. 
+### HandleOS TabView from v4.0.0 – Rewritten from scratch in C
 
-Starting from version 2.2.0, `HandleOS Tab View` is an enhanced window switching experience in `Console Mode`. 
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="250" src="Git_assets/HandleOS_TabView.png" style="left: auto;"/>
+In response to user feedback, I have completely rewritten the code for **HandleOS TabView** from scratch in **C**, starting with **version 4.1.0**.  
+This update allows for more reliable interaction with the operating system and introduces new effects in it.
 
-You can use `HandleOS Tab View` in two ways:
+You can now invoke **HandleOS TabView** not only with a controller by using ***BACK***+***LB***+***RB***  but also via keyboard using the default shortcut **CTRL+SHIFT+F5** that can be changed from the Configuration window by the small Menu from the System Tray icon `HotKeys4Console2Desk` please have a look on a voice **Configure Switch Buttons to open HandleOS TabView**  .  
 
-1. **Informational View**: This mode displays a preview of the windows you're switching between. The view will automatically close after approximately 5 seconds if no selection is made.
-2. **Interactive View**: Use ***BACK***+***LB*** and then press ***RB*** to move between apps.
-   * **OR** as second option, use the  D-Pad on your controller to navigate/jump through the available apps. And then press `A` button, to select the app and close the Tab View .
+- `CTRL+SHIFT+F5` (*From Keyboard* ) = open **HandleOS TabView** move with arrows **Left** and **Right** and press **ENTER** to select the Background App.
 
-This dual functionality makes it easier to manage your switch between windows more efficiently.
+- It provides **two modes** for interacting with your Background applications:  
+
+  - **Informational View**:  
+    Shows a preview of the windows you're switching in between and will automatically close after about **five seconds** if no selection is made.  
+
+  - **Interactive View**:  
+    Navigate through apps using the **D-Pad** **Left** or **Right** Arrows on your controller to move between applications and press **A** to select an app.  
+
+In addition to these improvements, you can still utilize **multitasking features** to switch between apps when running a scaling application alongside your game.  
+This **dual functionality** streamlines the process of managing multiple windows efficiently.
+
+
+
+
+
+***Deprecated old HandleOS Tab View Version from 2.2.0 to 3.8.9***
+
+*<img height="220" src="Git_assets/features/HandleOSTabView.png"/>*
+
+*You can also use the multitasking function to switch between apps if you're running a scaling app in parallel with your game.* 
+
+*Starting from version 2.2.0, `HandleOS Tab View` is an enhanced window switching experience in `Console Mode`.* 
+
+*You can use `HandleOS Tab View` in two ways:*
+
+1. ***Informational View**: This mode displays a preview of the windows you're switching between. The view will automatically close after approximately 5 seconds if no selection is made.*
+2. ***Interactive View**: Use **BACK**+**LB** and then press **RB** to move between apps.*
+   * ***OR** as second option, use the  D-Pad on your controller to navigate/jump through the available apps. And then press `A` button, to select the app and close the Tab View .*
+
+*This dual functionality makes it easier to manage your switch between windows more efficiently.*

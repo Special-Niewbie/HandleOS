@@ -80,7 +80,7 @@ A brand-new, custom-designed Context Menu, has been implemented specifically for
 
 **Enhanced UI and Performance:**
 
-*Revamped User Interface (UI):* The Console2Desk UI has been reimagined from the latest 3.9.0 version, now featuring animated effects that improve user interaction.
+*Revamped User Interface (UI):* The Console2Desk UI has been reimagined from the latest 3.8.9/ 3.9.0 version, now featuring animated effects that improve user interaction.
 Faster Mode Switching: Performance has been doubled when transitioning between modes, ensuring a seamless and responsive experience.
 *Customizable Program Shortcuts:* Added three new customizable "icon boxes" where you can easily pin your favorite applications.
 
@@ -154,7 +154,7 @@ You can find installation instructions and the ISO here below, or by selecting t
 | <img width=32px src="Git_assets/ram.ico">  **RAM**           |                     1.5 GB DDR3 SDRAM                      |
 | <img width=32px src="Git_assets/gpu.png">  **GPU**           | Any<br />(with drivers compatible or modded for modern OS) |
 | <img width=32px src="Git_assets/windows.ico">  **HDD/SSD**   |                 15 GB <br />(Tested by VM)                 |
-| <img width=36px src="Git_assets/controller.png">↺ <img width=32px src="Git_assets/monitor.ico">Console Mode / Desktop Mode |                             ✅                              |
+| <img width=36px src="Git_assets/controller.png">↺ <img width=32px src="Git_assets/monitor.ico"><br />*Hybrid Mode/ Console Mode / Desktop Mode* |                             ✅                              |
 | <img width=32px src="Git_assets/computerchip.ico">  **TPM**  |          <img width=19px src="Git_assets/x.png">           |
 
 **NOTE**: *The benchmark and RAM consumption of approximately 1 GB, is based on a system with limited hardware characteristics. This value is intended to reflect the OS's lightness. HandleOS, by nature of being based on Windows, may use slightly more RAM if you have a large amount available on your PC, especially if there are default drivers that Windows has founded in its local database. Conversely, if the system has very limited specifications, HandleOS will adjust and use less RAM accordingly.*
@@ -164,7 +164,7 @@ You can find installation instructions and the ISO here below, or by selecting t
 | <img height=34px src="Git_assets/Console2Desk_icon.png">   Console2Desk |        ✅        |
 | <img height=34px src="Git_assets/theme.ico">  HandleOS Personalized Wallpapers |        ✅        |
 | <img height=34px src="Git_assets/Heroic.png"> or  <img height=34px src="Git_assets/Playnite.png"> The default user interface is set to either Heroic or Playnite for both Hybrid and Console Modes. However, you can change this setting and use any other UI or software via the Console2Desk settings. |        ✅        |
-| <img width=36px src="Git_assets/edge.ico">  Microsoft Edge + <img width=32px src="Git_assets/copilot.png">Copilot | ✅ (Installable) |
+| <img width=36px src="Git_assets/edge.ico">  Microsoft Edge + <img width=32px src="Git_assets/copilot.png">Copilot (not suggested to install for ) | ✅ (Installable) |
 | <img width=32px src="Git_assets/store4.ico"> Microsoft Store | ✅ (Installable) |
 | <img width=32px src="Git_assets/pipelines.ico">  OS Debloated and Optimized (*all the functions can be reversible by Console2Desk*) |        ✅        |
 | <img width=36px src="Git_assets/bitlocker.png">  Device Encryption |        ✅        |
@@ -186,15 +186,29 @@ You can find installation instructions and the ISO here below, or by selecting t
     <img height="240" src="Git_assets/Benchmarks/HandleOSv2_UserServices.png"
 </div>
 
-### HandleOS Benchmark
-From Version of 2.7.0, C2D has a new companion for our handhelds: the new **HandleOS Benchmark**. This tool, revived from the past and completely redesigned and rebuilt from the ground up, offers more consistent scores based on averages directly from Windows 7.
+
+
+### HandleOS TabView from v4.1.0 – Rewritten from scratch in C
+
+In response to user feedback, I have completely rewritten the code for **HandleOS TabView** from scratch in **C**, starting with **version 4.1.0**.  
+This update allows for more reliable interaction with the operating system and introduces new effects in it.
+You can now invoke **HandleOS TabView** not only with a controller by using ***BACK***+***LB***+***RB*** (*remember you can change this controllers combination buttons, please read for more details in <a href="features.md" style="color: #2079C8;">Features</a> section*) but also via keyboard using the shortcut **CTRL+SHIFT+F5** and moving with **Left** and **Right Arrows**, to select the Background app press **ENTER**  .  
+
+- It provides **two modes** for interacting with your Background applications:  
+
+  - **Informational View**:  
+    Shows a preview of the windows you're switching in between and will automatically close after about **five seconds** if no selection is made.  
+
+  - **Interactive View**:  
+    Navigate through apps using the **D-Pad** **Left** or **Right** Arrows on your controller to move between applications and press **A** to select an app.  
+
+In addition to these improvements, you can still utilize **multitasking features** to switch between apps when running a scaling application alongside your game.  
+This **dual functionality** streamlines the process of managing multiple windows efficiently.
+
+
 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img height="350" src="Git_assets/HandleOS_BanchMain.png" style="margin-left: auto;"/>
-    <img height="350" src="Git_assets/HandleOS_BanchScores.png" style="margin-left: auto;"/>
-</div>
-
-
+    <img height="220" src="Git_assets/HandleOS_TabView.png" style="left: auto;"/>
 
 
 
