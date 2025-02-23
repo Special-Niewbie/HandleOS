@@ -1,6 +1,6 @@
 
 
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
 
 
 
@@ -24,17 +24,19 @@ And, download latest `Console2Desk` release here: [Console2Desk.exe Latest Relea
 1. **Download ISO and Verify SHA256 Hash serial ISO Number**:
    
    - After downloading the ISO, check the SHA256 hash to ensure it matches the provided hash. This step is crucial for verifying the integrity of the downloaded HandleOS ISO file. You can find the file named `README_HandleOS_23H2v3.1_Genuine_Check_ISO.txt`. 
-     If you don't have the .txt file, execute this command by your Windows Termina:  
+     If you don't have the .txt file, execute this command by your Windows Terminal/CMD:  
      `certutil -hashfile "HandleOS_23H2v3.1.iso" SHA256`
    
    - Here it's the serial SHA256 Hash ISO number:
    
-     1. **HandleOS_23H2v3.1** genuine SHA256 = `e46e1cc3cac8267d336806f74e0a573d9a2cb0564b85bfb36db4b25bcf4a35f4`
+     1. **HandleOS_23H2v3.1** genuine SHA256 = 
+     
+        <a href="" style="color: #2079C8;">e46e1cc3cac8267d336806f74e0a573d9a2cb0564b85bfb36db4b25bcf4a35f4</a>
 
 ###### Deprecated OLD Version:
 
 `HandleOS_23H2v3_Home genuine SHA256 = c8734a698d82b635625690921d37cafbac37bc2aa7d8b5b88f71d77dfcf180f6`
-*Above, **HandleOS_23H2v3_Home** is deprecated due to some stability issues and the Xbox app not working as expected.*
+***HandleOS_23H2v3_Home** is deprecated due to some stability issues and the Xbox app not working as expected.*
 
 `HandleOS 23H2v2 genuine SHA256 = 634a06f5ad10e38c937f332f04ee371049f60be0b25139e0f52c15f2e06b5710`
 

@@ -1,4 +1,4 @@
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
 
 
 
@@ -303,8 +303,6 @@ As we can see in the image, there are 9 options in this first version:
 
 - **Configure Switch Buttons**  
   This option it's  to customize controller/handled buttons for switching between active system windows. 
-
-  * *Credits for suggestion go to `Prob`.*
   
   <img height="320" src="Git_assets/features/ConfigureSwitchButtons.png"/>
   
@@ -318,7 +316,7 @@ As we can see in the image, there are 9 options in this first version:
   - **Controller/Gamepad**
     - `SELECT+START` = Opens Console2Desk (with a small vibration)
     - `SELECT+LB+RB` = As Default, switch between applications (with a small vibration).
-    - `Configure Switch Buttons` = Customize your own buttons to switch between applications (with a small vibration). *Thanks to Prob for suggestions.*
+    - `Configure Switch Buttons` = Customize your own buttons to switch between applications (with a small vibration).
   
   > ***NOTE***: `SELECT` button which means *BACK* button on XBOX controller - and the switch function has two methods. We learned that *`Lenovo Legion Go`* uses combinations with `SELECT+LB or RB`, which can cause conflicts with switch application buttons. Therefore, if you have this problem with default configurations `SELECT+LB+RB` , now you can `Configure Switch Buttons`.
   
