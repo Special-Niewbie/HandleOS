@@ -163,8 +163,8 @@ You can find installation instructions and the ISO here below, or by selecting t
 | ------------------------------------------------------------ | :-------------: |
 | <img height=34px src="Git_assets/Console2Desk_icon.png">   Console2Desk |        ✅        |
 | <img height=34px src="Git_assets/theme.ico">  HandleOS Personalized Wallpapers |        ✅        |
-| <img height=34px src="Git_assets/Heroic.png"> or  <img height=34px src="Git_assets/Playnite.png"> The default user interface is set to either Heroic or Playnite for both Hybrid and Console Modes. However, you can change this setting and use any other UI or software via the Console2Desk settings. |        ✅        |
-| <img width=36px src="Git_assets/edge.ico">  Microsoft Edge + <img width=32px src="Git_assets/copilot.png">Copilot (not suggested to install for ) | ✅ (Installable) |
+| <img height=34px src="Git_assets/Heroic.png"> or  <img height=34px src="Git_assets/Playnite.png">   The default user interface is set to either Heroic or Playnite for both Hybrid and Console Modes. However, you can change this setting and use any other UI or software via the Console2Desk settings. |        ✅        |
+| <img width=36px src="Git_assets/edge.ico">  Microsoft Edge + <img width=32px src="Git_assets/copilot.png">Copilot (*suggestion, avoid installing both due to potential privacy concerns and the significant increase in Microsoft background services*) | ✅ (Installable) |
 | <img width=32px src="Git_assets/store4.ico"> Microsoft Store | ✅ (Installable) |
 | <img width=32px src="Git_assets/pipelines.ico">  OS Debloated and Optimized (*all the functions can be reversible by Console2Desk*) |        ✅        |
 | <img width=36px src="Git_assets/bitlocker.png">  Device Encryption |        ✅        |
