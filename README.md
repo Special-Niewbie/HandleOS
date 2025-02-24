@@ -76,13 +76,24 @@ First, I would like to remind you that you can recall **Console2Desk** from anyw
 Hybrid Mode is an evolution of the other simpler function called `Console Mode`. It bridges the gap between desktop apps and UWP apps, enabling seamless integration of both environments. Previously, this level of compatibility was impossible in `Console Mode` that operate to cutting off many Windows services (without UI). With *Hybrid Mode*, you can fully customize your handheld or PC, offering unprecedented flexibility and control.
 
 *`Only in Hybrid Mode we have Custom Context Menu:`*
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="240" src="Git_assets/HOS_ContextMenu.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/HOSContextMenu_NewOptions.png" style="margin-left: auto;"/>
+</div>
+
 A brand-new, custom-designed Context Menu, has been implemented specifically for handheld devices. In *Hybrid Mode*, this menu replaces the default Windows Context Menu, offering an optimized experience for touch screen. Achieving this required advanced coding techniques to ensure smooth functionality.
 
 **Enhanced UI and Performance:**
 
 *Revamped User Interface (UI):* The Console2Desk UI has been reimagined from the latest 3.8.9/ 3.9.0 version, now featuring animated effects that improve user interaction.
 Faster Mode Switching: Performance has been doubled when transitioning between modes, ensuring a seamless and responsive experience.
-*Customizable Program Shortcuts:* Added three new customizable "icon boxes" where you can easily pin your favorite applications.
+*`Customizable Program Shortcuts:`* Added three new customizable "icon boxes" where you can easily pin your favourites applications.
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="240" src="Git_assets/CustomIconMenu.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/AddCustomIconMenu.png" style="margin-left: auto;"/>
+</div>
 
 *Improved `TabView` and More:*
 The TabView has been rewrite with low level language, alongside various under-the-hood enhancements that lay the foundation for even more ambitious features in the future.
