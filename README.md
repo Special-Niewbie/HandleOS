@@ -84,6 +84,8 @@ Hybrid Mode is an evolution of the other simpler function called `Console Mode`.
 
 A brand-new, custom-designed Context Menu, has been implemented specifically for handheld devices. In *Hybrid Mode*, this menu replaces the default Windows Context Menu, offering an optimized experience for touch screen. Achieving this required advanced coding techniques to ensure smooth functionality.
 
+<br>
+
 **Enhanced UI and Performance:**
 
 *Revamped User Interface (UI):* The Console2Desk UI has been reimagined from the latest 3.8.9/ 3.9.0 version, now featuring animated effects that improve user interaction.
@@ -94,6 +96,8 @@ Faster Mode Switching: Performance has been doubled when transitioning between m
     <img height="240" src="Git_assets/CustomIconMenu.png" style="margin-left: auto;"/>
     <img height="240" src="Git_assets/AddCustomIconMenu.png" style="margin-left: auto;"/>
 </div>
+<br>
+
 *Improved `TabView` and More:*
 The TabView has been rewrite with low level language, alongside various under-the-hood enhancements that lay the foundation for even more ambitious features in the future.
 
@@ -103,7 +107,9 @@ The TabView has been rewrite with low level language, alongside various under-th
     <img height="220" src="Git_assets/HandleOS_TabView.png" style="left: auto;"/>
 
 
+<br>
 
+<br>
 
 
 *A Licensing Model*
