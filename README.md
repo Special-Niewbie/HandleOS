@@ -94,9 +94,17 @@ Faster Mode Switching: Performance has been doubled when transitioning between m
     <img height="240" src="Git_assets/CustomIconMenu.png" style="margin-left: auto;"/>
     <img height="240" src="Git_assets/AddCustomIconMenu.png" style="margin-left: auto;"/>
 </div>
-
 *Improved `TabView` and More:*
 The TabView has been rewrite with low level language, alongside various under-the-hood enhancements that lay the foundation for even more ambitious features in the future.
+
+
+
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="220" src="Git_assets/HandleOS_TabView.png" style="left: auto;"/>
+
+
+
+
 
 *A Licensing Model*
 Given the extensive work behind this major update, starting with version 4.0.0, `Console2Desk` is available to those who invest in or donate to the project (all the previous deprecated versions still available). Here’s how the licensing works from 4.0.0:
@@ -215,12 +223,6 @@ You can now invoke **HandleOS TabView** not only with a controller by using ***B
 
 In addition to these improvements, you can still utilize **multitasking features** to switch between apps when running a scaling application alongside your game.  
 This **dual functionality** streamlines the process of managing multiple windows efficiently.
-
-
-
-<div style="display: flex; justify-content: center; align-items: center;">
-    <img height="220" src="Git_assets/HandleOS_TabView.png" style="left: auto;"/>
-
 
 
 

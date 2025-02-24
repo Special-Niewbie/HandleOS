@@ -12,12 +12,17 @@ This is where `Console2Desk` and its companion `HotKeys4Console2Desk` come into 
 
 
 
-<div style="text-align: center;">
-  <h3><strong>Console2Desk v3.8.0</strong></h3>
+
+
+
+
+<div style="text-align: left;">
+  <h6><strong>Deprecated Console2Desk v3.8.0 /3.9.0</strong></h6>
 </div>
-<div align="center">  
-    <img height="420" src="Git_assets/features/c2d_main_v3.8.0.png"/>
+<div align="left">  
+    <img height="220" src="Git_assets/features/c2d_main_v3.8.0.png"/>
 </div>
+
 
 
 
