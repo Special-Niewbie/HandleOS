@@ -1,4 +1,10 @@
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="HybridvsConsole.md" style="color: #2079C8;">Hybrid Mode vs Console Mode</a>| <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a>
+
+
+
+# 🚧 Page Under Maintenance 🚧
+
+**The page is currently being updating to explain the new C2D version 4.1.0 and improve several sections. Please check back in the next few hours/Days for detailed information!**
 
 
 
@@ -29,6 +35,12 @@
 
 3. **WDDM Driver Switch – feature part for RDP** (set to ON): 
    Optimizations for using XDDM drivers on Nvidia cards. It can also be used on AMD cards but may not be beneficial for certain configurations. Activate it only if you are sure it will improve your Remote setup. 
+
+4. **Unlock 15 16:9/16:10 Resolutions**: This function, initially designed only for the Rog Ally 16:9 screen, has been expanded in the second version to include support for 16:10 screens as well (thanks to Prob for testing it). It increases the base screen resolutions from 3 to a total of 15. This is particularly advantageous for adapting screen resolutions to different scenarios, especially for older arcade or PC games that were designed for lower resolutions and might not run properly on newer systems with higher default resolutions.
+
+5. **Stock 3 16:9/16:10 Resolutions**: This function restores the Stock screen functions in case, for some reason, you want fewer available resolutions.
+
+6. **Add Integer Scaling voice in AMD Software: Adrenalin Edition**: This button is only for AMD APUs. It adds Integer Scaling, which is not implemented in Handhelds for some reason. This is particularly suitable for those with a handheld with a 2k (or higher) screen or those who connect the handheld to a PC monitor. This function is a "must-have" because it allows you to play natively at half resolution without degrading the image, thus increasing in-game performance.
 
 
 ## Intel

@@ -12,7 +12,7 @@
 </table>
 
 
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="HybridvsConsole.md" style="color: #2079C8;">Hybrid Mode vs Console Mode</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
 
 <br><br>
 
@@ -75,7 +75,7 @@ First, I would like to remind you that you can recall **Console2Desk** from anyw
 *`Hybrid Mode:`*
 Hybrid Mode is an evolution of the other simpler function called `Console Mode`. It bridges the gap between desktop apps and UWP apps, enabling seamless integration of both environments. Previously, this level of compatibility was impossible in `Console Mode` that operate to cutting off many Windows services (without UI). With *Hybrid Mode*, you can fully customize your handheld or PC, offering unprecedented flexibility and control.
 
-*`Only in Hybrid Mode we have Custom Context Menu:`*
+*Only in Hybrid Mode we have `HandleOS Touch Menu:`*
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HOS_ContextMenu.png" style="margin-left: auto;"/>

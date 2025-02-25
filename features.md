@@ -1,160 +1,234 @@
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BugFix_and_NewFeatures.md" style="color: #2079C8;">Bug Fix & New Features Scheduling</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> |<a href="HybridvsConsole.md" style="color: #2079C8;">Hybrid Mode vs Console Mode</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
 
+# 🚧 Page Under Maintenance 🚧
 
+**The page is currently being updating to explain the new C2D version 4.1.0 and improve several sections. Please check back in the next few hours/Days for detailed information!**
 
 ## Features
 
 ### Overview
 
-HandleOS is not just a fast operating system, optimized with debloating techniques or designed with unique wallpapers and icons to stand out from other projects. HandleOS aims to develop open-source tools to enhance the user experience on handheld consoles/PCs, and it is also suitable for tablets or traditional PCs. Our goal is to continue advancing the development of handheld computing, making HandleOS a benchmark in the market. While Microsoft focuses on adding AI features and bloated functionalities to their OS, neglecting this important segment for enthusiasts, HandleOS steps in to fill that gap.
+HandleOS is not just a fast operating system, optimized with debloating techniques or designed with unique wallpapers and icons to stand out from other projects. HandleOS aims to develop open-source tools to enhance the user experience on handheld consoles/PCs, and it is also suitable for tablets or traditional PCs. My goal is to continue advancing the development of handheld computing, making HandleOS a benchmark in the market. While Microsoft focuses on adding AI features and bloated functionalities to their OS, neglecting this important segment for enthusiasts, HandleOS steps in to fill that gap.
 
-This is where `Console2Desk` and its companion `HotKeys4Console2Desk` come into play. In this section, I will outline what we have till now. Additional features and future improvements will be detailed in their respective sections.
-
-
-
-
+This is where `Console2Desk` and its companions come into play. In this section, I will outline what we have till now. Additional features and future improvements will be detailed in their respective sections.
 
 
 
 <div style="text-align: left;">
-  <h6><strong>Deprecated Console2Desk v3.8.0 /3.9.0</strong></h6>
+  <h3><strong>Console2Desk v4.1.0</strong></h3>
 </div>
 <div align="left">  
-    <img height="220" src="Git_assets/features/c2d_main_v3.8.0.png"/>
+    <img height="450" src="Git_assets/features/c2d_main_v4.1.0.png"/>
 </div>
 
 
 
+### Quick Menu
 
+### 1. **Dynamic ON/OFF Icon for Windows Defender**: 
+Windows Defender dynamic icon, Defender can now be disabled in `Console Mode`, so there's no need to switch to `Desktop Mode`to turn it off anymore (as the previous C2D versions) .
 
+   :information_source:*This working only if you have `Tamper Protection` - **disabled**:*
 
+   *Tamper Protection security it is the service that prevents software from turning off the antivirus. I intentionally made in this light way to disable only if you turn off manually the Tamper Protection, because I didn't want the C2D software to be too invasive in this regard.*
 
+### 2. **Tweak Paradise**: 
+   Starting from ***C2D ver 3.8.0***, a new button has been introduced with a dedicated section for `HandleOS` users called `Tweak Paradise`. This is where we'll push the hardware to its limits, offering an array of switches and options to optimize performance (more switches will be added in future updates).
 
+   For more details on the available switches, please visit below page: <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a>.
 
+   
 
-### 1. Add Features
+### 3.  **Fix Touch Keyboard**: 
 
-- **Unlock 15 16:9/16:10 Resolutions**: This function, initially designed only for the Rog Ally 16:9 screen, has been expanded in the second version to include support for 16:10 screens as well (thanks to Prob for testing it). It increases the base screen resolutions from 3 to a total of 15. This is particularly advantageous for adapting screen resolutions to different scenarios, especially for older arcade or PC games that were designed for lower resolutions and might not run properly on newer systems with higher default resolutions.
+If you frequently switch between **Desktop Mode** and **Hybrid Mode / Console Mode** in quick succession, Windows may sometimes encounter a bug that causes the **Touch Keyboard** to pop up every time you interact with the system using your **XBOX controller**.  
+     
+**What This Button Does**  
+     
+The **Fix Touch Keyboard** button provides a solution by resetting the **Touch Keyboard** service. When you press this button, a prompt will appear with three options:  
+     
+ - **Yes**: This resets the **Touch Keyboard** service. A small countdown (approximately **5 seconds**) will appear while the reset is in progress.  
+     - **No**: This completely disables the **Touch Keyboard**, preventing it from appearing if the bug persists.  
+     - **Cancel**: This does nothing and simply closes the prompt.  
+     
+     **Additional Steps if the Issue Persists**:  
+     
+     If the **Touch Keyboard** still appears after selecting **Yes**, try the following steps:  
+     -- `Close the Virtual Touch Keyboard Manually:`
+     
+  - If the keyboard still appears, close it by clicking the **X** button in the window to prevent further interruptions.  
+    
+     -- `Run the Fix Touch Keyboard Function Again:`
+     
+       - Press the **Fix Touch Keyboard** button once more to ensure the service is fully reset.  
+     
+    -- `Use the Controller While Resetting:`
+    
+   - Move the **D-Pad left and right** and press some buttons while the **Fix Touch Keyboard** function is running (for about **5 seconds**) to verify that input is being registered correctly.  
+     
+     This feature ensures to correct if the bug appears in the **Touch Keyboard** and behaves correctly.
 
-- **Stock 3 16:9/16:10 Resolutions**: This function restores the Stock screen functions in case, for some reason, you want fewer available resolutions.
+  ***PS:***`Close the Keyboard Again` after reset with **Yes** or **No** choice , if necessary,  because could pop-up the Touch Keyboard again for just a time , and press the `X` on the main window of the Keyboard to close it manually, and the bug should disappear.
+This process should address the issue and prevent the keyboard from reappearing.
 
-- **Add Integer Scaling voice in AMD Software: Adrenalin Edition**: This button is only for AMD APUs. It adds Integer Scaling, which is not implemented in Handhelds for some reason. This is particularly suitable for those with a handheld with a 2k (or higher) screen or those who connect the handheld to a PC monitor. This function is a "must-have" because it allows you to play natively at half resolution without degrading the image, thus increasing in-game performance.
+### 4. **VRAM+ Configuration – When and How to Use It:** 
 
-- **Set - Increase VRAM System:** With `HandleOS_23H2v2`, you generally do not need to use this button except for 2 scenario as below. 
+   <img height="380" src="Git_assets/features/HOSVRamMenu.png"/>
 
-  - The new version of HandleOS includes optimizations for memory management that are sufficient for most scenarios. For instance, if you have 16GB of physical RAM, the pre-configured `HandleOS 8GB` of virtual RAM (in an APU scenario) is typically enough for System and GPU.
+   
 
-    However, if you have only `8GB` or `4GB` of physical RAM, you may consider using this button. This is particularly useful for older systems with very limited, where it can help optimize physical RAM usage by leveraging virtual RAM. 
+   ⚠️ **Important:** Those Switches **should not be used frequently**. It should be set **once or at most twice**, as repeatedly changing it may cause **excessive fragmentation of your SSD/NVMe**, potentially reducing its performance over time.
 
-  - Additionally, for scenarios involving `AAA games` like ***Hellblade 2*** or ***Alan Wake 2***, which are not launch on stock Windows due to insufficient physical GPU memory on first Handled generations, the new ***VRAM+*** feature in HandleOS ensures that these games can run at any resolution without encountering GPU memory errors in-game. 
-    - In conclusion , while the default VRAM settings in `HandleOS_23H2v2` are suitable for most cases and you should use it to don't let the OS to use more RAM, activating `VRAM+` is recommended in situations with limited RAM or when playing demanding AAA games where in normal case wont boot and you must to activate it.
+   Primarily it's useful to use it at the beginning of your **OS installation** or after upgrading your **RAM**.  
 
-  For the vast majority of scenarios, it is recommended to stick with the default settings already configured in HandleOS_23H2v2 to maintain the best performance. However, in cases of limited physical RAM or when dealing with specific AAA games, enabling VRAM+ can provide the necessary boost to ensure smooth operation.
+   Below is a breakdown of when to use this menu and what each **VRAM+ switch** does:  
 
-- **HandleOS NEWS:** A small window that keeps us updated on when we can all upgrade to the next Windows release together!
+   #### **Default HandleOS VRAM Management**  
+
+   The latest version of **HandleOS** includes optimizations for **memory management**, making it sufficient for most scenarios.  
+   For example, if you have **16GB of physical RAM**, the pre-configured **HandleOS 8GB** of virtual RAM (for an **APU scenario**) is typically enough for both the **System** and **GPU**.  
+
+   However, for specific cases, you may need to adjust VRAM settings manually using the available **three switches**:  
+
+   #### **1️⃣ VRAM OFF (First Switch - Left)**  
+   - **Enable this switch if you have 32GB or more of RAM**.  
+   - This disables extra VRAM allocation, ensuring your system relies on its **physical RAM** without unnecessary virtual memory usage.  
+
+   #### **2️⃣ Standard HandleOS VRAM (Second Switch - Middle)**  
+   - This it's default `HandleOS` settings, or this switch should **only** be used in two specific cases:  
+     - If your system has **less than 2GB of RAM**.  
+     - If your system has **exactly 24GB of RAM**.  
+
+   #### **3️⃣ VRAM+ for limited RAM and run AAA Games (Third Switch - Right)**  
+   - This switch is **essential for handheld devices with limited RAM** (the range it's **4GB to 16GB**).  
+   - Activating **VRAM+** ensures that demanding **AAA games**—such as ***Hellblade 2*** or ***Alan Wake 2***—can run **without encountering GPU memory errors**.  
+   - Some **first-generation handheld devices** cannot launch these games on **stock Windows** due to insufficient **physical GPU memory**, but **VRAM+** helps this limitation.  
+
+   #### **Final Recommendation**  
+
+   The **"Not-Ready to Defrag!"** button is a dynamic control designed to optimize disk defragmentation by ensuring a clean VRAM configuration before the process begins. It is recommended to use this feature when you want apply the defragmentation to your system with your preferred Defragmentation Software,  approximately should be every **six months** for normal user , to maintain disk health and prevent excessive data fragmentation.
+
+   Before starting the defragmentation, first set **VRAM to "OFF"**, then press the **"Not-Ready to Defrag!"** button to switch it to **"Ready to Defrag!"** mode. This step resets any previously applied VRAM settings, ensuring a thorough and efficient defragmentation process for your disk health.
+
+   After rebooting your system, temporarily disabling any your antivirus software, and proceed with SSD/HDD defragmentation. Once the process is complete, you can **reapply your preferred VRAM configuration** and then press the **"Ready to Defrag!"** button again to return it to its default **"Not-Ready to Defrag!"** state.
+
+   By following this procedure, you ensure that your system remains responsive while preventing long-term data fragmentation, keeping your storage optimized for better performance.
+
+### 5. **GPU Center**:
+
+   The **AMD, Intel, and NVIDIA** buttons are designed to **open their respective GPU control panels** for quick access to graphics settings.  
+
+   - *If any of these buttons do not work on your device, please let me know. Some **Handled** installations may differ, which can prevent the GPU settings panel from opening / appear. In such cases, we can add the necessary configuration to ensure compatibility.*  
+
+### 6. **Custom Apps**: 
+
+   <div style="display: flex; justify-content: center; align-items: center;">
+       <img height="240" src="Git_assets/CustomIconMenu.png" style="margin-left: auto;"/>
+       <img height="240" src="Git_assets/AddCustomIconMenu.png" style="margin-left: auto;"/>
+   </div>
+
+   #### Quick Access to your Favourite Applications in Console2Desk  
+
+   A new feature has been added to **Console2Desk (C2D)**, allowing you to **register up to three favourites applications** for quick access directly from the main UI.  
+
+   Three **cross-shaped boxes** are now available for adding your preferred apps, supporting both **mouse** and **touch screen** interaction:  
+
+   ##### 🔹 Using a Mouse  
+   - **Right-click** on one of the three cross icons to open a pop-up window where you can browse and select your favorite application.
+   -   **Left-click** on an added application icon to **launch** the app
+   - To **remove** an app from its box, **double-click** the icon with the **left mouse button**—a confirmation message will appear before deletion.  
+
+   ##### 🔹 Using a Touch Screen  
+   - **Press and hold** on one of the adding cross icons for **at least 3 seconds** to open the pop-up window and select your app.
+   - **One tap** on an added application icon will **launch** the app.  
+   - To **remove** an app, **double-tap** the icon, and a confirmation message will appear before deletion.  
+
+   This feature makes launching frequently used applications **faster and more intuitive**, whether you're using a **mouse** or a **touchscreen device**.  
+
+### 7. **HandleOS NEWS:** 
+
+   A small window that keeps us updated on different HandleOS news!
 
 - **Dynamic icon:** Displays and alerts users on how many controllers are connected. 
-  New features from 3.0.0 now C2D support up to 4 Controllers.
+  New feature from 3.0.0 now C2D support up to 4 Controllers.
 
 - **PayPal**: As you might guess, this is the donation section where you can donate directly to me and support the *HandleOS* / *C2D* project if you enjoyed it.
 
-### 2. Settings Menu
+### 8. Settings Menu
 Button to open the Settings Menu, which will be discussed later below.
 
-### 3. **Tweak Paradise**:
-Starting from ***C2D ver 3.8.0***, a new button has been introduced with a dedicated section for HandleOS users called `Tweak Paradise`. This is where we'll push the hardware to its limits, offering an array of switches and options to optimize performance (more switches will be added in future updates).
+### 9. **Commands Info**:
+The Info button will display a window, as shown in the image below, indicating the Mouse/Keyboard commands that your XBOX controller takes over while Console2Desk is active. From version 3.0.0 C2D it supports up to 4 Controllers simultaneously to get mouse and Keyboard behaviour .This feature helps users navigate seamlessly without needing to use a mouse or keyboard, making it easier to control the system purely with a game controller. 
 
-For more details on the available switches, please visit below page:
+⚠️ **If you need to browse through folders or perform various operations in system menus, it's recommended to keep C2D minimized during these tasks, as leaving the window normal may interfere with smooth navigation in the system.**
 
-<a href="TP.md" style="color: #2079C8;">Tweak Paradise</a>.
+   <img height="220" src="Git_assets/features/InfoC2D.png"/>
 
+### 10. **About**:
 
+   <img height="220" src="Git_assets/features/c2desk_about.png"/>
 
-### 4. **Fix Touch Keyboard**:
-
-If you turn on your Handled/PC and for some reason frequently switch few times between `Desktop Mode` and `Console Mode` - this happens in quick succession - Windows may sometimes encounter a bug that causes the Touch Keyboard to pop up every time you interact with the system.
-
-*What This Button Does*:
-The Fix Touch Keyboard button helps resolve this issue by resetting the `Touch Keyboard` functionality. After using this button, if the keyboard continues to reappear, please follow these steps:
-
-- ***Close the Virtual Touch Keyboard:*** If the Touch Keyboard still appears, close it manually by pressing `X` window button to prevent further interruptions.
-
-- ***Run the Function Again:*** Press the `Fix Touch Keyboard` button once more.
-  - ***Use the Controller:*** Move the Controller D-Pad left and right and press some buttons in meantime the Fix Touch Keyboard button it's resetting the service (around 5 seconds).
-
-  - ***Close the Keyboard Again**:* After reset, if necessary,  could pop-up the Touch Keyboard again for just a time , press the `X` on the Keyboard Window and close the keyboard manually again, and the problem it's solved.
-    This process should address the issue and prevent the keyboard from reappearing.
-
-
-
-### 5. Info Button
-
-The Info button will display a window, as shown in the image below, indicating the Mouse/Keyboard commands that your game controller takes over while Console2Desk is active. From version 3.0.0 C2D it supports up to 4 Controllers simultaneously to get mouse and Keyboard behaviour .This feature helps users navigate seamlessly without needing to use a mouse or keyboard, making it easier to control the system purely with a game controller. 
-
-**If you need to browse through folders or perform various operations in system menus, it's recommended to keep C2D minimized during these tasks, as leaving the window normal may interfere with smooth navigation in the system.**
-
-<img height="220" src="Git_assets/features/InfoC2D.png"/>
-
-
-
-### 6. About
-
-<img height="220" src="Git_assets/features/c2desk_about.png"/> 
 Button `About` to check the software version or click the icon to visit my account with some general info about C2D.
 
 
 
-### 7. Desktop Mode
+### 11. Desktop Mode:
 
-Touch button `Desktop Mode` to switch from `Console Mode` to `Desktop Mode` in case you need to do something temporary or use your handheld or PC in the classic Windows Environment.
+Button `Desktop Mode` to switch from **Hybrid Mode**  or **Console Mode** back to `Desktop Mode` , in case you need to do something temporary or use your handheld or PC as Desktop in the classic Windows Environment.
 
-### 8. Console Mode
-Touch button `Console Mode` to switch from the classic Windows Environment to `Console Mode` for a complete console experience.
 
-### 9. Minimize/Restore/Open - Steam/Playnite
 
-From 3.1.0 version, now it maximizes, minimizes, and re-opens (if mistakenly closed) the pre-configured program for Console Mode.
+### 12. Hybrid Mode:
 
-### 10. Dynamic ON/OFF Icon for Windows Defender
+**Hybrid Mode** offers a unique and advanced functionality that differs from **Console Mode**. In this mode, you gain the ability to run any application or system function that would typically cause errors or be inaccessible the **UWP Windows** apps in **Console Mode**—such as **Windows Settings**, **Microsoft Store**, **GamePass**, **Asus Armoury Crate for Handled** and more.
 
-Starting from ***C2D ver 3.8.0***, the Windows Defender dynamic icon can now be disabled in `Console Mode`, so there's no need to switch to `Desktop Mode`to turn it off anymore (as the previous C2D versions) .
+In **Hybrid Mode**, the **Windows UI** is suppressed. This means that Windows operates as if it's running normally, but without displaying its default UI. This creates a seamless integration, allowing for system-level functionality while giving us the flexibility to manipulate the user interface.
 
-:information_source:*This working only if you have `Tamper Protection` - **disabled**:*
+One of the key features of **Hybrid Mode** is the `custom context menu` called **HandleOS Touch Menu** that replace Windows context menu and appears when navigating through folders. This menu is specifically designed for **Handled Touch Screen devices** as below picture.
 
-- *Tamper Protection security it is the service that prevents software from turning off the antivirus. I intentionally made in this light way to disable only if you turn off manually the Tamper Protection, because I didn't want the C2D software to be too invasive in this regard.*
+<div style="display: flex; justify-content: center; align-items: center;">
+    <img height="240" src="Git_assets/HOS_ContextMenu.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/HOSContextMenu_NewOptions.png" style="margin-left: auto;"/>
+</div>
 
-### 11. Windows Security Settings
+This approach unlocks a wealth of possibilities for us. You can maintain a fully functional Windows environment while manipulating and even replacing its UI with something new, custom interface, all while keeping the underlying Windows operations intact.
 
-The central icon opens `Windows Security Settings` only if you are in `Desktop Mode` in case you need Windows Defender settings. 
 
-### 12. AMD Adrenalin
-The `AMD Adrenalin` icon opens the `AMD Adrenalin Center` if you want to check or modify various settings for the current game while in `Console Mode`.
 
-### 13. Wifi Settings
+### 13. Desktop Temporary Mode:
 
-Starting from ***C2D ver 3.8.0***:
+This button helps you switch to **Desktop Mode** temporarily without making the change permanent after a reboot. It is especially useful when you need to perform temporary tasks in **Desktop Mode**, such as system configurations or working with desktop-specific applications.
 
-1. **Desktop Mode**: As shown in the image below, this mode open the classic Windows Menu for managing WiFi networks.
+Once you reboot the device, it will automatically return to **Hybrid Mode** or **Console Mode** (depending on which mode was active from **Desktop Mode** previously).
 
+### 14. Console Mode:
+**Console Mode** is a more legacy method that differs significantly from **Hybrid Mode**. It is ideal for users who do not require Windows' full UI services and are focused primarily on running classic **.exe** applications, which do not rely on the Windows graphical interface and services.
+
+This mode is highly suitable for those who want to maximize system performance by limiting unnecessary background processes and services associated with the UI. If you are one of these users and your applications don't require advanced UI Modern features/ services, switching to **Console Mode** is a great option to free up some system resources and improve overall performance.
+
+### 15. Minimize/Restore/Open - Heroic/Steam/Playnite:
+
+This button maximizes, minimizes, and re-opens (if mistakenly closed) the pre-configured program for **Hybrid Mode** and **Console Mode**, but specially it's coded to work with the 3 most famous launchers.
+
+### 16. Wifi Settings:
+
+**Desktop Mode**: As shown in the image below, this buttons it open the classic Windows Menu for managing WiFi networks.
 
    <img height="220" src="Git_assets/features/WiFi_DesktopMode.png"/>
 
    
 
-
-2. **Console Mode**: Redesigned from the ground up to work seamlessly within C2D, this mode offers a closely mirroring the Windows experience, and can be accessed directly from C2D. A preview is shown in the mage below.
-
+**Hybrid Mode** /**Console Mode**: In these two modes, I have redesigned the WiFi interface from the ground up to work seamlessly within C2D. This mode offers an experience closely mirroring Windows, directly integrated into C2D. A preview is shown in the image below:  
 
    <img height="220" src="Git_assets/features/WiFi_MenuConsoleMode.png"/>
 
 
 
-### 14. Power OFF Menu
+### 17. Power OFF Menu
 
-Starting from ***C2D ver 3.8.0***, a new button and rebuilt the Windows menu for Shutting Down, Restarting, and Turning Off the monitor of your device, directly from C2D.
+Starting from ***C2D ver 3.8.0***, a new button and rebuilt the Windows menu for **Shutting Down**, **Restarting**, and **Turning Off the monitor** of your device, directly from C2D.
 
-
-<img height="160" src="Git_assets/features/PowerOFF_Menu.png"/>
+   <img height="160" src="Git_assets/features/PowerOFF_Menu.png"/>
 
 
 
@@ -373,6 +447,8 @@ In addition to these improvements, you can still utilize **multitasking features
 This **dual functionality** streamlines the process of managing multiple windows efficiently.
 
 
+
+------------------------------------------------------------------------------------------------------------------------------------+
 
 
 
