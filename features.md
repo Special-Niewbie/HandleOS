@@ -342,6 +342,9 @@ Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications
 9. **HandleOS Hibernation / Sleep / Standby**:
    
    <img height="340" src="Git_assets/features/HibernationSleep.png"/>
+   
+   
+   
    Starting from ***C2D ver 3.8.0***, this button opens a menu to fully reactivate the functionalities of `Sleep Mode` and `Hibernate Mode`. In the opened window, it explains the `Pros` and `Cons` of enabling these features, as HandleOS has them disabled by default.
    But let's dive in here below:
 * **Pros to Re-enable**
