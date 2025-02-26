@@ -1,10 +1,8 @@
 <a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> |<a href="HybridvsConsole.md" style="color: #2079C8;">Hybrid Mode vs Console Mode</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
 
-# 🚧 Page Under Maintenance 🚧
 
-**The page is currently being updating to explain the new C2D version 4.1.0 and improve several sections. Please check back in the next few hours/Days for detailed information!**
 
-## Features
+# Features
 
 ### Overview
 
@@ -158,11 +156,13 @@ This process should address the issue and prevent the keyboard from reappearing.
 Button to open the Settings Menu, which will be discussed later below.
 
 ### 9. **Commands Info**:
+<img height="220" src="Git_assets/features/InfoC2D.png"/>
+
 The Info button will display a window, as shown in the image below, indicating the Mouse/Keyboard commands that your XBOX controller takes over while Console2Desk is active. From version 3.0.0 C2D it supports up to 4 Controllers simultaneously to get mouse and Keyboard behaviour .This feature helps users navigate seamlessly without needing to use a mouse or keyboard, making it easier to control the system purely with a game controller. 
 
 ⚠️ **If you need to browse through folders or perform various operations in system menus, it's recommended to keep C2D minimized during these tasks, as leaving the window normal may interfere with smooth navigation in the system.**
 
-   <img height="220" src="Git_assets/features/InfoC2D.png"/>
+   
 
 ### 10. **About**:
 
@@ -235,11 +235,12 @@ Starting from ***C2D ver 3.8.0***, a new button and rebuilt the Windows menu for
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 <div style="text-align: center;">
-  <h3><strong>Menu Settings </strong></h3>
+  <h1><strong>Menu Settings </strong></h1>
 </div>
 <div align="center">  
-    <img height="420" src="Git_assets/features/C2D_settings_v3.8.0.png"/>
+    <img height="420" src="Git_assets/features/C2D_settings_v4.1.0.png"/>
 </div>
+
 
 
 
@@ -250,70 +251,122 @@ As the name suggests, if you want to pause updates again (after reactivated by W
 As the name implies, this opens File Explorer with full Administration privileges in case you're in `Console Mode` .
 
 3. **Touch Screen Enable / Disable**  
-In some games, this allows you to disable the touchscreen, as there are some games where the touchscreen messes up the controls. This function enables/disables the touchscreen.
+For some games, this allows you to disable/re-enable the device touchscreen, as there are some games where the touchscreen messes up with the controls. This function enables/disables the touchscreen.
 
 4. **Xinput Test**  
 As shown in the picture below, this is an interactive section where you can test your buttons to ensure they are calibrated correctly and also test if the speakers or other hardware components are working properly.
 
 <img height="320" src="Git_assets/features/Controller_Test.png"/>
 
-5. **Console Settings**  
-As shown in the picture below, this opens the Background settings for what to maintain as the UI for `Console Mode`. If you want a `Steam Deck` UI or have a game library only on `Steam`, select the appropriate icon and save. Otherwise, I've implemented a function that potentially allows you to set any executable UI you prefer if you're not familiar with Playnite or Steam. `But first check if Console Mode it's compatible with that personalized .exe, as any software by Windows Store - for now - are not compatible with Console Mode`.
 
-<img height="320" src="Git_assets/features/c2d_console_settings.png"/>
 
-6. **Uninstall Official MS Store (press to uninstall it)**  
-     This button installs and uninstalls the MS Store. Unlike other projects out there, an external downloaded package is not used; instead, we use a restore technique for the original MS Store from the Windows ISO to increase data security. The words and function, are dynamically animated on base if you have installed or uninstalled the MS Store in your system.
+5. **HandleOS Launcher Settings**:
 
-6. **HandleOS Benchmark**
-   From Version of 2.7.0, C2D has a new companion for our handhelds: the new **HandleOS Benchmark**. This tool, revived from the past and completely redesigned and rebuilt from the ground up, offers more consistent scores based on averages directly from Windows 7.
+  <img height="420" src="Git_assets/features/c2d_console_settings.png"/> 
 
+  
+
+  This section allows you to configure how HandleOS launches your preferred programs, games, or launchers instead of Windows UI. You can choose between **Console Mode** and **Hybrid Mode**, each offering different levels of Windows UI integration (here it's the guide of these 2 options <a href="HybridvsConsole.md" style="color: #2079C8;">Hybrid Mode vs Console Mode</a>). Below are the five key features available in this settings window:  
+
+  1️⃣. **Console Mode Launcher**  
+     This option allows you to set a launcher, game, or application to start in **Console Mode**, replacing the Windows UI. Console Mode is a more restrictive, legacy-friendly environment that disables most Windows UI elements to free up system resources. Before enabling this mode, click the link above to understand the differences between **Hybrid Mode** and **Console Mode**.  
+
+  2️⃣. **Preconfigured Launcher Selection**  
+     In this section, you can select from three popular preconfigured launchers: **Playnite, Heroic, or Steam** (Steam must be installed separately). Once you choose one and only in this section, a confirmation window will appear, as shown in the image below to understand if you want set only for **Hybrid Mode** or **Console Mode**:  
+
+<img height="180" src="Git_assets/features/c2d_console_settings_point_2.png"/> 
+    
+In this second window, you can specify whether you want your selected launcher to start in **Hybrid Mode** or **Console Mode**. If you're unsure which to choose, refer to this guide: [<a href="HybridvsConsole.md" style="color: #2079C8;">Hybrid Mode vs Console Mode</a>]. After making your choice, click **Save** (see point 5).  
+    
+Once saved, your chosen launcher will automatically start every time HandleOS boots, as long as you have selected the corresponding mode in the main settings window (**Hybrid Mode** or **Console Mode**). If you select **Console Mode**, the Windows UI will be completely disappear, creating a console-like experience.    
+To return to the standard Windows Desktop, use the **Console2Desk** shortcut keys combination (explained in another section of the guide or in the main page project) and switch back to **Desktop Mode**.  
+
+  3️⃣. **Clear Hybrid Mode Button**  
+     This button is specifically for **Hybrid Mode** users. Since **Hybrid Mode** allows full compatibility with standard Windows applications, this button lets you clear any previously set programs for **Hybrid Mode** (configured in points 2 or 4) as otherwise when you switch back to `Hybrid Mode` will launch the software already set previously.  
+
+     Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications in restricted directories (such as **Asus Armoury Crate for ROG Ally** or **Game Pass**) may be configured to launch automatically at system startup. In these cases, there’s no need to manually set them as startup applications within HandleOS. Instead, **Hybrid Mode** simply removes the Windows UI while letting these applications launch on their own. Anyway, this button provides users with greater flexibility by allowing them to clear any previously set launchers if needed.  
+
+  4️⃣. **Hybrid Mode Launcher**  
+     Similar to the **Console Mode Launcher** option, this setting allows you to specify a Custom launcher, game, or application to start in **Hybrid Mode** instead of Windows UI. `Hybrid Mode` maintains full Windows compatibility while removing completely the Windows UI.  
+
+  5️⃣. **Save Button**  
+     After configuring your preferred launcher, game, or application, in one of the above points you must **click the Save button** to store your settings. If you do not save your changes, your configurations will not take effect when switching to **Hybrid Mode** or **Console Mode**.  
+
+
+
+6. **Install/Uninstall MS Store (the button it's dynamic, and changes the words on base if the MS Store it's installed or not)**  
+     This button installs and uninstalls the MS Store. Unlike other projects out there, an external downloaded package is not used; instead, I use a restore technique for the original MS Store from the official Windows ISO to increase data security. The words and function, are dynamically animated on base if you have installed or uninstalled the MS Store in your system.
+
+7. **HandleOS Benchmark**
+   
    <div style="display: flex; justify-content: center; align-items: center;">
        <img height="350" src="Git_assets/HandleOS_BanchMain.png" style="margin-left: auto;"/>
        <img height="350" src="Git_assets/HandleOS_BanchScores.png" style="margin-left: auto;"/>
    </div>
+   
+   From Version of 2.7.0, C2D has a new companion for our handhelds: the new **HandleOS Benchmark**. This tool, revived from the past and completely redesigned and rebuilt from the ground up, offers more consistent scores based on averages directly from Windows 7.
+   
+   
+   
+8. **HandleOS Restore Boost**:
+   <img height="320" src="Git_assets/features/HOSRB4.1.0.png"/>
 
-6. **HandleOS Restore Boost**:
-   Exclusively for HandleOS users, to maintain system boost and performance after Windows updates. `Fix Wifi` his a button to restores the WiFi service in cases where it disappears from the Windows Taskbar, an issue affecting some devices. 
+   
+
+   Exclusively for HandleOS users, designed to maintain system performance and prevent slowdowns after Windows updates.  
+
+   This page is one of the most important features of HandleOS and will continue to evolve over time. Here, you will find several buttons, but the main one is **"Start Restore"**. The other options provide additional functionalities or useful information. Let's go through them one by one:  
+
+   1. `Informative List`  
+      This list shows what Microsoft attempts to reinstall or modify in the background after a Windows update. It helps you understand whether it is necessary to reapply HandleOS settings to prevent unwanted changes and maintain system privacy and performance.  
+
+   2. `Disable Edge & OneDrive Reinstallation` (Checkbox)  
+      Keep this checkbox enabled if you do not use **Edge** or **OneDrive** (*highly suggested to don't use them*). Even if you manually uninstall these applications, Microsoft often reinstalls them during updates or adds background services that collect user data. Over time upgrade after upgrades, these components may be gradually restored without your consent.  
+
+   3. `Fix WiFi`  
+      This button restores WiFi functionality in case the icon it disappears from the Windows taskbar after `Restored the Boost`, If you have or need Wifi press this Button, and restart the PC , after reboot will appear again the Wifi icon in the taskBar.  
+
+   4. `Rockstar Launcher Fix` 
+      **HandleOS** enforces strict privacy settings to prevent data from being sent outside your computer, keeping everything local. However, some launchers—like Rockstar Launcher—require specific Windows components to send out data function. This option enables the necessary services send out data for Rockstar Launcher that they require to work properly without compromising overall system privacy.  
+
+   5. `Start Restore (Main Button)`  
+      This is the primary button for applying HandleOS system restoration settings. Once started, you must wait for the process to complete before closing this page.  
 
 
-   <img height="320" src="Git_assets/features/HOSRB3.1.0.png"/>
-
-6. **Temporary Desktop Mode:** 
-   This button helps you switch to **Desktop Mode temporarily** (*without making it permanent*). It is especially useful when you need to perform temporary tasks in `Desktop Mode`. Upon reboot, the device will return to `Console Mode`.
-
-6. **HandleOS Hibernation / Sleep / Standby**:
-   Starting from ***C2D ver 3.8.0***, this button opens a menu to fully reactivate the functionalities of `Sleep Mode` and `Hibernate Mode`. In the opened window, it explains the `Pros` and `Cons` of enabling these features, as HandleOS has them disabled by default.
 
 
+
+
+9. **HandleOS Hibernation / Sleep / Standby**:
    <img height="340" src="Git_assets/features/HibernationSleep.png"/>
-
+   Starting from ***C2D ver 3.8.0***, this button opens a menu to fully reactivate the functionalities of `Sleep Mode` and `Hibernate Mode`. In the opened window, it explains the `Pros` and `Cons` of enabling these features, as HandleOS has them disabled by default.
+   But let's dive in here below:
+   
 * **Pros to Re-enable**
 
-1. *Energy Efficiency:* 
-     *Re-enabling hibernation or hybrid sleep allows you to put your Handled/PC in a Low-Power State, reducing energy consumption.*
-2. *Fast Resume:* 
-     *Hybrid sleep combines the benefits of sleep and hibernation, allowing faster resume times compared to a full shutdown.*
-3. *Data Safety:* 
-     *Preventing data loss if it's in Sleep Mode, avoid system corruption on resume stage.*
-4. *Convenience:* 
-     *It provides the ability to quickly resume work without rebooting.*
+    1. *Energy Efficiency:* 
+        *Re-enabling hibernation or hybrid sleep allows you to put your Handled/PC in a Low-Power State, reducing energy consumption.*
+    2. *Fast Resume:* 
+        *Hybrid sleep combines the benefits of sleep and hibernation, allowing faster resume times compared to a full shutdown.*
+    3. *Data Safety:* 
+        *Preventing data loss if it's in Sleep Mode, avoid system corruption on resume stage.*
+    4. *Convenience:* 
+        *It provides the ability to quickly resume work without rebooting.*
 
 * **Cons to Re-enable**
 
-1. *Increased Disk Writes:* 
-     *Enabling these features increases continuous disk writes, typically consuming around 75% of your system's RAM in disk space.*
-2. *Performance Degradation:* 
-     *Continuous background operations like disk writes increase the workload on the CPU and other components.* 
-     *Potentially causing a slight degradation in performance and keep stressing the SSD.*
-3. *SSD Lifespan:* 
-     *With frequent disk writes, SSDs experience reduced lifespan compared to systems with hibernation and hybrid sleep disabled.*
-4. *BIOS Configuration:* 
-    *If C-States (power-saving states) were previously disabled in the BIOS, they need to be re-enabled for proper energy savings.*
-    
-    
+    1. *Increased Disk Writes:* 
+        *Enabling these features increases continuous disk writes, typically consuming around 75% of your system's RAM in disk space.*
+    2. *Performance Degradation:* 
+        *Continuous background operations like disk writes increase the workload on the CPU and other components.* 
+        *Potentially causing a slight degradation in performance and keep stressing the SSD.*
+    3. *SSD Lifespan:* 
+        *With frequent disk writes, SSDs experience reduced lifespan compared to systems with hibernation and hybrid sleep disabled.*
+    4. *BIOS Configuration:* 
+        *If C-States (power-saving states) were previously disabled in the BIOS, they need to be re-enabled for proper energy savings.*
 
-### New Pointer Design from `HandleOS 23H2v2`:
+
+### HandleOS Pointer Design from:
 
 <img height="180" src="Git_assets/features/Material_light.png"/> <img height="180" src="Git_assets/features/Material_dark.png"/>
 
@@ -321,7 +374,7 @@ As shown in the picture below, this opens the Background settings for what to ma
 
 
 
-**In `HandleOS 23H2v2` New File Explorer Icon and Playnite Forwarder**
+**From `HandleOS 23H2v2` New Icons and Playnite Forwarder**
 
 - New File Explorer Icon: Redesigned for better consistency of style. 
   Reference image:  <img height="38" src="Git_assets/features/Material_Folder.png"/> <img height="118" src="Git_assets/features/FileExplorerBanner.png"/>
@@ -330,23 +383,35 @@ As shown in the picture below, this opens the Background settings for what to ma
   Quickly access the Tools folder for frequently used system utilities.
   Reference image:  <img height="38" src="Git_assets/features/Tools.png"/><img height="118" src="Git_assets/features/ToolsBanner.png"/>
   
-- **What are Forwarders?**
+## - **What are Forwarders?**
 
   Forwarders are small helper tools for the Playnite UI. They allow Playnite to open system components, like `File Explorer`, and then go into the background, letting you perform your tasks without Playnite's limitations. These forwarders are simple floating buttons; when clicked, they close the forwarder and components and return Playnite to full-screen mode, ready for use again.
 
 ​                 
 
-### HotKeys4Console2Desk
+## HotKeys4Console2Desk
 
-<img height="120" src="Git_assets/features/c2d_trayIcon.png"/>                <img height="240" src="Git_assets/features/c2d_trayIconMenu_v3.8.0.png"/>
+<img height="120" src="Git_assets/features/c2d_trayIcon.png"/>                <img height="260" src="Git_assets/features/c2d_trayIconMenu_v4.1.0.png"/>
 
-- *Above looking from Version 3.8.0* 
+*Above looking Version 4.1.0* 
 
-  
 
-`HotKeys4Console2Desk` is the lightweight assistant for `Console2Desk`, and from version 3.0.0 it supports up to 4 Controllers simultaneously. It's an application/service that runs in the background without a graphical interface, except for its presence in the System Tray and it's Menu tools. Above, you can see images showing its appearance in the system tray, where we have an icon, and right-clicking on it reveals other secondary options.
 
-As we can see in the image, there are 9 options in this first version:
+`HotKeys4Console2Desk` is the lightweight assistant and it's so much important for `Console2Desk`, and from version 3.0.0 it supports up to 4 Controllers simultaneously. It's an application/service that runs in the background without a graphical interface, except for its presence in the System Tray and it's Menu tools. Above, you can see images showing its appearance in the system tray, where we have an icon, and right-clicking on it reveals other secondary options.
+
+The **Autorun CMD service** of `HotKeys4Console2Desk` it's as the picture below:
+<img height="120" src="Git_assets/features/AutoRunHotKeys4Console2Desk.png"/>
+
+This service better to don't turn OFF otherwise will not work some of the C2D components including all the shortcuts:
+- **Keyboard**
+    - `CTRL+SHIFT+F7` = Opens **Console2Desk**
+    - `CTRL+SHIFT+F5` = Default call to open **HandleOS TabView**
+    
+- **Controller/Gamepad**
+    - `SELECT+START` = Opens **Console2Desk** (with a small vibration)
+    - `SELECT+LB+RB` = Default call to open **HandleOS TabView**. You can change this setting through the menu in the System Tray.
+
+Now, as we can see above in the image of **HotKeys4Console2Desk Menu**, there are ***14 voice options***:
 
 - **Project site for Updates / Donate**  
   This option allows you to visit the `HandleOS` page for updates or to check out various sections.
@@ -364,7 +429,11 @@ As we can see in the image, there are 9 options in this first version:
 - **Cursor Theme Dark/Light**
   Switch Mouse Pointer theme between `Light Mode` and `Dark Mode` when using Desktop Mode.
 
-- **Tablet Mode ON/OFF**
+- **Handheld Mode ON/OFF**
+  
+  When enabled, this mode increases the size of all UI elements in Windows, making them more suitable for small screens. It enhances readability and accessibility, ensuring a more comfortable experience on handheld devices.
+  
+- **TaskBar Tablet Mode ON/OFF**
   Button to transform the Windows messages and Taskbar into `Tablet Mode`, perfect feature for handheld devices. (Thanks to [@alcopsy](https://github.com/alcopsy))
 
   <img height="400" src="Git_assets/features/TabletMode.png"/>
@@ -385,6 +454,14 @@ As we can see in the image, there are 9 options in this first version:
 - **Splash Video ON/OFF**  
   This option disables the HandleOS splash video that plays at every first launch of Playnite in `Desktop Mode`. Alternatively, you can keep it active or change the boot/waiting video that plays while Playnite loads.
 
+- **Microsoft Defender Auto-Disable ON/OFF**
+  
+  <img height="120" src="Git_assets/features/TemperProtectionOFF.png"/>
+  
+  To ensure a non-intrusive approach, **Tamper Protection** must be disabled (as the picture above) for this feature to work properly. Instead of forcing deep system modifications, this function automatically disables Windows Defender at every startup in a less invasive way.
+  
+  When `Microsoft Defender Auto-Disable ON/OFF` it's enabled, Windows Defender remains permanently disabled, helping to improve gaming performance by freeing up system resources. If you wish to re-enable the antivirus, simply disable this function, and Windows Defender will function as usual again.
+  
 - **Configure Switch Buttons to open HandleOS TabView **  
   This option it's  to customize controller/handled buttons for switching between active system windows. 
   
@@ -402,7 +479,11 @@ As we can see in the image, there are 9 options in this first version:
   
   
 - **Exit**  
-  If you encounter problems with the program/service, you can always close it. However, it's not recommended as we'll see more functions of `HotKeys4Console2Desk` shortly.
+  
+  If you experience issues with the program/service or encounter problems with anti-cheats—such as in **Apex Legends**, which restricts background applications that use shortcut keys—you may need to temporarily exit HotKeys4Console2Desk to run the game without interference.
+  
+  However, this is not recommended, as HotKeys4Console2Desk provides several useful functions that we will explore shortly.
+  If you are in game in **Hybrid Mode** or **Console Mode**, for now the unique way it's to use Windows Terminal to run **Console2Desk** if needed.
 
 ***HotKeys4Console2Desk*** doesn't just stop there. When you plug in or unplug the charger, respective sounds will play along with a charging icon appearing. If you're gaming and don't notice the battery level, from 20% battery onward, you'll be notified every 5% with the respective icon, so you can save your gaming sessions in time.
 
@@ -448,7 +529,7 @@ This **dual functionality** streamlines the process of managing multiple windows
 
 
 
-------------------------------------------------------------------------------------------------------------------------------------+
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
