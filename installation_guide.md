@@ -193,6 +193,7 @@ My tool will process the ISO you download from Official Microsoft site to create
 
 ## *Important Security Reminder*  
 
-All my software is digitally signed by me. Please download only from my official channels.  
+All my software is digitally signed by me. Please download only from my official channels that for now are only this **GitHub page** <a href="https://github.com/Special-Niewbie">    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="40">
+</a> and **HandleOS** official [![Discord](https://img.shields.io/badge/Discord-7289DA?logo=discord&logoColor=white)](https://discord.gg/dC7TKNkN8z) server.  
 Avoid external sites that may tamper with the software.  
 **Please, stay safe, and help me spread this message!!!**  
