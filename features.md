@@ -284,7 +284,7 @@ To return to the standard Windows Desktop, use the **Console2Desk** shortcut key
   3️⃣. **Clear Hybrid Mode Button**  
      This button is specifically for **Hybrid Mode** users. Since **Hybrid Mode** allows full compatibility with standard Windows applications, this button lets you clear any previously set programs for **Hybrid Mode** (configured in points 2 or 4) as otherwise when you switch back to `Hybrid Mode` will launch the software already set previously.  
 
-     Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications in restricted directories (such as **Asus Armoury Crate for ROG Ally** or **Game Pass**) may be configured to launch automatically at system startup. In these cases, there’s no need to manually set them as startup applications within HandleOS. Instead, **Hybrid Mode** simply removes the Windows UI while letting these applications launch on their own. Anyway, this button provides users with greater flexibility by allowing them to clear any previously set launchers if needed.  
+Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications in restricted directories (such as **Asus Armoury Crate for ROG Ally** or **Game Pass**) may be configured to launch automatically at system startup. In these cases, there’s no need to manually set them as startup applications within HandleOS. Instead, **Hybrid Mode** simply removes the Windows UI while letting these applications launch on their own. Anyway, this button provides users with greater flexibility by allowing them to clear any previously set launchers if needed.  
 
   4️⃣. **Hybrid Mode Launcher**  
      Similar to the **Console Mode Launcher** option, this setting allows you to specify a Custom launcher, game, or application to start in **Hybrid Mode** instead of Windows UI. `Hybrid Mode` maintains full Windows compatibility while removing completely the Windows UI.  
@@ -298,17 +298,19 @@ To return to the standard Windows Desktop, use the **Console2Desk** shortcut key
      This button installs and uninstalls the MS Store. Unlike other projects out there, an external downloaded package is not used; instead, I use a restore technique for the original MS Store from the official Windows ISO to increase data security. The words and function, are dynamically animated on base if you have installed or uninstalled the MS Store in your system.
 
 7. **HandleOS Benchmark**
-   
+
    <div style="display: flex; justify-content: center; align-items: center;">
-       <img height="350" src="Git_assets/HandleOS_BanchMain.png" style="margin-left: auto;"/>
-       <img height="350" src="Git_assets/HandleOS_BanchScores.png" style="margin-left: auto;"/>
+       <img height="340" src="Git_assets/HandleOS_BanchMain.png" style="margin-left: auto;"/>
+       <img height="340" src="Git_assets/HandleOS_BanchScores.png" style="margin-left: auto;"/>
    </div>
    
+
    From Version of 2.7.0, C2D has a new companion for our handhelds: the new **HandleOS Benchmark**. This tool, revived from the past and completely redesigned and rebuilt from the ground up, offers more consistent scores based on averages directly from Windows 7.
+
    
-   
-   
+
 8. **HandleOS Restore Boost**:
+
    <img height="320" src="Git_assets/features/HOSRB4.1.0.png"/>
 
    
@@ -338,10 +340,10 @@ To return to the standard Windows Desktop, use the **Console2Desk** shortcut key
 
 
 9. **HandleOS Hibernation / Sleep / Standby**:
+   
    <img height="340" src="Git_assets/features/HibernationSleep.png"/>
    Starting from ***C2D ver 3.8.0***, this button opens a menu to fully reactivate the functionalities of `Sleep Mode` and `Hibernate Mode`. In the opened window, it explains the `Pros` and `Cons` of enabling these features, as HandleOS has them disabled by default.
    But let's dive in here below:
-   
 * **Pros to Re-enable**
 
     1. *Energy Efficiency:* 
@@ -377,12 +379,13 @@ To return to the standard Windows Desktop, use the **Console2Desk** shortcut key
 **From `HandleOS 23H2v2` New Icons and Playnite Forwarder**
 
 - New File Explorer Icon: Redesigned for better consistency of style. 
+  
   Reference image:  <img height="38" src="Git_assets/features/Material_Folder.png"/> <img height="118" src="Git_assets/features/FileExplorerBanner.png"/>
-
+  
 - New Playnite Forwarder: 
   Quickly access the Tools folder for frequently used system utilities.
-  Reference image:  <img height="38" src="Git_assets/features/Tools.png"/><img height="118" src="Git_assets/features/ToolsBanner.png"/>
   
+  Reference image:  <img height="38" src="Git_assets/features/Tools.png"/><img height="118" src="Git_assets/features/ToolsBanner.png"/>
 ## - **What are Forwarders?**
 
   Forwarders are small helper tools for the Playnite UI. They allow Playnite to open system components, like `File Explorer`, and then go into the background, letting you perform your tasks without Playnite's limitations. These forwarders are simple floating buttons; when clicked, they close the forwarder and components and return Playnite to full-screen mode, ready for use again.
@@ -400,6 +403,8 @@ To return to the standard Windows Desktop, use the **Console2Desk** shortcut key
 `HotKeys4Console2Desk` is the lightweight assistant and it's so much important for `Console2Desk`, and from version 3.0.0 it supports up to 4 Controllers simultaneously. It's an application/service that runs in the background without a graphical interface, except for its presence in the System Tray and it's Menu tools. Above, you can see images showing its appearance in the system tray, where we have an icon, and right-clicking on it reveals other secondary options.
 
 The **Autorun CMD service** of `HotKeys4Console2Desk` it's as the picture below:
+
+
 <img height="120" src="Git_assets/features/AutoRunHotKeys4Console2Desk.png"/>
 
 This service better to don't turn OFF otherwise will not work some of the C2D components including all the shortcuts:
