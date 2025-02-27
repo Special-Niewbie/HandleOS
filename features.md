@@ -370,6 +370,24 @@ Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications
     4. *BIOS Configuration:* 
         *If C-States (power-saving states) were previously disabled in the BIOS, they need to be re-enabled for proper energy savings.*
 
+10. **Coming Soon...**
+
+11. **Coming Soon...**
+
+12. **Coming Soon...**
+
+13. **Coming Soon...**
+
+14. **Join our server family!**:
+
+    Clicking this button will take you directly to the HandleOS community page, where you can connect with other users, share experiences, and get support.
+
+    
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 ### HandleOS Pointer Design from:
 
