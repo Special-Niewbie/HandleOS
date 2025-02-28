@@ -75,7 +75,7 @@ First, I would like to remind you that you can recall **Console2Desk** from anyw
 *`Hybrid Mode:`*
 Hybrid Mode is an evolution of the other simpler function called `Console Mode`. It bridges the gap between desktop apps and UWP apps, enabling seamless integration of both environments. Previously, this level of compatibility was impossible in `Console Mode` that operate to cutting off many Windows services (without UI). With *Hybrid Mode*, you can fully customize your handheld or PC, offering unprecedented flexibility and control.
 
-*Only in Hybrid Mode we have `HandleOS Touch Menu:`*
+***Only in Hybrid Mode** we have `HandleOS Touch Menu:`*
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HOS_ContextMenu.png" style="margin-left: auto;"/>
@@ -190,7 +190,7 @@ You can find installation instructions and the ISO here below, or by selecting t
 | <img height=34px src="Git_assets/theme.ico">  HandleOS Personalized Wallpapers |        ✅        |
 | <img height=34px src="Git_assets/Heroic.png"> or  <img height=34px src="Git_assets/Playnite.png">   The default user interface is set to either Heroic or Playnite for both Hybrid and Console Modes. However, you can change this setting and use any other UI or software via the Console2Desk settings. |        ✅        |
 | <img width=36px src="Git_assets/edge.ico">  Microsoft Edge + <img width=32px src="Git_assets/copilot.png">Copilot (*suggestion, avoid installing both due to potential privacy concerns and the significant increase in Microsoft background services*) | ✅ (Installable) |
-| <img width=32px src="Git_assets/store4.ico"> Microsoft Store | ✅ (Installable) |
+| <img width=32px src="Git_assets/store4.ico"> Microsoft Store     (*installable by Console2Desk related button*) | ✅ (Installable) |
 | <img width=32px src="Git_assets/pipelines.ico">  OS Debloated and Optimized (*all the functions can be reversible by Console2Desk*) |        ✅        |
 | <img width=36px src="Git_assets/bitlocker.png">  Device Encryption |        ✅        |
 | <img width=32px src="Git_assets/Pause_updates-icon.png">  Full Upgradable (*by default are suspended to reduce services in background  if reactivate remember to suspend again by Console2Desk*) |        ✅        |
