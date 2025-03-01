@@ -45,9 +45,7 @@
 
 
 
-# 🚧 Page Under Maintenance 🚧
 
-**The page is currently being updating to explain the new C2D version 4.1.0 and improve several sections. Please check back in the next few hours/Days for detailed information!**
 
 ## Join Our Discord Community!
 
@@ -57,9 +55,17 @@ In Discord channel where we can exchange ideas, provide support, and help each o
 
 
 
+**The motto of HandleOS is** ***"Reversible."*** This means that the core philosophy behind the project is to optimize Windows to its maximum potential for better performance—**without ever crossing the border line.**
+
+What does this mean? It means that, yes, we could make HandleOS even lighter, strip the ISO down further, and remove more components—but at what cost? Doing so would result in a **half-broken system**, where essential functionalities stop working or you cant upgrade it. If so, some development tools, modern games, or applications relying on specific components OR newer Windows technologies would no longer function properly.
+
+That’s why **HandleOS is built to be fully reversible and always functional.** The goal is not to create a barebones Windows version that sacrifices compatibility, but rather an **optimized Windows experience**—one that works **just like stock Windows** but **as lightweight as only a custom ISO can be.**
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
 **HandleOS** is a fan-made project tailored for those seeking a lightweight, secure, privacy-focused, reversible features and stable OS, ideal for future handheld PCs and more. Based on Windows 11 official ISO (so from Microsoft's official site), a valid Microsoft license is required from your Microsoft device; HandleOS is optimized by removing telemetry, unnecessary software,  services, while retaining all Windows Defender security features. This reduces RAM consumption to use approximately 1 GB in "IDLE Benchmark" (on a virtual machine), allowing more RAM to be allocated to the APU GPU and improving responsiveness.
 
-After months of rigorous development, HandleOS now introduces a major milestone called **Console2Desk** tool. From C2D 4.1.0 version represents a complete overhaul of my previous work, featuring numerous improvements and exclusive new functionalities, including the ground breaking `Hybrid Mod`.
+After months of rigorous development, HandleOS now introduces a major milestone called **Console2Desk** tool. From **C2D** 4.1.0 version represents a complete overhaul of my previous work, featuring numerous improvements and exclusive new functionalities, including the ground breaking `Hybrid Mod`.
 
 **What’s New from Console2Desk 4.1.0?**
 
