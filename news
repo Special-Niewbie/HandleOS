@@ -5,9 +5,9 @@
     "status": "Available"
   },
   {
-    "title": "All 24H2 Windows Update, hold on within further confirmation!",
-    "icon": "C:/Program Files/Console2Desk/sources/alert.png",
-    "status": "Pending"
+    "title": "Can be update from 23H2 to 24H2, and can be upgrade form Home to Pro version!",
+    "icon": "C:/Program Files/Console2Desk/sources/ok.png",
+    "status": "Available"
   }, 
   {
     "title": "All 23H2 Windows Update, can be installed.",
