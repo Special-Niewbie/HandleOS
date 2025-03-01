@@ -1,4 +1,4 @@
-<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="HybridvsConsole.md" style="color: #2079C8;">Hybrid Mode vs Console Mode</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
+<a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
 
 <br>
 
@@ -35,6 +35,7 @@ Below is a side-by-side comparison of how **Hybrid Mode** and **Console Mode** l
 
 - **Choose Console Mode** if you prefer a lightweight system with minimal background services, ideal for running classic applications without unnecessary overhead.
 
-  
+<br>
+
 
 # 💡 **Both modes have been carefully developed and designed to ensure they do not break any Windows components, SO DON'T GO IN PANIC! They are fully reversible at any time—you just have to call Console2Desk press "Desktop Mode", and it will switch back to Desktop if needed**.
