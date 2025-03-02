@@ -121,7 +121,7 @@ The TabView has been rewrite with low level language, alongside various under-th
 *A Licensing Model*
 Given the extensive work behind this major update, starting with version 4.0.0, `Console2Desk` is available to those who invest in or donate to the project (all the previous deprecated versions still available). Here’s how the licensing works from 4.0.0:
 
-## Licensing and Donations  
+## Console2Desk Licensing and Donations  
 
 To support the development of `HandleOS`, you can obtain a license by donating:  
 - **Standard License**: Donate a minimum of **€4.99**.  
