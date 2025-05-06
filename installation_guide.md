@@ -6,6 +6,12 @@ Follow these steps to install **HandleOS** correctly on your device. Please make
 
 ## Download the HandleOS ISO Creator Tool
 
+
+
+![HOS ISO Creator](C:\GitHub\HandleOS\Git_assets\installation\HOS_ISO_Creator.png)
+
+
+
 Instead of downloading a pre-made ISO, you can create your own optimized *HandleOS* installation with our new official tool!
 
 Download the `HandleOS ISO Creator`, and also, download the latest `Console2Desk` from the following link: [HandleOS ISO Creator + Console2Desk](https://github.com/Special-Niewbie/HandleOS/releases)
