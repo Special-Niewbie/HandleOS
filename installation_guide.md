@@ -8,7 +8,12 @@ Follow these steps to install **HandleOS** correctly on your device. Please make
 
 
 
-![HOS ISO Creator](C:\GitHub\HandleOS\Git_assets\installation\HOS_ISO_Creator.png)
+<div style="text-align: left;">
+  <h3><strong></strong></h3>
+</div>
+<div align="left">  
+    <img height="550" src="Git_assets/installation\HOS_ISO_Creator.png"/>
+</div>
 
 
 
