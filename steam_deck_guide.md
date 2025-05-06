@@ -66,7 +66,12 @@
   <div style="display: flex; justify-content: left; align-items: left;">
       <img height="140" src="Git_assets/steam_deckGuide/Other-Drivers.png" style="left: auto;"/>
   </div>
-
+  
+  
+  ### A huge thank you to **@ALLEVATOREANONIMO** for his months of dedication in finding and testing all the missing drivers. Below, you'll find all the drivers you may need for your Steam Deck! 
+  
+  
+  
   **PS:** *If you are not sure and you cannot find all the drivers listed by @AllevatoreAnonimo, please come in our HandleOS Discord Server, to ask the help (the Discord Server invitation, it's on the main page).*
 
 ## Preparing the Ventoy USB Drive
