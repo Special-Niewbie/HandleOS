@@ -341,7 +341,12 @@ Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications
      
   5️⃣. **Barebone Mode**  
      The Barebone Mode is an optional feature available in the Launcher Settings, designed to offer a minimalist, console-like startup experience by hiding all branding elements typically shown during boot — such as the PC or handheld manufacturer logos. 
-     This mode is particularly useful when paired with Console Mode or Hybrid Mode, to maintain visual immersion from power-on to full interface.. 
+     This mode is particularly useful when paired with Console Mode or Hybrid Mode, to maintain visual immersion from power-on to full interface.
+
+- When you click the button, if *`Barebone Mode`* is active, the text will turn **BLUE** and the Windows logo will appear crossed out.
+  Clicking it again while in *`Barebone Mode`* will revert the icon to the regular Windows logo (not crossed out), and the text will turn **GREEN** with the label *`Normal Boot`*.
+
+  
 
 **IMPORTANT:**  "Barebone Mode is applied instantly — no need to press the Save button."
 
