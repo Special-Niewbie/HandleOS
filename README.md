@@ -20,7 +20,7 @@
 
 <div style="display: flex; justify-content: center; align-items: center;">
     <img height="240" src="Git_assets/HandleOS_Box.png" style="margin-left: auto;"/>
-    <img height="240" src="Git_assets/c2d_main_v.4.1.0.png" style="margin-left: auto;"/>
+    <img height="240" src="Git_assets/c2d_main_v.4.6.0.gif" style="margin-left: auto;"/>
 </div>
 
 
@@ -31,25 +31,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 ![](https://img.shields.io/github/stars/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/forks/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/tag/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/release/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/issues/Special-Niewbie/HandleOS.svg)  ![](https://img.shields.io/github/downloads/Special-Niewbie/HandleOS/total.svg)
-
-
-
-
-
-# 🚧 Page Under Maintenance 🚧
-
-**The page is currently being updating to explain the new C2D version 4.5.0 and improve several sections. Please check back in the next few hours/Days for detailed information!**
 
 
 
@@ -71,7 +53,12 @@ That’s why **HandleOS is built to be fully reversible and always functional.**
 
 -----------------------------------------------------------------------------------------------------------------------------------------
 
-**HandleOS** is a fan-made project tailored for those seeking a lightweight, secure, privacy-focused, reversible features and stable OS, ideal for future handheld PCs and more. Based on Windows 11 official ISO (so from Microsoft's official site), a valid Microsoft license is required from your Microsoft device; HandleOS is optimized by removing telemetry, unnecessary software,  services, while retaining all Windows Defender security features. This reduces RAM consumption to use approximately 1 GB in "IDLE Benchmark" (on a virtual machine), allowing more RAM to be allocated to the APU GPU and improving responsiveness.
+**HandleOS** is a fan-made project tailored for those seeking a lightweight, secure, privacy-focused, and stable OS with fully reversible features — ideal for future handheld PCs and beyond.
+A valid Microsoft license from your device is required. Users must first download a clean Windows 11 ISO from the official Microsoft website, which is then processed through the HandleOS ISO Creator to build their custom HandleOS installation.
+
+The system will be optimized by removing telemetry, unnecessary software, and background services, while retaining all Windows Defender security features.
+
+As a result, **RAM** usage is reduced to approximately **546 MB** in idle (*benchmark based on real hardware **SAMSUNG NF210***), allowing more memory to be allocated to the APU’s GPU and improving overall responsiveness.
 
 After months of rigorous development, HandleOS now introduces a major milestone called **Console2Desk** tool. From **C2D** 4.1.0 version represents a complete overhaul of my previous work, featuring numerous improvements and exclusive new functionalities, including the ground breaking `Hybrid Mod`.
 
@@ -125,9 +112,8 @@ The TabView has been rewrite with low level language, alongside various under-th
 
 <br>
 
-
-*C2D Licensing Model*
-Given the extensive work behind this major update, starting with version 4.0.0, `Console2Desk` is available to those who invest in or donate to the project (all the previous deprecated versions still available). Here’s how the licensing works from 4.0.0:
+*C2D Licensing Model*:
+Given the extensive work behind the project, starting with version 4.0.0, `Console2Desk` is available to those who invest in or donate to the project (all the previous deprecated versions still available). Here’s how the licensing works from 4.0.0:
 
 ## Console2Desk Licensing and Donations  
 
@@ -139,7 +125,7 @@ Both licenses currently offer the same features, but in future updates, they wil
 
 If you would like to support the ongoing development with any amount time to time, you are welcome to make a donation in any amount. Please note that maintaining this  project incurs some monthly costs from my side.
 
-<small> `Please note`: Any donation amount below €4.99 will be considered a simple donation to support the project and will not include any license as a gift. </small>  
+<small> `Please note`: Any donation below €4.99 will be considered a simple contribution to support the Console2Desk project up to version 3.9, and will not include a license as a gift. </small>  
 
 ### How to Donate  
 You can make your donation using the buttons below, either directly on this page or through the HandleOS app installed:  
@@ -156,7 +142,7 @@ You can make your donation using the buttons below, either directly on this page
 
 - **Donate Any Amount**: [Click here](https://www.paypal.com/paypalme/CrisDonate/)  
 
-The license will be processed and then sent to your email as a gift within **3 to 48 hours**, depending on the system’s processing time (<small>please check your spam folder as well if you haven't received an email from me regarding your license, before contacting me :blush:</small>).  
+The **C2D** license will be processed and then sent to your email as a gift within **3 to 48 hours**, depending on the system’s processing time (<small>please check your spam folder as well if you haven't received an email from me regarding your license, before contacting me :blush:</small>).  
 
 My goal is to create a community of enthusiasts eager to get the most out of these products, considering that both Linux and Windows have their Pros and Cons.
 
@@ -196,7 +182,7 @@ You can find installation instructions and the ISO here below, or by selecting t
 | <img width=36px src="Git_assets/controller.png">↺ <img width=32px src="Git_assets/monitor.ico"><br />*Hybrid Mode/ Console Mode / Desktop Mode* |                             ✅                              |
 | <img width=32px src="Git_assets/computerchip.ico">  **TPM**  |          <img width=19px src="Git_assets/x.png">           |
 
-**NOTE**: *The benchmark and RAM consumption of approximately 1 GB, is based on a system with limited hardware characteristics. This value is intended to reflect the OS's lightness. HandleOS, by nature of being based on Windows, may use slightly more RAM if you have a large amount available on your PC, especially if there are default drivers that Windows has founded in its local database. Conversely, if the system has very limited specifications, HandleOS will adjust and use less RAM accordingly.*
+**NOTE**: *The benchmark and **RAM** consumption of approximately **546 Mb**, is based on a system with limited hardware characteristics **Samsung NF210** . This value is intended to reflect the OS's lightness. HandleOS, by nature of being based on Windows, may use slightly more RAM if you have a large amount available on your PC, especially if there are default drivers that Windows has founded in its local database. Conversely, if the system has very limited specifications, HandleOS will adjust and use less RAM accordingly.*
 
 | Feature                                                      |   HandleOS 11   |
 | ------------------------------------------------------------ | :-------------: |
@@ -217,13 +203,9 @@ You can find installation instructions and the ISO here below, or by selecting t
 ### Benchmark (based on RAM 2GB / CPU 2 Core 4 Threads)
 
 <div style="display: flex; justify-content: center; align-items: center;">
-    <img height="240" src="Git_assets/Benchmarks/HandleOSv2_Playnite_Open_CPU.png" style="margin-left: auto;"/>
-    <img height="240" src="Git_assets/Benchmarks/HandleOSv2_RAM.png" style="margin-left: auto;"/>
+    <img height="440" src="Git_assets/Benchmarks/HandleOSv3.2_RAM.png"/>
 </div>
 
-<div style="display: flex; justify-content: center; align-items: center;">
-    <img height="240" src="Git_assets/Benchmarks/HandleOSv2_UserServices.png"
-</div>
 
 
 
@@ -269,7 +251,7 @@ This project includes both open source and proprietary components:
 
 ## Credits
 
-- Special thanks to the Italian YouTuber <img height="38" src="Git_assets/Youtubers/prob.jpg">  [Prob]( https://www.youtube.com/@Prob-nest/featured) , for trusting and having been a dedicated beta tester on pre-release of *HandleOS*.
+- Special thanks to the Italian YouTuber <img height="38" src="Git_assets/Youtubers/prob.jpg">  [Prob]( https://www.youtube.com/@Prob-nest/featured) .
 - Special thanks to developer @AderitoSilva for his amazing `XInputium drivers` <img height="38" src="Git_assets/XInputiumLogo_Light.svg"> and support—without him, it wouldn’t have been possible!
 
 

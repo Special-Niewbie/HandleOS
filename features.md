@@ -16,15 +16,16 @@ This is where `Console2Desk` and its companions come into play. In this section,
   <h3><strong>Console2Desk v4.1.0</strong></h3>
 </div>
 <div align="left">  
-    <img height="450" src="Git_assets/features/c2d_main_v4.1.0.png"/>
+    <img height="450" src="Git_assets/features/c2d_main_v4.6.0.png"/>
 </div>
+
 
 
 
 ### Quick Menu
 
 ### 1. **Dynamic ON/OFF Icon for Windows Defender**: 
-Windows Defender dynamic icon, Defender can now be disabled in `Console Mode`, so there's no need to switch to `Desktop Mode`to turn it off anymore (as the previous C2D versions) .
+Windows Defender dynamic icon, Defender can be manually disabled anytime .
 
    :information_source:*This working only if you have `Tamper Protection` - **disabled**:*
 
@@ -69,7 +70,47 @@ The **Fix Touch Keyboard** button provides a solution by resetting the **Touch K
   ***PS:***`Close the Keyboard Again` after reset with **Yes** or **No** choice , if necessary,  because could pop-up the Touch Keyboard again for just a time , and press the `X` on the main window of the Keyboard to close it manually, and the bug should disappear.
 This process should address the issue and prevent the keyboard from reappearing.
 
-### 4. **VRAM+ Configuration – When and How to Use It:** 
+
+
+### 4. **GPU Center**:
+
+   The **AMD, Intel, and NVIDIA** buttons are designed to **open their respective GPU control panels** for quick access to graphics settings.  
+
+   - *If any of these buttons do not work on your device, please let me know. Some **Handled** installations may differ, which can prevent the GPU settings panel from opening / appear. In such cases, we can add the necessary configuration to ensure compatibility.*  
+
+
+
+### 5. **Custom Apps**: 
+
+   <div style="display: flex; justify-content: center; align-items: center;">
+       <img height="240" src="Git_assets/CustomIconMenu.png" style="margin-left: auto;"/>
+       <img height="240" src="Git_assets/AddCustomIconMenu.png" style="margin-left: auto;"/>
+   </div>
+
+
+   #### Quick Access to your Favourite Applications in Console2Desk  
+
+   A new feature has been added to **Console2Desk (C2D)**, allowing you to **register up to three favourites applications** for quick access directly from the main UI.  
+
+   Three **cross-shaped boxes** are now available for adding your preferred apps, supporting both **mouse** and **touch screen** interaction:  
+
+   ##### 🔹 Using a Mouse  
+
+   - **Right-click** on one of the three cross icons to open a pop-up window where you can browse and select your favorite application.
+   - **Left-click** on an added application icon to **launch** the app
+   - To **remove** an app from its box, **double-click** the icon with the **left mouse button**—a confirmation message will appear before deletion.  
+
+   ##### 🔹 Using a Touch Screen  
+
+   - **Press and hold** on one of the adding cross icons for **at least 3 seconds** to open the pop-up window and select your app.
+   - **One tap** on an added application icon will **launch** the app.  
+   - To **remove** an app, **double-tap** the icon, and a confirmation message will appear before deletion.  
+
+   This feature makes launching frequently used applications **faster and more intuitive**, whether you're using a **mouse** or a **touchscreen device**.  
+
+
+
+### 6. **VRAM+ Configuration – When and How to Use It:** 
 
    <img height="380" src="Git_assets/features/HOSVRamMenu.png"/>
 
@@ -112,36 +153,9 @@ This process should address the issue and prevent the keyboard from reappearing.
 
    By following this procedure, you ensure that your system remains responsive while preventing long-term data fragmentation, keeping your storage optimized for better performance.
 
-### 5. **GPU Center**:
 
-   The **AMD, Intel, and NVIDIA** buttons are designed to **open their respective GPU control panels** for quick access to graphics settings.  
 
-   - *If any of these buttons do not work on your device, please let me know. Some **Handled** installations may differ, which can prevent the GPU settings panel from opening / appear. In such cases, we can add the necessary configuration to ensure compatibility.*  
 
-### 6. **Custom Apps**: 
-
-   <div style="display: flex; justify-content: center; align-items: center;">
-       <img height="240" src="Git_assets/CustomIconMenu.png" style="margin-left: auto;"/>
-       <img height="240" src="Git_assets/AddCustomIconMenu.png" style="margin-left: auto;"/>
-   </div>
-
-   #### Quick Access to your Favourite Applications in Console2Desk  
-
-   A new feature has been added to **Console2Desk (C2D)**, allowing you to **register up to three favourites applications** for quick access directly from the main UI.  
-
-   Three **cross-shaped boxes** are now available for adding your preferred apps, supporting both **mouse** and **touch screen** interaction:  
-
-   ##### 🔹 Using a Mouse  
-   - **Right-click** on one of the three cross icons to open a pop-up window where you can browse and select your favorite application.
-   -   **Left-click** on an added application icon to **launch** the app
-   - To **remove** an app from its box, **double-click** the icon with the **left mouse button**—a confirmation message will appear before deletion.  
-
-   ##### 🔹 Using a Touch Screen  
-   - **Press and hold** on one of the adding cross icons for **at least 3 seconds** to open the pop-up window and select your app.
-   - **One tap** on an added application icon will **launch** the app.  
-   - To **remove** an app, **double-tap** the icon, and a confirmation message will appear before deletion.  
-
-   This feature makes launching frequently used applications **faster and more intuitive**, whether you're using a **mouse** or a **touchscreen device**.  
 
 ### 7. **HandleOS NEWS:** 
 
@@ -152,10 +166,24 @@ This process should address the issue and prevent the keyboard from reappearing.
 
 - **PayPal**: As you might guess, this is the donation section where you can donate directly to me and support the *HandleOS* / *C2D* project if you enjoyed it.
 
-### 8. Settings Menu
-Button to open the Settings Menu, which will be discussed later below.
 
-### 9. **Commands Info**:
+### 8. Info controller Connected
+
+Displays how many controllers are currently connected to the PC. This is useful to verify whether the system detects the controllers and whether Console2Desk (C2D) recognizes them as well, allowing their use as mouse and keyboard input.
+
+You can disable this controller check and the Mouse/Keyboard simulator while C2D is running by using Tweak Paradise, through the Input2Desk switch found on the second page of the Microsoft section.
+
+
+### 9. Settings Menu
+
+Animated button, to open the Settings Menu, which will be discussed later below.
+
+### 10. Button New Version
+This button appears only when a new version of C2D and its components is available on the GitHub site. When clicked, it starts a download progress circle animation, and once the download is complete, the installation procedure will appear.
+
+If no new version is available, the button will not be shown on the main screen.
+
+### 11. **Commands Info**:
 <img height="220" src="Git_assets/features/InfoC2D.png"/>
 
 The Info button will display a window, as shown in the image below, indicating the Mouse/Keyboard commands that your XBOX controller takes over while Console2Desk is active. From version 3.0.0 C2D it supports up to 4 Controllers simultaneously to get mouse and Keyboard behaviour .This feature helps users navigate seamlessly without needing to use a mouse or keyboard, making it easier to control the system purely with a game controller. 
@@ -164,7 +192,7 @@ The Info button will display a window, as shown in the image below, indicating t
 
    
 
-### 10. **About**:
+### 12. **About**:
 
    <img height="220" src="Git_assets/features/c2desk_about.png"/>
 
@@ -172,13 +200,13 @@ Button `About` to check the software version or click the icon to visit my accou
 
 
 
-### 11. Desktop Mode:
+### 13. Desktop Mode:
 
 Button `Desktop Mode` to switch from **Hybrid Mode**  or **Console Mode** back to `Desktop Mode` , in case you need to do something temporary or use your handheld or PC as Desktop in the classic Windows Environment.
 
 
 
-### 12. Hybrid Mode:
+### 14. Hybrid Mode:
 
 **Hybrid Mode** offers a unique and advanced functionality that differs from **Console Mode**. In this mode, you gain the ability to run any application or system function that would typically cause errors or be inaccessible the **UWP Windows** apps in **Console Mode**—such as **Windows Settings**, **Microsoft Store**, **GamePass**, **Asus Armoury Crate for Handled** and more.
 
@@ -195,22 +223,37 @@ This approach unlocks a wealth of possibilities for us. You can maintain a fully
 
 
 
-### 13. Desktop Temporary Mode:
+### 15. Desktop Temporary Mode:
 
 This button helps you switch to **Desktop Mode** temporarily without making the change permanent after a reboot. It is especially useful when you need to perform temporary tasks in **Desktop Mode**, such as system configurations or working with desktop-specific applications.
 
 Once you reboot the device, it will automatically return to **Hybrid Mode** or **Console Mode** (depending on which mode was active from **Desktop Mode** previously).
 
-### 14. Console Mode:
+### 16. Console Mode:
 **Console Mode** is a more legacy method that differs significantly from **Hybrid Mode**. It is ideal for users who do not require Windows' full UI services and are focused primarily on running classic **.exe** applications, which do not rely on the Windows graphical interface and services.
 
 This mode is highly suitable for those who want to maximize system performance by limiting unnecessary background processes and services associated with the UI. If you are one of these users and your applications don't require advanced UI Modern features/ services, switching to **Console Mode** is a great option to free up some system resources and improve overall performance.
 
-### 15. Minimize/Restore/Open - Heroic/Steam/Playnite:
+### 17. Animated Audio sidebar:
+Animated audio sidebar to control system volume.
+
+### 18. Animated Brightness sidebar:
+
+Animated sidebar to control system brightness.
+
+### 19. Animated Arrow Button:
+
+This button expands or collapses the control panel with animated effects.
+
+### 20. Minimize/Restore/Open - Heroic/Steam/Playnite:
 
 This button maximizes, minimizes, and re-opens (if mistakenly closed) the pre-configured program for **Hybrid Mode** and **Console Mode**, but specially it's coded to work with the 3 most famous launchers.
 
-### 16. Wifi Settings:
+### 21. Animated SSD Temperature Monitoring:
+
+Animated monitoring of the SSD temperature for the primary disk, with visual alerts when temperature thresholds are exceeded — essential for handheld devices or small form factor barebone PCs.
+
+### 22. Wifi Settings:
 
 **Desktop Mode**: As shown in the image below, this buttons it open the classic Windows Menu for managing WiFi networks.
 
@@ -224,11 +267,17 @@ This button maximizes, minimizes, and re-opens (if mistakenly closed) the pre-co
 
 
 
-### 17. Power OFF Menu
 
-Starting from ***C2D ver 3.8.0***, a new button and rebuilt the Windows menu for **Shutting Down**, **Restarting**, and **Turning Off the monitor** of your device, directly from C2D.
 
-   <img height="160" src="Git_assets/features/PowerOFF_Menu.png"/>
+
+
+### 23. Power System Menu:
+
+Provides quick access to power options, including system shutdown, restart, reboot to BIOS, and monitor power-off, all integrated into the C2D interface.
+
+   <img height="260" src="Git_assets/features/PowerOFF_Menu.png"/>
+
+
 
 
 
@@ -238,8 +287,9 @@ Starting from ***C2D ver 3.8.0***, a new button and rebuilt the Windows menu for
   <h1><strong>Menu Settings </strong></h1>
 </div>
 <div align="center">  
-    <img height="420" src="Git_assets/features/C2D_settings_v4.1.0.png"/>
+    <img height="420" src="Git_assets/features/C2D_settings_v4.6.0.png"/>
 </div>
+
 
 
 
@@ -287,9 +337,25 @@ To return to the standard Windows Desktop, use the **Console2Desk** shortcut key
 Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications in restricted directories (such as **Asus Armoury Crate for ROG Ally** or **Game Pass**) may be configured to launch automatically at system startup. In these cases, there’s no need to manually set them as startup applications within HandleOS. Instead, **Hybrid Mode** simply removes the Windows UI while letting these applications launch on their own. Anyway, this button provides users with greater flexibility by allowing them to clear any previously set launchers if needed.  
 
   4️⃣. **Hybrid Mode Launcher**  
-     Similar to the **Console Mode Launcher** option, this setting allows you to specify a Custom launcher, game, or application to start in **Hybrid Mode** instead of Windows UI. `Hybrid Mode` maintains full Windows compatibility while removing completely the Windows UI.  
+     Similar to the **Console Mode Launcher** option, this setting allows you to specify a Custom launcher, game, or application to start in **Hybrid Mode** instead of Windows UI. `Hybrid Mode` maintains full Windows compatibility while removing completely the Windows UI.
+     
+  5️⃣. **Barebone Mode**  
+     The Barebone Mode is an optional feature available in the Launcher Settings, designed to offer a minimalist, console-like startup experience by hiding all branding elements typically shown during boot — such as the PC or handheld manufacturer logos. 
+     This mode is particularly useful when paired with Console Mode or Hybrid Mode, to maintain visual immersion from power-on to full interface.. 
 
-  5️⃣. **Save Button**  
+**IMPORTANT:**  "Barebone Mode is applied instantly — no need to press the Save button."
+
+
+​     ⚙️ **Please note**:
+
+- *The **Barebone Mode** only removes software-level branding and overlays. If you wish to hide the pre-boot hardware/BIOS manufacturer logo (e.g., ASUS, GPD), this must be done manually from the device's BIOS settings, usually under options like “Splash Screen” or “Boot Animation.” However, most handheld devices do not expose such settings.*
+-  *I avoided disabling those BIOS logos through unofficial methods, as it would require modifying signed BIOS files, disabling Secure Boot, and could lead to system instability or reduced security for the user — which is strongly discouraged for safety reasons. However, if you disable the logo manually from the BIOS settings, that’s perfectly fine.*
+
+ 
+
+
+
+ 6️⃣. **Save Button**  
      After configuring your preferred launcher, game, or application, in one of the above points you must **click the Save button** to store your settings. If you do not save your changes, your configurations will not take effect when switching to **Hybrid Mode** or **Console Mode**.  
 
 
@@ -311,7 +377,7 @@ Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications
 
 8. **HandleOS Restore Boost**:
 
-   <img height="320" src="Git_assets/features/HOSRB4.1.0.png"/>
+   <img height="320" src="Git_assets/features/HOSRB4.6.0.png"/>
 
    
 
@@ -320,18 +386,28 @@ Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications
    This page is one of the most important features of HandleOS and will continue to evolve over time. Here, you will find several buttons, but the main one is **"Start Restore"**. The other options provide additional functionalities or useful information. Let's go through them one by one:  
 
    1. `Informative List`  
-      This list shows what Microsoft attempts to reinstall or modify in the background after a Windows update. It helps you understand whether it is necessary to reapply HandleOS settings to prevent unwanted changes and maintain system privacy and performance.  
+      This list highlights what Microsoft may attempt to reinstall or modify silently after a Windows update. It helps you decide whether you need to reapply HandleOS settings to block unwanted changes—like AI or background services—and preserve both privacy and performance.
 
-   2. `Disable Edge & OneDrive Reinstallation` (Checkbox)  
-      Keep this checkbox enabled if you do not use **Edge** or **OneDrive** (*highly suggested to don't use them*). Even if you manually uninstall these applications, Microsoft often reinstalls them during updates or adds background services that collect user data. Over time upgrade after upgrades, these components may be gradually restored without your consent.  
+   2. `Disable Edge, OneDrive & all AI Services Reinstallation` (Checkbox)  
+      Keep this checkbox enabled if you do not use Edge or OneDrive (strongly recommended not to use them), and want to block both visible and hidden AI services like Copilot, Recall, and others that Microsoft silently installs in the background.
+      Even if you manually uninstall these components, Microsoft often reinstalls them during system updates or adds background services that collect user data. Over time, update after update, these elements may gradually be restored without your consent.
+      
+      `Auto Fix WiFi`  
+      This Checkbox,  auto-restores WiFi functionality in case the icon it disappears from the Windows taskbar after `Restored the Boost`, If you have or need Wifi keep this Checkbox, checked.  
+      
+   3. `Rockstar Launcher Fix & EA Games Performance Fix` (Checkbox)
 
-   3. `Fix WiFi`  
-      This button restores WiFi functionality in case the icon it disappears from the Windows taskbar after `Restored the Boost`, If you have or need Wifi press this Button, and restart the PC , after reboot will appear again the Wifi icon in the taskBar.  
-
-   4. `Rockstar Launcher Fix` 
-      **HandleOS** enforces strict privacy settings to prevent data from being sent outside your computer, keeping everything local. However, some launchers—like Rockstar Launcher—require specific Windows components to send out data function. This option enables the necessary services send out data for Rockstar Launcher that they require to work properly without compromising overall system privacy.  
-
-   5. `Start Restore (Main Button)`  
+      - ***Rockstar Launcher Fix***:
+        HandleOS applies strict privacy rules to keep all data local and prevent outbound telemetry. However, the Rockstar Launcher depends on certain Windows services to function properly, which may involve limited outbound connectivity. Enabling this fix restores the necessary components for Rockstar to launch and operate correctly—without weakening HandleOS's overall privacy model.
+   
+      - ***EA Games Performance Fix***:
+        Some EA games (like FC25 or others using both Steam + EA Desktop) can suffer from severe performance issues on ultra-optimized systems. This is due to how multiple anti-cheat engines, dual launcher overlays, and EA telemetry interfere with proper power distribution to the GPU, causing stuttering, delayed rendering, or low GPU usage.
+        Enabling this fix adjusts system behavior to correct power allocation and improve stability and performance in affected EA titles.
+   
+   
+        **IMPORTANT:** "`Rockstar Launcher Fix & EA Games Performance Fix` is applied instantly — no need to press the `Start Boost` button."
+   
+   4. `Start Boost (Main Button)`  
       This is the primary button for applying HandleOS system restoration settings. Once started, you must wait for the process to complete before closing this page.  
 
 
@@ -370,13 +446,39 @@ Why is this needed? Some Microsoft Store apps, **UWP programs**, or applications
     4. *BIOS Configuration:* 
         *If C-States (power-saving states) were previously disabled in the BIOS, they need to be re-enabled for proper energy savings.*
 
-10. **Coming Soon...**
+10. **Windows Defender Settings:**
+    In Desktop Mode and Hybrid Mode (but not in Console Mode), clicking this button will open the Windows Defender settings.
 
-11. **Coming Soon...**
+    
+
+11. **Task Manager:**
+    Clicking this button will open the Windows Task Manager, providing quick access regardless of the mode you're in.
 
 12. **Coming Soon...**
 
-13. **Coming Soon...**
+13. **HandleOS ISO Creator:**
+
+    Clicking this button downloads the **HandleOS ISO Creator**, a portable tool that allows you to build a custom, legal HandleOS installation ISO using official Microsoft ISO files.
+
+    #### 📌 Key Features:
+
+    - **Replaces tools like Rufus** in the HandleOS workflow.
+    - Works on both **Windows and Linux** (Wine, not deep tested).
+    - Supports **10 languages** (including English, Italian, Spanish, German, French, Japanese, Chinese, Arabic, Russian, Hindi).
+    - Allows you to:
+      - Create just the ISO,
+      - Create a bootable USB,
+      - Or do both in one process.
+
+    #### 📂 Extras:
+
+    - Includes the **“MyApps”** feature: you can add your own folder containing drivers or software, which will be embedded into the final ISO or USB stick.
+
+    #### ℹ️ Notes:
+
+    - A built-in guide provides basic steps for creating your own ISO. However, no support is offered for advanced custom ISOs due to the complexity of coordination required.
+    - Ideal for users who want to stay aligned with the official HandleOS format and avoid inconsistencies caused by manual script editing.
+      
 
 14. **Join our server family!**:
 
