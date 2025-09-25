@@ -1,5 +1,10 @@
 [
-{
+  {
+    "title": "Big News! Visit HandleOS official website: https://www.handle-os.com/",
+    "icon": "C:/Program Files/Console2Desk/sources/ok.png",
+    "status": "Available"
+  },
+  {
     "title": "New! HandleOS ISO Creator V2.0.0 — Full 23H2 & 24H2 Home/Pro support!",
     "icon": "C:/Program Files/Console2Desk/sources/ok.png",
     "status": "Available"
