@@ -2,6 +2,26 @@
 
 
 
+# ⚠️ Deprecated Descriptions  
+
+This page descriptions is no longer updated.  
+
+For the latest news, updates, and documentation, please visit and <u>click below the **official website**</u>: 
+ 
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="Git_assets/hos_icon.png" alt="HandleOS Logo" height="32">
+    <a href="https://www.handle-os.com" style="font-size: 2.2em; text-decoration: none;">
+        HandleOS
+    </a>
+</div>
+
+
+
+- Older information here is kept only for historical reference.
+
+
+
 # BCD Fix: Restoring BCD After Applying `Optimize Memory and Reduce Stutter by BCD`
 
 **Important:** If you have applied the `Optimize Memory and Reduce Stutter by BCD` function and are experiencing boot issues, follow these steps to restore your system. Please note that if BitLocker is active or the disk is encrypted, you will need to decrypt it first, which will complicate the process.
@@ -28,7 +48,7 @@
      ```
    - If the drive letter has changed, adjust the command to reflect the new letter. For example:
      ```bash
-     bcdedit /import YOUR_LETTER:\Users\HandleOS\AppData\Roaming\Console2Desk\BackupBCD\bcdbackup.bin
+     bcdedit /import YOUR_C:_LETTER:\Users\HandleOS\AppData\Roaming\Console2Desk\BackupBCD\bcdbackup.bin
      ```
    - Ensure you type the command exactly as shown, including spaces.
 

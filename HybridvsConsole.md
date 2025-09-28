@@ -1,5 +1,27 @@
 <a href="README.md" style="color: #2079C8;">Introduction</a> | <a href="installation_guide.md" style="color: #2079C8;">Download + Installation Guide</a> | <a href="features.md" style="color: #2079C8;">Features</a> | <a href="https://github.com/Special-Niewbie/HandleOS/discussions" style="color: #2079C8;">Discussions</a> | <a href="BCDFix.md" style="color: #2079C8;">Guide to Restoring BCD</a> | <a href="TP.md" style="color: #2079C8;">Tweak Paradise</a> | <a href="PrivacyPolicy.md" style="color: #2079C8;">Policy Privacy</a>
 
+
+
+# ⚠️ Deprecated Descriptions  
+
+This page descriptions is no longer updated.  
+
+For the latest news, updates, and documentation, please visit and <u>click below the **official website**</u>: 
+ 
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+    <img src="Git_assets/hos_icon.png" alt="HandleOS Logo" height="32">
+    <a href="https://www.handle-os.com" style="font-size: 2.2em; text-decoration: none;">
+        HandleOS
+    </a>
+</div>
+
+
+
+- Older information here is kept only for historical reference.
+
+  
+
 <br>
 
 
