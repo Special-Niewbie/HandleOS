@@ -7,7 +7,9 @@
 This page descriptions is no longer updated.  
 
 For the latest news, updates, and documentation, please visit and <u>click below the **official website**</u>: 
- 
+
+
+
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
     <img src="Git_assets/hos_icon.png" alt="HandleOS Logo" height="32">
@@ -15,11 +17,10 @@ For the latest news, updates, and documentation, please visit and <u>click below
         HandleOS
     </a>
 </div>
-
+<br><br>
 
 
 - Older information here is kept only for historical reference.
-- 
 
 
 

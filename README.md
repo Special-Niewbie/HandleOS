@@ -23,7 +23,7 @@
 This page descriptions is no longer updated.  
 
 For the latest news, updates, and documentation, please visit and <u>click below the **official website**</u>: 
- 
+
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 10px;">
     <img src="Git_assets/hos_icon.png" alt="HandleOS Logo" height="32">
@@ -31,7 +31,7 @@ For the latest news, updates, and documentation, please visit and <u>click below
         HandleOS
     </a>
 </div>
-
+<br><br>
 
 
 - Older information here is kept only for historical reference.
@@ -275,7 +275,6 @@ This project includes both open source and proprietary components:
 
 ## Credits
 
-- Special thanks to the Italian YouTuber <img height="38" src="Git_assets/Youtubers/prob.jpg">  [Prob]( https://www.youtube.com/@Prob-nest/featured) .
 - Special thanks to developer @AderitoSilva for his amazing `XInputium drivers` <img height="38" src="Git_assets/XInputiumLogo_Light.svg"> and support—without him, it wouldn’t have been possible!
 
 
